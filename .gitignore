@@ -17,3 +17,13 @@ wp-content/plugins/hello.php
 /sitemap.xml
 /sitemap.xml.gz
 
+.DS_Store
+_notes
+*.swp
+*_log
+logs
+.tmb
+.tmb/*
+
+info.php
+info-siwp.php
