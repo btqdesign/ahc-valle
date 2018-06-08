@@ -1,0 +1,145 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: BTQ Design Booking TC\n"
+"POT-Creation-Date: 2018-05-31 10:57-0500\n"
+"PO-Revision-Date: 2018-05-31 11:00-0500\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: es_MX\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.0.7\n"
+"X-Poedit-Basepath: ..\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-Flags-xgettext: --add-comments=translators:\n"
+"X-Poedit-WPHeader: btq-booking-tc.php\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
+"_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.js\n"
+
+#: btq-booking-tc-test2.php:348 btq-booking-tc.php:877
+msgid "Select a PACKAGE or ROOM"
+msgstr "Seleccione un PAQUETE o HABITACIÓN"
+
+#: btq-booking-tc-test2.php:356 btq-booking-tc.php:885
+msgid "Rooms"
+msgstr "Habitaciones"
+
+#: btq-booking-tc-test2.php:359 btq-booking-tc.php:888
+msgid "Packages"
+msgstr "Paquetes"
+
+#: btq-booking-tc-test2.php:362 btq-booking-tc.php:891
+msgid "Top Rated"
+msgstr "Mejor Valorados"
+
+#: btq-booking-tc-test2.php:376 btq-booking-tc.php:905
+msgid "Arrival Date"
+msgstr "Día de llegada"
+
+#: btq-booking-tc-test2.php:381 btq-booking-tc.php:910
+msgid "Departure Date"
+msgstr "Fecha de salida"
+
+#: btq-booking-tc-test2.php:393 btq-booking-tc.php:922
+#, php-format
+msgid "%s Adult"
+msgid_plural "%s Adults"
+msgstr[0] "%s Adulto"
+msgstr[1] "%s Adultos"
+
+#: btq-booking-tc-test2.php:402 btq-booking-tc.php:931
+#, php-format
+msgid "%s Children"
+msgid_plural "%s Children"
+msgstr[0] "%s Niño"
+msgstr[1] "%s Niños"
+
+#: btq-booking-tc-test2.php:414 btq-booking-tc.php:943
+#, php-format
+msgid "%s Room"
+msgid_plural "%s Rooms"
+msgstr[0] "%s Habitación"
+msgstr[1] "%s Habitaciones"
+
+#: btq-booking-tc-test2.php:422 btq-booking-tc.php:951
+msgid "SEARCH"
+msgstr "BUSCAR"
+
+#: btq-booking-tc-test2.php:434
+msgid "Check your dates-rate to stay"
+msgstr "Consulta las tarifas para hospedarte"
+
+#: btq-booking-tc-test2.php:438
+msgid ""
+"* Remember that having an advance reservation will always be a better option "
+"(rates shown at 90 days)"
+msgstr ""
+"* Recuerda que tener una reservación anticipada siempre será una mejor "
+"opción (tarifas mostradas a 90 días)"
+
+#: btq-booking-tc.php:52 btq-booking-tc.php:53
+msgid "Booking TC"
+msgstr "Booking TC"
+
+#: btq-booking-tc.php:62 btq-booking-tc.php:63
+msgid "Settings"
+msgstr "Configuración"
+
+#: btq-booking-tc.php:70 btq-booking-tc.php:71
+msgid "Debug"
+msgstr "Depuración"
+
+#: btq-booking-tc.php:87
+msgid "SOAP Header To"
+msgstr "SOAP Header To"
+
+#: btq-booking-tc.php:91
+msgid "SOAP Header Action"
+msgstr "SOAP Header Action"
+
+#: btq-booking-tc.php:95 btq-booking-tc.php:426
+msgid "Hotel code english language"
+msgstr "Código de hotel en idioma inglés"
+
+#: btq-booking-tc.php:99
+msgid "Hotel code spanish language"
+msgstr "Código de hotel en idioma español"
+
+#: btq-booking-tc.php:972
+msgid "BTQ Booking"
+msgstr "BTQ Booking"
+
+#: btq-booking-tc.php:975
+msgid "Content"
+msgstr "Contenido"
+
+#. Plugin Name of the plugin/theme
+msgid "BTQ Design Booking TC"
+msgstr "BTQ Design Booking TC"
+
+#. Plugin URI of the plugin/theme
+msgid "http://btqdesign.com/plugins/btq-booking-tc/"
+msgstr "http://btqdesign.com/plugins/btq-booking-tc/"
+
+#. Description of the plugin/theme
+msgid "Booking TravelClick"
+msgstr "Booking TravelClick"
+
+#. Author of the plugin/theme
+msgid "BTQ Design"
+msgstr "BTQ Design"
+
+#. Author URI of the plugin/theme
+msgid "http://btqdesign.com/"
+msgstr "http://btqdesign.com/"
+
+#~ msgid "Saul Díaz"
+#~ msgstr "Saul Díaz"
+
+#~ msgid "https://saul.mx"
+#~ msgstr "https://saul.mx"

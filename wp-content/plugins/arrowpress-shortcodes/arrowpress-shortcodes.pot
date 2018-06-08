@@ -1,0 +1,901 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-12-23 04:18+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: \n"
+"Language: \n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Loco https://localise.biz/"
+
+#. widget base id
+#: classes/class-hb-widget-room-carousel.php:19
+msgid "HB Rooms Carousel"
+msgstr ""
+
+#: classes/class-hb-widget-room-carousel.php:20
+msgid "Display rooms slider"
+msgstr ""
+
+#: classes/class-hb-widget-room-carousel.php:183
+msgid "Title:"
+msgstr ""
+
+#: classes/class-hb-widget-room-carousel.php:187
+msgid "Number of rooms to show:"
+msgstr ""
+
+#: classes/class-hb-widget-room-carousel.php:191
+msgid "Number of items:"
+msgstr ""
+
+#: classes/class-hb-widget-room-carousel.php:195
+msgid "Number of rows:"
+msgstr ""
+
+#: classes/class-hb-widget-room-carousel.php:199
+msgid "Navigation:"
+msgstr ""
+
+#: classes/class-hb-widget-room-carousel.php:201
+#: shortcodes/arrowpress_banner.php:359 shortcodes/arrowpress_container.php:42
+#: shortcodes/arrowpress_gallery.php:73 shortcodes/arrowpress_gallery.php:80
+msgid "Yes"
+msgstr ""
+
+#: classes/class-hb-widget-room-carousel.php:203
+msgid "No"
+msgstr ""
+
+#: classes/class-hb-widget-room-carousel.php:206
+msgid "Text Link"
+msgstr ""
+
+#: classes/class-hb-widget-room-carousel.php:210
+msgid "Enter room type slug"
+msgstr ""
+
+#: lib/arrowpress-post-type.php:15 lib/arrowpress-post-type.php:15
+#: shortcodes/arrowpress_static_block.php:28
+#: shortcodes/arrowpress_static_block.php:36
+msgid "Static Block"
+msgstr ""
+
+#: lib/arrowpress-post-type.php:39
+msgid "Gallerys"
+msgstr ""
+
+#: lib/arrowpress-post-type.php:39 shortcodes/arrowpress_gallery.php:20
+msgid "Gallery"
+msgstr ""
+
+#: lib/arrowpress-post-type.php:52
+msgid "Gallery Category"
+msgstr ""
+
+#: lib/arrowpress-post-type.php:52
+msgid "Gallery Categories"
+msgstr ""
+
+#: lib/arrowpress-post-type.php:66
+msgid "Add New"
+msgstr ""
+
+#: lib/arrowpress-post-type.php:67 lib/arrowpress-post-type.php:89
+#, php-format
+msgid "Add New %s"
+msgstr ""
+
+#: lib/arrowpress-post-type.php:68
+#, php-format
+msgid "Edit %s"
+msgstr ""
+
+#: lib/arrowpress-post-type.php:69
+#, php-format
+msgid "New %s"
+msgstr ""
+
+#: lib/arrowpress-post-type.php:70
+#, php-format
+msgid "View %s"
+msgstr ""
+
+#: lib/arrowpress-post-type.php:71 lib/arrowpress-post-type.php:83
+#, php-format
+msgid "Search %s"
+msgstr ""
+
+#: lib/arrowpress-post-type.php:72
+#, php-format
+msgid "No %s found"
+msgstr ""
+
+#: lib/arrowpress-post-type.php:73
+#, php-format
+msgid "No %s found in Trash"
+msgstr ""
+
+#: lib/arrowpress-post-type.php:84
+#, php-format
+msgid "All %s"
+msgstr ""
+
+#: lib/arrowpress-post-type.php:85
+#, php-format
+msgid "Parent %s"
+msgstr ""
+
+#: lib/arrowpress-post-type.php:86
+#, php-format
+msgid "Parent %s:"
+msgstr ""
+
+#: lib/arrowpress-post-type.php:87
+msgid "Edit %"
+msgstr ""
+
+#: lib/arrowpress-post-type.php:88
+#, php-format
+msgid "Update %s"
+msgstr ""
+
+#: lib/arrowpress-post-type.php:90
+#, php-format
+msgid "New %s Name"
+msgstr ""
+
+#: lib/functions.php:17
+msgid "None"
+msgstr ""
+
+#: lib/functions.php:18 shortcodes/arrowpress_banner.php:266
+msgid "Left"
+msgstr ""
+
+#: lib/functions.php:19 shortcodes/arrowpress_banner.php:267
+msgid "Right"
+msgstr ""
+
+#: lib/functions.php:20 shortcodes/arrowpress_banner.php:265
+msgid "Center"
+msgstr ""
+
+#: lib/functions.php:21
+msgid "Justify"
+msgstr ""
+
+#: lib/functions.php:27 shortcodes/arrowpress_gallery.php:32
+msgid "Grid"
+msgstr ""
+
+#: lib/functions.php:28
+msgid "List"
+msgstr ""
+
+#: lib/functions.php:29
+msgid "Slider"
+msgstr ""
+
+#: lib/functions.php:48
+msgid "Animation Type"
+msgstr ""
+
+#: lib/functions.php:56
+msgid "Date"
+msgstr ""
+
+#: lib/functions.php:57
+msgid "ID"
+msgstr ""
+
+#: lib/functions.php:58
+msgid "Author"
+msgstr ""
+
+#: lib/functions.php:59 shortcodes/arrowpress_get_widget.php:43
+#: woo_shortcodes/arrowpress_product.php:28
+msgid "Title"
+msgstr ""
+
+#: lib/functions.php:60
+msgid "Modified"
+msgstr ""
+
+#: lib/functions.php:61
+msgid "Random"
+msgstr ""
+
+#: lib/functions.php:62
+msgid "Comment count"
+msgstr ""
+
+#: lib/functions.php:63
+msgid "Menu order"
+msgstr ""
+
+#: lib/functions.php:70
+msgid "Descending"
+msgstr ""
+
+#: lib/functions.php:71
+msgid "Ascending"
+msgstr ""
+
+#: lib/functions.php:77
+msgid "bounce"
+msgstr ""
+
+#: lib/functions.php:78
+msgid "flash"
+msgstr ""
+
+#: lib/functions.php:79
+msgid "pulse"
+msgstr ""
+
+#: lib/functions.php:80
+msgid "rubberBand"
+msgstr ""
+
+#: lib/functions.php:81
+msgid "shake"
+msgstr ""
+
+#: lib/functions.php:82
+msgid "swing"
+msgstr ""
+
+#: lib/functions.php:83
+msgid "tada"
+msgstr ""
+
+#: lib/functions.php:84
+msgid "wobble"
+msgstr ""
+
+#: lib/functions.php:85
+msgid "jello"
+msgstr ""
+
+#: lib/functions.php:86
+msgid "bounceIn"
+msgstr ""
+
+#: lib/functions.php:87
+msgid "bounceInDown"
+msgstr ""
+
+#: lib/functions.php:88
+msgid "bounceInLeft"
+msgstr ""
+
+#: lib/functions.php:89
+msgid "bounceInRight"
+msgstr ""
+
+#: lib/functions.php:90
+msgid "bounceInUp"
+msgstr ""
+
+#: lib/functions.php:91
+msgid "bounceOut"
+msgstr ""
+
+#: lib/functions.php:92
+msgid "bounceOutDown"
+msgstr ""
+
+#: lib/functions.php:93
+msgid "bounceOutLeft"
+msgstr ""
+
+#: lib/functions.php:94
+msgid "bounceOutRight"
+msgstr ""
+
+#: lib/functions.php:95
+msgid "bounceOutUp"
+msgstr ""
+
+#: lib/functions.php:96
+msgid "fadeIn"
+msgstr ""
+
+#: lib/functions.php:97
+msgid "fadeInDown"
+msgstr ""
+
+#: lib/functions.php:98
+msgid "fadeInDownBig"
+msgstr ""
+
+#: lib/functions.php:99
+msgid "fadeInLeft"
+msgstr ""
+
+#: lib/functions.php:100
+msgid "fadeInLeftBig"
+msgstr ""
+
+#: lib/functions.php:101
+msgid "fadeInRight"
+msgstr ""
+
+#: lib/functions.php:102
+msgid "fadeInUp"
+msgstr ""
+
+#: lib/functions.php:103
+msgid "fadeInUpBig"
+msgstr ""
+
+#: lib/functions.php:104
+msgid "fadeOut"
+msgstr ""
+
+#: lib/functions.php:105
+msgid "fadeOutDown"
+msgstr ""
+
+#: lib/functions.php:106
+msgid "fadeOutDownBig"
+msgstr ""
+
+#: lib/functions.php:107
+msgid "fadeOutLeft"
+msgstr ""
+
+#: lib/functions.php:108
+msgid "fadeOutLeftBig"
+msgstr ""
+
+#: lib/functions.php:109
+msgid "fadeOutRight"
+msgstr ""
+
+#: lib/functions.php:110
+msgid "fadeOutUp"
+msgstr ""
+
+#: lib/functions.php:111
+msgid "fadeOutUpBig"
+msgstr ""
+
+#: lib/functions.php:112
+msgid "flip"
+msgstr ""
+
+#: lib/functions.php:113
+msgid "flipInX"
+msgstr ""
+
+#: lib/functions.php:114
+msgid "flipInY"
+msgstr ""
+
+#: lib/functions.php:115
+msgid "flipOutX"
+msgstr ""
+
+#: lib/functions.php:116
+msgid "flipOutY"
+msgstr ""
+
+#: lib/functions.php:117
+msgid "lightSpeedIn"
+msgstr ""
+
+#: lib/functions.php:118
+msgid "lightSpeedOut"
+msgstr ""
+
+#: lib/functions.php:119
+msgid "rotateIn"
+msgstr ""
+
+#: lib/functions.php:120
+msgid "rotateInDownLeft"
+msgstr ""
+
+#: lib/functions.php:121
+msgid "rotateInDownRight"
+msgstr ""
+
+#: lib/functions.php:122
+msgid "rotateInUpLeft"
+msgstr ""
+
+#: lib/functions.php:123
+msgid "rotateInUpRight"
+msgstr ""
+
+#: lib/functions.php:124
+msgid "rotateOut"
+msgstr ""
+
+#: lib/functions.php:125
+msgid "rotateOutDownLeft"
+msgstr ""
+
+#: lib/functions.php:126
+msgid "rotateOutDownRight"
+msgstr ""
+
+#: lib/functions.php:127
+msgid "rotateOutUpLeft"
+msgstr ""
+
+#: lib/functions.php:128
+msgid "rotateOutUpRight"
+msgstr ""
+
+#: lib/functions.php:129
+msgid "slideInUp"
+msgstr ""
+
+#: lib/functions.php:130
+msgid "slideInDown"
+msgstr ""
+
+#: lib/functions.php:131
+msgid "slideInLeft"
+msgstr ""
+
+#: lib/functions.php:132
+msgid "slideInRight"
+msgstr ""
+
+#: lib/functions.php:133
+msgid "slideOutUp"
+msgstr ""
+
+#: lib/functions.php:134
+msgid "zoomIn"
+msgstr ""
+
+#: lib/functions.php:135
+msgid "zoomInDown"
+msgstr ""
+
+#: lib/functions.php:136
+msgid "zoomInLeft"
+msgstr ""
+
+#: lib/functions.php:137
+msgid "zoomInRight"
+msgstr ""
+
+#: lib/functions.php:138
+msgid "zoomInUp"
+msgstr ""
+
+#: lib/functions.php:139
+msgid "zoomOut"
+msgstr ""
+
+#: lib/functions.php:140
+msgid "zoomOutDown"
+msgstr ""
+
+#: lib/functions.php:141
+msgid "zoomOutLeft"
+msgstr ""
+
+#: lib/functions.php:142
+msgid "zoomOutRight"
+msgstr ""
+
+#: lib/functions.php:143
+msgid "zoomOutUp"
+msgstr ""
+
+#: lib/functions.php:144
+msgid "hinge"
+msgstr ""
+
+#: lib/functions.php:145
+msgid "rollIn"
+msgstr ""
+
+#: lib/functions.php:146
+msgid "rollOut"
+msgstr ""
+
+#: lib/functions.php:397
+msgid "Animation Duration"
+msgstr ""
+
+#: lib/functions.php:399 lib/functions.php:409
+msgid "numerical value (unit: milliseconds)"
+msgstr ""
+
+#: lib/functions.php:407
+msgid "Animation Delay"
+msgstr ""
+
+#: lib/functions.php:417
+msgid "Extra class name"
+msgstr ""
+
+#: lib/functions.php:419
+msgid ""
+"If you wish to style particular content element differently, then use this "
+"field to add a class name and then refer to it in your css file."
+msgstr ""
+
+#: lib/functions.php:460
+msgid "Enter"
+msgstr ""
+
+#: lib/functions.php:469
+msgid "Scale"
+msgstr ""
+
+#: lib/functions.php:486
+msgid "Flip"
+msgstr ""
+
+#: lib/functions.php:495
+msgid "Spin"
+msgstr ""
+
+#: lib/functions.php:504
+msgid "Roll"
+msgstr ""
+
+#: lib/functions.php:513
+msgid "Wait"
+msgstr ""
+
+#: shortcodes/arrowpress_banner.php:19
+msgid "Banner"
+msgstr ""
+
+#. Author of the plugin
+#: shortcodes/arrowpress_banner.php:21 shortcodes/arrowpress_container.php:20
+#: shortcodes/arrowpress_gallery.php:22 shortcodes/arrowpress_get_widget.php:30
+#: shortcodes/arrowpress_static_block.php:30
+#: shortcodes/arrowpress_testimonial.php:22
+#: woo_shortcodes/arrowpress_product.php:22
+msgid "ArrowPress"
+msgstr ""
+
+#: shortcodes/arrowpress_banner.php:27 shortcodes/arrowpress_gallery.php:28
+msgid "Layout"
+msgstr ""
+
+#: shortcodes/arrowpress_banner.php:31
+msgid "Banner type 1"
+msgstr ""
+
+#: shortcodes/arrowpress_banner.php:32
+msgid "Banner type 2"
+msgstr ""
+
+#: shortcodes/arrowpress_banner.php:33
+msgid "Banner type 3"
+msgstr ""
+
+#: shortcodes/arrowpress_banner.php:34
+msgid "Banner type 4 (only icon and title)"
+msgstr ""
+
+#: shortcodes/arrowpress_banner.php:35
+msgid "Banner type 5"
+msgstr ""
+
+#: shortcodes/arrowpress_banner.php:40 shortcodes/arrowpress_testimonial.php:53
+msgid "Image"
+msgstr ""
+
+#: shortcodes/arrowpress_banner.php:43 shortcodes/arrowpress_testimonial.php:56
+msgid "Upload image."
+msgstr ""
+
+#: shortcodes/arrowpress_banner.php:53
+msgid "Icon type"
+msgstr ""
+
+#: shortcodes/arrowpress_banner.php:57
+msgid "Image Icon"
+msgstr ""
+
+#: shortcodes/arrowpress_banner.php:58 shortcodes/arrowpress_banner.php:68
+msgid "Icon library"
+msgstr ""
+
+#: shortcodes/arrowpress_banner.php:64 shortcodes/arrowpress_banner.php:83
+#: shortcodes/arrowpress_banner.php:87 shortcodes/arrowpress_banner.php:100
+#: shortcodes/arrowpress_banner.php:104 shortcodes/arrowpress_banner.php:116
+#: shortcodes/arrowpress_banner.php:121 shortcodes/arrowpress_banner.php:132
+#: shortcodes/arrowpress_banner.php:136 shortcodes/arrowpress_banner.php:148
+#: shortcodes/arrowpress_banner.php:152 shortcodes/arrowpress_banner.php:164
+#: shortcodes/arrowpress_banner.php:168 shortcodes/arrowpress_banner.php:180
+#: shortcodes/arrowpress_banner.php:184 shortcodes/arrowpress_banner.php:196
+#: shortcodes/arrowpress_banner.php:208 shortcodes/arrowpress_banner.php:218
+msgid "Icon"
+msgstr ""
+
+#: shortcodes/arrowpress_banner.php:70
+msgid "Font Awesome"
+msgstr ""
+
+#: shortcodes/arrowpress_banner.php:71
+msgid "Font arrowpress"
+msgstr ""
+
+#: shortcodes/arrowpress_banner.php:72
+msgid "Open Iconic"
+msgstr ""
+
+#: shortcodes/arrowpress_banner.php:73
+msgid "Typicons"
+msgstr ""
+
+#: shortcodes/arrowpress_banner.php:74
+msgid "Entypo"
+msgstr ""
+
+#: shortcodes/arrowpress_banner.php:75
+msgid "Linecons"
+msgstr ""
+
+#: shortcodes/arrowpress_banner.php:82
+msgid "Select icon library."
+msgstr ""
+
+#: shortcodes/arrowpress_banner.php:99 shortcodes/arrowpress_banner.php:115
+#: shortcodes/arrowpress_banner.php:131 shortcodes/arrowpress_banner.php:147
+#: shortcodes/arrowpress_banner.php:163 shortcodes/arrowpress_banner.php:179
+#: shortcodes/arrowpress_banner.php:195
+msgid "Select icon from library."
+msgstr ""
+
+#: shortcodes/arrowpress_banner.php:200
+msgid "Image logo"
+msgstr ""
+
+#: shortcodes/arrowpress_banner.php:203
+msgid "Upload image logo."
+msgstr ""
+
+#: shortcodes/arrowpress_banner.php:212
+msgid "Icon font size"
+msgstr ""
+
+#: shortcodes/arrowpress_banner.php:222
+msgid "Big Title"
+msgstr ""
+
+#: shortcodes/arrowpress_banner.php:233
+msgid "Small Title"
+msgstr ""
+
+#: shortcodes/arrowpress_banner.php:252
+msgid "Description"
+msgstr ""
+
+#: shortcodes/arrowpress_banner.php:275
+msgid "Shop Now"
+msgstr ""
+
+#: shortcodes/arrowpress_banner.php:283
+msgid "Link"
+msgstr ""
+
+#: shortcodes/arrowpress_banner.php:293
+msgid "Margin Top"
+msgstr ""
+
+#: shortcodes/arrowpress_banner.php:295 shortcodes/arrowpress_banner.php:305
+#: shortcodes/arrowpress_banner.php:315 shortcodes/arrowpress_banner.php:325
+#: shortcodes/arrowpress_banner.php:335 shortcodes/arrowpress_banner.php:341
+#: shortcodes/arrowpress_banner.php:347
+#: shortcodes/arrowpress_testimonial.php:63
+#: shortcodes/arrowpress_testimonial.php:70
+#: shortcodes/arrowpress_testimonial.php:77
+msgid "Skin"
+msgstr ""
+
+#: shortcodes/arrowpress_banner.php:303
+msgid "Left position"
+msgstr ""
+
+#: shortcodes/arrowpress_banner.php:313
+msgid "Background Color"
+msgstr ""
+
+#: shortcodes/arrowpress_banner.php:323
+msgid "Background Color on Hover"
+msgstr ""
+
+#: shortcodes/arrowpress_banner.php:333
+#: shortcodes/arrowpress_testimonial.php:60
+msgid "Title Color"
+msgstr ""
+
+#: shortcodes/arrowpress_banner.php:339
+msgid "Small title Color"
+msgstr ""
+
+#: shortcodes/arrowpress_banner.php:345
+msgid "Text color"
+msgstr ""
+
+#: shortcodes/arrowpress_banner.php:389
+msgid "CSS box"
+msgstr ""
+
+#: shortcodes/arrowpress_banner.php:391
+msgid "Design Options"
+msgstr ""
+
+#: shortcodes/arrowpress_container.php:18
+msgid "Container"
+msgstr ""
+
+#: shortcodes/arrowpress_container.php:29
+msgid "Container Type"
+msgstr ""
+
+#: shortcodes/arrowpress_container.php:33
+msgid "Default Container"
+msgstr ""
+
+#: shortcodes/arrowpress_container.php:34
+msgid "Container Fluid"
+msgstr ""
+
+#: shortcodes/arrowpress_container.php:35
+msgid "Bigger Container"
+msgstr ""
+
+#: shortcodes/arrowpress_gallery.php:33
+msgid "Masonry"
+msgstr ""
+
+#: shortcodes/arrowpress_gallery.php:38
+msgid "Number of gallery to show"
+msgstr ""
+
+#: shortcodes/arrowpress_gallery.php:45
+msgid "Category IDs"
+msgstr ""
+
+#: shortcodes/arrowpress_gallery.php:46
+msgid "comma separated list of category ids"
+msgstr ""
+
+#: shortcodes/arrowpress_gallery.php:52
+#: woo_shortcodes/arrowpress_product.php:56
+msgid "Order way"
+msgstr ""
+
+#: shortcodes/arrowpress_gallery.php:55
+#: woo_shortcodes/arrowpress_product.php:59
+#, php-format
+msgid "Designates the ascending or descending order. More at %s."
+msgstr ""
+
+#: shortcodes/arrowpress_gallery.php:60
+msgid "Gallery Columns"
+msgstr ""
+
+#: shortcodes/arrowpress_gallery.php:64
+msgid "2 Columns"
+msgstr ""
+
+#: shortcodes/arrowpress_gallery.php:65
+msgid "3 Columns"
+msgstr ""
+
+#: shortcodes/arrowpress_gallery.php:66
+msgid "4 Columns"
+msgstr ""
+
+#: shortcodes/arrowpress_gallery.php:71
+msgid "Show load more"
+msgstr ""
+
+#: shortcodes/arrowpress_gallery.php:77
+msgid "Item delay"
+msgstr ""
+
+#: shortcodes/arrowpress_get_widget.php:20
+#: shortcodes/arrowpress_static_block.php:17
+msgid "Choose a block to display"
+msgstr ""
+
+#: shortcodes/arrowpress_get_widget.php:28
+#: shortcodes/arrowpress_get_widget.php:36
+msgid "Widgets"
+msgstr ""
+
+#: shortcodes/arrowpress_get_widget.php:48
+msgid "Column number"
+msgstr ""
+
+#: shortcodes/arrowpress_get_widget.php:57
+msgid "Row number"
+msgstr ""
+
+#: shortcodes/arrowpress_get_widget.php:66
+msgid "Text link"
+msgstr ""
+
+#: shortcodes/arrowpress_testimonial.php:20
+msgid " Testimonial"
+msgstr ""
+
+#: shortcodes/arrowpress_testimonial.php:31
+msgid "Testimonial Style 1"
+msgstr ""
+
+#: shortcodes/arrowpress_testimonial.php:37
+msgid "Name"
+msgstr ""
+
+#: shortcodes/arrowpress_testimonial.php:48
+msgid "Additional Information"
+msgstr ""
+
+#: shortcodes/arrowpress_testimonial.php:67
+msgid "Description Color"
+msgstr ""
+
+#: shortcodes/arrowpress_testimonial.php:74
+msgid "Additional Information Color"
+msgstr ""
+
+#: shortcodes/arrowpress_testimonial.php:82
+msgid "Css"
+msgstr ""
+
+#: shortcodes/arrowpress_testimonial.php:84
+msgid "Design Option"
+msgstr ""
+
+#: templates/arrowpress_gallery.php:78
+msgid "Load More"
+msgstr ""
+
+#: woo_shortcodes/arrowpress_product.php:20
+msgid "Product"
+msgstr ""
+
+#: woo_shortcodes/arrowpress_product.php:34
+msgid "Per page"
+msgstr ""
+
+#: woo_shortcodes/arrowpress_product.php:37
+msgid ""
+"The \"per_page\" shortcode determines how many products to show on the page"
+msgstr ""
+
+#: woo_shortcodes/arrowpress_product.php:41
+msgid "Columns"
+msgstr ""
+
+#: woo_shortcodes/arrowpress_product.php:49
+msgid "Order by"
+msgstr ""
+
+#: woo_shortcodes/arrowpress_product.php:52
+#, php-format
+msgid "Select how to sort retrieved products. More at %s."
+msgstr ""
+
+#. Name of the plugin
+msgid "ArrowPress Shortcodes"
+msgstr ""
+
+#. Description of the plugin
+msgid "Shortcodes for ArrowPress Theme."
+msgstr ""

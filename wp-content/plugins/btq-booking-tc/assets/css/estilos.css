@@ -1,0 +1,80 @@
+			    .ui-state-disabled .ui-state-default {
+				    background-color: #cb6666;
+			    }
+			    .btq-btn, .btq-input {
+				    width: 100%;
+				    box-sizing: border-box;
+			    }
+			    
+			    
+				
+				.linea{
+				margin-top:   12px;
+				margin-bottom:12px;
+				}
+
+
+				#element1 {
+					position: left;
+					position: relative;
+				}
+
+				#element2 {
+					float:left;
+					margin: 0px 0px;
+				}
+				.titulo{
+					margin-top: 25px;
+					margin-bottom: 15px;
+				}
+				
+				.iconoshabitacion{
+					width: 40px; 
+					height: 40px;
+					margin-right: 12px;
+				}
+
+				.recordatorio{
+					font-size: 13.4px;
+					align-content: center;
+					padding-top: 16px;
+				}
+				h5.hosp2{
+					margin-top: 20px;
+				}
+				.hosp{
+					margin-top: 9px;
+					margin-bottom: 4px;
+				}
+				
+				.mostrar{
+					margin-bottom: 15px;
+				}
+
+				.grisfondo{
+					background-color:#E6E7E8;
+				}
+				.precio{
+					align-content: center;
+					text-align: center;
+					padding-top: 10px;
+				}
+				.texto_recorrido{
+
+					margin-top: 0px;
+					margin-left: 0px;
+					margin-right: 0px;
+					margin-bottom: 0px;
+					padding-top: 0px;
+					float:left; 
+				}
+
+
+@media (max-width: 767px) {
+   input::-webkit-calendar-picker-indicator { 
+      display: none; 
+   }
+   input[type="date"]::-webkit-input-placeholder { 
+      visibility: hidden !important;
+   } 
+}
