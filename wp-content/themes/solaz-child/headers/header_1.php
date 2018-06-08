@@ -173,8 +173,28 @@ $solaz_settings = solaz_check_theme_options();
 						$language = 'es';
 					}
 
-					
-					if($language == 'en'){
+					$post_slug = get_post_field('post_name', get_post());
+					if ($post_slug == 'la-terraza'){
+						if (has_nav_menu('btq-menu-terraza')) {
+							wp_nav_menu(array(
+								'theme_location' => 'btq-menu-terraza',
+								'menu_class' => 'btq-menu',
+								'items_wrap' => $before_items_wrap . '<ul id="%1$s" class="%2$s">%3$s</ul>' . $after_item_wrap,
+								'walker' => new Solaz_Primary_Walker_Nav_Menu()
+							));
+						}
+					}
+					elseif($post_slug == 'banquetes'){
+						if (has_nav_menu('btq-menu-banquete')) {
+							wp_nav_menu(array(
+								'theme_location' => 'btq-menu-banquete',
+								'menu_class' => 'btq-menu',
+								'items_wrap' => $before_items_wrap . '<ul id="%1$s" class="%2$s">%3$s</ul>' . $after_item_wrap,
+								'walker' => new Solaz_Primary_Walker_Nav_Menu()
+							));
+						}
+					}
+					elseif($language == 'en'){
 						if (has_nav_menu('btq-menu-en')) {
 							wp_nav_menu(array(
 								'theme_location' => 'btq-menu-en',
@@ -184,7 +204,17 @@ $solaz_settings = solaz_check_theme_options();
 							));
 						}
 					}
-					
+					else{
+						if (has_nav_menu('btq-menu')) {
+							wp_nav_menu(array(
+								'theme_location' => 'btq-menu',
+								'menu_class' => 'btq-menu',
+								'items_wrap' => $before_items_wrap . '<ul id="%1$s" class="%2$s">%3$s</ul>' . $after_item_wrap,
+								'walker' => new Solaz_Primary_Walker_Nav_Menu()
+							));
+						}
+					}
+
 				
 				?>	
 				    <?php if (class_exists('WP_Hotel_Booking')):?>	    
