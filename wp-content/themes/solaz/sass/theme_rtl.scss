@@ -1,0 +1,33 @@
+// Make sure the charset is set appropriately
+@charset "UTF-8";
+
+$rtl: 1;
+$dir: rtl !default;
+$text_color: #3d3935;
+@font-face {
+	font-family: 'MyriadPro';
+	src: url('fonts/MyriadPro-Regular.eot'); 
+	src: url('../fonts/MyriadPro-Regular.otf')  format('opentype'), url('../fonts/MyriadPro-Regular.woff') format('woff'), url('../fonts/MyriadPro-Regular.ttf') format('truetype'), url('../fonts/MyriadPro-Regular.svg') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+@import "theme/directional";
+@import 'config/config_skin';
+@import "theme/typography";
+@import "theme/base/header";
+@import "theme/base/footer"; 
+@import "theme/base/megamenu";
+@import "theme/base/breadcrumds";
+
+@import "theme/content/widget";
+@import "theme/content/gallery"; 
+@import "theme/content/product";
+@import "theme/content/content";
+@import "theme/content/page-404";
+@import "theme/content/cart";
+@import "theme/content/blog";
+@import "theme/content/rooms";
+@import "theme/content/config_options";
+@import "theme/content/theme-responsive";             
+// Custom Rtl
+@import "theme/content/content_rtl";  

@@ -1,0 +1,1287 @@
+/*===================================
+	3.6 Cart
+===================================*/
+.shop_table{
+	.product-name{
+		a{
+			color: #000;
+		}
+	}
+	&.customer_details{
+		tbody tr th,
+		tbody tr td{
+		 	text-align: $left;
+		 	padding:10px 0;
+		 	font-weight: normal;
+		 	border: none;
+		}
+		tr:first-child td{
+			border:none;
+		}
+	}
+	&.order_details{
+		thead tr th,
+		tbody tr td{
+		 	text-align: $left;
+		}
+		 thead tr th{
+		 	color: #fff;
+		 	background: $primary_color;
+		 }
+		 tbody tr td{
+		 	border-#{$left}: 1px solid #f5f5f5;
+		 	&:last-child{
+		 		border-#{$right}: 1px solid #f5f5f5;
+		 	}
+		}
+		tfoot{
+			tr{
+				&:first-child{
+					th,td{
+						padding-top: 20px;
+					}
+				}
+				th{
+					width: 50%;
+					padding-top:10px;
+					font-weight: normal;
+				}
+				td{
+					font-weight: normal;
+					padding-top:10px;
+					width: 50%;
+					text-align: $right;
+				}
+			}
+		}
+	}
+	thead{
+		tr{
+			th{
+				text-transform: uppercase;
+				padding: 15px 0;
+				text-align: center;
+				color: #3d3935;
+				font-size: 18px;
+				padding: 19px 20px 17px;
+				font-weight: 600;
+			}
+		}
+	}
+	tbody{
+		tr{
+			&:first-child{
+				td{
+					border-top:1px solid #f5f5f5;
+				}
+			}
+			td{
+				text-align: center;
+				padding: 20px;
+				border-bottom: 1px solid #f5f5f5;
+			}
+			&.cart_item{
+				td{
+					border-#{$left}: 1px solid #f5f5f5;
+					&:last-child{
+						border-#{$right}:1px solid #f5f5f5;
+					}
+				}
+			}
+		}
+	}
+	.cart_item{
+		.product-thumbnail{
+			img{
+				width: 80px;
+				height: 100px;
+				display: block;
+			}
+		}
+		.product-name{
+		    a{
+		    	color: #3d3935;
+		    	&:hover{
+		    		color:$primary_color;
+		    	}
+		    }
+		}
+		.product-remove{
+			a{
+				font-size: 20px;
+				color: $primary_color;
+				&:hover{
+					color: #000;
+				}
+			}
+		}
+	}
+	&.cart{
+		thead{
+			tr{
+				th{
+					background: $primary_color;
+					color: #FFF;
+				}
+			}
+		}
+		tbody{
+			tr{
+				&:last-child{
+					td{
+						border-bottom: none;
+						padding-#{$left}: 0;
+						padding-#{$right}: 0;
+					}
+				}
+			}
+		}
+		.actions .coupon{
+			label{
+				float: $left;
+				margin-#{$right}: 15px;
+			}
+			input{
+				float: $left;
+				margin-#{$right}:10px;
+			}
+		}
+	}
+	&.woocommerce-checkout-review-order-table{
+		thead{
+			tr{
+				th{
+					background: $primary_color;
+					color: #FFF;
+					text-align: $left;
+					border-#{$right}: 1px solid #d1d1d1;
+					&:last-child{
+						border-#{$right}:none;
+					}
+				}
+			}
+		}	
+		tbody tr td{
+			text-align: $left;
+		}
+		tfoot{
+			padding-top: 20px;
+		    padding-bottom: 20px;
+			.cart-subtotal {
+			    font-size: 14px;
+				th,td{
+					padding-top: 25px;
+					padding-bottom: 10px;
+				}
+			}
+			tr{
+				th{
+					width: 50%;
+				}
+				td{
+					width: 50%;
+					text-align: $right;
+				}
+			}
+		}
+	}
+}
+.woocommerce table.wishlist_table {
+    font-size: 100%;
+}
+.wishlist-title h2 {
+    padding: 30px 0 30px 50px;
+}
+.shop_table.wishlist_table tbody tr:first-child td,
+.wishlist_table tbody tr td:first-child{
+	border-left:1px solid #f5f5f5;
+}
+.woocommerce .wishlist_table td.product-add-to-cart a,
+.wishlist_table .product-price .amount{
+	color: $primary_color;
+}
+.woocommerce .wishlist_table td.product-add-to-cart a{
+	&:hover{
+		color: #000;
+	}
+}
+.yith-wcwl-share h4.yith-wcwl-share-title {
+    margin: 20px 0;
+    font-size: 18px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+.cart-collaterals{
+	padding-top: 20px;
+	overflow: hidden;
+	width: 100%;
+}
+.display-inline{
+	display: inline-block;
+}
+.btn-updatecart{
+	float: $right;
+}
+.quantity{
+	background: #f5f5f5;
+	display: inline-block;
+	border: 1px solid #f5f5f5;
+	.qty-number{
+		cursor: pointer;
+		display: inline-block;
+		height: 45px;
+		vertical-align: middle;
+		span{
+			padding: 0 15px;
+	      	height: 45px;
+		    display: table-cell;
+		    vertical-align: middle;
+		    line-height: 45px;
+		    text-align: center;
+		}
+		&:hover{
+			span{
+				color: $primary_color;
+			}
+		}
+	}
+	> input.qty{
+		-moz-appearance:textfield;
+	}
+	input.qty.text {
+        width:60px;
+	    text-align: center;
+	    padding: 10px;
+	    height: 45px;
+	    display: inline-block;
+	    background: #FFF;
+	}
+}
+#hotel-booking-payment table.hb_table tbody tr.hb_addition_services_title td, 
+#hotel-booking-cart table.hb_table tbody tr.hb_addition_services_title td{
+	border-bottom:1px solid #f5f5f5;
+	border-#{$left}: 1px solid #f5f5f5;
+}
+#hotel-booking-cart input[type="number"], #hotel-booking-payment input[type="number"]{
+	-moz-appearance:textfield;
+}
+.hb_addition_package_extra a.hb_package_toggle:after{
+	-webkit-font-smoothing: antialiased;
+}
+.hb_extra_detail_price .hb_optional_quantity{
+	-moz-appearance:textfield;
+}
+.select2-results li{
+	color: #9c9c9c;
+}
+.select2-container .select2-choice{
+	color: #9c9c9c;
+	border-radius: 0;
+}
+
+.coupon {
+    float: $left;
+    label{
+    	margin-top: 10px;
+    	font-weight: normal;
+    }
+    input{
+    	padding: 14px 29px;
+    }
+}
+.woocommerce-page .coupon .btn.btn-primary{
+	padding: 14px 29px;
+}
+.woocommerce-message {
+  margin-bottom: 10px;
+}
+.btn-updatecart{
+	float: $right;
+}
+.title-cart {
+    text-transform: uppercase;
+    font-size: 24px;
+    margin: 0;
+    padding: 30px 0;
+    font-weight: 600;
+    padding-#{$left}: 50px;
+    position: relative;
+    &:before{
+    	content: "\e903";
+	    font-family: icomoon;
+	    #{$left}: 2px;
+	    position: absolute;
+	    top: 30px;
+	    color: $primary_color;
+    }
+}
+.woocommerce-page {
+	.btn.btn-primary {
+		width: auto;
+	    text-transform: uppercase;
+	    padding: 14px 22px 12px;
+	    color: #fff;
+	    font-weight: 600;
+	    background: $primary_color;
+	    &:hover{
+	    	background:#000;
+	    	border:2px solid #000;
+	    }
+	}
+	.button.btn-black{
+		background: #000;
+		font-weight: 600;
+		text-transform: uppercase;
+	    padding: 14px 22px 12px;
+		color: #fff;
+		border:2px solid #000;
+		&:hover{
+			background: $primary_color;
+			border:2px solid $primary_color;
+		}
+	}
+	
+}
+.woocommerce-cart {
+	.actions {
+	    margin-top: 24px;
+	    margin-bottom: 71px;
+	}
+}
+.cart-subtotal{
+	font-size: 14px;
+	color: #000;
+	th{
+		font-weight: 400;
+	}
+}
+.order-total{
+	color: #000;
+}
+.cart_totals{
+	.shop_table {
+		margin-bottom: 20px;
+		tbody tr:first-child td,
+		tbody tr td{
+			border:none;
+			padding:8px 20px;
+		}
+	}
+}
+
+//Checkout
+.woocommerce .login input.input-text:-webkit-autofill, 
+.woocommerce .login textarea.input-text:-webkit-autofill, 
+.woocommerce .login select.input-text:-webkit-autofill {
+    background-color: none !important;
+}
+.woocommerce-info{
+	margin-bottom: 10px;
+}
+.showlogin,
+.showcoupon{
+	color:  $primary_color;
+	&:hover,&:focus{
+		color: #1f1f1f;
+	}
+}
+.checkout_coupon.coupon{
+	float: none;
+    overflow: hidden;
+    margin-top: 10px;
+	.form-row{
+		display: inline-block;
+		float: $left;
+		&.form-row-first{
+			margin-#{$right}: 10px;
+		}
+	}
+}
+form.checkout {
+	.form-row {
+		label,input{
+			width: 100%;
+			font-weight: normal;
+		}
+		input{
+			height: 50px;
+		}
+	}
+}
+.select2-container .select2-choice{
+	height: 50px;
+	padding:13px 10px ;
+}
+.woocommerce-FormRow.form-row{
+	margin-bottom: 15px;
+}
+.woocommerce-page .form-row label{
+	color: #1b242b;
+    font-weight: normal;
+    margin-bottom: 3px;
+    margin-top: 0;
+    font-size: 15px;
+}
+.woocommerce-shipping-fields .form-row  label,
+.woocommerce-billing-fields .form-row  label {
+    color: #1b242b;
+    font-weight: normal;
+    margin-bottom: 3px;
+}
+.form-row {
+	margin-bottom: 15px;
+}
+.form-row input, .form-row .placeholder,
+.form-row textarea {
+    background: none;
+    border: 1px solid #ccc;
+    color: #9c9c9c;
+    padding: 13px 10px;
+    width: 100%;
+    line-height: normal;
+    width: 100%;
+}
+.woocommerce-EditAccountForm,
+.woocommerce-account .login,
+.woocommerce-edit-address{
+	.form-row {
+		margin-bottom: 15px;
+		input, 
+		.placeholder, 
+		textarea{
+			padding-#{$left}: 10px;
+			padding-#{$right}: 10px;
+  			border: 1px solid #ccc;
+  		}
+	}
+}
+.woocommerce-password-strength{
+	margin-top: 7px;
+	&.short,&.bad {
+	  color: red;
+	}
+	&.strong,&.good{
+		color: #60d362;
+	}
+}
+.form-row input{
+	height: 50px;
+}
+.payment_method_paypal{
+	label a{
+		color: $primary_color;
+		font-weight: 400;
+		float: $left;
+		width: 100%;
+	}
+}
+.woocommerce-checkout-payment{
+	margin-top: 20px;
+	.payment_methods{
+		label{
+			color: #000;
+			font-weight: 600;
+		}
+	}
+}
+.hotel-booking-results p a,
+#hb-payment-form > p a{
+	&:hover,&:focus{
+		color: $primary_color;
+	}
+}
+#customer_login{
+	.customer_login{
+		padding-top: 0;
+	}
+}
+input[type="radio"]{
+	border-radius: 50% !important;
+}
+.payment_box.payment_method_paypal{
+	padding:5px 15px;
+}
+.woocommerce{
+	.login{
+		label{
+			font-weight: 400;
+		}
+		input{
+			&.btn{
+				display: inline-block;
+				width: auto;
+			}
+		}
+		.form-row input.button{
+			border: 2px solid $primary_color;
+			background: $primary_color;
+			color: #fff;
+			text-transform: uppercase;
+			font-weight: 600;
+			padding: 12px 29px;
+    		margin-#{$right}: 10px;
+    		width: auto;
+			&:hover{
+				background:#000;
+				border:2px solid #000;
+			}
+		}
+	}
+}
+abbr[data-original-title], abbr[title] {
+  border-bottom: medium none;
+  text-decoration: none;
+}
+.form-row label{
+	font-weight: normal;
+}
+.lost_password a{
+	color: #000;
+	&:hover{
+		color: $primary_color;
+	}
+}
+.form-row input[type=checkbox] {
+    height: auto;
+    width: auto;
+    margin-top: 20px;
+}
+form.checkout .form-row input[type=checkbox] {
+   	float: $left;
+    height: 16px;
+    margin-#{$right}: 10px;
+    margin-top: 4px;
+    text-align: $left;
+    width: 16px;
+}
+.order_details{
+	li{
+		strong{
+			color: #1f1f1f;
+			font-weight: 600;
+		}
+	}
+}
+.woocommerce-error li strong{
+	font-weight: normal;
+	color: #1f1f1f;
+}
+.woocommerce-MyAccount-navigation{
+	margin-bottom: 20px;
+}
+.woocommerce-Address-title,
+.my_account_orders,
+.woocommerce-MyAccount-content,
+.woocommerce-MyAccount-navigation li {
+	a{
+		color: $primary_color;
+		font-weight: normal;
+		&:hover,&:focus{
+			color: #1f1f1f;
+		}
+	}
+}
+.woocommerce-MyAccount-content header,
+.woocommerce-MyAccount-content header .title-cart{
+	background: none !important;
+}
+.woocommerce-MyAccount-content p strong{
+	font-weight: 600;
+	color: #1f1f1f;
+}
+.woocommerce-MyAccount-navigation li{
+	display: inline-block;
+	padding-#{$right}: 25px;
+	a{
+		font-weight: 600;
+	}
+}
+.hb-order-new-customer .error input[name=first_name]{
+   margin-bottom: 0 !important;
+}
+
+@media (max-width: 1199px){
+	.wrapper {
+	    min-height: auto;
+	}
+	
+}
+@media (max-width:991px){
+	aside.widget .hotel-booking-search button{
+		padding-top: 14px;
+	}
+	#hotel-booking-cart, #hotel-booking-payment {
+	  padding-bottom: 0;
+	}
+	#hotel-booking-cart input[type="number"], #hotel-booking-payment input[type="number"]{
+		padding:11px 10px 9px;
+	}
+	#hotel-booking-cart .hb_capacity, 
+	#hotel-booking-payment .hb_capacity {
+	    display: block;
+	}
+	.hb_table tbody{
+		tr:nth-child(even) {
+		    background: #fff;
+		}
+	}
+	.hb_table thead{
+		display: none !important ;
+	}
+	/* tables change*/
+	.hb_table tbody,
+	.hb_table thead,
+	.hb_table th,
+	.hb_table tr,
+	.hb_table td{
+		display:block;
+	}
+	.hb_table tr td, 
+	.hb_table tr th{
+		width: auto !important;
+	    text-align: $left !important;	
+	}
+	.hb_table td{
+		margin-top: 0 !important;
+	}
+	.hb_table thead tr:first-child{
+		position:absolute;
+		top:-9999px;
+		#{$left}:-9999px;
+	}
+	.hb_table tbody tr:first-child{
+		position: relative;
+	    top: 0;
+	    #{$left}: 0;
+	}
+	.hb_table tbody tr:last-child td{
+		padding: 0 !important;
+	}
+	.hb_table td{
+		position:relative;
+		padding-#{$left}:50% !important;
+		border-#{$left}:none !important;
+		border-#{$right}:none !important;
+		border-top:none;
+	}
+	.hb_table td:not([colspan]):after{
+		content:"";
+		display:block;
+		border-#{$left}:1px solid #e0e0e0;
+		position:absolute;
+		#{$left}:47%;
+		top:0;
+		height:100%;
+	}
+	.hb_table td[colspan]{
+		width:100%;
+		text-align:center;
+		padding: 10px !important;
+	}
+	.hb_table tbody td[colspan]{
+	    display: block;
+	    text-align: center;
+	    border-#{$left}: none;
+	    border-#{$right}: none;
+	    border-top: none;
+	    width: 100%;
+	}
+	.hb_table td[colspan]:before{
+		display: none;
+	}
+	.hb_table td[colspan]:after{
+		display: none;
+	} 
+	.hb_table td[colspan] table tr td:after{
+		display: none;
+	}
+	.hb_table td[colspan] table tr td:before{
+		display: none;
+	}
+	
+	.hb_table{
+		border: 1px solid #e0e0e0;
+	}
+	.hb_table td:before{
+		content:attr(data-title);
+		position:absolute;
+		top:50%;
+		#{$left}:9px;
+		width:45%;
+		padding-#{$right}:10px;
+		-webkit-transform:translateY(-50%) translateZ(0);
+		-moz-transform:translateY(-50%);
+		-o-transform:translateY(-50%);
+		-ms-transform:translateY(-50%);
+		transform:translateY(-50%);
+    	font-size: 16px;
+	}
+	.hb_table tr:nth-child(2n){
+		background:#f9f9f9;
+	} 
+}
+@media (max-width:767px){
+	.woocommerce-account {
+		.wrapper{
+			min-height: auto;
+		}
+	}
+	header.woocommerce-Address-title.title{
+		background: none !important;
+	}
+	.woocommerce-page .woocommerce-MyAccount-content .form-row label {
+	    margin-bottom: 10px;
+	    line-height: 18px;
+	}
+	.woocommerce-page legend{
+		border: none;
+	}
+	.shop_table.shop_table_responsive.my_account_orders tbody,
+	.shop_table.cart.shop_table_responsive tbody,
+	.shop_table.order_details tbody{
+		tr:nth-child(odd) {
+		    background: #f9f9f9;
+		}
+	}
+	.shop_table.my_account_orders.shop_table_responsive tbody,
+	.shop_table.cart.shop_table_responsive tbody,
+	.shop_table.order_details tbody{
+		tr:nth-child(even) {
+		    background: #fff;
+		}
+	}
+	.shop_table.wishlist_table thead{
+		display: none !important ;
+	}
+	.wishlist_table tr td.product-thumbnail a{
+		margin: 0 auto !important;
+	}
+	.wishlist_table.shop_table.cart tbody tr:last-child td {
+	    border-bottom: none,
+	}
+	.wishlist_table.shop_table.cart tbody tr td:last-child{
+		border-bottom: 1px solid #f5f5f5;
+	}
+	.wishlist_table.shop_table.cart tbody tr td{
+		border-right: 1px solid #f5f5f5;
+	}
+	.wishlist_table tr td.product-thumbnail, .wishlist_table tr td.product-name, .wishlist_table tr td.wishlist-name,
+	 .wishlist_table tr td.wishlist-privacy, .woocommerce table.wishlist_table tfoot td{
+	 	text-align: center;
+	 }
+	/* tables change*/
+	.shop_table.wishlist_table tbody,
+	.shop_table.wishlist_table thead,
+	.shop_table.wishlist_table tfoot,
+	.shop_table.wishlist_table th,
+	.shop_table.wishlist_table tr,
+	.shop_table.wishlist_table td,
+	.my_account_orders.shop_table_responsive tbody,
+	.my_account_orders.shop_table_responsive thead,
+	.my_account_orders.shop_table_responsive tfoot
+	.my_account_orders.shop_table_responsive th,
+	.my_account_orders.shop_table_responsive tr,
+	.my_account_orders.shop_table_responsive td,
+	.shop_table_responsive.cart,
+	.shop_table_responsive.cart tbody,
+	.shop_table_responsive.cart thead,
+	.shop_table_responsive.cart tfoot,
+	.shop_table_responsive.cart th,
+	.shop_table_responsive.cart tr,
+	.shop_table_responsive.cart td{
+		display:block;
+	}
+	table.order_details {
+		tfoot tr:first-child > td[scope="row"]{border-bottom: 1px solid #ddd;}
+		tfoot tr:last-child > td[scope="row"]{border-bottom: none;}
+	}
+	.my_account_orders.shop_table_responsive tr td,
+	.my_account_orders.shop_table_responsive tr th,
+	.shop_table_responsive.cart tr td, 
+	.shop_table_responsive.cart tr th{
+		width: auto !important;
+	    text-align: $left !important;	
+	}
+	.my_account_orders.shop_table_responsive td,
+	.shop_table_responsive.cart td{
+		margin-top: 0 !important;
+	}
+	.my_account_orders.shop_table_responsive thead tr:first-child,
+	.shop_table_responsive.cart thead tr:first-child{
+		position:absolute;
+		top:-9999px;
+		#{$left}:-9999px;
+	}
+	.shop_table.my_account_orders.shop_table_responsive tbody tr:first-child,
+	.shop_table.shop_table_responsive.cart tbody tr:first-child{
+		position: relative;
+	    top: 0;
+	    #{$left}: 0;
+	}
+	.shop_table.cart tbody tr:last-child td{
+		padding: 0 !important;
+	}
+	.my_account_orders.shop_table_responsive td,
+	.shop_table_responsive.cart td{
+		position:relative;
+		padding-#{$left}:50% !important;
+		border-#{$left}:none !important;
+		border-#{$right}:none !important;
+		border-top:none;
+	}
+	.my_account_orders.shop_table_responsive td:not([colspan]):after,
+	.shop_table_responsive.cart td:not([colspan]):after{
+		content:"";
+		display:block;
+		border-#{$left}:1px solid #e0e0e0;
+		position:absolute;
+		#{$left}:47%;
+		top:0;
+		height:100%;
+	}
+	.shop_table_responsive.my_account_orders td[colspan],
+	.shop_table_responsive.cart td[colspan]{
+		width:100%;
+		text-align:center;
+		padding: 10px !important;
+	}
+	.shop_table_responsive.my_account_orders tbody td[colspan],
+	.shop_table_responsive.cart tbody td[colspan]{
+	    display: block;
+	    text-align: center;
+	    border-#{$left}: none;
+	    border-#{$right}: none;
+	    border-top: none;
+	    width: 100%;
+	}
+	.shop_table_responsive.my_account_orders td[colspan]:before,
+	.shop_table_responsive.cart td[colspan]:before{
+		display: none;
+	}
+	.shop_table_responsive.my_account_orders td[colspan]:after,
+	.shop_table_responsive.cart td[colspan]:after{
+		display: none;
+	} 
+	.shop_table_responsive.my_account_orders td[colspan] table tr td:after
+	.shop_table_responsive.cart td[colspan] table tr td:after{
+		display: none;
+	}
+	.shop_table_responsive.my_account_orders td[colspan] table tr td:before
+	.shop_table_responsive.cart td[colspan] table tr td:before{
+		display: none;
+	}
+	
+	.shop_table_responsive.my_account_orders, 
+	.shop_table_responsive.cart{
+		border-#{$left}: 1px solid #e0e0e0;
+		border-#{$right}: 1px solid #e0e0e0;
+	}
+	.shop_table_responsive.my_account_orders td:before,
+	.shop_table_responsive.cart td:before{
+		content:attr(data-title);
+		position:absolute;
+		top:50%;
+		#{$left}:9px;
+		width:45%;
+		padding-#{$right}:10px;
+		-webkit-transform:translateY(-50%) translateZ(0);
+		-moz-transform:translateY(-50%);
+		-o-transform:translateY(-50%);
+		-ms-transform:translateY(-50%);
+		transform:translateY(-50%);
+		color: #424242;
+    	font-size: 16px;
+	}
+	.shop_table_responsive.my_account_orders tr:nth-child(2n), 
+	.shop_table_responsive.cart tr:nth-child(2n){
+		background:#f9f9f9;
+	} 
+	.btn-updatecart {
+	  float: $left;
+	}
+	.coupon {
+	  margin-bottom: 10px;
+	}
+	
+	
+}
+@media (max-width:600px){
+	.hb-form-table.col-2{
+		width: 100%;
+		&.left,&.right{
+			padding: 0;
+		}
+	}
+}
+@media (max-width:480px){
+	.quantity input.qty.text {
+	  height: 40px;
+	  width: 40px;
+	}
+	.quantity .qty-number {
+		height: 40px;
+		span {
+		  height: 40px;
+		  padding: 0 10px;
+		}
+	}
+}
+
+
+//Cart Hotel
+table.hb_table .hb_checkout_item.package td {
+    padding: 20px 10px !important;
+}
+table.hb_table .hb_addition_services_title td {
+    font-weight: 600;
+    padding-bottom: 15px !important;
+    border-#{$right}: 1px solid #f5f5f5;
+}
+table.hb_table.hb_booking_table.booking_acc{
+	thead{
+		th{
+			padding: 20px;
+			color: #fff;
+		}
+	}
+	tbody{
+		tr{
+			td{
+				font-size: 15px;
+				padding: 20px 0;
+				border-bottom: 1px solid #f5f5f5;
+				border-#{$left}: 1px solid #f5f5f5;
+				&:last-child{
+					border-#{$right}:1px solid #f5f5f5;
+				}
+			}
+		}
+	}
+
+}
+#hotel-booking-payment,
+#hotel-booking-cart{
+	table.hb_table{
+		thead{
+			th{
+				padding: 20px;
+				color: #fff;
+				&:last-child{
+					width: 15%;
+				}
+			}
+		}
+		tbody{
+			tr{
+				&.hb_checkout_item{
+					td{
+						padding: 20px;
+					}
+				}
+				td{
+					padding: 15px 0 0;
+				}
+				span.hb-align-right{
+					border:none !important;
+				}
+			}
+		}
+	}
+}
+.hb_table{
+	thead{
+		th{
+			padding: 20px;
+			background: $primary_color;
+			font-weight: 600;
+			color: #fff;
+			font-size: 18px;
+			text-transform: uppercase;
+		}
+	}
+	tbody{
+		tr{
+			td{
+				padding: 20px;
+			}
+			&.hb_checkout_item{
+				td{
+					border-bottom: 1px solid #f5f5f5;
+					border-#{$left}: 1px solid #f5f5f5;
+					&:last-child{
+						border-#{$right}:1px solid #f5f5f5;
+					}
+				}
+			}
+		}
+	}
+}
+#hotel-booking-cart .hb_button.hb_checkout, 
+#hotel-booking-cart button[type=submit], 
+#hotel-booking-cart button[type=button], 
+#hotel-booking-payment .hb_button.hb_checkout, 
+#hotel-booking-payment button[type=submit], 
+#hotel-booking-payment button[type=button] {
+    text-transform: uppercase;
+    padding: 16px 26px 14px;
+    color: #fff;
+    border-radius: 0;
+    font-weight: 600;
+    background: $primary_color;
+    &:hover,&:focus{
+    	background:#000;
+    }
+}
+a{
+	color: $primary_color;
+	&:hover{
+		color: #1f1f1f;
+	}
+}
+#hotel-booking-payment .hb_room_type a,
+#hotel-booking-cart .hb_room_type a{
+	color: #000;
+	&:hover{
+		color: $primary_color;
+		text-decoration: none;
+	}
+}
+#hotel-booking-cart input[type=number], 
+#hotel-booking-payment input[type=number] {
+    background: none;
+    padding: 9px 10px;
+}
+.hb-payment-methods,
+.hb_payment_all {
+	label{
+ 		font-weight: normal;
+ 	}
+}
+.titlesub-cart{
+	font-size: 22px;
+	padding-top: 10px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+#hotel-booking-payment input[type=number], 
+#hotel-booking-payment input[type=text],
+#hotel-booking-payment input[type=email]{
+	padding: side-values(15px 20px 13px 10px);
+	background: none;
+	width: 100%;
+}
+.hb-form-field-label {
+    font-weight: normal;
+    color: #000;
+}
+#hotel-booking-cart select, 
+#hotel-booking-payment select {
+    line-height: 22px;
+    padding: side-values(14px 20px 12px 10px);
+    border: 1px solid #ddd;
+    height: 50px;
+    font-family: Poppins;
+    font-size: 15px;
+    color: #707070;
+    background:url("../images/caret-down.png") no-repeat 97% center;
+}
+.hb-form-table.left{
+	padding-#{$right}: 15px;
+}
+.hb-form-table.right{
+	padding-#{$left}: 15px;
+}
+.entry-content .hb-form-table .hb-form-field{
+	max-width: 100%;
+}
+#hotel-booking-payment{
+	p label{
+		font-weight: normal;
+		a{
+			&:hover,focus{
+				color: #000;
+			}
+		}
+	}
+}
+.hb-order-new-customer{
+	margin-bottom: 20px;
+}
+.hb-message {
+    border: 1px solid #ddd;
+    background: none;
+}
+.hb-message-content{
+	color: #1f1f1f;
+}
+// Hotel Booking
+select.number_room_select{
+ background:  url("../images/caret-down.png") no-repeat 90% center;
+ border: 1px solid #ddd;
+ border-radius: none;
+}
+aside.widget .hotel-booking-search{
+	padding: 0;
+	select{
+	 background:  url("../images/caret-down.png") no-repeat 96% center;
+	 border: 1px solid #ddd;
+	}
+
+}
+.hb_mini_cart_price_packages .hb_package_title{
+	a{
+		&:hover, &:focus{
+			color: $primary_color;
+		}
+	}
+	span{
+		a{
+			margin-#{$left}: 8px;
+		}
+	}
+}
+.hb_package_title label {
+    font-weight: 600;
+}
+.ui-datepicker.ui-widget .ui-datepicker-calendar .ui-state-default:hover{
+	background: $primary_color;
+}
+.hb_addition_package_extra a.hb_package_toggle:after {
+    color: $primary_color;
+    font-weight: bold;
+}
+.hb_input_field:after{
+	top: 16px;
+	#{$right}:15px;
+	pointer-events:none;
+}
+aside.widget .hotel-booking-search button, aside.widget .hotel-booking-search input, 
+aside.widget .hotel-booking-search select, aside.widget .hotel-booking-search textarea{
+    height: 50px;
+    border: 1px solid #ccc;
+    border-radius: 0;
+    font-size: 15px;
+    padding: 13px 10px;
+    font-family: Poppins;
+    width: 100%;
+}
+aside.widget .hotel-booking-search {
+	button{
+		background: $primary_color;
+		text-transform: uppercase;
+		font-weight: 600;
+		border: 1px solid $primary_color;
+		margin-top: 20px;
+		&:hover{
+			background: #000;
+			border:1px solid #000;
+		}
+	}
+	.hb_input_field{
+		width: 100%;
+		input{
+			cursor: pointer;
+		}
+	}
+	.hb-submit{
+		overflow: hidden;
+		> span{
+			float: $left;
+		}
+	}
+}
+#hotel-booking-results form .hb_button.hb_checkout, 
+#hotel-booking-results form button.hb_add_to_cart,
+#hotel-booking-results form button[type="submit"]{
+	text-transform: uppercase;
+	font-weight: 600;
+}
+.hotel_booking_mini_cart{
+	h3{
+		font-size: 20px;
+		font-weight: 600;
+		text-transform: uppercase;
+	}
+}
+.hotel_booking_mini_cart {
+	.hb_mini_cart_footer {
+		.hb_button{
+			text-transform: uppercase;
+		    padding: 16px 20px 14px;
+		    color: #fff;
+		    border-radius: 0;
+		    font-weight: 600;
+		    background: $primary_color;
+		    &:hover,&:focus{
+		    	background:#000;
+		    }
+		}
+	}
+	.hb_mini_cart_item {
+		.hb_mini_cart_price span{
+			color: $primary_color;
+		}
+		.hb_title {
+		    font-size: 16px;
+		    font-weight: 600;
+		    line-height: 30px;
+		    margin: 23px 0 0;
+		    a{
+		    	color: #2a2a2a;
+		    }
+		}
+	}
+}
+.hotel_booking_mini_cart .hb_mini_cart_item .hb_mini_cart_number span, 
+.hotel_booking_mini_cart .hb_mini_cart_item .hb_mini_cart_price span{
+	font-weight: 600;
+}
+.hb_search_room_pricing_price{
+	font-weight: normal;
+
+}
+.hb-booking-room-details table tr td.hb_search_item_price {
+    color: $primary_color;
+}
+.hb-booking-room-details table tbody tr td.hb_search_item_price {
+    font-weight: normal;
+}
+.hb-booking-room-details{
+	padding: 18px 35px;
+}
+.hb-booking-room-details .hb_search_room_item_detail_price_close{
+	background: $primary_color;
+	&:hover{
+		background: #000;
+	}
+}
+.hotel_booking_mini_cart .hb_mini_cart_item .hb_mini_cart_remove:hover {
+    background: $primary_color;
+}
+.hb_addition_package_extra a.hb_package_toggle {
+    font-weight: 600;
+    text-transform: uppercase;
+}
+.hb_addition_packages input[type=checkbox]{
+	margin-top: 6px;
+    height: 15px;
+    width: 15px;
+}
+.hb_addition_packages_ul{
+	padding: 0;
+}
+.hb_addition_package_extra input[type=checkbox]:checked:before{
+	content: none !important;
+}
+.hb_extra_detail_price strong,
+#hotel-booking-results .hb-search-results>.hb-room .hb-room-meta li.hb_search_capacity>div,
+#hotel-booking-results .hb-search-results>.hb-room .hb-room-meta li.hb_search_max_child>div,
+#hotel-booking-results .hb-search-results > .hb-room .hb-room-meta li.hb_search_price{
+	font-weight: 600;
+}
+@media(max-width:1199px){
+	.hb_table thead th{
+		font-size: 14px;
+	}
+}

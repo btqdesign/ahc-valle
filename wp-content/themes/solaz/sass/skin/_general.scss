@@ -1,0 +1,378 @@
+$font-stack: $general_font_family;
+body,#error-page {
+     font-family: $general_font_family;
+     font-weight: $general_font_weight;
+     font-size: $general_font_size;
+     color: $general_font_color;
+     line-height: $general_line_height;
+     background: $general_bg_color;
+ }
+p{
+     line-height: $general_line_height;
+}
+.side-breadcrumb {
+    background-image: $breadcrumb_bg_image;
+    background-repeat: $breadcrumb_bg_repeat;
+    background-position: $breadcrumb_bg_position;
+    background-size: $breadcrumb_bg_size;
+    background-attachment: $breadcrumb_bg_attachment;
+}
+.main-navigation, header{
+    background-color: $header_bg;
+}
+
+.footer-v1{
+    background-color: $footer_bg;
+}
+
+.footer-v1{
+    color: $footer_color;
+    a{
+        color: $footer_color;
+    }
+
+}
+h1{
+    font-family: $h1_font_family;
+    color: $h1_font_color;
+    font-size: $h1_font_size;
+}
+h2{
+    font-family: $h2_font_family;
+    color: $h2_font_color;
+    font-size: $h2_font_size;
+}
+h3{
+    font-family: $h3_font_family;
+    color: $h3_font_color;
+    font-size: $h3_font_size;
+}
+h4{
+    font-family: $h4_font_family;
+    color: $h4_font_color;
+    font-size: $h4_font_size;
+}
+h5{
+    font-family: $h5_font_family;
+    color: $h5_font_color;
+    font-size: $h5_font_size;
+}
+h6{
+    font-family: $h6_font_family;
+    color: $h6_font_color;
+    font-size: $h6_font_size;
+}
+
+.main-color, a,
+.hb_room_carousel_container .text_link a,
+.hb_room_carousel_container .navigation .next, 
+.hb_room_carousel_container .navigation .prev,
+.hb_room_carousel_container .text_link > a,
+.footer-v3 .footer_info a:hover,
+.link-contact a i,
+.mega-menu li:hover > a, 
+.mega-menu li.current-menu-item > a, 
+.mega-menu li.current-menu-ancestor > a,
+.rooms .hb_room .title h4 a:hover,
+.rooms .hb_room .price,
+.banner-content.banner-type-2 h2,
+.btn.btn-primary,.header-v2.is-sticky .header-logo:before,
+.btn.btn-default,body .fancybox-nav span:hover:before,
+.footer .widget_text .textwidget > p a i,
+.solaz_get_widget .widget_hb_widget_search .btn_prev:hover, 
+.solaz_get_widget .widget_hb_widget_search .btn_next:hover,
+.search-block-top .btn-search:hover,
+#mini-scart a:hover,
+.load-more > a.btn,
+.load-more.room-loadmore > a.btn,
+.load-more.room-loadmore > a.btn::before,
+.banner-type-5 .banner-desc h2,
+.footer-v3 .bottom-footer a:hover,
+.mega-menu ul li.current-menu-item > a,
+.aio-icon.none,
+.vc_general.vc_btn3.vc_btn3-style-custom,
+#hotel-booking-results .hb-search-results > .hb-room .hb-room-name a:hover,
+.active-sidebar .widget .widget-title:before,
+.hb_addition_package_extra a.hb_package_toggle:after,
+.mega-menu .dropdown-menu li a:hover,
+.main-color h6,
+.link-contact a:hover, .link-contact a:focus,
+.banner-content.banner-type-3:hover .btn.btn-primary:hover,
+.btn_slider_1:hover,.btn-primary.btn_slider_1:hover,
+.gallery-container .page-title h3:before,
+.button-group button:hover, .button-group button.is-checked,
+.widget_categories li.current-cat > a, .widget_product_categories li.current-cat > a,
+.blog-post-info .read-more > a,
+.blog-post-info .post-name > a:hover,
+.widget_search .search-form .btn-search:hover,
+.widget_recent_entries li a:hover, .widget_recent_comments li a:hover,
+.blog-item .post_link:hover,
+.arrows-custom .slick-arrow:hover,
+.widget_categories li a:hover, .widget_product_categories li a:hover,
+.links-info .info a,.share-links .lab,.share-links .f-social ul li a:hover,
+.post-single .blog-info > div i,
+.post-single .blog-info .info-comment a:hover,
+.product_archives .title_archive_product h2:before,
+.product_archives .tabs-fillter .btn-filter li a.active,
+.product_archives .tabs-fillter .btn-filter li a:hover,
+.product-content .product-image a.add_to_cart_button:hover, 
+.product-content .product-image a.product_type_grouped:hover,
+.tagcloud a:hover,.yith-wcwl-add-to-wishlist > div a:hover,
+.product-content h3 a:hover,a.add_to_wishlist:before,
+.yith-wcwl-add-to-wishlist > div a:hover,.info .price span,
+.info .product_meta > span a,
+.banner-type-5 .banner-desc h2,
+.coming-timer span, .upb_video-bg .video-controls,
+.amenities_room .ult-content-box p,
+.sp-reservation a:hover,
+.wishlist_table .product-price .amount,
+.woocommerce .wishlist_table td.product-add-to-cart a,
+.product-tab .nav-tabs > li.active a,
+.sticky_post, .woocommerce-pagination .page-numbers > li .current, 
+.woocommerce-pagination .page-numbers > li a:hover,
+.blog-list .blog-post-info .blog-info > .info a:hover,
+.blog-list .blog-post-info .blog-info > .info:hover > i,
+.title-cart:before,.payment_method_paypal label a,
+.showlogin, .showcoupon,
+.info .product-share h5,.info .product-share a:hover,
+.product-tab .nav-tabs > li a:hover, .product-tab .nav-tabs > li a:focus,
+.quantity .qty-number:hover span,
+.wishlist_table .product-remove a,
+.woocommerce-Address-title a, .my_account_orders a, 
+.woocommerce-MyAccount-content a, 
+.woocommerce-MyAccount-navigation li a,
+.hotel_booking_mini_cart .hb_mini_cart_item .hb_mini_cart_price span,
+.hb_mini_cart_price_packages .hb_package_title a:hover, 
+.hb_mini_cart_price_packages .hb_package_title a:focus,
+#hotel-booking-payment .hb_room_type a:hover, #hotel-booking-cart .hb_room_type a:hover{
+    color: $primary_color;
+}
+.btn-primary.btn_slider_1:hover,
+.footer-v3 a:hover,
+.languges-flags:hover > a,
+.solaz-1 .tp-bullet:hover, .solaz-1 .tp-bullet.selected,
+.mini-cart .buttons .button,
+.main-color .aio-icon.none,.header-v3 .mini-cart > a:hover,
+.languges-flags ul li a:hover,.main-color,
+.btn-primary.btn_slider_1:hover,
+.header-v4 .mega-menu li a:hover,
+.header-v4 .main-navigation .mega-menu .dropdown-menu li a:hover{
+    color: $primary_color !important;
+}
+
+.main-bg,.form-type2 .wpcf7-submit,
+.gallery-img a:before,
+.btn_slider_1,
+.scroll-to-top,.banner-content.text-center:before, 
+.banner-content.text-left:before, 
+.banner-content.text-right:before,
+.btn.btn-default:hover,
+.wpcf7-submit,.children.dropdown-menu:before,
+.cart_nu_count,
+.header-v2 .header-logo,
+.banner-content.banner-type-3:after,
+.room_search_fullw,.mini-cart .buttons .button:hover,
+.preloader .sq,
+#hotel-booking-results form .hb_button.hb_checkout, 
+#hotel-booking-results form button.hb_add_to_cart, 
+#hotel-booking-results form button[type="submit"],
+.widget-title-border span:before, .widget-title-border span:after,
+aside.widget .hotel-booking-search button,
+.main-bg_color > .vc_column-inner,
+.main-bg_color > .upb_row_bg, .main-bg_color.vc_row,
+.rooms-pagination .page-numbers li a:hover, 
+.rooms-pagination .page-numbers li span.current,
+.wpsl-direction-wrap a, .wpsl-direction-before a,
+#wpsl-search-wrap .wpsl-search-btn-wrap input,
+.widget_categories li a:before, .widget_product_categories li a:before,
+.blog-list .blog-img:before,
+.blog-item .post_link i,
+.blog-grid .blog-img:before, .blog-masonry .blog-img:before,
+.load-more > a.btn.btn-primary,
+.main-bg_color.ult-content-box-container,
+.commentform .comment-submit .btn,
+.product-content .product-image:before,
+.widget_price_filter .ui-slider .ui-slider-handle,
+.widget_price_filter .price_slider_amount .button,
+.page-404.has_overlay:before,
+.product-list .product-action .button.add_to_cart_button,
+.btn,.post-password-form input[type="submit"],
+.shop_table.cart thead tr th,
+.woocommerce-page .btn.btn-primary,
+.shop_table.woocommerce-checkout-review-order-table thead tr th,
+.shop_table.order_details thead tr th,
+.hotel_booking_mini_cart .hb_mini_cart_footer .hb_button,
+.hb_table thead th,
+#hotel-booking-cart .hb_button.hb_checkout, 
+#hotel-booking-cart button[type=submit], 
+#hotel-booking-cart button[type=button], 
+#hotel-booking-payment .hb_button.hb_checkout, 
+#hotel-booking-payment button[type=submit], 
+#hotel-booking-payment button[type=button],
+.hb_single_room table thead tr th{
+    background-color: $primary_color;
+}
+.cart-block::-webkit-scrollbar-thumb{
+    background-color: $primary_color;
+}
+.solaz-1 .tp-bullet:hover:after, .solaz-1 .tp-bullet.selected:after,
+.btn_white:hover{
+    background-color: $primary_color !important;
+}
+.content-filter.active,.languges-flags.open .header-languages,
+.btn.btn-default,.btn.btn-primary,.mini-cart .buttons .button,
+aside.widget .hotel-booking-search button,
+#wpsl-search-wrap .wpsl-search-btn-wrap input,
+.blog-item .post_link:hover,
+.load-more > a.btn.btn-primary{
+    border-color: $primary_color;
+}
+.vc_tta-accordion.vc_tta-style-classic{
+    &.vc_tta-color-white,&.vc_tta-color-grey{
+        .vc_tta-panel.vc_active .vc_tta-panel-heading, .vc_tta-panel:hover .vc_tta-panel-heading{
+            border-color: $primary_color !important;
+            .vc_tta-panel-title > a{
+                color: $primary_color !important;
+            }
+        }
+    }
+}
+.rooms .hb_room .entry-summary .grouped_elements:before,
+.header-v2.is-sticky .header-logo:before,
+.rooms .hb_room .entry-summary:hover .grouped_elements:before,
+.header-v1 .cart-block, .header-v1 .top-search, 
+.header-v1 .header-languages, .header-v2 .cart-block, 
+.header-v2 .top-search, .header-v2 .header-languages{
+    border-top-color: $primary_color;
+}
+@media (max-width: 767px){
+    .header-v3 .btn-active{
+        background: $primary_color;
+    }
+}
+@media (min-width: 768px){
+    .header-v3 {
+        .header-logo {
+            background: $primary_color;
+        }
+        .cart-block, .top-search, .header-languages {
+            border-top-color: $primary_color;
+        }
+    }
+}
+.hover-color,a:focus, a:hover,
+.hb_room_carousel_container .navigation .next:hover, 
+.hb_room_carousel_container .navigation .prev:hover,
+.hb_room_carousel_container .text_link > a:hover,
+.load-more.room-loadmore > a.btn:hover,
+.load-more.room-loadmore > a.btn:hover::before,
+.vc_btn3.vc_btn3-size-md.vc_btn3-style-custom.vc_btn3-icon-left:not(.vc_btn3-o-empty):hover,
+.blog-post-info .read-more > a:hover,
+.info .product_meta > span a:hover,
+.wishlist_table .product-remove a:hover,
+.woocommerce .wishlist_table td.product-add-to-cart a:hover,
+.woocommerce-Address-title a:hover, .woocommerce-Address-title a:focus, 
+.my_account_orders a:hover, .my_account_orders a:focus, 
+.woocommerce-MyAccount-content a:hover, .woocommerce-MyAccount-content a:focus, 
+.woocommerce-MyAccount-navigation li a:hover, 
+.woocommerce-MyAccount-navigation li a:focus,
+#hotel-booking-payment p label a:hover, 
+#hotel-booking-payment p label a focus{
+    color: $highlight_color;
+}
+.hover-bg,.link-contact.main-bg:hover,
+.scroll-to-top:hover,
+.wpcf7-submit:hover,.mc4wp-form [type="submit"]:hover,
+#hotel-booking-results form .hb_button.hb_checkout:hover, 
+#hotel-booking-results form button.hb_add_to_cart:hover, 
+#hotel-booking-results form button[type="submit"]:hover,
+aside.widget .hotel-booking-search button:hover,
+.form-type2 .wpcf7-submit:hover,
+.wpsl-direction-wrap a:hover, .wpsl-direction-before a:hover,
+#wpsl-search-wrap .wpsl-search-btn-wrap input:hover,
+.load-more > a.btn.btn-primary:hover,
+.commentform .comment-submit .btn:hover,
+.product-list .product-action .button.add_to_cart_button:hover,
+.woocommerce-page .btn.btn-primary:hover,
+.info .single_add_to_cart_button:hover, .info .add_to_cart_button:hover,
+.hotel_booking_mini_cart .hb_mini_cart_footer .hb_button:hover, 
+.hotel_booking_mini_cart .hb_mini_cart_footer .hb_button:focus,
+#hotel-booking-cart .hb_button.hb_checkout:hover, 
+#hotel-booking-cart .hb_button.hb_checkout:focus, 
+#hotel-booking-cart button[type=submit]:hover, 
+#hotel-booking-cart button[type=submit]:focus, 
+#hotel-booking-cart button[type=button]:hover, 
+#hotel-booking-cart button[type=button]:focus, 
+#hotel-booking-payment .hb_button.hb_checkout:hover, 
+#hotel-booking-payment .hb_button.hb_checkout:focus, 
+#hotel-booking-payment button[type=submit]:hover, 
+#hotel-booking-payment button[type=submit]:focus, 
+#hotel-booking-payment button[type=button]:hover, 
+#hotel-booking-payment button[type=button]:focus,
+.post-password-form input[type="submit"]:hover{
+    background: $highlight_color;
+}
+.widget_price_filter .price_slider_amount .button:hover{
+    background: $highlight_color !important;
+}
+aside.widget .hotel-booking-search button:hover,
+#wpsl-search-wrap .wpsl-search-btn-wrap input:hover,
+.load-more > a.btn.btn-primary:hover,
+.commentform .comment-submit .btn:hover,
+.woocommerce-page .btn.btn-primary:hover{
+    border-color: $highlight_color;
+}
+@keyframes stretch {
+  0% {
+    
+    transform: rotate(180deg);
+  }
+
+  100% {
+    background-color: $primary_color;
+    transform: scale(.5);
+    border-radius: 100%;
+  }
+}
+.cart-block::-webkit-scrollbar-thumb{
+    background-color: $primary_color;
+}
+
+/* Color themes */
+$themes: (
+  default: #8262b5,
+  awesome: #ff1a56,
+  banana: #f1c40f,
+  cherry: #c0392b,
+  di-serria: #cea35f,
+  leaf: #27ae60,
+  nightsky: #2980b9,
+  orange: #f96015,
+  pastel: #ffb546,
+  niagara: #16a085,
+  electric: #0091ea,
+  light-taupe: #ad8368,
+  pastel-red: #ff6d6d,
+  light-green: #2ecc71,
+  rodeo-dust: #c7b29b,
+  sunglo: #d86d65,
+);
+// Helper theme mixin
+// @param $name: name of the theme (HTML class)
+// @param $color: color of the theme
+@mixin theme($name, $color) {
+    .#{$name} { 
+        .cart_room_count{
+          background: $color;
+        }
+        .widget_room_cart_content .hb_button{
+          border: 2px solid $color;
+        }
+    }
+}
+
+// Including themes 
+// By looping through the $themes map
+@each $key, $value in $themes {
+  @include theme($key, $value);
+}

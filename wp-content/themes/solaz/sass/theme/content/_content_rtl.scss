@@ -1,0 +1,270 @@
+#style-changer{
+	width: 442px !important;
+}
+.megamenu .dropdown-menu,
+.product-content .product-image a.add_to_cart_button, .product-content .product-image a.product_type_grouped,
+.rooms .hb_room .entry-summary .grouped_elements{
+	left: 50%;
+	right: auto;
+}
+.languges-flags{
+	border-left: 0;
+}
+.solaz_get_widget .widget_hb_widget_search .btn_prev{
+	left: 17px;
+}
+.header-v2.is-sticky .header-logo::before{
+	margin-right: -10px;
+}
+.firefox .solaz_get_widget .widget_hb_widget_search .hb-submit button[type="submit"] span:after{
+	left: -115px;
+    width: 112px;
+}
+.slider_type1 .slick-prev.default.slick-arrow{
+	transform: rotateX(180deg);
+}
+.header-v1~#closeNav.overlay3, .header-v2~#closeNav.overlay3{
+	left: auto !important;
+    right: calc(100% - 32px) !important;
+}
+.header-v4 .main-navigation{
+	transform: translateX(-100%);
+}
+.fullscreen-container{
+	left: 0 !important;
+}
+.hb_input_field::after{
+	left: 15px;
+	right: auto;
+}
+aside.widget .hotel-booking-search select {
+    background: rgba(0, 0, 0, 0) url("../images/caret-down.png") no-repeat scroll 4% center;
+}
+#hotel-booking-results .hb-search-results > .hb-room .hb-room-meta li.hb_search_capacity {
+    border-left: 1px solid #eee;
+    margin-left: 20px;
+    padding-left: 20px;
+    border-right: 0px solid #eee;
+    margin-right: 0;
+    padding-right: 0;
+}
+.gallery-container .page-title h3::before,
+.active-sidebar .widget .widget-title::before{
+	left: 49%;
+	right: auto;
+}
+.product_archives .title_archive_product h2::before, .blog-img a::before{
+	left: 50%;
+	right: auto;
+}
+//boostrap
+.text-right {
+    text-align: left;
+}
+.text-left {
+    text-align: right;
+}
+.vc_col-sm-1, .vc_col-sm-10, .vc_col-sm-11, .vc_col-sm-12, .vc_col-sm-2, .vc_col-sm-3, .vc_col-sm-4, .vc_col-sm-5, .vc_col-sm-6, .vc_col-sm-7, .vc_col-sm-8, .vc_col-sm-9,
+.vc_col-md-1, .vc_col-md-10, .vc_col-md-11, .vc_col-md-12, .vc_col-md-2, .vc_col-md-3, .vc_col-md-4, .vc_col-md-5, .vc_col-md-6, .vc_col-md-7, .vc_col-md-8, .vc_col-md-9,
+.vc_col-lg-1, .vc_col-lg-10, .vc_col-lg-11, .vc_col-lg-12, .vc_col-lg-2, .vc_col-lg-3, .vc_col-lg-4, .vc_col-lg-5, .vc_col-lg-6, .vc_col-lg-7, .vc_col-lg-8, .vc_col-lg-9 {
+    float: right !important;
+}
+.col-lg-1, .col-lg-10, .col-lg-11, .col-lg-12, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-md-1, .col-md-10, .col-md-11, .col-md-12, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-sm-1, .col-sm-10, .col-sm-11, .col-sm-12, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-xs-1, .col-xs-10, .col-xs-11, .col-xs-12, .col-xs-2, .col-xs-3, .col-xs-4, .col-xs-5, .col-xs-6, .col-xs-7, .col-xs-8, .col-xs-9{
+	float: right;
+}
+.col-lg-pull-12 {
+left: 100%;
+right: auto;
+}
+.col-lg-pull-11 {
+left: 91.66666667%;
+right: auto;
+}
+.col-lg-pull-10 {
+left: 83.33333333%;
+right: auto;
+}
+.col-lg-pull-9 {
+left: 75%;
+right: auto;
+}
+.col-lg-pull-8 {
+left: 66.66666667%;
+right: auto;
+}
+.col-lg-pull-7 {
+left: 58.33333333%;
+right: auto;
+}
+.col-lg-pull-6 {
+left: 50%;
+right: auto;
+}
+.col-lg-pull-5 {
+left: 41.66666667%;
+right: auto;
+}
+.col-lg-pull-4 {
+left: 33.33333333%;
+right: auto;
+}
+.col-lg-pull-3 {
+left: 25%;
+right: auto;
+}
+.col-lg-pull-2 {
+left: 16.66666667%;
+right: auto;
+}
+.col-lg-pull-1 {
+left: 8.33333333%;
+right: auto;
+}
+.col-lg-pull-0 {
+left: auto;
+right: auto;
+}
+.col-lg-push-12 {
+right: 100%;
+left: 0;
+}
+.col-lg-push-11 {
+right: 91.66666667%;
+left: 0;
+}
+.col-lg-push-10 {
+right: 83.33333333%;
+left: 0;
+}
+.col-lg-push-9 {
+right: 75%;
+left: 0;
+}
+.col-lg-push-8 {
+right: 66.66666667%;
+left: 0;
+}
+.col-lg-push-7 {
+right: 58.33333333%;
+left: 0;
+}
+.col-lg-push-6 {
+right: 50%;
+left: 0;
+}
+.col-lg-push-5 {
+right: 41.66666667%;
+left: 0;
+}
+.col-lg-push-4 {
+right: 33.33333333%;
+left: 0;
+}
+.col-lg-push-3 {
+right: 25%;
+left: 0;
+}
+.col-lg-push-2 {
+right: 16.66666667%;
+left: 0;
+}
+.col-lg-push-1 {
+right: 8.33333333%;
+left: 0;
+}
+.col-lg-push-0 {
+right: auto;
+left: 0;
+}
+.col-lg-offset-12 {
+margin-right: 100%;
+margin-left: 0;
+}
+.col-lg-offset-11 {
+margin-right: 91.66666667%;
+margin-left: 0;
+}
+.col-lg-offset-10 {
+margin-right: 83.33333333%;
+margin-left: 0;
+}
+.col-lg-offset-9 {
+margin-right: 75%;
+margin-left: 0;
+}
+.col-lg-offset-8 {
+margin-right: 66.66666667%;
+margin-left: 0;
+}
+.col-lg-offset-7 {
+margin-right: 58.33333333%;
+margin-left: 0;
+}
+.col-lg-offset-6 {
+margin-right: 50%;
+margin-left: 0;
+}
+.col-lg-offset-5 {
+margin-right: 41.66666667%;
+margin-left: 0;
+}
+.col-lg-offset-4 {
+margin-right: 33.33333333%;
+margin-left: 0;
+}
+.col-lg-offset-3 {
+margin-right: 25%;
+margin-left: 0;
+}
+.col-lg-offset-2 {
+margin-right: 16.66666667%;
+margin-left: 0;
+}
+.col-lg-offset-1 {
+margin-right: 8.33333333%;
+margin-left: 0;
+}
+.col-lg-offset-0 {
+margin-right: 0%;
+margin-left: 0;
+}
+caption {
+  text-align: right;
+}
+th {
+  text-align: right;
+}
+@media(max-width: 767px){
+	.cform_type1 .wpcf7-form > p{
+		margin-left: 0;
+	}
+	.header-v1 .mini-cart{
+		right: 41px;
+	}
+	.header-v1.site-header .languges-flags + .mini-cart + .search-block-top{
+		left: 40px;
+		right: auto;
+	}
+	.header-v1 .mega-menu li .caret, .header-v2 .mega-menu li .caret{
+		left: 0;
+		right: auto;
+	}
+	.nav-sections{
+		z-index: 9999;
+	}
+	.header-v2 .mini-cart .cart-block, .header-v1 .mini-cart .cart-block {
+    	right: 1px;
+    	left: auto;
+	}
+	.header-v2 .top-search{
+		right: 0;
+		left: auto;
+	}
+	.header-v1 .top-search{
+		left: 0;
+		right: auto;
+	}
+	header.header-v2.site-header .header-logo{
+		right: 34%;
+	}
+}

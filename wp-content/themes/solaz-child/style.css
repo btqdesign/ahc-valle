@@ -1,0 +1,58 @@
+/*
+Theme Name:   Solaz child theme
+Theme URI:    http://hn.arrowpress.net/solaz/
+Description:  Solaz - Elegant WooCommerce WordPress Theme.
+Author:       AHT
+Author URI:   http://arrowhitech.com/
+Template:     solaz
+Version:      1.0
+License:      
+License URI:  
+Tags:         one-column, two-columns, right-sidebar,  custom-background, custom-header, custom-menu, editor-style, featured-images, flexible-header, full-width-template, microformats, post-formats, rtl-language-support, sticky-post, theme-options, translation-ready
+Text Domain:  solaz-child
+*/
+
+.header-v1.is-sticky .header-logo {
+	background-color: #f2f2f2;
+}
+
+.btq-book-now {
+	display: none !important;
+}
+@media (max-width:768px){
+	.btq-book-now {
+		display: block !important;
+	}
+	.btq-book-now ul li {
+		background-color: #C5992D;
+	    border: none;
+	    color: white;
+	    padding: 15px 70px;
+	    text-align: center;
+	    text-decoration: none;
+	    display: inline-block;
+	    font-size: 16px;
+	    margin: 0px 0px;
+	    cursor: pointer;
+	    border: 2px solid #C5992D;
+	    align-content: center;
+	    width: 100%;
+	}
+}
+
+.btq-menu li {
+	display: inline;
+	margin: 22px;
+	margin-right: 2%;
+}
+ul#menu-header-menu, ul#menu-header-menu-terraza, ul#menu-header-menu-banquete, ul#menu-header-menu-terraza-en, ul#menu-header-menu-en {
+	height: 50px;
+	padding-top: 5px;
+}
+.menu-header-menu-container, .menu-header-menu-terraza-container, .menu-header-menu-banquete-container, .menu-header-menu-terraza-en-container, .menu-header-menu-en-container {
+    padding-top: 17px;
+}
+
+textarea.wpcf7-form-control.wpcf7-textarea.form-control.placeholder{
+    height: 150px;
+}

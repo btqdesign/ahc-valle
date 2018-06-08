@@ -1,0 +1,37 @@
+<wpml-config>
+    <admin-texts>
+        <key name="solaz_settings">
+            <key name="blog-title" />
+            <key name="under-contr-content" />
+            <key name="header_text" />
+            <key name="link-paypal" />
+            <key name="link-visa" />
+            <key name="link-mastercard" />
+            <key name="link-discover" />
+            <key name="link-amex" />
+            <key name="social-twitter" />
+            <key name="social-linkedin" />
+            <key name="social-behance" />
+            <key name="social-dribble" />
+            <key name="popup-title" />
+            <key name="popup-description" />
+            <key name="under-contr-title" />
+            <key name="footer-copyright" />
+            <key name="footer2-copyright" />
+        </key>
+    </admin-texts>
+    <custom-fields>
+        <custom-field action="translate">name</custom-field>
+        <custom-field action="translate">mail</custom-field>
+        <custom-field action="translate">link_code</custom-field>
+        <custom-field action="translate">link_title</custom-field>
+        <custom-field action="translate">quote_code</custom-field>
+        <custom-field action="translate">quote_author</custom-field>
+        <custom-field action="translate">video_code</custom-field>
+        <custom-field action="translate">custom_tab_title</custom-field>
+        <custom-field action="translate">custom_tab_content</custom-field>
+        <custom-field action="translate">tes_name</custom-field>
+        <custom-field action="translate">address</custom-field>
+        <custom-field action="translate">occupation</custom-field>
+    </custom-fields>
+</wpml-config>

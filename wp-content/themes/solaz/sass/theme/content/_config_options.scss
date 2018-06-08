@@ -1,0 +1,27 @@
+/*===================================
+	3.7 Config Options
+===================================*/
+.center_element .wpb_wrapper{
+	position: absolute;
+    top: 50%;
+    @include transform(translateY(-50%)) ;
+    text-align: center;
+    width: 100%;
+}
+.has_overlay:before{
+	content: "";
+	position: absolute;
+	top: 0;
+	#{$left}: 0;
+	bottom: 0;
+	#{$right}: 0;
+	background: rgba(0,0,0,0.2);
+}
+.room-type2 {
+	.rooms .hb_room .entry-summary{
+		background: none;
+	}
+	.hb_room_carousel_container {
+	    margin-bottom: 43px;
+	}
+}

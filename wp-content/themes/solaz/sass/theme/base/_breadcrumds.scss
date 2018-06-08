@@ -1,0 +1,22 @@
+/*===================================
+    2.4 Breadcrumds
+===================================*/
+.side-breadcrumb {
+    height: 368px;
+    text-align: center;
+    display: table;
+    width: 100%;
+    margin-bottom: 118px;
+    .page-title {
+	  display: table-cell;
+	  vertical-align: middle;
+	}
+    h1{
+     	color: #fff;
+        letter-spacing: 4px;
+        font-weight: 600;
+        font-size: 67px;
+        padding: 0 15px;
+        text-transform: uppercase;
+    }
+}

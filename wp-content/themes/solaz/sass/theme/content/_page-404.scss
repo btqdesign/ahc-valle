@@ -1,0 +1,395 @@
+/*===================================
+	3.9 Page 404
+===================================*/
+// Coming soon
+#error-page{
+	max-width: 100%;
+	padding: 0 !important;
+	margin: 0 !important;
+	.coming-subcribe {
+		padding-top: 100px;
+   		padding-bottom: 30px;
+		p{
+		color: #a6a6a6;
+		letter-spacing: 1px;
+		}
+	}
+}
+.page-404{
+	margin: 0 -15px;
+}
+.coming_heading{
+	padding-top: 60px;
+}
+.coming-timer{
+	width: 169px;
+	height: 169px;
+	border: 2px solid #8d8b89;
+	color: #fff;
+	line-height: 107px;
+	margin:0 5px;
+	font-size: 18px;
+	font-weight: 600;
+	display: inline-block;
+	text-transform: uppercase;
+	span{
+		color:$primary_color;
+		display: block;
+		margin-top: 33px;
+		font-size: 65px;
+	}
+	&:first-child {
+	    margin-right: 1px !important;
+	}
+}
+.page-404.has_overlay:before{
+	background: $primary_color;
+	opacity: 0.9;
+}
+.title-behind{
+	color: #a6a6a6;
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 24px;
+    padding: 37px 0 80px;
+    text-transform: uppercase;
+    letter-spacing: 0.7px;
+	margin: 0 auto;
+	width: 50%;
+}
+.coming-subcribe .mc4wp-form input.placeholder[type="email"], 
+.coming-subcribe .mc4wp-form input.placeholder[type="text"] {
+  color: rgba(255,255,255,0.45);
+}
+.coming-subcribe {
+	.mc4wp-form input[type="email"], 
+	.mc4wp-form input[type="text"] {
+	  background: rgba(241,241,241, 0.04);
+	  color: rgba(255, 255, 255, 0.45);
+	}
+}
+.coming-footer{
+	.footer_info p{
+		color: #858585;
+		a{
+			color: #858585;
+			&:hover{
+				color:#b58a61;
+			}
+		}
+	}
+	>p{
+		color: #888888;
+	}
+}
+#error-page {
+	.coming-footer >p{
+		color: #888888;
+		margin-top: 0;
+		letter-spacing: 1.2px;
+	}
+	.footer_info > p{
+		letter-spacing: 1px;
+		margin-bottom: 7px !important;
+	}
+}
+.coming-footer {
+  position: absolute;
+  width: 100%;
+  bottom: 10px;
+}
+// Page 404
+.not-found{
+    .side-breadcrumb{
+        display: none;
+    }
+    .footer{
+        padding: 0;
+    }
+    .wrapper .container{
+      width: 100%;
+    }
+	.wrapper {
+	  min-height: auto;
+	}
+}
+.page-404{
+    position: relative;
+    .container-fluid, .row, 
+    .page-404-container{
+        height: 100%;
+    }
+    &:before{
+        opacity: 0.8;
+    }
+}
+.content-404{
+    position: absolute;
+    top: 50%;
+    #{$left}: 50%;
+    width: 100%;
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    -moz-transform: translateX(-50%) translateY(-50%);
+    -ms-transform: translateX(-50%) translateY(-50%);
+    -o-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+    padding: 0 30px;
+    h1 {
+         color: #ffffff;
+	    font-size: 128px;
+	    display: inline-block;
+	    font-weight: 600;
+	    letter-spacing: 6px;
+	    margin-bottom: 7px;
+	    text-transform: uppercase;
+    }
+    p{
+        color: #ffffff;
+	    font-size: 15px;
+	    margin: 0;
+	    text-transform: uppercase;
+	    font-weight: 600;
+    }
+}
+//About Page
+.vc_grid-btn-load_more .vc_general.vc_btn3.vc_btn3-style-custom:after {
+    background: #fff;
+    content: "";
+    height: 155px;
+    #{$left}: -75px;
+    opacity: .2;
+    position: absolute;
+    top: -50px;
+    @include transform(rotate(35deg));
+    @include transition(all 550ms cubic-bezier(0.19, 1, 0.22, 1));
+    width: 50px;
+}
+.vc_grid-btn-load_more .vc_general.vc_btn3.vc_btn3-style-custom:hover:after {
+  #{$left}: 120%;
+   @include transition(all 550ms cubic-bezier(0.19, 1, 0.22, 1));
+}
+.box-counter{
+	.stats-block{
+	  float: $left;
+	  width: 25%;
+	}
+	.ult-content-box{
+		padding: 0 100px;
+	}	
+}
+.stats-block{
+	.stats-number {
+	  border-radius: 50%;
+	  display: inline-block !important;
+	  height: 120px;
+	  line-height: 129px !important;
+	  overflow: hidden;
+	  padding: 0 !important;
+	  text-align: center;
+	  width: 120px;
+    	border: 1px solid #cbad91;
+	}
+	.stats-text {
+		margin-top: 2px;
+	  	text-align: center;
+	  	text-transform: uppercase;
+	}
+}
+.contact-address{
+	padding-top: 34px;
+	margin-bottom: -5px !important;
+	ul{
+		padding-#{$left}: 73px;
+	}
+	li{
+		list-style: none;
+	    color: #858585;
+	    letter-spacing: 0.5px;
+	    margin-bottom: 12px;
+		a{
+			color: #858585;
+			&:hover{
+				color: $primary_color;
+			}
+		}
+	}
+}
+.form-contact{
+	input{
+		&.wpcf7-text{
+		    background: #fff;
+		    margin-bottom: 15px;
+		    width: 100%;
+		    padding: 14px 24px 13px;
+		}
+		&.wpcf7-submit{
+			width: 164px;
+		    float: $right;
+		    font-size: 14px;
+		    height: 49px;
+		    font-weight: 600;
+		    letter-spacing: 1px;
+		    padding: 14px 19px 15px;
+		    margin-top: 18px;
+		}
+	}
+	textarea{
+		height: 113px;
+		background: #fff;
+		width: 100%;
+		 padding: 16px 24px 16px;
+	}
+	
+}
+.boxcontact-about .wpcf7-not-valid-tip {
+    margin-top: 0;
+}
+.boxcontact-about div.wpcf7-response-output,
+.boxcontact-about div.wpcf7-validation-errors {
+    border: 2px solid #f7e700;
+    margin-top: 25px !important;
+    float: $left;
+}
+.co_cus_gutter{
+	.mc4wp-form .mc4wp-response{
+		margin-top: 10px;
+	}
+}
+.btnabout-gallery{
+	.vc_grid .vc_pageable-load-more-btn {
+	    margin-top: 43px !important;
+	}
+}
+.cs-boxcontact{
+	.arrowpress-container{
+		.vc_col-lg-5 {
+		    .aio-icon.none{
+		    	margin-#{$left}: 0;
+		    }
+		}
+	}
+}
+.container {
+	.tabs_sort .isotope{
+		margin-#{$left}: -1px;
+	}
+}
+.post-type-archive-hb_room {
+	background: #f5f5f5;
+	.rooms{
+		margin-top: -2px;
+		.hb_room .room-info {
+		    min-height: 98px;
+		}
+	}
+}
+.room-loadmore{
+	margin:32px 0 30px;
+	padding-top: 19px;
+}
+
+@-webkit-keyframes nudged{
+  0%, 100% {
+    -webkit-transform: translate(0, 0);
+  }
+  
+  50% {
+    -webkit-transform: translate(0, 8px);
+  }
+  
+  80% {
+    -webkit-transform: translate(0, -8px);
+  }
+}
+@-ms-keyframes nudged {
+  0%, 100% {
+    -ms-transform: translate(0, 0);
+  }
+  
+  50% {
+    -ms-transform: translate(0, 8px);
+  }
+  
+  80% {
+    -ms-transform: translate(0, -8px);
+  }
+}
+@-moz-keyframes nudged {
+  0%, 100% {
+    -moz-transform: translate(0, 0);
+  }
+  
+  50% {
+    -moz-transform: translate(0, 8px);
+  }
+  
+  80% {
+    -moz-transform: translate(0, -8px);
+  }
+}
+.load-more.room-loadmore > a.btn{
+	background: none !important;
+	color:$primary_color;
+	font-size: 16px;
+	position: relative;
+	border: none;
+	&:before{
+		content: '\f346';
+		font: 300 22px/1 dashicons;
+		color: $primary_color;
+		position: absolute;
+		top: -18px;
+		-webkit-font-smoothing: antialiased;
+		#{$left}: 50%;
+		@include transform(translateX(-50%));
+		@include transition(all 0.3s ease-in-out 0s);
+		margin-#{$left}: -10px;
+		-moz-animation: 1s linear 0s normal none infinite running nudged;
+	    -o-animation: 1s linear 0s normal none infinite running nudged;
+	    -ms-animation: 1s linear 0s normal none infinite running nudged;
+	    -webkit-animation: 1s linear 0s normal none infinite running nudged;
+	    animation: 1s linear 0s normal none infinite running nudged;
+	}
+	&:hover{
+		background: none !important;
+		border:none;
+		color: #000;
+	}
+}
+.textbg-abs {
+   font-family: signalist;
+    font-size: 240px;
+    left: 93px;
+    letter-spacing: -3px;
+    opacity: 0.05;
+    color: #222;
+    position: absolute;
+    top: -149px;
+  @include transform(rotate(-10deg));
+}
+.sp-reservation{
+	p{
+		margin-bottom: 16px;
+	}
+	a{
+		color: #9c9c9c;
+		display: block;
+    	line-height: 18px;
+		&:hover{
+			color: $primary_color;
+		}
+	}
+}
+.room_search_4{
+	margin-bottom: -1px;
+	.ult-content-box-container,
+	.hotel-booking-search{
+		position: relative;
+		z-index: 1;
+	}
+}
+.amenities_room{
+	.ult-content-box p{
+		color: $primary_color;
+	}
+}
