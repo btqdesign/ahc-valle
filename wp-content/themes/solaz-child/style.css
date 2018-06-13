@@ -45,12 +45,17 @@ Text Domain:  solaz-child
 	margin: 22px;
 	margin-right: 2%;
 }
-ul#menu-header-menu, ul#menu-header-menu-terraza, ul#menu-header-menu-banquete, ul#menu-header-menu-terraza-en, ul#menu-header-menu-en {
+/* Main Menu */
+ul#menu-subheader-menu{
 	height: 50px;
 	padding-top: 5px;
 }
-.menu-header-menu-container, .menu-header-menu-terraza-container, .menu-header-menu-banquete-container, .menu-header-menu-terraza-en-container, .menu-header-menu-en-container {
-    padding-top: 17px;
+
+/* Submenu */
+
+.menu-sub-header-menu-container{
+	padding-top: 21.5px;
+	padding-bottom: 21.5px;
 }
 
 textarea.wpcf7-form-control.wpcf7-textarea.form-control.placeholder{
