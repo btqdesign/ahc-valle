@@ -1,41 +1,6 @@
-@font-face {
-  font-family: 'ButlerStencil-Bold';
-  src: url('ButlerStencil-Bold.eot');
-  src: url('ButlerStencil-Bold.woff2') format('woff2'),
-       url('ButlerStencil-Bold.woff') format('woff'),
-       url('ButlerStencil-Bold.ttf') format('truetype'),
-       url('ButlerStencil-Bold.svg#ButlerStencil-Bold') format('svg'),
-       url('ButlerStencil-Bold.eot?#iefix') format('embedded-opentype');
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'ButlerStencil-Medium';
-  src: url('ButlerStencil-Medium.eot');
-  src: url('ButlerStencil-Medium.woff2') format('woff2'),
-       url('ButlerStencil-Medium.woff') format('woff'),
-       url('ButlerStencil-Medium.ttf') format('truetype'),
-       url('ButlerStencil-Medium.svg#ButlerStencil-Medium') format('svg'),
-       url('ButlerStencil-Medium.eot?#iefix') format('embedded-opentype');
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Butler-Light';
-  src: url('Butler-Light.eot');
-  src: url('Butler-Light.woff2') format('woff2'),
-       url('Butler-Light.woff') format('woff'),
-       url('Butler-Light.ttf') format('truetype'),
-       url('Butler-Light.svg#Butler-Light') format('svg'),
-       url('Butler-Light.eot?#iefix') format('embedded-opentype');
-  font-weight: normal;
-  font-style: normal;
-}
 
 h1 {
-	font-family: 'ButlerStencil-Medium' !important;
+	font-family: 'Poppins' !important;
 	font-weight: normal !important;
 	font-style: normal !important;
 }
