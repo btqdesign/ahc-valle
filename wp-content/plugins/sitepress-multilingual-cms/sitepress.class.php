@@ -3569,11 +3569,8 @@ class SitePress extends WPML_WPDB_User implements
 
 	function get_translatable_documents( $include_not_synced = false ) {
 		$translatable_post_types = array();
-		$attachment_is_translatable = $this->is_translated_post_type( 'attachment' );
+
 		$exceptions = array( 'revision', 'nav_menu_item' );
-		if(!$attachment_is_translatable) {
-			$exceptions[] = 'attachment';
-		}
 
 		$translation_modes = new WPML_Translation_Modes();
 
@@ -3694,7 +3691,7 @@ class SitePress extends WPML_WPDB_User implements
 
 	function is_translated_post_type( $type ) {
 
-		$translated = apply_filters( 'pre_wpml_is_translated_post_type', $type === 'attachment' ? false : null, $type );
+		$translated = apply_filters( 'pre_wpml_is_translated_post_type', null, $type );
 
 		return $translated !== null ? $translated : $this->is_translated_element( $type,
 		                                                                          'custom_posts_sync_option',

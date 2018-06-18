@@ -30,7 +30,7 @@ if ( ! function_exists( 'prepare_synchronization_needed_warning' ) ) {
 $default_language = $sitepress->get_default_language();
 
 $wpml_post_types = new WPML_Post_Types( $sitepress );
-$custom_posts = $wpml_post_types->get_translatable_and_readonly( true );
+$custom_posts = $wpml_post_types->get_translatable_and_readonly();
 
 $custom_posts_sync_not_set = array();
 foreach ( $custom_posts as $k => $custom_post ) {

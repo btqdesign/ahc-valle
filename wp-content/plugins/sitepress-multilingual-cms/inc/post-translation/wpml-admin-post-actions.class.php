@@ -8,6 +8,8 @@
  */
 class WPML_Admin_Post_Actions extends WPML_Post_Translation {
 
+	const DISPLAY_FEATURED_IMAGE_AS_TRANSLATED_META_KEY = '_wpml_featured_image_as_translated';
+
 	private $http_referer;
 
 	public function init() {
@@ -106,7 +108,15 @@ class WPML_Admin_Post_Actions extends WPML_Post_Translation {
 		}
 		$save_filter_action_state = new WPML_WP_Filter_State( 'save_post' );
 		$this->after_save_post( $trid, $post_vars, $language_code, $source_language );
+		$this->save_media_options( $post_id );
 		$save_filter_action_state->restore();
+	}
+
+	private function save_media_options( $post_id ) {
+		$featured_as_translated = isset( $_POST['wpml_featured_as_translated'] )
+			? filter_var( $_POST['wpml_featured_as_translated'], FILTER_SANITIZE_NUMBER_INT ) : false;
+
+		update_post_meta( $post_id, self::DISPLAY_FEATURED_IMAGE_AS_TRANSLATED_META_KEY, (int) $featured_as_translated );
 	}
 
 	private function has_invalid_language_details_on_heartbeat() {

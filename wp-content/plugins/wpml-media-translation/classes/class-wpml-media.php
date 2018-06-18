@@ -69,24 +69,14 @@ class WPML_Media implements IWPML_Action {
 
 		$this->languages = null;
 
-		// do not run this when user is importing posts in Tools > Import
-		if ( ! isset( $_GET['import'] ) || $_GET['import'] !== 'wordpress' ) {
-			add_action( 'add_attachment', array( $this, 'save_attachment_actions' ) );
-		}
-
 		if ( $this->is_admin_or_xmlrpc() && ! $this->is_uploading_plugin_or_theme() ) {
+
+			add_action( 'wpml_admin_menu_configure', array( $this, 'menu' ) );
 
 			if ( 1 < count( $active_languages ) ) {
 
-				add_action( 'wpml_admin_menu_configure', array( $this, 'menu' ) );
-				add_filter( 'views_upload', array( $this, 'views_upload' ) );
-
 				// Post/page save actions
 				add_action( 'icl_make_duplicate', array( $this, 'make_duplicate' ), 10, 4 );
-				add_action( 'edit_attachment', array( $this, 'save_attachment_actions' ) );
-
-				//wp_delete_file file filter
-				add_filter( 'wp_delete_file', array( $this, 'delete_file' ) );
 
 				if ( $pagenow == 'media-upload.php' ) {
 					add_action( 'pre_get_posts', array( $this, 'filter_media_upload_items' ), 10, 1 );
@@ -393,40 +383,6 @@ class WPML_Media implements IWPML_Action {
 		}
 	}
 
-	function save_attachment_actions( $post_id ) {
-		if ( $this->is_uploading_plugin_or_theme() && get_post_type( $post_id ) == 'attachment' ) {
-			return;
-		}
-
-		global $wpdb, $sitepress;
-
-		$media_language = $sitepress->get_language_for_element( $post_id, 'post_attachment' );
-		$trid           = false;
-		if ( ! empty( $media_language ) ) {
-			$trid = $sitepress->get_element_trid( $post_id, 'post_attachment' );
-		}
-		if ( empty( $media_language ) ) {
-			$parent_post_sql      = "SELECT p2.ID, p2.post_type FROM {$wpdb->posts} p1 JOIN {$wpdb->posts} p2 ON p1.post_parent = p2.ID WHERE p1.ID=%d";
-			$parent_post_prepared = $wpdb->prepare( $parent_post_sql, array( $post_id ) );
-			$parent_post          = $wpdb->get_row( $parent_post_prepared );
-
-			if ( $parent_post ) {
-				$media_language = $sitepress->get_language_for_element( $parent_post->ID, 'post_' . $parent_post->post_type );
-			}
-
-			if ( empty( $media_language ) ) {
-				$media_language = $sitepress->get_admin_language_cookie();
-			}
-			if ( empty( $media_language ) ) {
-				$media_language = $sitepress->get_default_language();
-			}
-
-		}
-		if ( ! empty( $media_language ) ) {
-			$sitepress->set_element_language_details( $post_id, 'post_attachment', $trid, $media_language );
-		}
-	}
-
 	/**
 	 *Add a filter to fix the links for attachments in the language switcher so
 	 *they point to the corresponding pages in different languages.
@@ -525,102 +481,6 @@ class WPML_Media implements IWPML_Action {
 	public function menu_content() {
 		$menus = $this->menus_factory->create();
 		$menus->display();
-	}
-
-	//check if the image is not duplicated to another post before deleting it physically
-	function views_upload( $views ) {
-		global $sitepress, $wpdb, $pagenow;
-
-		if ( $pagenow == 'upload.php' ) {
-			//get current language
-			$lang = $sitepress->get_current_language();
-
-			foreach ( $views as $key => $view ) {
-				// extract the base URL and query parameters
-				$href_count = preg_match( '/(href=["\'])([\s\S]+?)\?([\s\S]+?)(["\'])/', $view, $href_matches );
-				if ( $href_count && isset( $href_args ) ) {
-					$href_base = $href_matches[2];
-					wp_parse_str( $href_matches[3], $href_args );
-				} else {
-					$href_base = 'upload.php';
-					$href_args = array();
-				}
-
-				if ( $lang != 'all' ) {
-					$sql = $wpdb->prepare( "
-						SELECT COUNT(p.id)
-						FROM {$wpdb->posts} AS p
-							INNER JOIN {$wpdb->prefix}icl_translations AS t
-								ON p.id = t.element_id
-						WHERE p.post_type = 'attachment'
-						AND t.element_type='post_attachment'
-						AND t.language_code = %s ", $lang );
-
-					switch ( $key ) {
-						case 'all';
-							$and = " AND p.post_status != 'trash' ";
-							break;
-						case 'detached':
-							$and = " AND p.post_status != 'trash' AND p.post_parent = 0 ";
-							break;
-						case 'trash':
-							$and = " AND p.post_status = 'trash' ";
-							break;
-						default:
-							if ( isset( $href_args['post_mime_type'] ) ) {
-								$and = " AND p.post_status != 'trash' " . wp_post_mime_type_where( $href_args['post_mime_type'], 'p' );
-							} else {
-								$and = $wpdb->prepare( " AND p.post_status != 'trash' AND p.post_mime_type LIKE %s", $key . '%' );
-							}
-					}
-
-					$and = apply_filters( 'wpml-media_view-upload-sql_and', $and, $key, $view, $lang );
-
-					$sql_and = $sql . $and;
-					$sql     = apply_filters( 'wpml-media_view-upload-sql', $sql_and, $key, $view, $lang );
-
-					$res = apply_filters( 'wpml-media_view-upload-count', null, $key, $view, $lang );
-					if ( null === $res ) {
-						$res = $wpdb->get_col( $sql );
-					}
-					//replace count
-					$view = preg_replace( '/\((\d+)\)/', '(' . $res[0] . ')', $view );
-				}
-
-				//replace href link, adding the 'lang' argument and the revised count
-				$href_args['lang'] = $lang;
-				$href_args         = array_map( 'urlencode', $href_args );
-				$new_href          = add_query_arg( $href_args, $href_base );
-				$views[ $key ]     = preg_replace( '/(href=["\'])([\s\S]+?)(["\'])/', '$1' . $new_href . '$3', $view );
-			}
-		}
-
-		return $views;
-	}
-
-	function delete_file( $file ) {
-		if ( $file ) {
-			global $wpdb;
-			//get file name from full name
-			$file_name = $this->get_file_name_without_size_from_full_name( $file );
-			//check file name in DB
-			$attachment_prepared = $wpdb->prepare( "SELECT pm.meta_id, pm.post_id FROM {$wpdb->postmeta} AS pm WHERE pm.meta_value LIKE %s", array( '%' . $file_name ) );
-			$attachment          = $wpdb->get_row( $attachment_prepared );
-			//if exist return NULL(do not delete physically)
-			if ( ! empty( $attachment ) ) {
-				$file = null;
-			}
-		}
-
-		return $file;
-	}
-
-	public function get_file_name_without_size_from_full_name( $file ) {
-		$file_name = preg_replace( '/^(.+)\-\d+x\d+(\.\w+)$/', '$1$2', $file );
-		$file_name = preg_replace( '/^[\s\S]+(\/.+)$/', '$1', $file_name );
-		$file_name = str_replace( '/', '', $file_name );
-
-		return $file_name;
 	}
 
 	/**

@@ -50,23 +50,22 @@ class WPML_Media_Post_Images_Translation implements IWPML_Action {
 	}
 
 	public function add_hooks() {
-		add_action( 'save_post', array( $this, 'translate_images' ), PHP_INT_MAX, 2 );
+		add_action( 'save_post', array( $this, 'translate_images' ), PHP_INT_MAX, 1 );
 		add_filter( 'wpml_pre_save_pro_translation', array( $this, 'translate_images_in_content' ), PHP_INT_MAX, 2 );
 
 		add_action( 'icl_make_duplicate', array( $this, 'translate_images_in_duplicate' ), PHP_INT_MAX, 4 );
 
 		add_action( 'wpml_added_media_file_translation', array( $this, 'translate_url_in_post' ), PHP_INT_MAX, 1 );
+		add_action( 'wpml_pro_translation_completed', array( $this, 'translate_images' ), PHP_INT_MAX, 1 );
+		add_action( 'wpml_restored_media_file_translation', array( $this, 'translate_url_in_post' ), PHP_INT_MAX, 2 );
 	}
 
 	/**
 	 * @param int $post_id
-	 * @param WP_Post $post
 	 */
-	public function translate_images( $post_id, WP_Post $post = null ) {
+	public function translate_images( $post_id ) {
 
-		if ( null === $post ) {
-			$post = get_post( $post_id );
-		}
+		$post = get_post( $post_id );
 
 		$post_element    = $this->translation_element_factory->create( $post_id, 'post' );
 		$source_language = $post_element->get_source_language_code();
@@ -130,7 +129,7 @@ class WPML_Media_Post_Images_Translation implements IWPML_Action {
 			$attachment_element            = $this->translation_element_factory->create( $original_featured_image, 'post' );
 			$translated_attachment_element = $attachment_element->get_translation( $language );
 			$translated_featured_image     = null !== $translated_attachment_element ? $translated_attachment_element->get_id() : false;
-			if ( $original_featured_image !== $translated_featured_image ) {
+			if ( $translated_featured_image && $original_featured_image !== $translated_featured_image ) {
 				update_post_meta( $translated_post_id, '_thumbnail_id', $translated_featured_image );
 			}
 		}
@@ -168,9 +167,12 @@ class WPML_Media_Post_Images_Translation implements IWPML_Action {
 		return $postarr;
 	}
 
-	public function translate_url_in_post( $attachment_id ) {
-		$media_usage = $this->media_usage_factory->create( $attachment_id );
-		$posts = $media_usage->get_posts();
+	public function translate_url_in_post( $attachment_id, $posts = array() ) {
+		if ( ! $posts ) {
+			$media_usage = $this->media_usage_factory->create( $attachment_id );
+			$posts = $media_usage->get_posts();
+		}
+
 		foreach( $posts as $post_id ){
 			$this->translate_images( $post_id );
 		}

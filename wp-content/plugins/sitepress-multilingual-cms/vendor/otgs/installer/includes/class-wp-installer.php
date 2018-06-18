@@ -1,6 +1,9 @@
 <?php
 
 final class WP_Installer {
+
+	const TOOLSET_TYPES = 'Toolset Types';
+
 	protected static $_instance = null;
 
 	public $settings = array();
@@ -347,6 +350,10 @@ final class WP_Installer {
 										$this,
 										'plugins_action_links_not_registered'
 									) );
+
+									if ( $this->should_display_types_upgrade_link( $r_plugin['name'], $plugin['Version'] ) ) {
+										add_filter( 'plugin_action_links_' . $plugin_id, array( $this, 'types_upgrade_link' ) );
+									}
 								}
 
 							}
@@ -361,6 +368,15 @@ final class WP_Installer {
 			}
 		}
 
+	}
+
+	private function should_display_types_upgrade_link( $name, $version ) {
+		return $name === self::TOOLSET_TYPES && version_compare( $version, '3.0', '<' );
+	}
+
+	public function types_upgrade_link( $links ) {
+		$links[] = '<a style="color: #55AA55" target="_blank" href="'. esc_url( 'https://toolset.com/buy/?utm_source=typesplugin&utm_campaign=moving-types-to-toolset&utm_medium=plugins-page&utm_term=upgrade-link' ) .'">' . __( 'Upgrade', 'installer' ) . '</a>';
+		return $links;
 	}
 
 	public function plugins_action_links_registered( $links ) {
@@ -2245,6 +2261,10 @@ final class WP_Installer {
 							foreach ( $product['plugins'] as $plugin_slug ) {
 
 								$download = $this->settings['repositories'][ $repository_id ]['data']['downloads']['plugins'][ $plugin_slug ];
+
+								if ( ! $this->plugin_is_registered( $repository_id, $download['slug'] ) ) {
+									continue;
+								}
 
 								$has_wporg_update = ! empty( $update_plugins->response[ $plugin_id ] );
 								if ( $this->should_fallback_under_wp_org_repo( $download, $site_key ) && $has_wporg_update ) {

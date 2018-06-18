@@ -4,7 +4,7 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInitabe66f353a6254972bf9d60928c362fa
+class ComposerStaticInitceafc745a2d637c51fa202610a1341da
 {
     public static $files = array (
         'b45b351e6b6f7487d819961fef2fda77' => __DIR__ . '/..' . '/jakeasmith/http_build_url/src/http_build_url.php',
@@ -401,6 +401,8 @@ class ComposerStaticInitabe66f353a6254972bf9d60928c362fa
         'WPML_Allowed_Redirect_Hosts' => __DIR__ . '/../..' . '/classes/url-handling/class-wpml-allowed-redirect-hosts.php',
         'WPML_Archives_Query' => __DIR__ . '/../..' . '/classes/query-filtering/class-wpml-archives-query.php',
         'WPML_Archives_Query_Factory' => __DIR__ . '/../..' . '/classes/query-filtering/class-wpml-archives-query-factory.php',
+        'WPML_Attachment_Action' => __DIR__ . '/../..' . '/classes/media/class-wpml-attachment-action.php',
+        'WPML_Attachment_Action_Factory' => __DIR__ . '/../..' . '/classes/media/class-wpml-attachment-action-factory.php',
         'WPML_Attachments_Urls_With_Identical_Slugs' => __DIR__ . '/../..' . '/classes/query-filtering/class-wpml-attachments-urls-with-identical-slugs.php',
         'WPML_Attachments_Urls_With_Identical_Slugs_Factory' => __DIR__ . '/../..' . '/classes/query-filtering/class-wpml-attachments-urls-with-identical-slugs-factory.php',
         'WPML_BBPress_API' => __DIR__ . '/../..' . '/classes/compatibility/bbpress/class-wpml-bbpress-api.php',
@@ -480,6 +482,10 @@ class ComposerStaticInitabe66f353a6254972bf9d60928c362fa
         'WPML_Display_As_Translated_Tax_Query' => __DIR__ . '/../..' . '/classes/query-filtering/class-wpml-display-as-translated-tax-query.php',
         'WPML_Display_As_Translated_Tax_Query_Factory' => __DIR__ . '/../..' . '/classes/query-filtering/class-wpml-display-as-translated-tax-query-factory.php',
         'WPML_Display_As_Translated_Taxonomy_Query' => __DIR__ . '/../..' . '/classes/query-filtering/class-wpml-display-as-translated-taxonomy-query.php',
+        'WPML_Display_Featured_Image_As_Translated' => __DIR__ . '/../..' . '/classes/display-as-translated/class-wpml-display-featured-image-as-translated.php',
+        'WPML_Display_Featured_Image_As_Translated_Factory' => __DIR__ . '/../..' . '/classes/display-as-translated/class-wpml-display-featured-image-as-translated-factory.php',
+        'WPML_Display_Gallery_As_Translated' => __DIR__ . '/../..' . '/classes/display-as-translated/class-wpml-display-gallery-as-translated.php',
+        'WPML_Display_Gallery_As_Translated_Factory' => __DIR__ . '/../..' . '/classes/display-as-translated/class-wpml-display-gallery-as-translated-factory.php',
         'WPML_Download_Localization' => __DIR__ . '/../..' . '/classes/localization/class-wpml-download-localization.php',
         'WPML_Duplicable_Element' => __DIR__ . '/../..' . '/classes/translations/interface-wpml-duplicable-element.php',
         'WPML_Element_Sync_Settings' => __DIR__ . '/../..' . '/classes/settings/class-wpml-element-sync-settings.php',
@@ -609,6 +615,8 @@ class ComposerStaticInitabe66f353a6254972bf9d60928c362fa
         'WPML_Log' => __DIR__ . '/../..' . '/classes/logs/interface-wpml-log.php',
         'WPML_MO_File_Search' => __DIR__ . '/../..' . '/classes/class-wpml-mo-file-search.php',
         'WPML_Main_Admin_Menu' => __DIR__ . '/../..' . '/classes/admin-menu/configurations/class-wpml-main-admin-menu.php',
+        'WPML_Media_Without_TM_Notice' => __DIR__ . '/../..' . '/classes/media/class-wpml-media-without-tm-notice.php',
+        'WPML_Media_Without_TM_Notice_Factory' => __DIR__ . '/../..' . '/classes/media/class-wpml-media-without-tm-notice-factory.php',
         'WPML_Menu_Element' => __DIR__ . '/../..' . '/classes/translations/class-wpml-menu-element.php',
         'WPML_Menu_Item_Sync' => __DIR__ . '/../..' . '/inc/wp-nav-menus/menu-item-sync.class.php',
         'WPML_Menu_Sync_Display' => __DIR__ . '/../..' . '/menu/menu-sync/wpml-menu-sync-display.class.php',
@@ -890,6 +898,7 @@ class ComposerStaticInitabe66f353a6254972bf9d60928c362fa
         'WPML_Upgrade_Loader' => __DIR__ . '/../..' . '/classes/upgrade/class-wpml-upgrade-loader.php',
         'WPML_Upgrade_Loader_Factory' => __DIR__ . '/../..' . '/classes/upgrade/class-wpml-upgrade-loader-factory.php',
         'WPML_Upgrade_Localization_Files' => __DIR__ . '/../..' . '/classes/upgrade/class-wpml-upgrade-localizations-files.php',
+        'WPML_Upgrade_Media_Settings_To_Core' => __DIR__ . '/../..' . '/classes/upgrade/commands/class-wpml-upgrade-media-settings-to-core.php',
         'WPML_Upgrade_Remove_Translation_Services_Transient' => __DIR__ . '/../..' . '/classes/upgrade/commands/class-wpml-upgrade-remove-translation-services-transient.php',
         'WPML_Upgrade_Schema' => __DIR__ . '/../..' . '/classes/upgrade/class-wpml-upgrade-schema.php',
         'WPML_Upgrade_Table_Translate_Job_For_3_9_0' => __DIR__ . '/../..' . '/classes/upgrade/commands/class-wpml-upgrade-table-translate-job-for-3-9-0.php',
@@ -977,10 +986,10 @@ class ComposerStaticInitabe66f353a6254972bf9d60928c362fa
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInitabe66f353a6254972bf9d60928c362fa::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInitabe66f353a6254972bf9d60928c362fa::$prefixDirsPsr4;
-            $loader->prefixesPsr0 = ComposerStaticInitabe66f353a6254972bf9d60928c362fa::$prefixesPsr0;
-            $loader->classMap = ComposerStaticInitabe66f353a6254972bf9d60928c362fa::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInitceafc745a2d637c51fa202610a1341da::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInitceafc745a2d637c51fa202610a1341da::$prefixDirsPsr4;
+            $loader->prefixesPsr0 = ComposerStaticInitceafc745a2d637c51fa202610a1341da::$prefixesPsr0;
+            $loader->classMap = ComposerStaticInitceafc745a2d637c51fa202610a1341da::$classMap;
 
         }, null, ClassLoader::class);
     }

@@ -56,6 +56,7 @@ class WPML_Meta_Boxes_Post_Edit_HTML {
 		$this->translation_of();
 		$this->languages_actions();
 		$this->copy_from_original( $post );
+		$this->media_options( $post );
 		do_action( 'icl_post_languages_options_after' );
 		$contents = ob_get_clean();
 
@@ -562,6 +563,34 @@ class WPML_Meta_Boxes_Post_Edit_HTML {
                                             $this->post_translation->get_element_id( $source_lang, $trid ),
                                             $lang );
 		}
+	}
+
+	private function media_options( $post ) {
+		echo '<br /><br /><strong>' . esc_html__( 'Media options', 'sitepress' ) . '</strong>';
+
+		$default_lang_code = $this->sitepress->get_default_language();
+
+		$featured_as_translated = get_post_meta( $post->ID, WPML_Admin_Post_Actions::DISPLAY_FEATURED_IMAGE_AS_TRANSLATED_META_KEY, true );
+		if ( '' === $featured_as_translated ) {
+			$original_post_id = $this->post_translation->get_original_post_ID( $this->trid );
+			if ( null == $original_post_id ) {
+				$featured_as_translated = $this->sitepress->get_setting( 'display_featured_image_as_translated' );
+			} else {
+				$featured_as_translated = get_post_meta( $original_post_id, WPML_Admin_Post_Actions::DISPLAY_FEATURED_IMAGE_AS_TRANSLATED_META_KEY, true );
+			}
+		}
+		if ( $this->selected_language === $default_lang_code ) {
+			$featured_as_translated_label = esc_html__( 'Show the same featured image in translations', 'sitepress' );
+		} else {
+			$admin_lang_code    = $this->sitepress->get_admin_language();
+			$default_lang       = $this->sitepress->get_languages( $admin_lang_code );
+			$default_lang_label = $default_lang[ $default_lang_code ]['display_name'];
+
+			$featured_as_translated_label = sprintf( esc_html__( 'Use featured image from original post (%s)', 'sitepress' ), $default_lang_label );
+		}
+
+		echo '<br /><label><input name="wpml_featured_as_translated" type="checkbox" value="1" ' .
+		     checked( $featured_as_translated, true, false ) . '/>&nbsp;' . $featured_as_translated_label . '</label>';
 	}
 
 	/**

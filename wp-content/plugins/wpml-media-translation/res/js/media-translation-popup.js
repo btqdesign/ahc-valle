@@ -62,18 +62,17 @@ jQuery(document).ready(function ($) {
                                 var originalAttachmentId = translationForm.find("input[name='original-attachment-id']").val();
                                 var translatedLanguage = translationForm.find("input[name='translated-language']").val();
                                 var mediaTranslationWrap = $("#media-attachment-" + originalAttachmentId + "-" + translatedLanguage);
+								var batchMediaTranslationWrap = $( '#batch-media-translation-wrap' );
 
+                                var isMediaUpload = false;
+								var isRestoreMedia = false;
                                 if (response.data.thumb) {
                                     mediaTranslationWrap.find("img").attr("src", response.data.thumb).fadeIn();
                                     mediaTranslationWrap.data("thumb", response.data.thumb);
                                     mediaTranslationWrap.data("media-is-translated", 1);
                                     mediaTranslationWrap.find(".otgs-ico-edit").hide();
 
-                                    var isMediaUpload = translationForm.find("input[name=update-media-file]").val();
-                                    if (isMediaUpload > 0) {
-                                        WPML_Media_Batch_Url_Translation.createDialog(originalAttachmentId, response.data.usage);
-                                    }
-
+									isMediaUpload = translationForm.find("input[name=update-media-file]").val();
                                 } else {
                                     mediaTranslationWrap.find("img").attr("src", "").hide();
                                     mediaTranslationWrap.data("thumb", "");
@@ -82,7 +81,16 @@ jQuery(document).ready(function ($) {
                                         .closest(".js-open-media-translation-dialog")
                                         .removeClass("wpml-media-translation-image");
                                     mediaTranslationWrap.data("media-is-translated", 0);
+
+									isRestoreMedia = translationForm.find("input[name=restore-media]").val();
                                 }
+
+								if (isMediaUpload || isRestoreMedia) {
+									WPML_Media_Batch_Url_Translation.createDialog(originalAttachmentId, response.data.usage);
+									batchMediaTranslationWrap.find('#batch-media-translation-form').show();
+									batchMediaTranslationWrap.removeClass( 'notice-success' );
+									batchMediaTranslationWrap.addClass( 'notice-info' );
+								}
 
                                 mediaTranslationWrap.attr('title', mediaTranslationWrap.data('language-name') + ': ' +
                                     wpml_media_popup.status_labels[response.data.status]);

@@ -62,10 +62,11 @@ class WPML_Media_Menus {
 		);
 		wp_localize_script( 'wpml-media', 'wpml_media_popup', $wpml_media_popup_strings );
 		wp_enqueue_script( 'wpml-media-batch-url-translation', $wpml_media_url . '/res/js/batch-url-translation.js', array( 'jquery' ), $wpml_media_version, true );
-		$batch_translation_strings = array(
-			'complete'         => esc_js( __( 'Scan complete!', 'wpml-media' ) )
+		$batch_translation_vars = array(
+			'complete'      => esc_js( __( 'Scan complete!', 'wpml-media' ) ),
+			'is_st_enabled' => (bool) $this->sitepress->get_wp_api()->constant( 'WPML_ST_VERSION' ),
 		);
-		wp_localize_script( 'wpml-media-batch-url-translation', 'wpml_media_batch_translation', $batch_translation_strings );
+		wp_localize_script( 'wpml-media-batch-url-translation', 'wpml_media_batch_translation', $batch_translation_vars );
 
 		$media_translations_ui = new WPML_Media_Translations_UI(
 			$this->sitepress,
