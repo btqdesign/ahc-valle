@@ -7,6 +7,7 @@ add_action( 'wp_enqueue_scripts', 'solaz_parent_btq_scripts' );
 
 function solaz_child_scripts() {
     wp_enqueue_style( 'solaz-child-style', get_stylesheet_directory_uri() . '/style.css', 'solaz-parent-style');
+    wp_enqueue_style( 'butler', get_stylesheet_directory_uri() . '/assets/font-face/font.css', 'solaz-child-style');
 }
 add_action( 'wp_enqueue_scripts', 'solaz_child_scripts', 1000);
 
