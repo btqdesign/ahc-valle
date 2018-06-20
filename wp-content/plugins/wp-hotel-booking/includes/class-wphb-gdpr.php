@@ -1,9 +1,18 @@
 <?php
+/**
+ * WP Hotel Booking GDPR.
+ *
+ * @version       1.9.7
+ * @author        ThimPress
+ * @package       WP_Hotel_Booking/Classes
+ * @category      Classes
+ * @author        Thimpress, leehld
+ */
 
-if ( ! defined( 'ABSPATH' ) ) {
-	exit; // Exit if accessed directly
-}
-
+/**
+ * Prevent loading this file directly
+ */
+defined( 'ABSPATH' ) || exit;
 /**
  * Class WPHB_Personal_Data
  */

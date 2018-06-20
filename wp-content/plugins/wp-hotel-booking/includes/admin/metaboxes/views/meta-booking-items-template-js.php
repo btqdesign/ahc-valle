@@ -1,14 +1,17 @@
 <?php
 /**
- * @Author: ducnvtt
- * @Date:   2016-04-06 16:40:46
- * @Last Modified by:   ducnvtt
- * @Last Modified time: 2016-04-08 13:27:40
+ * Admin View: Meta booking items template js.
+ *
+ * @version     1.9.7
+ * @package     WP_Hotel_Booking/Views
+ * @category    Views
+ * @author      Thimpress, leehld
  */
 
-if ( ! defined( 'ABSPATH' ) ) {
-	exit();
-}
+/**
+ * Prevent loading this file directly
+ */
+defined( 'ABSPATH' ) || exit;
 
 ?>
 
@@ -37,9 +40,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 					<div class="section">
 						<select name="product_id" class="booking_search_room_items">
 							<# if ( typeof data.room !== 'undefined' ) { #>
-
 								<option value="{{ data.room.ID }}" selected>{{ data.room.post_title }}</option>
-
 							<# } #>
 						</select>
 					</div>

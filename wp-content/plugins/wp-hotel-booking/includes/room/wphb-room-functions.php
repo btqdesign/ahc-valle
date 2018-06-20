@@ -1,14 +1,18 @@
 <?php
+/**
+ * WP Hotel Booking room functions.
+ *
+ * @version     1.9.6
+ * @author      ThimPress
+ * @package     WP_Hotel_Booking/Functions
+ * @category    Core Functions
+ * @author      Thimpress, leehld
+ */
 
 /**
- * @Author: ducnvtt
- * @Date:   2016-04-12 13:08:14
- * @Last Modified by:   someone
- * @Last Modified time: 2016-05-13 14:55:29
+ * Prevent loading this file directly
  */
-if ( ! defined( 'ABSPATH' ) ) {
-	exit();
-}
+defined( 'ABSPATH' ) || exit;
 
 if ( ! function_exists( 'hb_room_get_pricing_plans' ) ) {
 

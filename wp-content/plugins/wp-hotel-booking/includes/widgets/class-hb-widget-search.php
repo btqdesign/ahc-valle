@@ -1,14 +1,19 @@
 <?php
-if ( ! defined( 'ABSPATH' ) ) {
-	exit;
-}
+/**
+ * WP Hotel Booking widget search room form.
+ *
+ * @version       1.9.6
+ * @author        ThimPress
+ * @package       WP_Hotel_Booking/Classes/Widgets
+ * @category      Classes
+ * @author        Thimpress, leehld
+ */
 
 /**
- * Class HB_Widget_Search
- *
- * Display form for search rooms
- * @extends WP_Widget
+ * Prevent loading this file directly
  */
+defined( 'ABSPATH' ) || exit;
+
 class HB_Widget_Search extends WP_Widget {
 	/**
 	 * Constructor

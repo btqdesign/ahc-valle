@@ -1,11 +1,19 @@
 <?php
+/**
+ * WP Hotel Booking core functions.
+ *
+ * @version       1.9.6
+ * @author        ThimPress
+ * @package       WP_Hotel_Booking/Functions
+ * @category      Functions
+ * @author        Thimpress, leehld
+ */
 
 /**
- * @Author: ducnvtt
- * @Date  :   2016-04-01 09:45:55
- * @Last  Modified by:   someone
- * @Last  Modified time: 2016-05-13 15:23:06
+ * Prevent loading this file directly
  */
+defined( 'ABSPATH' ) || exit;
+
 /**
  * set table name.
  */
@@ -35,6 +43,10 @@ if ( ! function_exists( 'hotel_booking_get_room_available' ) ) {
 	function hotel_booking_get_room_available( $room_id = null, $args = array() ) {
 		$valid  = true;
 		$errors = new WP_Error;
+
+		// for search room in single with wpml
+		$room_id = apply_filters( 'hotel_booking_get_available_room', $room_id );
+
 		if ( ! $room_id ) {
 			$valid = false;
 			$errors->add( 'room_id_invalid', __( 'Room not found.', 'wp-hotel-booking' ) );
@@ -231,12 +243,12 @@ if ( is_multisite() ) {
 
 if ( ! function_exists( 'hb_notice_remove_hotel_booking' ) ) {
 	function hb_notice_remove_hotel_booking() { ?>
-        <div class="notice notice-error hb-dismiss-notice is-dismissible">
-            <p>
+		<div class="notice notice-error hb-dismiss-notice is-dismissible">
+			<p>
 				<?php echo __( wp_kses( '<strong>WP Hotel Booking</strong> plugin version ' . WPHB_VERSION . ' is an upgrade of <strong>TP Hotel Booking</strong> plugin. Please deactivate and delete <strong>TP Hotel Booking/TP Hotel Booking add-ons</strong> and replace by <strong>WP Hotel Booking/WP Hotel Booking add-ons</strong>.', array( 'strong' => array() ) ), 'wp-hotel-booking' ); ?>
-            </p>
+			</p>
 
-        </div>
+		</div>
 	<?php }
 }
 

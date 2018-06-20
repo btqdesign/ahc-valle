@@ -1,14 +1,18 @@
 <?php
 /**
- * @Author: ducnvtt
- * @Date  :   2016-04-11 08:27:22
- * @Last  Modified by:   ducnvtt
- * @Last  Modified time: 2016-04-11 08:35:07
+ * WP Hotel Booking cart functions.
+ *
+ * @version     1.9.6
+ * @author      ThimPress
+ * @package     WP_Hotel_Booking/Functions
+ * @category    Core Functions
+ * @author      Thimpress, leehld
  */
 
-if ( !defined( 'ABSPATH' ) ) {
-	exit();
-}
+/**
+ * Prevent loading this file directly
+ */
+defined( 'ABSPATH' ) || exit;
 
 // generate cart item id
 if ( !function_exists( 'hb_generate_cart_item_id' ) ) {

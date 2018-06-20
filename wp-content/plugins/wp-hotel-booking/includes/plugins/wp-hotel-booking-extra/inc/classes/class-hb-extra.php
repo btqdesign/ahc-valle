@@ -73,13 +73,13 @@ class HB_Extra_Field {
 
 		$packages = $booking_params[ $search_key ][ $room_id ]['extra_packages_details'];
 		?>
-        <ul>
+		<ul>
 			<?php foreach ( $packages as $id => $package ): ?>
-                <li>
-                    <small><?php printf( '%s (x%s)', $package['package_title'], $package['package_quantity'] ) ?></small>
-                </li>
+				<li>
+					<small><?php printf( '%s (x%s)', $package['package_title'], $package['package_quantity'] ) ?></small>
+				</li>
 			<?php endforeach ?>
-        </ul>
+		</ul>
 		<?php
 	}
 

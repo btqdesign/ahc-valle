@@ -80,7 +80,7 @@ class HB_Extra_Cart {
 			return;
 		}
 
-		remove_action( 'hotel_booking_added_cart', array( $this, 'ajax_added_cart' ), 10, 3 );
+		remove_action( 'hotel_booking_added_cart', array( $this, 'ajax_added_cart' ), 10 );
 
 		if ( $posts['hb_optional_quantity_selected'] ) {
 			$selected_quantity = $posts['hb_optional_quantity'];

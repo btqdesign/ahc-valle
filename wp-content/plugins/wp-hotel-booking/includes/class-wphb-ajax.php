@@ -1,8 +1,18 @@
 <?php
+/**
+ * WP Hotel Booking ajax.
+ *
+ * @version       1.9.6
+ * @author        ThimPress
+ * @package       WP_Hotel_Booking/Classes
+ * @category      Classes
+ * @author        Thimpress, leehld
+ */
 
-if ( ! defined( 'ABSPATH' ) ) {
-	exit; // Exit if accessed directly
-}
+/**
+ * Prevent loading this file directly
+ */
+defined( 'ABSPATH' ) || exit;
 
 /**
  * Class WPHB_Ajax
@@ -297,11 +307,13 @@ class WPHB_Ajax {
 		// add to cart
 		$cart_item_id = WP_Hotel_Booking::instance()->cart->add_to_cart( $product_id, $param, $qty );
 
+		$cart_item_id = apply_filters( 'hotel_booking_cart_item_id', $cart_item_id, $param, $qty );
+
 		if ( ! is_wp_error( $cart_item_id ) ) {
 			$cart_item = WP_Hotel_Booking::instance()->cart->get_cart_item( $cart_item_id );
 			$room      = $cart_item->product_data;
 
-			do_action( 'hotel_booking_added_cart_completed', $cart_item_id, $cart_item, $_POST );
+			do_action( 'hotel_booking_added_cart_completed', $cart_item_id, $param, $qty );
 
 			$results = array(
 				'status'    => 'success',

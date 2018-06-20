@@ -62,7 +62,7 @@ defined( 'ABSPATH' ) || exit(); ?>
 
 <?php if ( $booking->content ) { ?>
 
-    <h2><?php _e( 'Addition Information', 'wp-hotel-booking' ); ?></h2>
+    <h2><?php _e( 'Additional Information', 'wp-hotel-booking' ); ?></h2>
     <p><?php printf( '%s', $booking->content ) ?></p>
 
 <?php } ?>

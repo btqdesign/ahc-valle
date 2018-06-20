@@ -423,6 +423,35 @@
                 })
             }
         });
+
+	    $(document).on('click', '#wphb-theme-override-templates .template-filter', function (event) {
+		    var $link = $(this),
+			    template = $link.data('template'),
+			    filter = $link.data('filter');
+		    if ($link.hasClass('current')) {
+			    return false;
+		    }
+		    $link.addClass('current').siblings('a').removeClass('current');
+		    var $templatesList = $('#wphb-theme-override-templates'),
+			    $templates = $templatesList.find('tr[data-template]');
+
+		    if (!template) {
+			    if (!filter) {
+				    $templates.removeClass('hide-if-js');
+			    } else {
+				    $templates.map(function () {
+					    $(this).toggleClass('hide-if-js', $(this).data('filter-' + filter) !== 'yes');
+				    })
+			    }
+		    } else {
+			    $templates.map(function () {
+				    $(this).toggleClass('hide-if-js', $(this).data('template') !== template);
+			    })
+		    }
+
+		    $('.no-templates').toggleClass('hide-if-js', !!$templatesList.find('tr.template-row:not(.hide-if-js):first').length);
+		    return false;
+	    });
     }
 
     $doc.ready(_ready);

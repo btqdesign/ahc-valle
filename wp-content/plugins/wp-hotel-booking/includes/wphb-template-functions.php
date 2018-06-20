@@ -1,8 +1,18 @@
 <?php
+/**
+ * WP Hotel Booking template functions.
+ *
+ * @version       1.9.7.4
+ * @author        ThimPress
+ * @package       WP_Hotel_Booking/Functions
+ * @category      Functions
+ * @author        Thimpress, leehld
+ */
 
-if ( ! defined( 'ABSPATH' ) ) {
-	exit; // Exit if accessed directly
-}
+/**
+ * Prevent loading this file directly
+ */
+defined( 'ABSPATH' ) || exit;
 
 if ( ! function_exists( 'hb_template_path' ) ) {
 	function hb_template_path() {
@@ -54,9 +64,9 @@ if ( ! function_exists( 'hb_get_template_part' ) ) {
  * Get other templates passing attributes and including the file.
  *
  * @param string $template_name
- * @param array $args (default: array())
+ * @param array  $args          (default: array())
  * @param string $template_path (default: '')
- * @param string $default_path (default: '')
+ * @param string $default_path  (default: '')
  *
  * @return void
  */
@@ -100,7 +110,7 @@ if ( ! function_exists( 'hb_get_template' ) ) {
  *
  * @param string $template_name
  * @param string $template_path (default: '')
- * @param string $default_path (default: '')
+ * @param string $default_path  (default: '')
  *
  * @return string
  */
@@ -159,11 +169,11 @@ if ( ! function_exists( 'hb_lightbox_assets_lightbox2' ) ) {
 		wp_enqueue_script( 'lightbox2', WP_Hotel_Booking::instance()->plugin_url( 'includes/libraries/lightbox/lightbox2/js/lightbox.min.js' ) );
 		wp_enqueue_style( 'lightbox2', WP_Hotel_Booking::instance()->plugin_url( 'includes/libraries/lightbox/lightbox2/css/lightbox.min.css' ) );
 		?>
-        <script type="text/javascript">
-            jQuery(function () {
+		<script type="text/javascript">
+			jQuery(function () {
 
-            });
-        </script>
+			});
+		</script>
 		<?php
 
 	}
@@ -596,7 +606,7 @@ if ( ! function_exists( 'hotel_booking_edit_room_link' ) ) {
 		if ( $user_id = get_current_user_id() ) {
 			$user = get_user_by( 'id', $user_id );
 			if ( $user->has_cap( 'edit_hb_rooms' ) ) { ?>
-                <a href="<?php echo get_edit_post_link( get_the_ID() ); ?>"><?php _e( 'Edit', 'wp-hotel-booking' ); ?></a>
+				<a href="<?php echo get_edit_post_link( get_the_ID() ); ?>"><?php _e( 'Edit', 'wp-hotel-booking' ); ?></a>
 				<?php
 			}
 		}

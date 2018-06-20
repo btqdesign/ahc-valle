@@ -1,8 +1,18 @@
 <?php
+/**
+ * WP Hotel Booking cart.
+ *
+ * @version       1.9.6
+ * @author        ThimPress
+ * @package       WP_Hotel_Booking/Classes
+ * @category      Classes
+ * @author        Thimpress, leehld
+ */
 
-if ( ! defined( 'ABSPATH' ) ) {
-	exit; // Exit if accessed directly
-}
+/**
+ * Prevent loading this file directly
+ */
+defined( 'ABSPATH' ) || exit;
 
 class WPHB_Cart {
 
@@ -185,13 +195,15 @@ class WPHB_Cart {
 	}
 
 	/**
-	 * add_to_cart
+	 * Add to cart
 	 *
-	 * @param $post_id
-	 * @param $params product
-	 * @param $qty product
-	 * @param $group_post_id use with extra packages
-	 * @param $asc if set true $qty++
+	 * @param null  $post_id
+	 * @param array $params
+	 * @param int   $qty
+	 * @param null  $group_post_id
+	 * @param bool  $asc
+	 *
+	 * @return mixed|null|string|WP_Error
 	 */
 	function add_to_cart( $post_id = null, $params = array(), $qty = 1, $group_post_id = null, $asc = false ) {
 		if ( ! $post_id ) {
@@ -564,19 +576,19 @@ class WPHB_Cart {
 			$total = $total / ( 1 + $tax );
 		}
 
-//		echo '<pre>';
-//		var_dump( $this->get_rooms() );
-//		echo '</pre>';
-//		die();
+		//		echo '<pre>';
+		//		var_dump( $this->get_rooms() );
+		//		echo '</pre>';
+		//		die();
 
 
-//        $total = 0;
+		//        $total = 0;
 
-//        if ( !empty( $this->cart_contents ) ) {
-//            foreach ( $this->cart_contents as $cart_item_id => $cart_item ) {
-//                $total = $total + $cart_item->amount_exclude_tax;
-//            }
-//        }
+		//        if ( !empty( $this->cart_contents ) ) {
+		//            foreach ( $this->cart_contents as $cart_item_id => $cart_item ) {
+		//                $total = $total + $cart_item->amount_exclude_tax;
+		//            }
+		//        }
 		return apply_filters( 'hotel_booking_cart_total_exclude_tax', $total );
 	}
 

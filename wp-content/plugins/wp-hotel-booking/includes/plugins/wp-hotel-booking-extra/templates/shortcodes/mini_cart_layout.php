@@ -1,3 +1,19 @@
+<?php
+/**
+ * The template for displaying extra mini cart js template.
+ *
+ * This template can be overridden by copying it to yourtheme/wp-hotel-booking-extra/shortcode/mini_cart_layout.php.
+ *
+ * @author  ThimPress, leehld
+ * @package WP-Hotel-Booking/Templates
+ * @version 1.6
+ */
+
+/**
+ * Prevent loading this file directly
+ */
+defined( 'ABSPATH' ) || exit; ?>
+
 <script type="text/html" id="tmpl-hb-minicart-item">
     <div class="hb_mini_cart_item active" data-cart-id="{{ data.cart_id }}">
 

@@ -43,7 +43,7 @@ defined( 'ABSPATH' ) || exit();
         <span><?php echo esc_html( $booking->customer_postal_code ) ?></span>
     </li>
 	<?php if ( $booking->post->post_content ) { ?>
-        <li><strong><?php echo esc_html__( 'Addition Information:', 'wp-hotel-booking' ); ?></strong>
+        <li><strong><?php echo esc_html__( 'Additional Information:', 'wp-hotel-booking' ); ?></strong>
             <span><?php echo esc_html( $booking->post->post_content ) ?></span>
         </li>
 	<?php } ?>

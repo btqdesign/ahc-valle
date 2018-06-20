@@ -1,14 +1,17 @@
 <?php
 /**
- * @Author: ducnvtt
- * @Date:   2016-03-25 12:01:51
- * @Last Modified by:   ducnvtt
- * @Last Modified time: 2016-04-07 14:12:17
+ * Admin View: Meta booking items.
+ *
+ * @version     1.9.7
+ * @package     WP_Hotel_Booking/Views
+ * @category    Views
+ * @author      Thimpress, leehld
  */
 
-if ( ! defined( 'ABSPATH' ) ) {
-	exit();
-}
+/**
+ * Prevent loading this file directly
+ */
+defined( 'ABSPATH' ) || exit;
 
 $hb_booking = WPHB_Booking::instance( $post->ID );
 $rooms      = hb_get_order_items( $post->ID );

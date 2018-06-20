@@ -84,8 +84,8 @@ class HB_Extra_Post_Type {
 				break;
 			case 'required':
 				?>
-                <input type="checkbox" name="required-extra"
-                       data-extra-id="<?php echo esc_attr( $post_id ); ?>" <?php checked( get_post_meta( $post_id, 'tp_hb_extra_room_required', true ), 1 ); ?> disabled>
+				<input type="checkbox" name="required-extra"
+				       data-extra-id="<?php echo esc_attr( $post_id ); ?>" <?php checked( get_post_meta( $post_id, 'tp_hb_extra_room_required', true ), 1 ); ?> disabled>
 				<?php break;
 			default:
 				break;
@@ -98,7 +98,7 @@ class HB_Extra_Post_Type {
 	 * @return mixed
 	 */
 	public function extra_columns( $columns ) {
-//			unset( $columns['author'] );
+		//			unset( $columns['author'] );
 		unset( $columns['date'] );
 		$columns['price']    = __( 'Price', 'wp-hotel-booking' );
 		$columns['unit']     = __( 'Unit', 'wp-hotel-booking' );
@@ -180,7 +180,8 @@ class HB_Extra_Post_Type {
 				'type'  => 'number',
 				'std'   => '10',
 				'desc'  => __( 'Price of extra room option', 'wp-hotel-booking' ),
-				'min'   => 0
+				'min'   => 0,
+				'step'  => 0.01,
 			),
 			array(
 				'name'    => 'respondent_name',

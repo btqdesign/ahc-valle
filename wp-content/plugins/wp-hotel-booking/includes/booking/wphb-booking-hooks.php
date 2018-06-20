@@ -1,10 +1,18 @@
 <?php
 /**
- * @Author: ducnvtt
- * @Date  :   2016-03-31 15:40:31
- * @Last  Modified by:   someone
- * @Last  Modified time: 2016-05-11 16:45:23
+ * WP Hotel Booking booking hook.
+ *
+ * @version     1.9.6
+ * @author      ThimPress
+ * @package     WP_Hotel_Booking/Hooks
+ * @category    Hooks
+ * @author      Thimpress, leehld
  */
+
+/**
+ * Prevent loading this file directly
+ */
+defined( 'ABSPATH' ) || exit;
 
 /**
  * Hook
@@ -88,7 +96,7 @@ if ( ! function_exists( 'hb_customer_place_order_email' ) ) {
 	 * hb_customer_place_order_email
 	 *
 	 * @param array $return
-	 * @param null $booking_id
+	 * @param null  $booking_id
 	 *
 	 * @return bool|void
 	 */
@@ -364,5 +372,52 @@ if ( ! function_exists( 'hb_cancel_customer_booking_email' ) ) {
 		//     fclose($fo);
 		// }
 		remove_filter( 'wp_mail_content_type', 'hb_set_html_content_type' );
+	}
+}
+
+add_action( 'admin_head', 'hb_menu_booking_count' );
+
+if ( ! function_exists( 'hb_menu_booking_count' ) ) {
+	/**
+	 *
+	 */
+	function hb_menu_booking_count() {
+		global $submenu;
+
+		if ( isset( $submenu['tp_hotel_booking'] ) ) {
+			// Remove 'WooCommerce' sub menu item.
+			//			unset( $submenu['tp_hotel_booking'][0] );
+
+			$order_count = hb_get_processing_booking_count();
+
+			// Add count if user has access.
+			if ( $order_count ) {
+				foreach ( $submenu['tp_hotel_booking'] as $key => $menu_item ) {
+					if ( 0 === strpos( $menu_item[0], _x( 'Bookings', 'Admin menu name', 'wp-hotel-booking' ) ) ) {
+						$submenu['tp_hotel_booking'][ $key ][0] .= ' <span class="awaiting-mod update-plugins count-' . esc_attr( $order_count ) . '"><span class="processing-count">' . number_format_i18n( $order_count ) . '</span></span>'; // WPCS: override ok.
+						break;
+					}
+				}
+			}
+		}
+	}
+}
+
+if ( ! function_exists( 'hb_get_processing_booking_count' ) ) {
+	/**
+	 * @return int
+	 */
+	function hb_get_processing_booking_count() {
+		$query = array(
+			'post_type'   => 'hb_booking',
+			'post_status' => array(
+				'hb-pending',
+				'hb-processing'
+			)
+		);
+
+		$booking = new WP_Query( $query );
+
+		return $booking->post_count;
 	}
 }

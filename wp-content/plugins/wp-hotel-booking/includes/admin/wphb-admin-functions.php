@@ -1,11 +1,19 @@
 <?php
-if ( ! defined( 'ABSPATH' ) ) {
-	exit; // Exit if accessed directly
-}
+/**
+ * WP Hotel Booking admin core functions.
+ *
+ * @version     1.9.7.4
+ * @author      ThimPress
+ * @package     WP_Hotel_Booking/Functions
+ * @category    Core Functions
+ * @author      Thimpress, leehld
+ */
 
 /**
- * Common function for admin side
+ * Prevent loading this file directly
  */
+defined( 'ABSPATH' ) || exit;
+
 /**
  * Define default tabs for settings
  *
@@ -14,6 +22,17 @@ if ( ! defined( 'ABSPATH' ) ) {
 if ( ! function_exists( 'hb_admin_settings_tabs' ) ) {
 	function hb_admin_settings_tabs() {
 		return apply_filters( 'hb_admin_settings_tabs', array() );
+	}
+}
+
+if ( ! function_exists( 'wphb_get_admin_tools_tabs' ) ) {
+	/**
+	 * Get admin tool tabs.
+	 *
+	 * @return mixed
+	 */
+	function wphb_get_admin_tools_tabs() {
+		return apply_filters( 'wphb/admin/tool-tabs', array() );
 	}
 }
 
@@ -85,7 +104,7 @@ if ( ! function_exists( 'hb_add_meta_boxes' ) ) {
 			),
 			array(
 				'name'   => 'room_addition_information',
-				'label'  => __( 'Addition Information', 'wp-hotel-booking' ),
+				'label'  => __( 'Additional Information', 'wp-hotel-booking' ),
 				'type'   => 'textarea',
 				'std'    => '',
 				'editor' => true

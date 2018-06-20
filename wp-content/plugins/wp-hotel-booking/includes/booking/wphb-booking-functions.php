@@ -1,14 +1,18 @@
 <?php
 /**
- * @Author: ducnvtt
- * @Date  :   2016-03-31 14:42:40
- * @Last  Modified by:   ducnvtt
- * @Last  Modified time: 2016-04-25 16:27:58
+ * WP Hotel Booking booking functions.
+ *
+ * @version     1.9.6
+ * @author      ThimPress
+ * @package     WP_Hotel_Booking/Functions
+ * @category    Core Functions
+ * @author      Thimpress, leehld
  */
 
-if ( ! defined( 'ABSPATH' ) ) {
-	exit();
-}
+/**
+ * Prevent loading this file directly
+ */
+defined( 'ABSPATH' ) || exit;
 
 // get booking
 if ( ! function_exists( 'hb_get_booking' ) ) {
@@ -27,7 +31,7 @@ if ( ! function_exists( 'hb_update_booking_status' ) ) {
 	function hb_update_booking_status( $booking_id, $status ) {
 		$booking = WPHB_Booking::instance( $booking_id );
 
-		return $booking->update_status( $status );
+		$booking->update_status( $status );
 	}
 }
 
@@ -356,7 +360,7 @@ if ( ! function_exists( 'hb_booking_tax_total' ) ) {
  * Checks to see if a user is booked room
  *
  * @param string $customer_email
- * @param int $room_id
+ * @param int    $room_id
  *
  * @return bool
  */

@@ -77,6 +77,10 @@ Yes.
 
 == Changelog ==
 
+= 1.9.7.4 =
++ Add tool check override templates
++ Update templates instruction
+
 = 1.9.7.3 =
 + Update offline payment instruction in thank you page template
 

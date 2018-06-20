@@ -3,7 +3,7 @@
 /**
  * Admin View: Admin meta box checkbox field.
  *
- * @version     2.0
+ * @version     1.9.7
  * @package     WP_Hotel_Booking/Views
  * @category    View
  * @author      Thimpress, leehld

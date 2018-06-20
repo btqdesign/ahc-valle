@@ -1,14 +1,18 @@
 <?php
 /**
- * @Author: ducnvtt
- * @Date:   2016-03-29 17:13:06
- * @Last Modified by:   ducnvtt
- * @Last Modified time: 2016-04-14 14:54:23
+ * WP Hotel Booking admin setting emails.
+ *
+ * @version     1.9.6
+ * @author      ThimPress
+ * @package     WP_Hotel_Booking/Classes
+ * @category    Classes
+ * @author      Thimpress, leehld
  */
 
-if ( ! defined( 'ABSPATH' ) ) {
-	exit();
-}
+/**
+ * Prevent loading this file directly
+ */
+defined( 'ABSPATH' ) || exit;
 
 if ( ! class_exists( 'WPHB_Admin_Setting_Emails' ) ) {
 	class WPHB_Admin_Setting_Emails extends WPHB_Admin_Setting_Page {

@@ -1,13 +1,17 @@
 <?php
 /**
- * @Author: ducnvtt
- * @Date:   2016-03-25 09:32:53
- * @Last Modified by:   ducnvtt
- * @Last Modified time: 2016-04-13 13:47:55
+ * Admin View: Meta booking details.
+ *
+ * @version     1.9.7
+ * @package     WP_Hotel_Booking/Views
+ * @category    Views
+ * @author      Thimpress, leehld
  */
-if ( ! defined( 'ABSPATH' ) ) {
-	exit();
-}
+
+/**
+ * Prevent loading this file directly
+ */
+defined( 'ABSPATH' ) || exit;
 
 global $post;
 $booking = WPHB_Booking::instance( $post->ID );
