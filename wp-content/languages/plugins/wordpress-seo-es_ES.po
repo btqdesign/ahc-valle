@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the Plugins - Yoast SEO - Stable (latest release) package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2018-06-14 22:26:30+0000\n"
+"PO-Revision-Date: 2018-06-19 22:50:09+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -2212,13 +2212,13 @@ msgstr "%1$sPor favor, no me muestres más este aviso%2$s"
 #. Yoast knowledge base, %2$s is the link closing tag.
 #: admin/class-product-upsell-notice.php:145
 msgid "If you are experiencing issues, %1$splease file a bug report%2$s and we'll do our best to help you out."
-msgstr "Si estás experimentando problemas %1$spor favor, envía un informe de fallos%2$s y haremos todo lo posible para ayudarte."
+msgstr "Si estás teniendo problemas, %1$spor favor, envía un informe de fallos%2$s y haremos todo lo posible para ayudarte."
 
 #. translators: %1$s expands to Yoast SEO, %2$s is a link start tag to the
 #. plugin page on WordPress.org, %3$s is the link closing tag.
 #: admin/class-product-upsell-notice.php:137
 msgid "We've noticed you've been using %1$s for some time now; we hope you love it! We'd be thrilled if you could %2$sgive us a 5 stars rating on WordPress.org%3$s!"
-msgstr "Hemos detectado que estás hace ya tiempo que usas %1$s; ¡esperamos que te encante! ¡Nos emocionaría si nos %2$sdas una valoración de 5 estrellas en WordPress.org%3$s!"
+msgstr "Hemos observado que has estado usando %1$s desde hace algún tiempo; ¡esperamos que te guste! ¡Nos encantaría que pudieras %2$sdejarnos una valoración de 5 estrellas en WordPress.org%3$s!"
 
 #. translators: %1$s expands to Yoast SEO for WordPress Training, %2$s to Yoast
 #. SEO for WordPress.
@@ -2296,7 +2296,7 @@ msgstr "Introduce una palabra clave objetivo"
 #. </a>
 #: admin/class-product-upsell-notice.php:120
 msgid "By the way, did you know we also have a %1$sPremium plugin%2$s? It offers advanced features, like a redirect manager and support for multiple keywords. It also comes with 24/7 personal support."
-msgstr "Dicho sea de paso ¿sabías que también tenemos un %1$s plugin Premium%2$s? Ofrece funcionalidades avanzadas, como un gestor de redirecciones, y compatibilidad con múltiples palabras clave. También incluye soporte personal 24/7."
+msgstr "Por cierto, ¿sabías que también tenemos un %1$splugin Premium%2$s? Ofrece funcionalidades avanzadas, como un gestor de redirecciones y compatibilidad con múltiples palabras clave. También incluye soporte personal 24/7."
 
 #: admin/class-bulk-editor-list-table.php:803
 msgid "(no title)"
