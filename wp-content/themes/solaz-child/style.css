@@ -40,14 +40,17 @@ Text Domain:  solaz-child
 	}
 }
 
+
 .btq-menu li {
 	display: inline;
 	margin: 22px;
 	margin-right: 2%;
 }
+
 /* Main Menu */
-ul#menu-main_menu{
-	height: 80px;
+ul#menu-subheader-menu{
+	height: 50px;
+	padding-top: 5px;
 }
 
 /* Submenu */
@@ -56,6 +59,7 @@ ul#menu-main_menu{
 	padding-top: 21.5px;
 	padding-bottom: 21.5px;
 }
+
 
 textarea.wpcf7-form-control.wpcf7-textarea.form-control.placeholder{
     height: 150px;
