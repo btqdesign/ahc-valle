@@ -597,7 +597,7 @@ class WPHB_Product_Room_Base extends WPHB_Product_Abstract {
 
 	function renderImage( $attachID = null, $size = array(), $src = true, $default = 'thumbnail' ) {
 		$resizer = WPHB_Reizer::getInstance();
-
+/*
 		$image = $resizer->process( $attachID, $size, $src );
 		if ( $image ) {
 			return $image;
@@ -614,7 +614,7 @@ class WPHB_Product_Room_Base extends WPHB_Product_Abstract {
 			}
 		}
 	}
-
+*/
 	function pricing_plan() {
 		$prices = array();
 		$prices = hb_get_price_plan_room( get_the_ID() );
