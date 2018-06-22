@@ -2,25 +2,25 @@
 //SKIN
 //General
 $general_bg_color: #fff;
-$general_bg_image: url('https://valle.idevol.net/wp-content/uploads/2018/06/hvm_banner_2-1.jpg');
+$general_bg_image: url('https://valle.idevol.net/wp-content/uploads/2018/06/hvm_banner_1-2.jpg');
 $general_bg_repeat: no-repeat;
 $general_bg_position: center center;
-$general_bg_size: inherit;
-$general_bg_attachment: inherit;
+$general_bg_size: cover;
+$general_bg_attachment: scroll;
 $general_font_family: Lato;
 $general_font_weight: 400;
 $general_font_size: 14px;
-$general_font_color: #9c9c9c;
+$general_font_color: #000000;
 $general_line_height: 24px;
-$primary_color: #e7b72f;
-$highlight_color: #000000;
+$primary_color: #858a38;
+$highlight_color: #e7b72f;
 //Header
 $header_bg: #ffffff;
 //Footer
 $footer_bg: #f7f7f7;
 $footer_color: #3d3935;
 //Breadcrumbs 1
-$breadcrumb_bg_image: url('//valle.idevol.net/wp-content/uploads/2018/06/hvm_banner_2-1.jpg');
+$breadcrumb_bg_image: url('//valle.idevol.net/wp-content/uploads/2018/06/hvm_banner_1-2.jpg');
 $breadcrumb_bg_repeat: no-repeat;
 $breadcrumb_bg_position: center center;
 $breadcrumb_bg_size: cover;
@@ -29,13 +29,13 @@ $breadcrumb_bg_attachment: inherit;
 //Typography
 $h1_font_family: Montserrat;
 $h1_font_size: 40px;
-$h1_font_color: #c69807;
+$h1_font_color: #858a38;
 $h2_font_family: Montserrat;
 $h2_font_size: 36px;
-$h2_font_color: #c69807;
+$h2_font_color: #858a38;
 $h3_font_family: Montserrat;
 $h3_font_size: 20px;
-$h3_font_color: #000000;
+$h3_font_color: #858a38;
 $h4_font_family: Montserrat;
 $h4_font_size: 16px;
 $h4_font_color: #000000;
