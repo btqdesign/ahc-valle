@@ -1,23 +1,4 @@
 <?php
-/**
- * Plugin Name: BTQ Design Booking IP
- * Plugin URI: http://btqdesign.com/plugins/btq-booking-ip/
- * Description: Booking Internet Power
- * Version: 0.1.0
- * Author: BTQ Design
- * Author URI: http://btqdesign.com/
- * Requires at least: 4.9.6
- * Tested up to: 4.9.6
- * 
- * Text Domain: btq-booking-ip
- * Domain Path: /languages
- * 
- * @package btq-booking-ip
- * @category Core
- * @author BTQ Design
- */
-
-
 // Exit if accessed directly
 defined('ABSPATH') or die('No script kiddies please!');
 
