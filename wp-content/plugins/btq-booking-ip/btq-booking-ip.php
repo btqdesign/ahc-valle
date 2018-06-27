@@ -129,7 +129,7 @@ function btq_booking_ip_query_url($app, $propertyNumber, $partnerId, $lang, $che
 			.'&adults=' . $adults
 			.'&lang=' . $lang
 			.'&CheckIn=' . str_replace('-', '', $checkIn)
-			.'&CheckOut=' .  . str_replace('-', '', $checkOut)
+			.'&CheckOut=' . str_replace('-', '', $checkOut)
 			.'&Children='.$children;
 		
 		return $url;
