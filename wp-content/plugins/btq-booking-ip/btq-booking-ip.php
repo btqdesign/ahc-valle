@@ -106,9 +106,9 @@ function btq_booking_ip_admin_admin_page(){
 ?>
 	<div class="wrap">
 		<h1>Booking Internet Power Admin</h1>
-		<pre><?php echo htmlentities( btq_booking_ip_query_url('ValleDeMexico', '6422', '2689', 'es-MX', '2018-11-21', '2018-11-22', 'MXN', 1, 1, 0) ); ?></pre>
+		<pre><?php echo htmlentities( btq_booking_ip_query_url('ValleDeMexico', '6422', '2689', 'es-MX', btq_booking_ip_grid_date_start(), btq_booking_ip_grid_date_end(btq_booking_ip_grid_date_start()), 'MXN', 1, 1, 0) ); ?></pre>
 		<?php
-			$result = btq_booking_ip_query('ValleDeMexico', '6422', '2689', 'es-MX', '2018-11-21', '2018-11-22', 'MXN', 1, 1, 0);
+			$result = btq_booking_ip_query('ValleDeMexico', '6422', '2689', 'es-MX', btq_booking_ip_grid_date_start(), btq_booking_ip_grid_date_end(btq_booking_ip_grid_date_start()), 'MXN', 1, 1, 0);
 			$resultVarExport = var_export($result, TRUE);
 		?>
 		<pre><?php echo htmlentities($resultVarExport); ?></pre>
@@ -167,4 +167,58 @@ function btq_booking_ip_query($app, $propertyNumber, $partnerId, $lang, $checkIn
 	$resultJSON = file_get_contents($urlQuery);
 	$resultArray = json_decode($resultJSON);
 	return $resultArray;
+}
+
+/**
+ * Devuelve la fecha de llegada disponible a 90 días o más.
+ *
+ * @autor Saúl Díaz
+ * @return string Fecha de llegada disponible a 90 días o más.
+ */
+function btq_booking_ip_grid_date_start() {
+	$unavailableJSON_file = plugin_dir_path( __FILE__ ) . 'assets' . DIRECTORY_SEPARATOR . 'js' . DIRECTORY_SEPARATOR . 'btq-unavailable.json';
+	$unavailableJSON = file_get_contents($unavailableJSON_file);
+	$unavailableDatesArray = json_decode($unavailableJSON);
+	for($days = 90; $days < 120; $days++){
+		$date_start = date('Y-m-d', ( time() + (60*60*24*$days) ));
+		if (array_search($date_start, $unavailableDatesArray) === FALSE){
+			return $date_start;
+		}
+	}
+}
+
+/**
+ * Devuelve la fecha de salida al día siguiente.
+ *
+ * @author Saúl Díaz
+ * @param string $date_start Fecha de llegada.
+ * @return string Fecha de salida.
+ */
+function btq_booking_ip_grid_date_end($date_start) {
+	return date('Y-m-d', strtotime($date_start . ' + 1 day'));
+}
+
+/**
+ * Devuelve el código de idioma que se está utilizando.
+ *
+ * @author Saúl Díaz
+ * @return string Código de idioma que se está utilizando.
+ */
+function btq_booking_ip_grid_current_language_code() {
+
+	$wpml_current_language = apply_filters( 'wpml_current_language', NULL );
+	if (!empty($wpml_current_language)){
+		$language = $wpml_current_language;
+	}
+	elseif ( defined( 'ICL_LANGUAGE_CODE' ) ) {
+		$language = ICL_LANGUAGE_CODE;
+	}
+	else {
+		$language = 'es';
+	}
+	
+	//Debug
+	//btq_booking_ip_log('languages', $language, TRUE);
+	
+	return $language;
 }
