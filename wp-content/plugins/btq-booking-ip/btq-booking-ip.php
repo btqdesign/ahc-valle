@@ -107,10 +107,33 @@ function btq_booking_ip_admin_admin_page(){
 	<div class="wrap">
 		<h1>Booking Internet Power Admin</h1>
 		<pre><?php echo htmlentities( btq_booking_ip_query_url('ValleDeMexico', '6422', '2689', 'en-US', '2018-11-21', '2018-11-22', 'USD', 1, 1, 0) ); ?></pre>
+		<?php
+			$result = btq_booking_ip_query('ValleDeMexico', '6422', '2689', 'en-US', '2018-11-21', '2018-11-22', 'USD', 1, 1, 0);
+			$resultVarExport = var_export($result, TRUE);
+		?>
+		<pre><?php echo htmlentities($resultVarExport); ?></pre>
 	</div>
 <?php
 }
 
+/**
+ * Genera la URL de consulta al booking de Internet Power.
+ *
+ * La URL devuelve un JSON con las habitaciones
+ * 
+ * @author Saúl Díaz
+ * @param string $app Código de app
+ * @param string $propertyNumber Número de propiedad
+ * @param string $partnerId Identificador de asociado
+ * @param string $lang Código ISO de idioma
+ * @param string $checkIn Fecha de entrada
+ * @param string $checkOut Fecha de salida
+ * @param string $currency Código ISO de moneda
+ * @param int $rooms Número de habitaciones
+ * @param int $adults Número de adultos
+ * @param int $children Número de niños
+ * @return string URL a consultar
+ */
 function btq_booking_ip_query_url($app, $propertyNumber, $partnerId, $lang, $checkIn, $checkOut, $currency, $rooms, $adults, $children){
 	//https://secure.internetpower.com.mx/portals/DinamicRooms/Request.ashx?propertyNumber=6422&currency=USD&app=ValleDeMexico&Rooms=1&PartnerId=2689&StartDay=1&Nights=1&adults=1&lang=en-US&CheckIn=20180424&CheckOut=20180425&Children=0
 	$dateCheckIn  = new DateTime($checkIn);
@@ -137,4 +160,11 @@ function btq_booking_ip_query_url($app, $propertyNumber, $partnerId, $lang, $che
 	else {
 		return FALSE;
 	}
+}
+
+function btq_booking_ip_query($app, $propertyNumber, $partnerId, $lang, $checkIn, $checkOut, $currency, $rooms, $adults, $children){
+	$urlQuery = btq_booking_ip_query_url($app, $propertyNumber, $partnerId, $lang, $checkIn, $checkOut, $currency, $rooms, $adults, $children);
+	$resultJSON = file_get_contents($urlQuery);
+	$resultArray = json_decode($resultJSON);
+	return $resultArray;
 }
