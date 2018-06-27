@@ -255,7 +255,7 @@ img.emoji {
 <link rel='stylesheet' id='ult_content_box_css-css'  href='https://hotel.idevol.net/wp-content/plugins/Ultimate_VC_Addons/assets/min-css/content-box.min.css?ver=3.16.21' type='text/css' media='all' />
 <link rel='stylesheet' id='solaz-child-style-css'  href='https://hotel.idevol.net/wp-content/themes/solaz-child/style.css?ver=4.9.6' type='text/css' media='all' />
 <link rel='stylesheet' id='butler-css'  href='https://hotel.idevol.net/wp-content/themes/solaz-child/assets/font-face/font.css?ver=4.9.6' type='text/css' media='all' />
-<link rel='stylesheet' id='btq-booking-tc-grid-css'  href='https://hotel.idevol.net/wp-content/plugins/btq-booking-tc/assets/css/estilos.css?ver=1.0.0' type='text/css' media='all' />
+<link rel='stylesheet' id='btq-booking-ip-grid-css'  href='https://hotel.idevol.net/wp-content/plugins/btq-booking-ip/assets/css/estilos.css?ver=1.0.0' type='text/css' media='all' />
         <script type="text/javascript">
             var hotel_settings = {
                 ajax: 'https://hotel.idevol.net/wp-admin/admin-ajax.php',
@@ -318,7 +318,7 @@ jQuery(document).ready(function(jQuery){jQuery.datepicker.setDefaults({"closeTex
 <script type='text/javascript' src='https://hotel.idevol.net/wp-content/plugins/Ultimate_VC_Addons/assets/min-js/custom.min.js?ver=3.16.21' defer onload=''></script>
 <script type='text/javascript' src='https://hotel.idevol.net/wp-content/plugins/Ultimate_VC_Addons/assets/min-js/jquery-appear.min.js?ver=3.16.21' defer onload=''></script>
 <script type='text/javascript' src='https://hotel.idevol.net/wp-content/plugins/Ultimate_VC_Addons/assets/min-js/headings.min.js?ver=3.16.21' defer onload=''></script>
-<script type='text/javascript' src='https://hotel.idevol.net/wp-content/plugins/btq-booking-tc/assets/js/app.js?ver=1.0.0' defer onload=''></script>
+<script type='text/javascript' src='https://hotel.idevol.net/wp-content/plugins/btq-booking-ip/assets/js/app.js?ver=1.0.0' defer onload=''></script>
 	
 	
 	
@@ -345,7 +345,7 @@ jQuery(document).ready(function(jQuery){jQuery.datepicker.setDefaults({"closeTex
 		
 		<section class="row">
 			<article class="col-md-12">
-				<h5 class="hosp"><?php _e('Select a PACKAGE or ROOM','btq-booking-tc'); ?></h5>
+				<h5 class="hosp"><?php _e('Select a PACKAGE or ROOM','btq-booking-ip'); ?></h5>
 			</article>
 		</section>
 
@@ -353,13 +353,13 @@ jQuery(document).ready(function(jQuery){jQuery.datepicker.setDefaults({"closeTex
 
 		<section class="row">
 			<div class="col-xs-12 col-md-4">
-				<button id="btq-btn-rooms" name="btq-btn-rooms" class="btn btn-default btq-btn"><?php _e('Rooms','btq-booking-tc'); ?></button>
+				<button id="btq-btn-rooms" name="btq-btn-rooms" class="btn btn-default btq-btn"><?php _e('Rooms','btq-booking-ip'); ?></button>
 			</div>
 			<div class="col-xs-12 col-md-4">
-				<button id="btq-btn-packages" name="btq-btn-rooms" class="btn btq-btn"><?php _e('Packages','btq-booking-tc'); ?></button>
+				<button id="btq-btn-packages" name="btq-btn-rooms" class="btn btq-btn"><?php _e('Packages','btq-booking-ip'); ?></button>
 			</div>
 			<div class="col-xs-12 col-md-4">
-				<button id="btq-btn-top" name="btq-btn-top" class="btn btq-btn"><?php _e('Top Rated','btq-booking-tc'); ?></button>
+				<button id="btq-btn-top" name="btq-btn-top" class="btn btq-btn"><?php _e('Top Rated','btq-booking-ip'); ?></button>
 			</div>
 		</section>
 		
@@ -367,18 +367,18 @@ jQuery(document).ready(function(jQuery){jQuery.datepicker.setDefaults({"closeTex
 		
 		<section class="row">
 			
-			<form name="btq-booking-tc-form" id="btq-booking-tc-form" action="" target="_self" method="post">
+			<form name="btq-booking-ip-form" id="btq-booking-ip-form" action="" target="_self" method="post">
 					
 				<article class="col-xs-12 col-md-4">
 					<div class="row">
 						<div class="col-xs-6">
 							<div class="form-group">
-								<input class="btq-input" id="btq-date-start" name="btq-date-start" placeholder="<?php _e('Arrival Date','btq-booking-tc'); ?>">
+								<input class="btq-input" id="btq-date-start" name="btq-date-start" placeholder="<?php _e('Arrival Date','btq-booking-ip'); ?>">
 							</div>
 						</div>
 						<div class="col-xs-6">
 							<div class="form-group">
-								<input class="btq-input" id="btq-date-end" name="btq-date-end" placeholder="<?php _e('Departure Date','btq-booking-tc'); ?>">
+								<input class="btq-input" id="btq-date-end" name="btq-date-end" placeholder="<?php _e('Departure Date','btq-booking-ip'); ?>">
 							</div>		
 						</div>
 					</div>
@@ -390,7 +390,7 @@ jQuery(document).ready(function(jQuery){jQuery.datepicker.setDefaults({"closeTex
 							<div class="form-group">
 								<select class="btq-select" id="btq-num-adults" name="btq-num-adults">
 									<?php for ($i = 1; $i <= 9; $i ++) { ?>
-									<option value="<?php echo $i; ?>"><?php echo sprintf( _n( '%s Adult', '%s Adults', $i, 'btq-booking-tc' ), $i); ?></option>
+									<option value="<?php echo $i; ?>"><?php echo sprintf( _n( '%s Adult', '%s Adults', $i, 'btq-booking-ip' ), $i); ?></option>
 									<?php } ?>
 								</select>
 							</div>
@@ -399,7 +399,7 @@ jQuery(document).ready(function(jQuery){jQuery.datepicker.setDefaults({"closeTex
 							<div class="form-group">
 								<select class="btq-select" id="btq-num-children" name="btq-num-children">
 									<?php for ($i = 0; $i <= 9; $i ++) { ?>
-									<option value="<?php echo $i; ?>"><?php echo sprintf( _n( '%s Children', '%s Children', $i, 'btq-booking-tc' ), $i); ?></option>
+									<option value="<?php echo $i; ?>"><?php echo sprintf( _n( '%s Children', '%s Children', $i, 'btq-booking-ip' ), $i); ?></option>
 									<?php } ?>
 								</select>
 							</div>
@@ -411,7 +411,7 @@ jQuery(document).ready(function(jQuery){jQuery.datepicker.setDefaults({"closeTex
 					<div class="form-group">
 						<select class="btq-select" id="btq-num-rooms" name="btq-num-rooms">
 							<?php for ($i = 1; $i <= 9; $i ++) { ?>
-							<option value="<?php echo $i; ?>"><?php echo sprintf( _n( '%s Room', '%s Rooms', $i, 'btq-booking-tc' ), $i); ?></option>
+							<option value="<?php echo $i; ?>"><?php echo sprintf( _n( '%s Room', '%s Rooms', $i, 'btq-booking-ip' ), $i); ?></option>
 							<?php } ?>
 						</select>
 					</div>
@@ -419,7 +419,7 @@ jQuery(document).ready(function(jQuery){jQuery.datepicker.setDefaults({"closeTex
 				
 				<article class="col-xs-12 col-md-2">	
 					<input type="hidden" id="btq-type-query" name="btq-type-query" value="rooms">				
-					<button class="btn btq-btn" name="btq-search" id="btq-search"><?php _e('SEARCH','btq-booking-tc'); ?></button>
+					<button class="btn btq-btn" name="btq-search" id="btq-search"><?php _e('SEARCH','btq-booking-ip'); ?></button>
 				</article>
 			
 			</form>
@@ -431,11 +431,11 @@ jQuery(document).ready(function(jQuery){jQuery.datepicker.setDefaults({"closeTex
 		<section class="row">
 			<article class="col-md-5">
 				<img src="<?php echo plugins_url( $iconos_dir . DIRECTORY_SEPARATOR . 'gh_calendar2.png', __FILE__ ); ?>" width="30" height="30" id="element2">
-				<h5 class="hosp2">&nbsp;&nbsp;&nbsp;<?php _e('Check your dates-rate to stay','btq-booking-tc'); ?></h5>
+				<h5 class="hosp2">&nbsp;&nbsp;&nbsp;<?php _e('Check your dates-rate to stay','btq-booking-ip'); ?></h5>
 			</article>
 
 			<article class="col-md-7">
-				<p class="recordatorio"><?php _e('* Remember that having an advance reservation will always be a better option (rates shown at 90 days)','btq-booking-tc'); ?></p>
+				<p class="recordatorio"><?php _e('* Remember that having an advance reservation will always be a better option (rates shown at 90 days)','btq-booking-ip'); ?></p>
 			</article>
 			<hr class="linea"/>
 		</section>
