@@ -106,7 +106,7 @@ function btq_booking_ip_admin_admin_page(){
 ?>
 	<div class="wrap">
 		<h1>Booking Internet Power Admin</h1>
-		<pre><?php echo btq_booking_ip_query_url('ValleDeMexico', '6422', '2689', 'en-US', '2018-11-21', '2018-11-22', 'USD', 1, 1, 0); ?></pre>
+		<pre><?php echo htmlentities( btq_booking_ip_query_url('ValleDeMexico', '6422', '2689', 'en-US', '2018-11-21', '2018-11-22', 'USD', 1, 1, 0) ); ?></pre>
 	</div>
 <?php
 }
