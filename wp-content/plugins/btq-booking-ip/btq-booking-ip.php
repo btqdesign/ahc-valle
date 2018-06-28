@@ -178,7 +178,7 @@ function btq_booking_ip_query($app, $propertyNumber, $partnerId, $lang, $checkIn
 function btq_booking_ip_grid_date_start() {
 	$unavailableJSON_file = plugin_dir_path( __FILE__ ) . 'assets' . DIRECTORY_SEPARATOR . 'js' . DIRECTORY_SEPARATOR . 'btq-unavailable.json';
 	$unavailableJSON = file_get_contents($unavailableJSON_file);
-	$unavailableDatesArray = json_decode($unavailableJSON);
+	$unavailableDatesArray = json_decode($unavailableJSON, TRUE);
 	for($days = 90; $days < 120; $days++){
 		$date_start = date('Y-m-d', ( time() + (60*60*24*$days) ));
 		if (array_search($date_start, $unavailableDatesArray) === FALSE){
