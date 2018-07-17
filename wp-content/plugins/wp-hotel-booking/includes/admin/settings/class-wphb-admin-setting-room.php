@@ -89,12 +89,12 @@ if ( ! class_exists( 'WPHB_Admin_Setting_Room' ) ) {
 							'id'		=> 'tp_hotel_booking_room_image_gallery',
 							'type'		=> 'image_size',
 							'default'	=> array(
-									'width'		=> 270,
-									'height'	=> 270
+									'width'		=> 1000,
+									'height'	=> 1000
 								),
 							'options'	=> array(
-									'width'		=> 270,
-									'height'	=> 270
+									'width'		=> 1000,
+									'height'	=> 1000
 								),
 							'title'		=> __( 'Room images size gallery', 'wp-hotel-booking' )
 						),

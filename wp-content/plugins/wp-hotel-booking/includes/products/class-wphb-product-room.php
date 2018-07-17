@@ -364,7 +364,7 @@ class WPHB_Product_Room_Base extends WPHB_Product_Abstract {
 	 *
 	 * @param      $from
 	 * @param      $to
-	 * @param int $num_of_rooms
+	 * @param int  $num_of_rooms
 	 * @param bool $including_tax
 	 *
 	 * @return float|int
@@ -437,16 +437,7 @@ class WPHB_Product_Room_Base extends WPHB_Product_Abstract {
 	 * @return WP_Query
 	 */
 	public function get_related_rooms() {
-		$room_types          = get_the_terms( $this->post->ID, 'hb_room_type' );
-		$room_capacity       = (int) get_post_meta( $this->post->ID, '_hb_room_capacity', true );
-		$max_adults_per_room = get_term_meta( $room_capacity, 'hb_max_number_of_adults', true );
-		if ( ! $max_adults_per_room ) {
-			$max_adults_per_room = (int) get_option( 'hb_taxonomy_capacity_' . $room_capacity );
-		}
-		if ( ! $max_adults_per_room ) {
-			$max_adults_per_room = (int) get_post_meta( $this->post->ID, '_hb_max_adults_per_room', true );
-		}
-		$max_child_per_room = (int) get_post_meta( $this->post->ID, '_hb_max_child_per_room', true );
+		$room_types = get_the_terms( $this->post->ID, 'hb_room_type' );
 
 		$taxonomis = array();
 		if ( $room_types ) {
@@ -463,18 +454,6 @@ class WPHB_Product_Room_Base extends WPHB_Product_Abstract {
 		$args  = array(
 			'post_type'    => 'hb_room',
 			'status'       => 'publish',
-			'meta_query'   => array(
-				// array(
-				//     'key'       => '_hb_max_adults_per_room',
-				//     'value'     => $max_adults_per_room,
-				//     'compare'   => '>=',
-				// ),
-				array(
-					'key'     => '_hb_max_child_per_room',
-					'value'   => $max_child_per_room,
-					'compare' => '<='
-				),
-			),
 			'tax_query'    => array(
 				array(
 					'taxonomy' => 'hb_room_type',

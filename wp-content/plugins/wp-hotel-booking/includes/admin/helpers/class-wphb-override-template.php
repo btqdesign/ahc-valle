@@ -38,68 +38,83 @@ if ( ! class_exists( 'WPHB_Helper_Override_Template' ) ) {
 		 * @return array|bool|mixed
 		 */
 		public static function get_theme_override_templates( $check = false ) {
-			$template_folder = hb_template_path();
-			$template_path   = WPHB_TEMPLATES;
-			$template_dir    = get_template_directory();
-			$stylesheet_dir  = get_stylesheet_directory();
-			$t_folder        = basename( $template_dir );
-			$s_folder        = basename( $stylesheet_dir );
+
+			$plugins = apply_filters( 'hb_plugins_templates_path', array(
+				'wphb' => array(
+					'folder' => hb_template_path(),
+					'path'   => WPHB_TEMPLATES
+				)
+			) );
+
+			$template_dir   = get_template_directory();
+			$stylesheet_dir = get_stylesheet_directory();
+			$t_folder       = basename( $template_dir );
+			$s_folder       = basename( $stylesheet_dir );
 
 			$found_files        = array( $t_folder => array(), $s_folder => array() );
 			$outdated_templates = false;
 
-			$scanned_files = self::_scan_template_files( $template_path );
+			if ( ! is_array( $plugins ) || ! $plugins ) {
+				return false;
+			}
 
-			foreach ( $scanned_files as $file ) {
-				$theme_folder = '';
+			foreach ( $plugins as $key => $template ) {
+				$template_folder = $template['folder'];
+				$template_path   = $template['path'];
 
-				if ( file_exists( $stylesheet_dir . '/' . $file ) ) {
-					$theme_file   = $stylesheet_dir . '/' . $file;
-					$theme_folder = $s_folder;
-				} elseif ( file_exists( $stylesheet_dir . '/' . $template_folder . '/' . $file ) ) {
-					$theme_file   = $stylesheet_dir . '/' . $template_folder . '/' . $file;
-					$theme_folder = $s_folder;
-				} elseif ( file_exists( $template_dir . '/' . $file ) ) {
-					$theme_file   = $template_dir . '/' . $file;
-					$theme_folder = $t_folder;
-				} elseif ( file_exists( $template_dir . '/' . $template_folder . '/' . $file ) ) {
-					$theme_file   = $template_dir . '/' . $template_folder . '/' . $file;
-					$theme_folder = $t_folder;
-				} else {
-					$theme_file = false;
-				}
+				$scanned_files = self::_scan_template_files( $template_path );
 
-				if ( ! empty( $theme_file ) ) {
-					self::$counts['all'] ++;
-					$core_version  = self::_get_file_version( $template_path . $file );
-					$theme_version = self::_get_file_version( $theme_file );
-					// If core-template define version number then compare with it.
-					if ( $core_version && ( empty( $theme_version ) || version_compare( $theme_version, $core_version, '<' ) ) ) {
-						if ( ! $outdated_templates ) {
-							$outdated_templates = true;
-						}
-						$found_files[ $theme_folder ][] = array(
-							str_replace( WP_CONTENT_DIR . '/themes/', '', $theme_file ),
-							$theme_version ? $theme_version : '-',
-							$core_version,
-							true
-						);
-						if ( empty( $theme_version ) ) {
-							self::$counts['undefined'] ++;
-						}
-						self::$counts['outdated'] ++;
+				foreach ( $scanned_files as $file ) {
+					$theme_folder = '';
+
+					if ( file_exists( $stylesheet_dir . '/' . $file ) ) {
+						$theme_file   = $stylesheet_dir . '/' . $file;
+						$theme_folder = $s_folder;
+					} elseif ( file_exists( $stylesheet_dir . '/' . $template_folder . '/' . $file ) ) {
+						$theme_file   = $stylesheet_dir . '/' . $template_folder . '/' . $file;
+						$theme_folder = $s_folder;
+					} elseif ( file_exists( $template_dir . '/' . $file ) ) {
+						$theme_file   = $template_dir . '/' . $file;
+						$theme_folder = $t_folder;
+					} elseif ( file_exists( $template_dir . '/' . $template_folder . '/' . $file ) ) {
+						$theme_file   = $template_dir . '/' . $template_folder . '/' . $file;
+						$theme_folder = $t_folder;
 					} else {
-						$found_files[ $theme_folder ][] = array(
-							str_replace( WP_CONTENT_DIR . '/themes/', '', $theme_file ),
-							$theme_version ? $theme_version : '?',
-							$core_version ? $core_version : '?',
-							null
-						);
-						self::$counts['up-to-date'] ++;
+						$theme_file = false;
 					}
-				}
-				if ( $check && $outdated_templates ) {
-					return $outdated_templates;
+
+					if ( ! empty( $theme_file ) ) {
+						self::$counts['all'] ++;
+						$core_version  = self::_get_file_version( $template_path . $file );
+						$theme_version = self::_get_file_version( $theme_file );
+						// If core-template define version number then compare with it.
+						if ( $core_version && ( empty( $theme_version ) || version_compare( $theme_version, $core_version, '<' ) ) ) {
+							if ( ! $outdated_templates ) {
+								$outdated_templates = true;
+							}
+							$found_files[ $theme_folder ][] = array(
+								str_replace( WP_CONTENT_DIR . '/themes/', '', $theme_file ),
+								$theme_version ? $theme_version : '-',
+								$core_version,
+								true
+							);
+							if ( empty( $theme_version ) ) {
+								self::$counts['undefined'] ++;
+							}
+							self::$counts['outdated'] ++;
+						} else {
+							$found_files[ $theme_folder ][] = array(
+								str_replace( WP_CONTENT_DIR . '/themes/', '', $theme_file ),
+								$theme_version ? $theme_version : '?',
+								$core_version ? $core_version : '?',
+								null
+							);
+							self::$counts['up-to-date'] ++;
+						}
+					}
+					if ( $check && $outdated_templates ) {
+						return $outdated_templates;
+					}
 				}
 			}
 

@@ -6,7 +6,7 @@
  * This template can be overridden by copying it to yourtheme/wp-hotel-booking-extra/loop/addition-services-title.php.
  *
  * @author  ThimPress, leehld
- * @package WP-Hotel-Booking/Templates
+ * @package WP-Hotel-Booking/Extra/Templates
  * @version 1.9.6
  */
 

@@ -100,7 +100,6 @@ if ( ! class_exists( 'WPHB_Reizer' ) ) {
 		 * @return array|bool|string
 		 */
 		public static function process( $attachmentID = null, $size = array(), $single = false, $upscale = true ) {
-			require_once('aq_resizer.php');
 			$aq_resize = Aq_Resize::getInstance();
 			global $hb_settings;
 			if ( ! $attachmentID ) {
