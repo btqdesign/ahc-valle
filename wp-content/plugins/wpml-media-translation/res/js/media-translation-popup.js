@@ -45,6 +45,7 @@ jQuery(document).ready(function ($) {
                 disabled: true,
                 click: function () {
                     var thisDialog = $(this);
+					disableFormSave();
                     var ajaxLoader = $("<span class=\"spinner\"></span>");
                     var translationForm = thisDialog.find("form");
                     ajaxLoader.insertBefore(".wpml-media-dialog .button-primary").css({
@@ -130,6 +131,10 @@ jQuery(document).ready(function ($) {
             }
         ]
     });
+
+	function disableFormSave() {
+	    $(".wpml-media-dialog .ui-dialog-buttonset .button-primary").prop("disabled", true);
+	}
 
     function enableFormSave(e) {
         if (typeof e !== 'undefined') {
