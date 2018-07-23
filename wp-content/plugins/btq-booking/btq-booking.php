@@ -273,7 +273,17 @@ function btq_booking_iph_query($app, $propertyNumber, $partnerId, $lang, $checkI
 	$resultJSON = file_get_contents($urlQuery);
 	$resultArray = json_decode($resultJSON, true);
 	
-	return $resultArray;
+	$rooms = array();
+	foreach($resultArray['Rooms'] as $room){
+		$room['url'] = btq_booking_iph_url_correct($room['url'], $checkIn, $checkOut);
+		$rooms[] = $room;
+	}
+	
+	return $rooms;
+}
+
+function btq_booking_iph_url_correct($url, $checkIn, $checkOut){
+	return $url;
 }
 
 /**
