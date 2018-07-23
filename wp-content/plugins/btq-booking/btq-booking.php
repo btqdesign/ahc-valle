@@ -382,6 +382,19 @@ function btq_booking_tc_validate_saved_settings() {
 	){
 		$out = false;
 	}
+	elseif (
+		empty( get_option('btq_booking_tc_soap_sales_channel_info_id') )
+		|| empty( get_option('btq_booking_tc_soap_username') )
+		|| empty( get_option('btq_booking_tc_soap_password') )
+		|| empty( get_option('btq_booking_tc_soap_to_action_pals') )
+		|| empty( get_option('btq_booking_tc_soap_to_action_full') )
+		|| empty( get_option('btq_booking_tc_hotel_code_us') )
+		|| empty( get_option('btq_booking_tc_hotel_code_es') )
+		|| empty( get_option('btq_booking_tc_hotel_themeid_us') )
+		|| empty( get_option('btq_booking_tc_hotel_themeid_es') )
+	){
+		$out = false;
+	}
 	return $out;
 }
 
