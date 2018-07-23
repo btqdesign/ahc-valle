@@ -200,7 +200,7 @@ function btq_booking_iph_admin_rooms_table($language, $checkIn, $checkOut){
 		$languageISO = 'es-MX';
 		$currency = 'MXN';
 	}
-	elseif($language == 'en'){
+	else if($language == 'en'){
 		$languageISO = 'en-US';
 		$currency = 'USD';
 	}
@@ -208,6 +208,7 @@ function btq_booking_iph_admin_rooms_table($language, $checkIn, $checkOut){
 		$languageISO = 'en-US';
 		$currency = 'USD';
 	}
+	
 	$rooms = btq_booking_iph_query(
 		esc_attr( get_option('btq_booking_iph_app') ),
 		esc_attr( get_option('btq_booking_iph_property_number') ),
