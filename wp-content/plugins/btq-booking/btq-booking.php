@@ -142,20 +142,20 @@ function btq_booking_admin_menu() {
     
     add_submenu_page(
     	$menu_slug, 
-    	__('IPH Test', 'btq-booking'), 
-    	__('IPH Test', 'btq-booking'), 
-    	'manage_options', 
-    	'btq_booking_iph_test',
-    	'btq_booking_iph_test_page'
-    );
-    
-    add_submenu_page(
-    	$menu_slug, 
     	__('Settings', 'btq-booking'), 
     	__('Settings', 'btq-booking'), 
     	'manage_options', 
     	'btq_booking_settings',
     	'btq_booking_admin_settings_page'
+    );
+    
+    add_submenu_page(
+    	$menu_slug, 
+    	__('IPH Test', 'btq-booking'), 
+    	__('IPH Test', 'btq-booking'), 
+    	'manage_options', 
+    	'btq_booking_iph_test',
+    	'btq_booking_iph_test_page'
     );
     
     /* Manda a llamar la funcion para declarar los ajustes y opciones del plug-in */
