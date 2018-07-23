@@ -180,10 +180,39 @@ function btq_booking_iph_test_page(){
 ?>
 	<div class="wrap">
 		<h1>Internet Power Hotel Test</h1>
-		<pre><?php echo htmlentities( btq_booking_iph_query_url('ValleDeMexico', '6422', '2689', 'en-US', btq_booking_grid_date_start(), btq_booking_grid_date_end(btq_booking_grid_date_start()), 'USD', 1, 1, 0) ); ?></pre>
+		<p>
+		<?php 
+			echo htmlentities( 
+				btq_booking_iph_query_url(
+					esc_attr( get_option('btq_booking_iph_app') ),
+					esc_attr( get_option('btq_booking_iph_property_number') ),
+					esc_attr( get_option('btq_booking_iph_partner_id') ),
+					'en-US',
+					btq_booking_grid_date_start(),
+					btq_booking_grid_date_end(btq_booking_grid_date_start()),
+					'USD',
+					1,
+					1,
+					0
+				) 
+			); 
+		?>
+		</p>
+		
 		<?php
-			$result = btq_booking_iph_query('ValleDeMexico', '6422', '2689', 'en-US', btq_booking_grid_date_start(), btq_booking_grid_date_end(btq_booking_grid_date_start()), 'USD', 1, 1, 0);
-			$resultVarExport = var_export($result, TRUE);
+		$result = btq_booking_iph_query(
+			esc_attr( get_option('btq_booking_iph_app') ),
+			esc_attr( get_option('btq_booking_iph_property_number') ),
+			esc_attr( get_option('btq_booking_iph_partner_id') ),
+			'en-US',
+			btq_booking_grid_date_start(),
+			btq_booking_grid_date_end(btq_booking_grid_date_start()),
+			'USD',
+			1,
+			1,
+			0
+		);
+		$resultVarExport = var_export($result, TRUE);
 		?>
 		<pre><?php echo htmlentities($resultVarExport); ?></pre>
 	</div>
