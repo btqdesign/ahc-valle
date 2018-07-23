@@ -264,7 +264,7 @@ function btq_booking_admin_settings_page() {
 		<form method="post" action="options.php">
 			<?php settings_fields( 'btq-booking-settings' ); ?>
 			<?php do_settings_sections( 'btq-booking-settings' ); ?>
-			<?php submit_button(); ?>
+			<?php submit_button(null, null, 'submit2'); ?>
 			<table class="form-table">
 				<tbody>
 					<tr valign="top">
