@@ -237,6 +237,9 @@ function btq_booking_iph_query($app, $propertyNumber, $partnerId, $lang, $checkI
  * Declara los ajustes y opciones del plug-in
  */
 function btq_booking_register_settings() {
+	register_setting('btq-booking-settings', 'btq_booking_color_principal');
+	register_setting('btq-booking-settings', 'btq_booking_service');
+	
 	register_setting('btq-booking-settings', 'btq_booking_tc_soap_sales_channel_info_id');
 	register_setting('btq-booking-settings', 'btq_booking_tc_soap_username');
 	register_setting('btq-booking-settings', 'btq_booking_tc_soap_password');
@@ -246,7 +249,6 @@ function btq_booking_register_settings() {
 	register_setting('btq-booking-settings', 'btq_booking_tc_hotel_code_es', array('type' => 'integer'));
 	register_setting('btq-booking-settings', 'btq_booking_tc_hotel_themeid_us', array('type' => 'integer'));
 	register_setting('btq-booking-settings', 'btq_booking_tc_hotel_themeid_es', array('type' => 'integer'));
-	register_setting('btq-booking-settings', 'btq_booking_color_principal');
 }
 
 /**
@@ -267,6 +269,13 @@ function btq_booking_admin_settings_page() {
 					<tr valign="top">
 						<th scope="row"><label for="btq_booking_color_principal"><?php _e('Default color', 'btq-booking'); ?></label></th>
 						<td><input type="text" id="btq_booking_color_principal" name="btq_booking_color_principal" value="<?php echo esc_attr( get_option('btq_booking_color_principal') ); ?>" /></td>
+					</tr>
+					<tr valign="top">
+						<th scope="row"><?php _e('Booking service', 'btq-booking'); ?></th>
+						<td>
+							<input type="radio" id="btq_booking_service_tc" name="btq_booking_service" value="tc" <?php checked('tc', get_option('btq_booking_service')); ?>><label for="btq_booking_service_tc">Travel Click</label><br>
+							<input type="radio" id="btq_booking_service_iph" name="btq_booking_service" value="iph" <?php checked('iph', get_option('btq_booking_service')); ?>><label for="btq_booking_service_iph">Internet Power Hotel</label>
+						</td>
 					</tr>
 					<tr valign="top">
 						<th scope="row"><label for="btq_booking_tc_soap_sales_channel_info_id"><?php _e('Sales channel info ID', 'btq-booking'); ?></label></th>
