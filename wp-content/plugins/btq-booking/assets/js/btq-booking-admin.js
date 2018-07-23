@@ -2,6 +2,16 @@
     // Add Color Picker to all inputs that have 'color-field' class
     $(function() {
         $('#btq_booking_color_principal').wpColorPicker();
+        
+        if ($('input[type=radio][name=btq_booking_service]:checked').val() == 'tc'){
+	        $('#btq_booking_tc_form_settings').removeClass('hide');
+			$('#btq_booking_iph_form_settings').addClass('hide');
+        }
+        
+        if ($('input[type=radio][name=btq_booking_service]:checked').val() == 'iph'){
+	        $('#btq_booking_iph_form_settings').removeClass('hide');
+			$('#btq_booking_tc_form_settings').addClass('hide');
+        }
     });
     
     // Formulario de opciones
