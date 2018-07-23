@@ -280,7 +280,7 @@ function btq_booking_admin_settings_page() {
 					</tr>
 				</tbody>
 			</table>
-			<table class="form-table" id="btq_booking_tc_form_settings">
+			<table class="form-table hide" id="btq_booking_tc_form_settings">
 				<tbody>
 					<tr valign="top">
 						<th scope="row"><label for="btq_booking_tc_soap_sales_channel_info_id"><?php _e('Sales channel info ID', 'btq-booking'); ?></label></th>
@@ -317,6 +317,14 @@ function btq_booking_admin_settings_page() {
 					<tr valign="top">
 						<th scope="row"><label for="btq_booking_tc_hotel_themeid_es"><?php _e('Theme id spanish language', 'btq-booking'); ?></label></th>
 						<td><input type="number" class="regular-text" id="btq_booking_tc_hotel_themeid_es" name="btq_booking_tc_hotel_themeid_es" value="<?php echo esc_attr( get_option('btq_booking_tc_hotel_themeid_es') ); ?>" /></td>
+					</tr>
+				</tbody>
+			</table>
+			<table class="form-table hide" id="btq_booking_iph_form_settings">
+				<tbody>
+					<tr valign="top">
+						<th scope="row"><label for="btq_booking_iph_credencial"><?php _e('Credential', 'btq-booking'); ?></label></th>
+						<td><input type="text" class="regular-text" id="btq_booking_iph_credencial" name="btq_booking_iph_credencial" value="<?php echo esc_attr( get_option('btq_booking_iph_credencial') ); ?>" /></td>
 					</tr>
 				</tbody>
 			</table>
