@@ -76,7 +76,7 @@ function btq_booking_log($file_name, $var, $same_file = false){
  * @return void Añade el enlace de ajustes en la pagina de plugins
  */
 function btq_booking_add_settings_link($links) {
-    $settings_link = '<a href="admin.php?page=btq_booking_settings">' . __( 'Settings' ) . '</a>';
+    $settings_link = '<a href="admin.php?page=btq_booking_settings">' . __('Settings','btq-booking') . '</a>';
     array_unshift( $links, $settings_link );
   	return $links;
 }
