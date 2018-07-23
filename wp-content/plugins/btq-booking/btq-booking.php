@@ -226,11 +226,9 @@ function btq_booking_iph_admin_rooms_table($language, $checkIn, $checkOut){
 		<thead>
 			<tr>
 				<th scope="col"><?php _e('Room Name','btq-booking'); ?></th>
-				<th scope="col"><?php _e('Room Description','btq-booking'); ?></th>
 				<th scope="col"><?php _e('Link','btq-booking'); ?></th>
 				<th scope="col"><?php _e('Total','btq-booking'); ?></th>
 				<th scope="col"><?php _e('Promotion','btq-booking'); ?></th>
-				<th scope="col"><?php _e('Promo Description','btq-booking'); ?></th>
 				<th scope="col"><?php _e('Picture','btq-booking'); ?></th>
 			</tr>
 		</thead>
@@ -240,11 +238,9 @@ function btq_booking_iph_admin_rooms_table($language, $checkIn, $checkOut){
 			?>
 			<tr>
 				<td scope="col"><?php echo htmlentities($room['roomName']); ?></td>
-				<td scope="col"><?php echo htmlentities($room['roomDescription']); ?></td>
 				<td scope="col"><a href="<?php echo $room['url']; ?>" taget="_blank">Book Now</a></td>
-				<td scope="col"><?php echo htmlentities($room['total']); ?></td>
-				<td scope="col"><?php echo htmlentities($room['promotion']); ?></td>
-				<td scope="col"><?php echo htmlentities($room['descPromotion']); ?></td>
+				<td scope="col"><?php echo '$'.htmlentities($room['total']).' '.$currency; ?></td>
+				<td scope="col"><?php echo '$'.htmlentities($room['promotion']).' '.$currency; ?></td>
 				<td scope="col"><img src="<?php echo $room['img']; ?>"></td>
 			</tr>
 			<?php
