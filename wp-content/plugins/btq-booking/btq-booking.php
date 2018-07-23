@@ -88,7 +88,7 @@ function btq_booking_log($file_name, $var, $same_file = false){
  *		la consulta de habitaciones disponibles.
  * @return string HTML del Grid de habitaciones.
  */
-function btq_booking_iph_grid_rooms($language, $checkIn, $checkOut, $rooms = 1, $adults = 1, $childrens = 0){
+function btq_booking_iph_grid_rooms($language = 'es', $checkIn, $checkOut, $rooms = 1, $adults = 1, $childrens = 0){
 	
 	if ($language == 'es') {
 		$languageISO = 'es-MX';
@@ -240,7 +240,7 @@ add_filter( "plugin_action_links_$plugin", 'btq_booking_add_settings_link' );
  * 		WordPress.
  */
 function btq_booking_admin_menu() {
-    if(btq_booking_tc_validate_saved_settings()){
+	if(btq_booking_tc_validate_saved_settings()){
 	    $menu_slug      = 'btq_booking_rooms';
 	    $menu_function  = 'btq_booking_tc_admin_rooms_page';
     }
@@ -651,31 +651,51 @@ add_action('admin_enqueue_scripts', 'btq_booking_admin_scripts');
  */
 function btq_booking_tc_validate_saved_settings() {
 	$out = true;
-	if (
-		get_option('btq_booking_tc_soap_sales_channel_info_id') === false
-		|| get_option('btq_booking_tc_soap_username') === false
-		|| get_option('btq_booking_tc_soap_password') === false
-		|| get_option('btq_booking_tc_soap_to_action_pals') === false
-		|| get_option('btq_booking_tc_soap_to_action_full') === false
-		|| get_option('btq_booking_tc_hotel_code_us') === false
-		|| get_option('btq_booking_tc_hotel_code_es') === false
-		|| get_option('btq_booking_tc_hotel_themeid_us') === false
-		|| get_option('btq_booking_tc_hotel_themeid_es') === false
-	){
-		$out = false;
+	if (get_option('btq_booking_service') !== false) {
+		if (get_option('btq_booking_service') != 'tc'){
+			$out = false;
+		}
+		elseif (
+			empty( get_option('btq_booking_tc_soap_sales_channel_info_id') )
+			|| empty( get_option('btq_booking_tc_soap_username') )
+			|| empty( get_option('btq_booking_tc_soap_password') )
+			|| empty( get_option('btq_booking_tc_soap_to_action_pals') )
+			|| empty( get_option('btq_booking_tc_soap_to_action_full') )
+			|| empty( get_option('btq_booking_tc_hotel_code_us') )
+			|| empty( get_option('btq_booking_tc_hotel_code_es') )
+			|| empty( get_option('btq_booking_tc_hotel_themeid_us') )
+			|| empty( get_option('btq_booking_tc_hotel_themeid_es') )
+		){
+			$out = false;
+		}
 	}
-	elseif (
-		empty( get_option('btq_booking_tc_soap_sales_channel_info_id') )
-		|| empty( get_option('btq_booking_tc_soap_username') )
-		|| empty( get_option('btq_booking_tc_soap_password') )
-		|| empty( get_option('btq_booking_tc_soap_to_action_pals') )
-		|| empty( get_option('btq_booking_tc_soap_to_action_full') )
-		|| empty( get_option('btq_booking_tc_hotel_code_us') )
-		|| empty( get_option('btq_booking_tc_hotel_code_es') )
-		|| empty( get_option('btq_booking_tc_hotel_themeid_us') )
-		|| empty( get_option('btq_booking_tc_hotel_themeid_es') )
-	){
-		$out = false;
+	else{
+		if (
+			get_option('btq_booking_tc_soap_sales_channel_info_id') === false
+			|| get_option('btq_booking_tc_soap_username') === false
+			|| get_option('btq_booking_tc_soap_password') === false
+			|| get_option('btq_booking_tc_soap_to_action_pals') === false
+			|| get_option('btq_booking_tc_soap_to_action_full') === false
+			|| get_option('btq_booking_tc_hotel_code_us') === false
+			|| get_option('btq_booking_tc_hotel_code_es') === false
+			|| get_option('btq_booking_tc_hotel_themeid_us') === false
+			|| get_option('btq_booking_tc_hotel_themeid_es') === false
+		){
+			$out = false;
+		}
+		elseif (
+			empty( get_option('btq_booking_tc_soap_sales_channel_info_id') )
+			|| empty( get_option('btq_booking_tc_soap_username') )
+			|| empty( get_option('btq_booking_tc_soap_password') )
+			|| empty( get_option('btq_booking_tc_soap_to_action_pals') )
+			|| empty( get_option('btq_booking_tc_soap_to_action_full') )
+			|| empty( get_option('btq_booking_tc_hotel_code_us') )
+			|| empty( get_option('btq_booking_tc_hotel_code_es') )
+			|| empty( get_option('btq_booking_tc_hotel_themeid_us') )
+			|| empty( get_option('btq_booking_tc_hotel_themeid_es') )
+		){
+			$out = false;
+		}
 	}
 	return $out;
 }
@@ -688,19 +708,33 @@ function btq_booking_tc_validate_saved_settings() {
  */
 function btq_booking_iph_validate_saved_settings() {
 	$out = true;
-	if (
-		get_option('btq_booking_iph_property_number') === false
-		|| get_option('btq_booking_iph_app') === false
-		|| get_option('btq_booking_tc_soap_password') === false
-	){
-		$out = false;
+	if (get_option('btq_booking_service') !== false) {
+		if (get_option('btq_booking_service') != 'iph'){
+			$out = false;
+		}
+		elseif (
+			empty( get_option('btq_booking_iph_property_number') )
+			|| empty( get_option('btq_booking_iph_app') )
+			|| empty( get_option('btq_booking_iph_partner_id') )
+		){
+			$out = false;
+		}
 	}
-	elseif (
-		empty( get_option('btq_booking_iph_property_number') )
-		|| empty( get_option('btq_booking_iph_app') )
-		|| empty( get_option('btq_booking_iph_partner_id') )
-	){
-		$out = false;
+	else{
+		if (
+			get_option('btq_booking_iph_property_number') === false
+			|| get_option('btq_booking_iph_app') === false
+			|| get_option('btq_booking_tc_soap_password') === false
+		){
+			$out = false;
+		}
+		elseif (
+			empty( get_option('btq_booking_iph_property_number') )
+			|| empty( get_option('btq_booking_iph_app') )
+			|| empty( get_option('btq_booking_iph_partner_id') )
+		){
+			$out = false;
+		}
 	}
 	return $out;
 }
@@ -1350,7 +1384,7 @@ function btq_booking_grid_get_images($path) {
  *		la consulta de habitaciones disponibles.
  * @return string HTML del Grid de habitaciones.
  */
-function btq_booking_grid_rooms($language = 'es', $dateRangeStart, $dateRangeEnd, $typeQuery = 'rooms', $rooms = 1, $adults = 1, $childrens = 0, $availRatesOnly = 'true'){
+function btq_booking_tc_grid_rooms($language = 'es', $dateRangeStart, $dateRangeEnd, $typeQuery = 'rooms', $rooms = 1, $adults = 1, $childrens = 0, $availRatesOnly = 'true'){
 	
 	switch($language){
 		case 'es':
@@ -1528,7 +1562,7 @@ function btq_booking_grid_rooms($language = 'es', $dateRangeStart, $dateRangeEnd
 			$precio = 0;
 		} // foreach($arrayRoomType as $elementRoomType)
 	} // if ($response !== FALSE)
-} // function btq_booking_grid_rooms()
+} // function btq_booking_tc_grid_rooms()
 
 /**
  * Grid del booking con los datos de paquetes disponibles devueltos de la consulta a TravelClick.
@@ -1955,15 +1989,29 @@ function btq_booking_grid_shortcode() {
 	?>
 	<div class="container">
     <?php
-	btq_booking_grid_form( btq_booking_grid_current_language_code() );
+	if (btq_booking_tc_validate_saved_settings()){
+		btq_booking_grid_form( btq_booking_grid_current_language_code() );
+	}
 	?>
 	<div id="btq-booking-grid">
+		<p>PRUEBA</p>
 		<?php
-		btq_booking_grid_rooms(
-			btq_booking_grid_current_language_code(),
-			btq_booking_grid_date_start(),
-			btq_booking_grid_date_end(btq_booking_grid_date_start())
-		);
+		if (btq_booking_tc_validate_saved_settings()){
+			echo "<p>TC</p>";
+			btq_booking_tc_grid_rooms(
+				btq_booking_grid_current_language_code(),
+				btq_booking_grid_date_start(),
+				btq_booking_grid_date_end(btq_booking_grid_date_start())
+			);
+		}
+		elseif(btq_booking_iph_validate_saved_settings()){
+			echo "<p>IPH</p>";
+			btq_booking_iph_grid_rooms(
+				btq_booking_grid_current_language_code(), 
+				btq_booking_grid_date_start(), 
+				btq_booking_grid_date_end(btq_booking_grid_date_start()
+			)
+		}
 		?>
 	</div>
 	</div>
@@ -1996,7 +2044,7 @@ function btq_booking_grid_ajax() {
 		$post_data = $_POST['data'];
 		
 		if ($post_data['btq_type_query'] == 'rooms'){
-			btq_booking_grid_rooms(
+			btq_booking_tc_grid_rooms(
 				btq_booking_grid_current_language_code(), 
 				$post_data['btq_date_start'],
 				$post_data['btq_date_end'],
@@ -2058,7 +2106,7 @@ add_action( 'wp_ajax_nopriv_btq_booking_grid_packages', 'btq_booking_grid_packag
  */
 function btq_booking_grid_rooms_ajax() {	
 	if (isset($_POST['data']['btq_rooms_init'])) {
-		btq_booking_grid_rooms(
+		btq_booking_tc_grid_rooms(
 			btq_booking_grid_current_language_code(),
 			btq_booking_grid_date_start(),
 			btq_booking_grid_date_end(btq_booking_grid_date_start())
