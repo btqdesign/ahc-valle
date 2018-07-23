@@ -188,17 +188,19 @@ function btq_booking_iph_grid_rooms($language = 'es', $checkIn, $checkOut, $room
 				
 				<article class="col-md-3 grisfondo">
 					<form>
-						
 						<hr class="linea"/>
-						
+						<?php if(!empty($room['descPromotion'])):?>
 						<label class="radio-inline">
 							<input type="radio" name="optradio"><?php echo $room['descPromotion']; ?><br>
 							<span>$<?php echo  $room['promotion'] . ' ' . $currency; ?></span><br>
 							$<?php echo  $room['total'] . ' ' . $currency; ?>
 						</label>
-						
+						<?php else: ?>
+						<label class="radio-inline">
+							<span>$<?php echo  $room['promotion'] . ' ' . $currency; ?></span><br>
+						</label>
+						<?php endif; ?>
 						<hr class="linea"/>
-						
 					</form>
 					
 					<h3 align="center">$<?php echo $room['total'] . ' ' . $currency; ?>/noche</h3>
