@@ -166,7 +166,7 @@ add_action( 'admin_menu', 'btq_booking_admin_menu' );
 function btq_booking_iph_test_page(){
 ?>
 	<div class="wrap">
-		<h1>Booking Internet Power Admin</h1>
+		<h1>Internet Power Hotel Test</h1>
 		<pre><?php echo htmlentities( btq_booking_iph_query_url('ValleDeMexico', '6422', '2689', 'es-MX', btq_booking_grid_date_star(), btq_booking_grid_date_end(btq_booking_grid_date_star()), 'MXN', 1, 1, 0) ); ?></pre>
 		<?php
 			$result = btq_booking_iph_query('ValleDeMexico', '6422', '2689', 'es-MX', btq_booking_grid_date_star(), btq_booking_grid_date_end(btq_booking_grid_date_star()), 'MXN', 1, 1, 0);
@@ -215,6 +215,9 @@ function btq_booking_iph_query_url($app, $propertyNumber, $partnerId, $lang, $ch
 			.'&CheckIn=' . str_replace('-', '', $checkIn)
 			.'&CheckOut=' . str_replace('-', '', $checkOut)
 			.'&Children='.$children;
+		
+		// Debug
+		btq_booking_log('btq_booking_iph_query_url', $url, true);
 		
 		return $url;
 	}
