@@ -96,7 +96,11 @@ add_filter( "plugin_action_links_$plugin", 'btq_booking_add_settings_link' );
 function btq_booking_admin_menu() {
     if(btq_booking_tc_validate_saved_settings()){
 	    $menu_slug      = 'btq_booking_rooms';
-	    $menu_function  = 'btq_booking_admin_rooms_page';
+	    $menu_function  = 'btq_booking_tc_admin_rooms_page';
+    }
+    elseif(btq_booking_iph_validate_saved_settings()){
+	    $menu_slug      = 'btq_booking_rooms';
+	    $menu_function  = 'btq_booking_iph_admin_rooms_page';
     }
     else {
 	    $menu_slug      = 'btq_booking_settings';
@@ -120,7 +124,7 @@ function btq_booking_admin_menu() {
 	    	__('Rooms', 'btq-booking'), 
 	    	'manage_options', 
 	    	'btq_booking_rooms',
-	    	'btq_booking_admin_rooms_page'
+	    	'btq_booking_tc_admin_rooms_page'
 	    );
 	    add_submenu_page(
 	    	$menu_slug, 
@@ -128,7 +132,7 @@ function btq_booking_admin_menu() {
 	    	__('Packages', 'btq-booking'), 
 	    	'manage_options', 
 	    	'btq_booking_packages',
-	    	'btq_booking_admin_packages_page'
+	    	'btq_booking_tc_admin_packages_page'
 	    );
 	    add_submenu_page(
 	    	$menu_slug, 
@@ -136,7 +140,26 @@ function btq_booking_admin_menu() {
 	    	__('Dates without availability', 'btq-booking'), 
 	    	'manage_options', 
 	    	'btq_booking_unavailable_dates',
-	    	'btq_booking_admin_generate_unavailable_dates_page'
+	    	'btq_booking_tc_admin_generate_unavailable_dates_page'
+	    );
+    }
+    
+    if(btq_booking_iph_validate_saved_settings()){
+	    add_submenu_page(
+	    	$menu_slug, 
+	    	__('Rooms', 'btq-booking'), 
+	    	__('Rooms', 'btq-booking'), 
+	    	'manage_options', 
+	    	'btq_booking_rooms',
+	    	'btq_booking_iph_admin_rooms_page'
+	    );
+	    add_submenu_page(
+	    	$menu_slug, 
+	    	__('IPH Test', 'btq-booking'), 
+	    	__('IPH Test', 'btq-booking'), 
+	    	'manage_options', 
+	    	'btq_booking_iph_test',
+	    	'btq_booking_iph_test_page'
 	    );
     }
     
@@ -147,15 +170,6 @@ function btq_booking_admin_menu() {
     	'manage_options', 
     	'btq_booking_settings',
     	'btq_booking_admin_settings_page'
-    );
-    
-    add_submenu_page(
-    	$menu_slug, 
-    	__('IPH Test', 'btq-booking'), 
-    	__('IPH Test', 'btq-booking'), 
-    	'manage_options', 
-    	'btq_booking_iph_test',
-    	'btq_booking_iph_test_page'
     );
     
     /* Manda a llamar la funcion para declarar los ajustes y opciones del plug-in */
@@ -362,7 +376,7 @@ function btq_booking_admin_scripts($hook) {
 add_action('admin_enqueue_scripts', 'btq_booking_admin_scripts');
 
 /**
- * Valida que las opciones necesarias esten almacenadas en la base de datos.
+ * Valida que las opciones necesarias para Travel Click esten almacenadas en la base de datos.
  *
  * @author Saúl Díaz
  * @return bool Devuelve true en caso de que las opciones estan almacenadas.
@@ -392,6 +406,31 @@ function btq_booking_tc_validate_saved_settings() {
 		|| empty( get_option('btq_booking_tc_hotel_code_es') )
 		|| empty( get_option('btq_booking_tc_hotel_themeid_us') )
 		|| empty( get_option('btq_booking_tc_hotel_themeid_es') )
+	){
+		$out = false;
+	}
+	return $out;
+}
+
+/**
+ * Valida que las opciones necesarias para Internet Power Hotel esten almacenadas en la base de datos.
+ *
+ * @author Saúl Díaz
+ * @return bool Devuelve true en caso de que las opciones estan almacenadas.
+ */
+function btq_booking_iph_validate_saved_settings() {
+	$out = true;
+	if (
+		get_option('btq_booking_iph_property_number') === false
+		|| get_option('btq_booking_iph_app') === false
+		|| get_option('btq_booking_tc_soap_password') === false
+	){
+		$out = false;
+	}
+	elseif (
+		empty( get_option('btq_booking_iph_property_number') )
+		|| empty( get_option('btq_booking_iph_app') )
+		|| empty( get_option('btq_booking_iph_partner_id') )
 	){
 		$out = false;
 	}
@@ -702,7 +741,7 @@ function btq_booking_admin_packages($hotelCode) {
  * @author Saúl Díaz
  * @return void Genera la pagina de depuración.
  */
-function btq_booking_admin_packages_page(){
+function btq_booking_tc_admin_packages_page(){
 ?>
 	<!-- wrap -->
 	<div class="wrap">
@@ -822,7 +861,7 @@ function btq_booking_admin_rooms($hotelCode) {
  * @author Saúl Díaz
  * @return void Genera la pagina de depuración.
  */
-function btq_booking_admin_rooms_page() {
+function btq_booking_tc_admin_rooms_page() {
 ?>
 	<div class="wrap">
 		<h1><?php _e('Rooms on TravelClick', 'btq-booking'); ?></h1>
@@ -930,7 +969,7 @@ function btq_booking_generate_unavailable_dates_status(){
  * @author Saúl Díaz
  * @return void Genera la pagina de depuración.
  */
-function btq_booking_admin_generate_unavailable_dates_page() {
+function btq_booking_tc_admin_generate_unavailable_dates_page() {
 ?>
 	<div class="wrap">
 		<h1><?php _e('Generate Unavailable Dates TravelClick','btq-booking'); ?></h1>
