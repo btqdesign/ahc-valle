@@ -283,7 +283,17 @@ function btq_booking_iph_query($app, $propertyNumber, $partnerId, $lang, $checkI
 }
 
 function btq_booking_iph_url_correct($url, $checkIn, $checkOut){
-	return $url;
+	$patt = array(
+		'/(CheckIn=)([0-9]{0,8})(&)/',
+		'/(CheckOut=)([0-9]{0,8})(&)/'
+	);
+	$repl = array(
+		'${1}' . str_replace('-', '', $checkIn)  . '${3}',
+		'${1}' . str_replace('-', '', $checkOut) . '${3}'
+	);
+	$output = preg_replace($patt, $repl, $url);  
+	
+	return $output;
 }
 
 /**
