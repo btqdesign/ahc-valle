@@ -1,16 +1,20 @@
 (function($) {
-    // Add Color Picker to all inputs that have 'color-field' class
     $(function() {
+        // Add Color Picker to all inputs that have 'color-field' class
         $('#btq_booking_color_principal').wpColorPicker();
         
+        // Aplica la clase hide
         if ($('input[type=radio][name=btq_booking_service]:checked').val() == 'tc'){
 	        $('#btq_booking_tc_form_settings').removeClass('hide');
 			$('#btq_booking_iph_form_settings').addClass('hide');
         }
-        
-        if ($('input[type=radio][name=btq_booking_service]:checked').val() == 'iph'){
+        else if ($('input[type=radio][name=btq_booking_service]:checked').val() == 'iph'){
 	        $('#btq_booking_iph_form_settings').removeClass('hide');
 			$('#btq_booking_tc_form_settings').addClass('hide');
+        }
+        else {
+	        $('#btq_booking_tc_form_settings').addClass('hide');
+	        $('#btq_booking_iph_form_settings').addClass('hide');
         }
     });
     
