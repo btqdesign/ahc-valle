@@ -120,6 +120,8 @@ function btq_booking_iph_grid_rooms($language = 'es', $checkIn, $checkOut, $room
 	//btq_booking_log('iph-rooms', $rooms);
 	
 	if ($rooms !== FALSE) {
+		$images_packages_path = 'assets/images/packages/';
+		$images_iconos_path = 'assets/images/iconos/';
 		
 		foreach($rooms as $room){
 			$roomSlug = sanitize_title($room['roomName']);
