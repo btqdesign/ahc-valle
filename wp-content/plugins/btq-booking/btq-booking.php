@@ -143,8 +143,7 @@ function btq_booking_admin_menu() {
 	    	'btq_booking_tc_admin_generate_unavailable_dates_page'
 	    );
     }
-    
-    if(btq_booking_iph_validate_saved_settings()){
+    elseif(btq_booking_iph_validate_saved_settings()){
 	    add_submenu_page(
 	    	$menu_slug, 
 	    	__('Rooms', 'btq-booking'), 
