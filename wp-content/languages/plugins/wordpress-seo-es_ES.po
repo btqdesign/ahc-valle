@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the Plugins - Yoast SEO - Stable (latest release) package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2018-07-17 05:44:18+0000\n"
+"PO-Revision-Date: 2018-07-17 18:35:01+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -1100,7 +1100,7 @@ msgstr "Legibilidad: %1$sNecesita mejorar%2$s"
 #. closing strong tag.
 #: admin/formatter/class-metabox-formatter.php:92
 msgid "Readability: %1$sOK%2$s"
-msgstr "Legibilidad: %1$sBien%2$s"
+msgstr "Legibilidad: %1$sAceptable%2$s"
 
 #. translators: %1$s expands to an opening strong tag, %2$s expands to a
 #. closing strong tag.
@@ -4898,7 +4898,7 @@ msgstr "bastante difícil"
 
 #: inc/class-wpseo-rank.php:106 languages/yoast-seo-js.php:411
 msgid "OK"
-msgstr "OK"
+msgstr "Aceptable"
 
 #: languages/yoast-seo-js.php:18
 msgid "fairly easy"
