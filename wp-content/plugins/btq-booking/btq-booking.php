@@ -264,6 +264,7 @@ function btq_booking_admin_settings_page() {
 		<form method="post" action="options.php">
 			<?php settings_fields( 'btq-booking-settings' ); ?>
 			<?php do_settings_sections( 'btq-booking-settings' ); ?>
+			<?php submit_button(); ?>
 			<table class="form-table">
 				<tbody>
 					<tr valign="top">
@@ -277,6 +278,10 @@ function btq_booking_admin_settings_page() {
 							<input type="radio" id="btq_booking_service_iph" name="btq_booking_service" value="iph" <?php checked('iph', get_option('btq_booking_service')); ?>><label for="btq_booking_service_iph">Internet Power Hotel</label>
 						</td>
 					</tr>
+				</tbody>
+			</table>
+			<table class="form-table" id="btq_booking_tc_form_settings">
+				<tbody>
 					<tr valign="top">
 						<th scope="row"><label for="btq_booking_tc_soap_sales_channel_info_id"><?php _e('Sales channel info ID', 'btq-booking'); ?></label></th>
 						<td><input type="text" class="regular-text" id="btq_booking_tc_soap_sales_channel_info_id" name="btq_booking_tc_soap_sales_channel_info_id" value="<?php echo esc_attr( get_option('btq_booking_tc_soap_sales_channel_info_id') ); ?>" /></td>
