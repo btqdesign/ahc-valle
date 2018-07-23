@@ -2010,7 +2010,7 @@ function btq_booking_grid_shortcode() {
 				btq_booking_grid_current_language_code(), 
 				btq_booking_grid_date_start(), 
 				btq_booking_grid_date_end(btq_booking_grid_date_start()
-			)
+			);
 		}
 		?>
 	</div>
