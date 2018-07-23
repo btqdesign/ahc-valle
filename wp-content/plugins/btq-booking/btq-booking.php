@@ -176,6 +176,84 @@ function btq_booking_admin_menu() {
 }
 add_action( 'admin_menu', 'btq_booking_admin_menu' );
 
+function btq_booking_iph_admin_rooms_page(){
+?>
+	<!-- wrap -->
+	<div class="wrap">
+		<h1><?php _e('Rooms on Internet Power Hotel', 'btq-booking'); ?></h1>
+		
+		<div>
+			<h2><?php _e('Spanish','btq-booking')?></h2>
+			<?php btq_booking_iph_admin_rooms_table('es', btq_booking_grid_date_start(), btq_booking_grid_date_end(btq_booking_grid_date_start())); ?>
+		</div>
+		<div>
+			<h2><?php _e('English','btq-booking')?></h2>
+			<?php btq_booking_iph_admin_rooms_table('en', btq_booking_grid_date_start(), btq_booking_grid_date_end(btq_booking_grid_date_start())); ?>
+		</div>
+	</div>
+	<!-- wrap -->
+<?php
+}
+
+function btq_booking_iph_admin_rooms_table($language, $checkIn, $checkOut){
+	if ($language == 'es') {
+		$languageISO = 'es-MX';
+		$currency = 'MXN';
+	}
+	elseif($language == 'en'){
+		$languageISO = 'en-US';
+		$currency = 'USD';
+	}
+	else {
+		$languageISO = 'en-US';
+		$currency = 'USD';
+	}
+	$rooms = btq_booking_iph_query(
+		esc_attr( get_option('btq_booking_iph_app') ),
+		esc_attr( get_option('btq_booking_iph_property_number') ),
+		esc_attr( get_option('btq_booking_iph_partner_id') ),
+		$languageISO,
+		$checkIn,
+		$checkOut,
+		$currency,
+		1,
+		1,
+		0
+	);
+	?>
+	<table class="wp-list-table widefat fixed striped" cellspacing="0">
+		<thead>
+			<tr>
+				<th scope="col"><?php _e('Room Name','btq-booking'); ?></th>
+				<th scope="col"><?php _e('Room Description','btq-booking'); ?></th>
+				<th scope="col"><?php _e('Link','btq-booking'); ?></th>
+				<th scope="col"><?php _e('Total','btq-booking'); ?></th>
+				<th scope="col"><?php _e('Promotion','btq-booking'); ?></th>
+				<th scope="col"><?php _e('Promo Description','btq-booking'); ?></th>
+				<th scope="col"><?php _e('Picture','btq-booking'); ?></th>
+			</tr>
+		</thead>
+		<tbody>
+		<?php
+		foreach($rooms as $room){			
+			?>
+			<tr>
+				<td scope="col"><?php echo htmlentities($room['roomName']); ?></td>
+				<td scope="col"><?php echo htmlentities($room['roomDescription']); ?></td>
+				<td scope="col"><a href="<?php echo $room['url']; ?>" taget="_blank">Book Now</a></td>
+				<td scope="col"><?php echo htmlentities($room['total']); ?></td>
+				<td scope="col"><?php echo htmlentities($room['promotion']); ?></td>
+				<td scope="col"><?php echo htmlentities($room['descPromotion']); ?></td>
+				<td scope="col"><img src="<?php echo $room['img']; ?>"></td>
+			</tr>
+			<?php
+		}
+		?>
+		</tbody>
+	</table>
+	<?php
+}
+
 function btq_booking_iph_test_page(){
 ?>
 	<div class="wrap">
@@ -278,7 +356,6 @@ function btq_booking_iph_query($app, $propertyNumber, $partnerId, $lang, $checkI
 		$room['url'] = btq_booking_iph_url_correct($room['url'], $checkIn, $checkOut);
 		$rooms[] = $room;
 	}
-	
 	return $rooms;
 }
 
@@ -292,7 +369,6 @@ function btq_booking_iph_url_correct($url, $checkIn, $checkOut){
 		'${1}' . str_replace('-', '', $checkOut) . '${3}'
 	);
 	$output = preg_replace($patt, $repl, $url);  
-	
 	return $output;
 }
 
