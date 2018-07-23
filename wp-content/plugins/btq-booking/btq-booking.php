@@ -120,7 +120,7 @@ function btq_booking_iph_grid_rooms($language = 'es', $checkIn, $checkOut, $room
 	//btq_booking_log('iph-rooms', $rooms);
 	
 	if ($rooms !== FALSE) {
-		$images_packages_path = 'assets/images/packages/';
+		$images_rooms_path = 'assets/images/rooms/';
 		$images_iconos_path = 'assets/images/iconos/';
 		
 		foreach($rooms as $room){
@@ -379,18 +379,24 @@ function btq_booking_iph_admin_rooms_table($language, $checkIn, $checkOut){
 				<th scope="col"><?php _e('Link','btq-booking'); ?></th>
 				<th scope="col"><?php _e('Total','btq-booking'); ?></th>
 				<th scope="col"><?php _e('Promotion','btq-booking'); ?></th>
+				<th scope="col"><?php _e('Folder With Pictures','btq-booking'); ?></th>
 				<th scope="col"><?php _e('Picture','btq-booking'); ?></th>
 			</tr>
 		</thead>
 		<tbody>
 		<?php
-		foreach($rooms as $room){			
+		foreach($rooms as $room){
+			$images_rooms_path = 'assets/images/rooms/';
+			$roomSlug = sanitize_title($room['roomName']);
+			$images_dir = plugin_dir_path( __FILE__ ) . $images_rooms_path . $roomSlug;
+			$folder_with_pictures = (btq_booking_folder_with_pictures($images_dir)) ? __('Yes','btq-booking') : __('No','btq-booking');
 			?>
 			<tr>
 				<td scope="col"><?php echo htmlentities($room['roomName']); ?></td>
 				<td scope="col"><a href="<?php echo $room['url']; ?>" target="_blank">Book Now</a></td>
 				<td scope="col"><?php echo '$'.htmlentities($room['total']).' '.$currency; ?></td>
 				<td scope="col"><?php echo '$'.htmlentities($room['promotion']).' '.$currency; ?></td>
+				<td scope="col"><?php echo $folder_with_pictures; ?></td>
 				<td scope="col"><img src="<?php echo $room['img']; ?>"></td>
 			</tr>
 			<?php
@@ -1026,7 +1032,7 @@ function btq_booking_admin_packages($hotelCode) {
 			
 			$images_packages_path   = 'assets/images/packages/';
 			$images_dir = plugin_dir_path( __FILE__ ) . $images_packages_path . $RatePlanCode;
-			$folder_with_pictures = (is_dir($images_dir)) ? __('Yes','btq-booking') : __('No','btq-booking');
+			$folder_with_pictures = (btq_booking_folder_with_pictures($images_dir)) ? __('Yes','btq-booking') : __('No','btq-booking');
 			?>
 			<tr>
 				<td scope="col"><?php echo $RatePlanCode; ?></td>
@@ -1039,6 +1045,42 @@ function btq_booking_admin_packages($hotelCode) {
 		</tbody>
 	</table>
 	<?php
+}
+
+/**
+ * Determina si una ruta contiene imagenes, de lo contrario intenta crear la carpeta
+ *
+ * @author Saúl Díaz
+ * @param $path Ruta de la carpeta con imagenes
+ * @return mixed Devuelve false en caso de no tener imagenes, true en caso de si tener imagenes e intenta crear la carpeta
+ */
+function btq_booking_folder_with_pictures($path){
+	if (!file_exists($path)) {
+		mkdir($path, 0755);
+	}
+	
+	if(!is_dir($path)){
+		$out = false;
+	}
+	else{
+		$files = scandir($path);
+		$images = array();
+		
+		foreach ($files as $file) {
+			if (!is_dir($path . DIRECTORY_SEPARATOR . $file)){
+				if (preg_match('/^.*\.(jpg|jpeg|png|gif)$/', $file) !== FALSE) array_push($images, $file);
+			}
+		}
+		
+		if(empty($images)){
+			$out = false;
+		}
+		else{
+			$out = true;
+		}
+	}
+	
+	return $out;
 }
 
 /**
@@ -1097,7 +1139,7 @@ function btq_booking_admin_rooms($hotelCode) {
 			
 			$images_rooms_path   = 'assets/images/rooms/';
 			$images_dir = plugin_dir_path( __FILE__ ) . $images_rooms_path . $elementRoomType['!RoomTypeCode'];
-			$folder_with_pictures = (is_dir($images_dir)) ? __('Yes','btq-booking') : __('No','btq-booking');
+			$folder_with_pictures = (btq_booking_folder_with_pictures($images_dir)) ? __('Yes','btq-booking') : __('No','btq-booking');
 			
 			?>
 			<tr>
@@ -1998,10 +2040,8 @@ function btq_booking_grid_shortcode() {
 	}
 	?>
 	<div id="btq-booking-grid">
-		<p>PRUEBA</p>
 		<?php
 		if (btq_booking_tc_validate_saved_settings()){
-			echo "<p>TC</p>";
 			btq_booking_tc_grid_rooms(
 				btq_booking_grid_current_language_code(),
 				btq_booking_grid_date_start(),
@@ -2009,7 +2049,6 @@ function btq_booking_grid_shortcode() {
 			);
 		}
 		elseif(btq_booking_iph_validate_saved_settings()){
-			echo "<p>IPH</p>";
 			btq_booking_iph_grid_rooms(
 				btq_booking_grid_current_language_code(), 
 				btq_booking_grid_date_start(), 
