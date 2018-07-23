@@ -271,7 +271,8 @@ function btq_booking_iph_query_url($app, $propertyNumber, $partnerId, $lang, $ch
 function btq_booking_iph_query($app, $propertyNumber, $partnerId, $lang, $checkIn, $checkOut, $currency, $rooms, $adults, $children){
 	$urlQuery = btq_booking_iph_query_url($app, $propertyNumber, $partnerId, $lang, $checkIn, $checkOut, $currency, $rooms, $adults, $children);
 	$resultJSON = file_get_contents($urlQuery);
-	$resultArray = json_decode($resultJSON);
+	$resultArray = json_decode($resultJSON, true);
+	
 	return $resultArray;
 }
 
