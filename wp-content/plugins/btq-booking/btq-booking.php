@@ -249,6 +249,10 @@ function btq_booking_register_settings() {
 	register_setting('btq-booking-settings', 'btq_booking_tc_hotel_code_es', array('type' => 'integer'));
 	register_setting('btq-booking-settings', 'btq_booking_tc_hotel_themeid_us', array('type' => 'integer'));
 	register_setting('btq-booking-settings', 'btq_booking_tc_hotel_themeid_es', array('type' => 'integer'));
+	
+	register_setting('btq-booking-settings', 'btq_booking_iph_property_number', array('type' => 'integer'));
+	register_setting('btq-booking-settings', 'btq_booking_iph_app');
+	register_setting('btq-booking-settings', 'btq_booking_iph_partner_id', array('type' => 'integer'));
 }
 
 /**
@@ -264,7 +268,6 @@ function btq_booking_admin_settings_page() {
 		<form method="post" action="options.php">
 			<?php settings_fields( 'btq-booking-settings' ); ?>
 			<?php do_settings_sections( 'btq-booking-settings' ); ?>
-			<?php submit_button(null, null, 'submit2'); ?>
 			<table class="form-table">
 				<tbody>
 					<tr valign="top">
@@ -323,8 +326,16 @@ function btq_booking_admin_settings_page() {
 			<table class="form-table hide" id="btq_booking_iph_form_settings">
 				<tbody>
 					<tr valign="top">
-						<th scope="row"><label for="btq_booking_iph_credencial"><?php _e('Credential', 'btq-booking'); ?></label></th>
-						<td><input type="text" class="regular-text" id="btq_booking_iph_credencial" name="btq_booking_iph_credencial" value="<?php echo esc_attr( get_option('btq_booking_iph_credencial') ); ?>" /></td>
+						<th scope="row"><label for="btq_booking_iph_property_number"><?php _e('Property number', 'btq-booking'); ?></label></th>
+						<td><input type="number" class="regular-text" id="btq_booking_iph_property_number" name="btq_booking_iph_property_number" value="<?php echo esc_attr( get_option('btq_booking_iph_property_number') ); ?>" /></td>
+					</tr>
+					<tr valign="top">
+						<th scope="row"><label for="btq_booking_iph_app"><?php _e('App', 'btq-booking'); ?></label></th>
+						<td><input type="text" class="regular-text" id="btq_booking_iph_app" name="btq_booking_iph_app" value="<?php echo esc_attr( get_option('btq_booking_iph_app') ); ?>" /></td>
+					</tr>
+					<tr valign="top">
+						<th scope="row"><label for="btq_booking_iph_partner_id"><?php _e('Partner ID', 'btq-booking'); ?></label></th>
+						<td><input type="number" class="regular-text" id="btq_booking_iph_partner_id" name="btq_booking_iph_partner_id" value="<?php echo esc_attr( get_option('btq_booking_iph_partner_id') ); ?>" /></td>
 					</tr>
 				</tbody>
 			</table>
