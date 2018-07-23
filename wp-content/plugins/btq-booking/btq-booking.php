@@ -334,7 +334,7 @@ function btq_booking_iph_query_url($app, $propertyNumber, $partnerId, $lang, $ch
 			.'&Children='.$children;
 		
 		// Debug
-		btq_booking_log('btq_booking_iph_query_url', $url, true);
+		//btq_booking_log('btq_booking_iph_query_url', $url, true);
 		
 		return $url;
 	}
