@@ -36,5 +36,44 @@
 		$('.datepicker').datepicker({
 			dateFormat: 'dd/mm/yy'
 		});
+		
+		$('#btq-search').click(function() {
+			btq_admin_btn_search();
+		});
+
 	});
+	
+	function btq_admin_btn_search(){
+		console.log('#btq-admin-search click function');
+		
+		$('#btq-admin-booking-form').submit(function(e){ e.preventDefault(); });
+		
+		//$("#wait").css("display", "block");
+		//$(".preloader").css("display", "block");
+		
+		$.post(
+		    '/wp-admin/admin-ajax.php', 
+		    {
+				'action' : 'btq_booking_admin_grid',
+				'data' : {
+					btq_date_start   : moment( $('#btq-date-start').datepicker('getDate') ).tz('America/Mexico_City').format('YYYY-MM-DD'), 
+					btq_date_end     : moment( $('#btq-date-end').datepicker('getDate')   ).tz('America/Mexico_City').format('YYYY-MM-DD'),
+					btq_type_query   : $('#btq-type-query').val(),
+					btq_num_rooms    : $('#btq-num-rooms').val(),
+					btq_num_adults   : $('#btq-num-adults').val(),
+					btq_num_children : $("#btq-num-children").val()
+				}
+		    }, 
+		    function(response) {
+				$('#btq-booking-admin-grid').html(response);
+				//$(".preloader").css("display", "none");
+		    }
+		)
+		.done(function() {
+			//$(".preloader").css("display", "none");
+		})
+		.fail(function() {
+			//$(".preloader").css("display", "none");
+		});
+	}
 })(jQuery);

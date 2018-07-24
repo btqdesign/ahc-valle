@@ -342,67 +342,141 @@ function btq_booking_admin_menu() {
 }
 add_action( 'admin_menu', 'btq_booking_admin_menu' );
 
+/**
+ * Genera la respuesta AJAX del la consulta al booking de TravelClick e Internet Power Hotel.
+ *
+ * @author Saúl Díaz
+ * @return string Resultado de la consulta al booking de TravelClick e Internet Power Hotel.
+ */
+function btq_booking_admin_grid_ajax() {
+	// Debug Log
+	//btq_booking_log('ajax-post', $_POST);
+	
+	if (isset(
+		$_POST['data'],
+		$_POST['data']['btq_date_start'],
+		$_POST['data']['btq_date_end'],
+		$_POST['data']['btq_type_query'],
+		$_POST['data']['btq_num_rooms'],
+		$_POST['data']['btq_num_adults'],
+		$_POST['data']['btq_num_children']
+	)){
+		$post_data = $_POST['data'];
+		
+		if ($post_data['btq_type_query'] == 'rooms'){
+			/*
+			if (btq_booking_tc_validate_saved_settings()) {
+				btq_booking_tc_grid_rooms(
+					btq_booking_grid_current_language_code(), 
+					$post_data['btq_date_start'],
+					$post_data['btq_date_end'],
+					$post_data['btq_type_query'],
+					$post_data['btq_num_rooms'],
+					$post_data['btq_num_adults'],
+					$post_data['btq_num_children']
+				);
+			}
+			else
+			*/
+			if(btq_booking_iph_validate_saved_settings()){
+				?>
+				<div>
+					<h2><?php _e('Spanish','btq-booking')?></h2>
+					<?php btq_booking_iph_admin_rooms_table('es', $post_data['btq_date_start'], $post_data['btq_date_end'],$post_data['btq_num_rooms'],$post_data['btq_num_adults'],$post_data['btq_num_children']); ?>
+				</div>
+				<div>
+					<h2><?php _e('English','btq-booking')?></h2>
+					<?php btq_booking_iph_admin_rooms_table('en', $post_data['btq_date_start'], $post_data['btq_date_end'],$post_data['btq_num_rooms'],$post_data['btq_num_adults'],$post_data['btq_num_children']); ?>
+				</div>
+				<?php
+			}
+		}
+		/*
+		elseif ($post_data['btq_type_query'] == 'packages'){
+			btq_booking_grid_packages(
+				btq_booking_grid_current_language_code(), 
+				$post_data['btq_date_start'],
+				$post_data['btq_date_end'],
+				$post_data['btq_type_query'],
+				$post_data['btq_num_rooms'],
+				$post_data['btq_num_adults'],
+				$post_data['btq_num_children']
+			);
+		}
+		*/
+		else {
+			echo '';
+		}
+	}
+	else {
+		echo '';
+	}
+	wp_die();
+}
+add_action( 'wp_ajax_btq_booking_admin_grid', 'btq_booking_admin_grid_ajax' );
+
 function btq_booking_iph_admin_rooms_page(){
 	$checkin  = btq_booking_grid_date_start();
 	$checkout = btq_booking_grid_date_end(btq_booking_grid_date_start());
 
 	$checkinDatepicker  = date('d/m/Y', strtotime($checkin));
 	$checkoutDatepicker = date('d/m/Y', strtotime($checkout));
-?>
+	?>
 	<!-- wrap -->
 	<div class="wrap">
 		<h1><?php _e('Rooms on Internet Power Hotel', 'btq-booking'); ?></h1>
 		
-		<form>
+		<form id="btq-admin-booking-form">
 			<div class="tablenav top">
 				<div class="alignleft actions">
-					<label class="screen-reader-text" for="checkin"><?php _e('Check-In'); ?></label>
-					<input class="datepicker" type="text" name="checkin" id="checkin" value="<?php echo $checkinDatepicker; ?>">
+					<label class="screen-reader-text" for="btq-date-start"><?php _e('Check-In'); ?></label>
+					<input class="datepicker" type="text" name="btq-date-start" id="btq-date-start" value="<?php echo $checkinDatepicker; ?>">
 					
-					<label class="screen-reader-text" for="checkout"><?php _e('Check-Out'); ?></label>
-					<input class="datepicker" type="text" name="checkout" id="checkout" value="<?php echo $checkoutDatepicker; ?>">
+					<label class="screen-reader-text" for="btq-date-end"><?php _e('Check-Out'); ?></label>
+					<input class="datepicker" type="text" name="btq-date-end" id="btq-date-end" value="<?php echo $checkoutDatepicker; ?>">
 					
-					<label class="screen-reader-text" for="adults"><?php _e('Adults'); ?></label>
-					<select name="adults" id="adults">					
+					<label class="screen-reader-text" for="btq-num-adults"><?php _e('Adults'); ?></label>
+					<select name="btq-num-adults" id="btq-num-adults">					
 						<?php for ($i = 1; $i <= 9; $i ++) { ?>
 							<option value="<?php echo $i; ?>"><?php printf( _n('%s adult', '%s adults', $i, 'btq-booking'), number_format_i18n($i) ); ?></option>
 						<?php } ?>
 					</select>
 					
-					<label class="screen-reader-text" for="children"><?php _e('Children'); ?></label>
-					<select name="children" id="children">
+					<label class="screen-reader-text" for="btq-num-children"><?php _e('Children'); ?></label>
+					<select name="btq-num-children" id="btq-num-children">
 						<?php for ($i = 0; $i <= 9; $i ++) { ?>
 							<option value="<?php echo $i; ?>"><?php printf( _n('%s child', '%s children', $i, 'btq-booking'), number_format_i18n($i) ); ?></option>
 						<?php } ?>
 					</select>
 					
-					<label class="screen-reader-text" for="rooms"><?php _e('Rooms'); ?></label>
-					<select name="rooms" id="rooms">
+					<label class="screen-reader-text" for="btq-num-rooms"><?php _e('Rooms'); ?></label>
+					<select name="btq-num-rooms" id="btq-num-rooms">
 						<?php for ($i = 1; $i <= 9; $i ++) { ?>
 							<option value="<?php echo $i; ?>"><?php printf( _n('%s room', '%s rooms', $i, 'btq-booking'), number_format_i18n($i) ); ?></option>
 						<?php } ?>
 					</select>
 					
-					<input type="submit" name="seach_action" id="post-query-submit" class="button" value="<?php _e('Search','btq-booking'); ?>">
+					<input type="submit" name="seach_action" id="btq-admin-search" class="button" value="<?php _e('Search','btq-booking'); ?>">
 				</div>
 				<br class="clear">
 			</div>
 		</form>
-		
-		<div>
-			<h2><?php _e('Spanish','btq-booking')?></h2>
-			<?php btq_booking_iph_admin_rooms_table('es', $checkin, $checkout); ?>
-		</div>
-		<div>
-			<h2><?php _e('English','btq-booking')?></h2>
-			<?php btq_booking_iph_admin_rooms_table('en', $checkin, $checkout); ?>
+		<div id="btq-booking-admin-grid">
+			<div>
+				<h2><?php _e('Spanish','btq-booking')?></h2>
+				<?php btq_booking_iph_admin_rooms_table('es', $checkin, $checkout); ?>
+			</div>
+			<div>
+				<h2><?php _e('English','btq-booking')?></h2>
+				<?php btq_booking_iph_admin_rooms_table('en', $checkin, $checkout); ?>
+			</div>
 		</div>
 	</div>
 	<!-- wrap -->
-<?php
+	<?php
 }
 
-function btq_booking_iph_admin_rooms_table($language, $checkIn, $checkOut){
+function btq_booking_iph_admin_rooms_table($language, $checkIn, $checkOut, $rooms = 1, $adults = 1, $children = 0){
 	if ($language == 'es') {
 		$languageISO = 'es-MX';
 		$currency = 'MXN';
@@ -424,9 +498,9 @@ function btq_booking_iph_admin_rooms_table($language, $checkIn, $checkOut){
 		$checkIn,
 		$checkOut,
 		$currency,
-		1,
-		1,
-		0
+		$rooms,
+		$adults,
+		$children
 	);
 	?>
 	<table class="wp-list-table widefat fixed striped" cellspacing="0">
@@ -705,16 +779,21 @@ function btq_booking_admin_settings_page() {
  */
 function btq_booking_admin_scripts($hook) {
     if(is_admin()) {      
-        if ($hook == 'btq_booking_settings'){
+        if ($hook == 'btq_booking_settings' || $hook == 'btq_booking_rooms'){
         	// Color Picker
 			wp_enqueue_style('wp-color-picker'); 
-        }
-        elseif ($hook == 'btq_booking_rooms'){
+			
+			// Datepicker
 	        wp_enqueue_script('jquery-ui-datepicker');
 	        wp_register_style('jquery-ui', 'https://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css');
 	        wp_enqueue_style('jquery-ui');
+	        
+	        // moment
+	        wp_enqueue_script('moment', plugins_url( 'assets/js' . DIRECTORY_SEPARATOR . 'moment.min.js', __FILE__ ), array(), '2.21.0', true);
+			wp_enqueue_script('moment-timezone', plugins_url( 'assets/js' . DIRECTORY_SEPARATOR . 'moment-timezone.js', __FILE__ ), array('moment'), '0.5.17', true);
+			
+			wp_enqueue_script('btq-booking-admin-js', plugins_url('assets/js' . DIRECTORY_SEPARATOR . 'btq-booking-admin.js', __FILE__), array('wp-color-picker','moment','moment-timezone'), false, true);
         }
-        wp_enqueue_script('btq-booking-admin-js', plugins_url('assets/js' . DIRECTORY_SEPARATOR . 'btq-booking-admin.js', __FILE__), array('wp-color-picker'), false, true);
     }
 }
 add_action('admin_enqueue_scripts', 'btq_booking_admin_scripts');
