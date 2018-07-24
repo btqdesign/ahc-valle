@@ -700,13 +700,16 @@ function btq_booking_admin_settings_page() {
  */
 function btq_booking_admin_scripts($hook) {
     if(is_admin()) {      
-        // Color Picker
-        wp_enqueue_style('wp-color-picker'); 
+        if ($hook == 'btq_booking_settings'){
+        	// Color Picker
+			wp_enqueue_style('wp-color-picker'); 
+        }
+        elseif ($hook == 'btq_booking_rooms'){
+	        wp_enqueue_script('jquery-ui-datepicker');
+	        wp_register_style('jquery-ui', 'https://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css');
+	        wp_enqueue_style('jquery-ui');
+        }
         wp_enqueue_script('btq-booking-admin-js', plugins_url('assets/js' . DIRECTORY_SEPARATOR . 'btq-booking-admin.js', __FILE__), array('wp-color-picker'), false, true);
-        
-        wp_enqueue_script('jquery-ui-datepicker');
-        wp_register_style('jquery-ui', 'https://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css');
-        wp_enqueue_style('jquery-ui');
     }
 }
 add_action('admin_enqueue_scripts', 'btq_booking_admin_scripts');
