@@ -2096,7 +2096,7 @@ function btq_booking_grid_ajax() {
 		$post_data = $_POST['data'];
 		
 		if ($post_data['btq_type_query'] == 'rooms'){
-			if (btq_booking_tc_validate_saved_settings()) {
+			if (btq_booking_tc_validate_saved_settings()) {
 				btq_booking_tc_grid_rooms(
 					btq_booking_grid_current_language_code(), 
 					$post_data['btq_date_start'],
