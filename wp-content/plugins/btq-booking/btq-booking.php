@@ -429,7 +429,7 @@ function btq_booking_iph_debug_page(){
 ?>
 	<div class="wrap">
 		<h1>Internet Power Hotel Test</h1>
-		<p>
+		<textarea>
 		<?php 
 			echo htmlentities( 
 				btq_booking_iph_query_url(
@@ -446,7 +446,7 @@ function btq_booking_iph_debug_page(){
 				) 
 			); 
 		?>
-		</p>
+		</textarea>
 		
 		<?php
 		$result = btq_booking_iph_query(
@@ -463,7 +463,7 @@ function btq_booking_iph_debug_page(){
 		);
 		$resultVarExport = var_export($result, TRUE);
 		?>
-		<pre><?php echo htmlentities($resultVarExport); ?></pre>
+		<pre style="background: white; padding: 5px;"><?php echo htmlentities($resultVarExport); ?></pre>
 	</div>
 <?php
 }
