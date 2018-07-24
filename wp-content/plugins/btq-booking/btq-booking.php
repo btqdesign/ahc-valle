@@ -348,6 +348,27 @@ function btq_booking_iph_admin_rooms_page(){
 	<div class="wrap">
 		<h1><?php _e('Rooms on Internet Power Hotel', 'btq-booking'); ?></h1>
 		
+<form>
+	<div class="tablenav bottom">
+		<div class="alignleft actions">
+		</div>
+		<div class='tablenav-pages no-pages'>
+			<span class="displaying-num">0 elementos</span>
+			<span class='pagination-links'>
+				<span class="tablenav-pages-navspan" aria-hidden="true">&laquo;</span>
+				<span class="tablenav-pages-navspan" aria-hidden="true">&lsaquo;</span>
+				<span class="screen-reader-text">Página actual</span>
+				<span id="table-paging" class="paging-input">
+					<span class="tablenav-paging-text">1 de <span class='total-pages'>0</span></span>
+				</span>
+				<a class='next-page' href='https://valle.idevol.net/wp-admin/edit.php?paged=0'><span class='screen-reader-text'>Página siguiente</span><span aria-hidden='true'>&rsaquo;</span></a>
+				<a class='last-page' href='https://valle.idevol.net/wp-admin/edit.php?paged=0'><span class='screen-reader-text'>Última página</span><span aria-hidden='true'>&raquo;</span></a>
+			</span>
+		</div>
+		<br class="clear" />
+	</div>
+</form>
+		
 		<div>
 			<h2><?php _e('Spanish','btq-booking')?></h2>
 			<?php btq_booking_iph_admin_rooms_table('es', btq_booking_grid_date_start(), btq_booking_grid_date_end(btq_booking_grid_date_start())); ?>
