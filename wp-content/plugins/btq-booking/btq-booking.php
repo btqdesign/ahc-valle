@@ -236,7 +236,7 @@ function btq_booking_iph_grid_rooms($language = 'es', $checkIn, $checkOut, $room
 				$precio = 0;
 			} // if ($room['total'] != '0.00' && $room['show'] == true)
 			else {
-				error_log('Error - Room: ' . $room['roomName'] . ' - URL: ' . $room['url']);
+				error_log('Error - Room: ' . $room['roomName'] . ', Check-in: ' . $checkIn . ', Check-out: ' . $checkOut . ', Total: ' . $room['total'] . ', Show: ' . $room['show'] . ', URL: ' . $room['url']);
 			}
 		} // foreach($arrayRoomType as $elementRoomType)
 	} // if ($rooms !== FALSE)
@@ -560,10 +560,10 @@ function btq_booking_iph_debug_page(){
 					esc_attr( get_option('btq_booking_iph_app') ),
 					esc_attr( get_option('btq_booking_iph_property_number') ),
 					esc_attr( get_option('btq_booking_iph_partner_id') ),
-					'en-US',
+					'es-MX',
 					btq_booking_grid_date_start(),
 					btq_booking_grid_date_end(btq_booking_grid_date_start()),
-					'USD',
+					'MXN',
 					1,
 					1,
 					0
@@ -577,10 +577,10 @@ function btq_booking_iph_debug_page(){
 			esc_attr( get_option('btq_booking_iph_app') ),
 			esc_attr( get_option('btq_booking_iph_property_number') ),
 			esc_attr( get_option('btq_booking_iph_partner_id') ),
-			'en-US',
+			'es-MX',
 			btq_booking_grid_date_start(),
 			btq_booking_grid_date_end(btq_booking_grid_date_start()),
-			'USD',
+			'MXN',
 			1,
 			1,
 			0
