@@ -349,23 +349,30 @@ function btq_booking_iph_admin_rooms_page(){
 		<h1><?php _e('Rooms on Internet Power Hotel', 'btq-booking'); ?></h1>
 		
 <form>
-	<div class="tablenav bottom">
+	<div class="tablenav top">
 		<div class="alignleft actions">
+			<label class="screen-reader-text" for="cat">Filtrar por categoría</label>
+			<select name="cat" id="cat" class="postform">
+				<option value="0">Todas las categorías</option>
+				<option class="level-0" value="2">Uncategorized</option>
+			</select>
+			<input type="hidden" name="lang" value="en"><input type="submit" name="filter_action" id="post-query-submit" class="button" value="Filtrar">
 		</div>
-		<div class='tablenav-pages no-pages'>
+		<div class="tablenav-pages no-pages">
 			<span class="displaying-num">0 elementos</span>
-			<span class='pagination-links'>
-				<span class="tablenav-pages-navspan" aria-hidden="true">&laquo;</span>
-				<span class="tablenav-pages-navspan" aria-hidden="true">&lsaquo;</span>
-				<span class="screen-reader-text">Página actual</span>
-				<span id="table-paging" class="paging-input">
-					<span class="tablenav-paging-text">1 de <span class='total-pages'>0</span></span>
+			<span class="pagination-links">
+				<span class="tablenav-pages-navspan" aria-hidden="true">«</span>
+				<span class="tablenav-pages-navspan" aria-hidden="true">‹</span>
+				<span class="paging-input">
+					<label for="current-page-selector" class="screen-reader-text">Página actual</label>
+					<input class="current-page" id="current-page-selector" type="text" name="paged" value="1" size="1" aria-describedby="table-paging">
+					<span class="tablenav-paging-text"> de <span class="total-pages">0</span></span>
 				</span>
-				<a class='next-page' href='https://valle.idevol.net/wp-admin/edit.php?paged=0'><span class='screen-reader-text'>Página siguiente</span><span aria-hidden='true'>&rsaquo;</span></a>
-				<a class='last-page' href='https://valle.idevol.net/wp-admin/edit.php?paged=0'><span class='screen-reader-text'>Última página</span><span aria-hidden='true'>&raquo;</span></a>
+				<a class="next-page" href="https://valle.idevol.net/wp-admin/edit.php?paged=0"><span class="screen-reader-text">Página siguiente</span><span aria-hidden="true">›</span></a>
+				<a class="last-page" href="https://valle.idevol.net/wp-admin/edit.php?paged=0"><span class="screen-reader-text">Última página</span><span aria-hidden="true">»</span></a>
 			</span>
 		</div>
-		<br class="clear" />
+		<br class="clear">
 	</div>
 </form>
 		
