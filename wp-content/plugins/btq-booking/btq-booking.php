@@ -348,33 +348,36 @@ function btq_booking_iph_admin_rooms_page(){
 	<div class="wrap">
 		<h1><?php _e('Rooms on Internet Power Hotel', 'btq-booking'); ?></h1>
 		
-<form>
-	<div class="tablenav top">
-		<div class="alignleft actions">
-			<label class="screen-reader-text" for="cat">Filtrar por categoría</label>
-			<select name="cat" id="cat" class="postform">
-				<option value="0">Todas las categorías</option>
-				<option class="level-0" value="2">Uncategorized</option>
-			</select>
-			<input type="hidden" name="lang" value="en"><input type="submit" name="filter_action" id="post-query-submit" class="button" value="Filtrar">
-		</div>
-		<div class="tablenav-pages no-pages">
-			<span class="displaying-num">0 elementos</span>
-			<span class="pagination-links">
-				<span class="tablenav-pages-navspan" aria-hidden="true">«</span>
-				<span class="tablenav-pages-navspan" aria-hidden="true">‹</span>
-				<span class="paging-input">
-					<label for="current-page-selector" class="screen-reader-text">Página actual</label>
-					<input class="current-page" id="current-page-selector" type="text" name="paged" value="1" size="1" aria-describedby="table-paging">
-					<span class="tablenav-paging-text"> de <span class="total-pages">0</span></span>
-				</span>
-				<a class="next-page" href="https://valle.idevol.net/wp-admin/edit.php?paged=0"><span class="screen-reader-text">Página siguiente</span><span aria-hidden="true">›</span></a>
-				<a class="last-page" href="https://valle.idevol.net/wp-admin/edit.php?paged=0"><span class="screen-reader-text">Última página</span><span aria-hidden="true">»</span></a>
-			</span>
-		</div>
-		<br class="clear">
-	</div>
-</form>
+		<form>
+			<div class="tablenav top">
+				<div class="alignleft actions">
+					<label class="screen-reader-text" for="checkin"><?php _e('Check-In'); ?></label>
+					<input type="text" name="checkin" id="checkin">
+					
+					<label class="screen-reader-text" for="checkout"><?php _e('Check-Out'); ?></label>
+					<input type="text" name="checkout" id="checkout">
+					
+					<label class="screen-reader-text" for="adults"><?php _e('Adults'); ?></label>
+					<select name="adults" id="adults">
+						<option value="1">1 Adult</option>
+						<option class="level-0" value="2">2 Adult</option>
+					</select>
+					
+					<label class="screen-reader-text" for="children"><?php _e('Children'); ?></label>
+					<select name="children" id="children">
+						<option value="0">0 Children</option>
+					</select>
+					
+					<label class="screen-reader-text" for="rooms"><?php _e('Rooms'); ?></label>
+					<select name="rooms" id="rooms">
+						<option value="0">1 Room</option>
+					</select>
+					
+					<input type="submit" name="seach_action" id="post-query-submit" class="button" value="<?php _e('Search','btq-booking'); ?>">
+				</div>
+				<br class="clear">
+			</div>
+		</form>
 		
 		<div>
 			<h2><?php _e('Spanish','btq-booking')?></h2>
