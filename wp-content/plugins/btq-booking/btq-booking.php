@@ -2171,11 +2171,20 @@ add_action( 'wp_ajax_nopriv_btq_booking_grid_packages', 'btq_booking_grid_packag
  */
 function btq_booking_grid_rooms_ajax() {	
 	if (isset($_POST['data']['btq_rooms_init'])) {
-		btq_booking_tc_grid_rooms(
-			btq_booking_grid_current_language_code(),
-			btq_booking_grid_date_start(),
-			btq_booking_grid_date_end(btq_booking_grid_date_start())
-		);
+		if(btq_booking_tc_validate_saved_settings()){
+			btq_booking_tc_grid_rooms(
+				btq_booking_grid_current_language_code(),
+				btq_booking_grid_date_start(),
+				btq_booking_grid_date_end(btq_booking_grid_date_start())
+			);
+		}
+		elseif(btq_booking_iph_validate_saved_settings()){
+			btq_booking_iph_grid_rooms(
+				btq_booking_grid_current_language_code(),
+				btq_booking_grid_date_start(),
+				btq_booking_grid_date_end(btq_booking_grid_date_start())
+			);
+		}
 	}
 	else {
 		echo '';
