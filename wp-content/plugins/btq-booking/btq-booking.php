@@ -183,7 +183,7 @@ function btq_booking_iph_grid_rooms($language = 'es', $checkIn, $checkOut, $room
 			else{
 			?>
 				<article class="col-md-5">
-					<img src="<?php echo $room['img']; ?>" style="width: 100%; height: auto;">
+					<img src="<?php echo $room['img']; ?>">
 				</article>
 			<?php
 			}
