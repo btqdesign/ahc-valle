@@ -182,14 +182,17 @@ function btq_booking_iph_grid_rooms($language = 'es', $checkIn, $checkOut, $room
 			}
 			else{
 			?>
-				<article class="col-md-5">
-					<img src="<?php echo $room['img']; ?>">
+				<article class="col-md-2">
+					<img src="<?php echo $room['img']; ?>" style="width: 100%; height: auto; margin-top: 27px;">
 				</article>
 			<?php
 			}
 			?>
-				
+				<?php if (btq_booking_folder_with_pictures($images_dir)) { ?>
 				<article class="col-md-4">
+				<?php else { ?>
+				<article class="col-md-7">
+				<?php } ?>
 					<h3 class="titulo"><?php echo $room['roomName'] ?></h3>
 					<?php btq_booking_grid_split_description($room['roomDescription'], $language); ?>
 								
