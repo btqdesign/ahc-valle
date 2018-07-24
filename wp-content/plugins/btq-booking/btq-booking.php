@@ -343,6 +343,11 @@ function btq_booking_admin_menu() {
 add_action( 'admin_menu', 'btq_booking_admin_menu' );
 
 function btq_booking_iph_admin_rooms_page(){
+	$checkin  = btq_booking_grid_date_start();
+	$checkout = btq_booking_grid_date_end(btq_booking_grid_date_start());
+
+	$checkinDatepicker  = date('d/m/Y', strtotime($checkin));
+	$checkoutDatepicker = date('d/m/Y', strtotime($checkout));
 ?>
 	<!-- wrap -->
 	<div class="wrap">
@@ -352,10 +357,10 @@ function btq_booking_iph_admin_rooms_page(){
 			<div class="tablenav top">
 				<div class="alignleft actions">
 					<label class="screen-reader-text" for="checkin"><?php _e('Check-In'); ?></label>
-					<input class="datepicker" type="text" name="checkin" id="checkin">
+					<input class="datepicker" type="text" name="checkin" id="checkin" value="<?php echo $checkinDatepicker; ?>">
 					
 					<label class="screen-reader-text" for="checkout"><?php _e('Check-Out'); ?></label>
-					<input class="datepicker" type="text" name="checkout" id="checkout">
+					<input class="datepicker" type="text" name="checkout" id="checkout" value="<?php echo $checkoutDatepicker; ?>">
 					
 					<label class="screen-reader-text" for="adults"><?php _e('Adults'); ?></label>
 					<select name="adults" id="adults">
@@ -381,11 +386,11 @@ function btq_booking_iph_admin_rooms_page(){
 		
 		<div>
 			<h2><?php _e('Spanish','btq-booking')?></h2>
-			<?php btq_booking_iph_admin_rooms_table('es', btq_booking_grid_date_start(), btq_booking_grid_date_end(btq_booking_grid_date_start())); ?>
+			<?php btq_booking_iph_admin_rooms_table('es', $checkin, $checkout); ?>
 		</div>
 		<div>
 			<h2><?php _e('English','btq-booking')?></h2>
-			<?php btq_booking_iph_admin_rooms_table('en', btq_booking_grid_date_start(), btq_booking_grid_date_end(btq_booking_grid_date_start())); ?>
+			<?php btq_booking_iph_admin_rooms_table('en', $checkin, $checkout); ?>
 		</div>
 	</div>
 	<!-- wrap -->
