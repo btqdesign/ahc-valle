@@ -31,4 +31,10 @@
 			$('#btq_booking_tc_form_settings').addClass('hide');
 		}
 	});
+	
+	$(document).ready(function(){
+		$('.datepicker').datepicker({
+			dateFormat: 'dd/mm/yy'
+		});
+	});
 })(jQuery);
