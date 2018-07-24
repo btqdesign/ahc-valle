@@ -2075,10 +2075,10 @@ function btq_booking_grid_shortcode() {
 add_shortcode( 'btq-booking-grid', 'btq_booking_grid_shortcode' );
 
 /**
- * Genera la respuesta AJAX del la consulta al booking de TravelClick.
+ * Genera la respuesta AJAX del la consulta al booking de TravelClick e Internet Power Hotel.
  *
  * @author Saúl Díaz
- * @return string Resultado de la consulta al booking de TravelClick.
+ * @return string Resultado de la consulta al booking de TravelClick e Internet Power Hotel.
  */
 function btq_booking_grid_ajax() {
 	// Debug Log
@@ -2096,15 +2096,27 @@ function btq_booking_grid_ajax() {
 		$post_data = $_POST['data'];
 		
 		if ($post_data['btq_type_query'] == 'rooms'){
-			btq_booking_tc_grid_rooms(
-				btq_booking_grid_current_language_code(), 
-				$post_data['btq_date_start'],
-				$post_data['btq_date_end'],
-				$post_data['btq_type_query'],
-				$post_data['btq_num_rooms'],
-				$post_data['btq_num_adults'],
-				$post_data['btq_num_children']
-			);
+			if (btq_booking_tc_validate_saved_settings()) {
+				btq_booking_tc_grid_rooms(
+					btq_booking_grid_current_language_code(), 
+					$post_data['btq_date_start'],
+					$post_data['btq_date_end'],
+					$post_data['btq_type_query'],
+					$post_data['btq_num_rooms'],
+					$post_data['btq_num_adults'],
+					$post_data['btq_num_children']
+				);
+			}
+			elseif(btq_booking_iph_validate_saved_settings()){
+				btq_booking_iph_grid_rooms(
+					btq_booking_grid_current_language_code(),
+					$post_data['btq_date_start'],
+					$post_data['btq_date_end'],
+					$post_data['btq_num_rooms'],
+					$post_data['btq_num_adults'],
+					$post_data['btq_num_children']
+				);
+			}
 		}
 		elseif ($post_data['btq_type_query'] == 'packages'){
 			btq_booking_grid_packages(
