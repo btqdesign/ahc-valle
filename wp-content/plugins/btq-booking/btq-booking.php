@@ -126,11 +126,14 @@ function btq_booking_iph_grid_rooms($language = 'es', $checkIn, $checkOut, $room
 		foreach($rooms as $room){
 			$roomSlug = sanitize_title($room['roomName']);
 			$images_dir = plugin_dir_path( __FILE__ ) . $images_rooms_path . $roomSlug;
-			$images = btq_booking_grid_get_images($images_dir);
 			?>
 			
 			<section class="row">
 				
+			<?php
+			if (btq_booking_folder_with_pictures($images_dir)) {
+				$images = btq_booking_grid_get_images($images_dir);
+				?>
 				<article class="col-md-5">
 					<div id="btq-carousel-<?php echo $roomSlug; ?>" class="carousel slide" data-ride="carousel">
 						<!-- Indicators -->
@@ -175,6 +178,16 @@ function btq_booking_iph_grid_rooms($language = 'es', $checkIn, $checkOut, $room
 						</a>
 					</div>
 				</article>
+				<?php
+			}
+			else{
+			?>
+				<article class="col-md-5">
+					<img src="<?php echo $room['imag']; ?>" style="width: 100%; height: auto;">
+				</article>
+			<?php
+			}
+			?>
 				
 				<article class="col-md-4">
 					<h3 class="titulo"><?php echo $room['roomName'] ?></h3>
