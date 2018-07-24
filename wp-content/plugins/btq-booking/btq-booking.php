@@ -2136,6 +2136,7 @@ function btq_booking_grid_ajax() {
 	else {
 		echo '';
 	}
+	wp_die();
 }
 add_action( 'wp_ajax_btq_booking_grid', 'btq_booking_grid_ajax' );
 add_action( 'wp_ajax_nopriv_btq_booking_grid', 'btq_booking_grid_ajax' );
