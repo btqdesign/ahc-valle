@@ -1251,7 +1251,7 @@ function btq_booking_tc_admin_rooms_page() {
  * @author Saúl Díaz
  * @return void
  */
-function btq_booking_generate_unavailable_dates_deactivation() {
+function btq_booking_tc_generate_unavailable_dates_deactivation() {
 	wp_clear_scheduled_hook('btq_booking_generate_unavailable_dates_event');
 }
 register_deactivation_hook(__FILE__, 'btq_booking_generate_unavailable_dates_deactivation');
@@ -1266,7 +1266,7 @@ register_deactivation_hook(__FILE__, 'btq_booking_generate_unavailable_dates_dea
  * @author Saúl Díaz
  * @return void 
  */
-function btq_booking_generate_unavailable_dates_activation() {
+function btq_booking_tc_generate_unavailable_dates_activation() {
     if (! wp_next_scheduled ( 'btq_booking_generate_unavailable_dates_event' )) {
 		wp_schedule_event(time(), 'hourly', 'btq_booking_generate_unavailable_dates_event');
     }
@@ -1279,7 +1279,7 @@ register_activation_hook(__FILE__, 'btq_booking_generate_unavailable_dates_activ
  * @author Saúl Díaz
  * @return mixed Archivo JSON y tabala
  */
-function btq_booking_generate_unavailable_dates_status(){
+function btq_booking_tc_generate_unavailable_dates_status(){
 	$dateRangeStart = date('Y-m-d');
 	$dateRangeEnd   = date('Y-m-d', strtotime($dateRangeStart . ' + 1 year'));
 	$dates = btq_booking_grid_dates($dateRangeStart, $dateRangeEnd);
@@ -1337,7 +1337,7 @@ function btq_booking_tc_admin_generate_unavailable_dates_page() {
 ?>
 	<div class="wrap">
 		<h1><?php _e('Generate Unavailable Dates TravelClick','btq-booking'); ?></h1>
-		<?php btq_booking_generate_unavailable_dates_status(); ?>
+		<?php btq_booking_tc_generate_unavailable_dates_status(); ?>
 	</div><!-- wrap -->
 <?php
 }
@@ -1348,24 +1348,26 @@ function btq_booking_tc_admin_generate_unavailable_dates_page() {
  * @author Saúl Díaz
  * @return file Archivo JSON
  */
-function btq_booking_generate_unavailable_dates(){
-	$dateRangeStart = date('Y-m-d');
-	$dateRangeEnd   = date('Y-m-d', strtotime($dateRangeStart . ' + 1 year'));
-	$dates = btq_booking_grid_dates($dateRangeStart, $dateRangeEnd);
-	$datesUnavailable = array();
-	
-	foreach($dates as $date){
-		$dayRangeStart = $date->format('Y-m-d');
-		$dayRangeEnd   = date('Y-m-d', strtotime($date->format('Y-m-d') . ' + 1 day'));
-		if (btq_booking_soap_query(esc_attr(get_option('btq_booking_tc_hotel_code_es')), $dayRangeStart, $dayRangeEnd) === FALSE){
-			$datesUnavailable[] = $dayRangeStart;
+function btq_booking_tc_generate_unavailable_dates(){
+	if(btq_booking_tc_validate_saved_settings()){
+		$dateRangeStart = date('Y-m-d');
+		$dateRangeEnd   = date('Y-m-d', strtotime($dateRangeStart . ' + 1 year'));
+		$dates = btq_booking_grid_dates($dateRangeStart, $dateRangeEnd);
+		$datesUnavailable = array();
+		
+		foreach($dates as $date){
+			$dayRangeStart = $date->format('Y-m-d');
+			$dayRangeEnd   = date('Y-m-d', strtotime($date->format('Y-m-d') . ' + 1 day'));
+			if (btq_booking_soap_query(esc_attr(get_option('btq_booking_tc_hotel_code_es')), $dayRangeStart, $dayRangeEnd) === FALSE){
+				$datesUnavailable[] = $dayRangeStart;
+			}
 		}
+		
+		$js_dir = plugin_dir_path( __FILE__ ) . 'assets' . DIRECTORY_SEPARATOR . 'js' . DIRECTORY_SEPARATOR ;
+		file_put_contents( $js_dir . 'btq-unavailable.json', json_encode($datesUnavailable) );
 	}
-	
-	$js_dir = plugin_dir_path( __FILE__ ) . 'assets' . DIRECTORY_SEPARATOR . 'js' . DIRECTORY_SEPARATOR ;
-	file_put_contents( $js_dir . 'btq-unavailable.json', json_encode($datesUnavailable) );
 }
-add_action('btq_booking_generate_unavailable_dates_event', 'btq_booking_generate_unavailable_dates');
+add_action('btq_booking_generate_unavailable_dates_event', 'btq_booking_tc_generate_unavailable_dates');
 
 /**
  * Genera la descripción con las estiquetas HTML necesarias para el link "Ver más".
@@ -1967,28 +1969,10 @@ function btq_booking_grid_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'btq_booking_grid_scripts', 1003 );
 
+/**
+ * Integra CSS denstro de la pagina 
+ */
 function btq_booking_head_scripts(){
-	/** 
-	 * CSS personalizado dentro de <head>
-	 * Estilos del BTQ Booking TC Grid
-	 *
-	 * Datepicker
-	 * 
-	 * #cb6666  Rosado rojo
-	 * #222     Negro
-	 * #cbd08c  Amarillo limon
-	 * #666     Gris
-	 * #C69807  Dorado - Gran Hotel
-	 * #fff     Balnco
-	 *
-	 *
-	 *
-	 * Grid
-	 *
-	 * #BDBDBD  Gris claro
-	 * #666     Gris
-	 * #C69807  Dorado - Gran Hotel
-	 */
 	if (!is_admin()) {
 	    ?>
 	    <style type="text/css">
