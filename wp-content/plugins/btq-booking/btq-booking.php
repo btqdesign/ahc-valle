@@ -190,7 +190,7 @@ function btq_booking_iph_grid_rooms($language = 'es', $checkIn, $checkOut, $room
 			?>
 				<?php if (btq_booking_folder_with_pictures($images_dir)) { ?>
 				<article class="col-md-4">
-				<?php else { ?>
+				<?php } else { ?>
 				<article class="col-md-7">
 				<?php } ?>
 					<h3 class="titulo"><?php echo $room['roomName'] ?></h3>
