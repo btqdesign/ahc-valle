@@ -352,10 +352,10 @@ function btq_booking_iph_admin_rooms_page(){
 			<div class="tablenav top">
 				<div class="alignleft actions">
 					<label class="screen-reader-text" for="checkin"><?php _e('Check-In'); ?></label>
-					<input class="datepicker" type="date" name="checkin" id="checkin">
+					<input class="datepicker" type="text" name="checkin" id="checkin">
 					
 					<label class="screen-reader-text" for="checkout"><?php _e('Check-Out'); ?></label>
-					<input class="datepicker" type="date" name="checkout" id="checkout">
+					<input class="datepicker" type="text" name="checkout" id="checkout">
 					
 					<label class="screen-reader-text" for="adults"><?php _e('Adults'); ?></label>
 					<select name="adults" id="adults">
