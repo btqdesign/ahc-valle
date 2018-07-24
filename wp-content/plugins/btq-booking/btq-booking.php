@@ -456,7 +456,7 @@ function btq_booking_iph_admin_rooms_page(){
 						<?php } ?>
 					</select>
 					
-					<input type="button" name="seach_action" id="btq-admin-search" class="button" value="<?php _e('Search','btq-booking'); ?>">
+					<input type="button" name="btq-admin-search" id="btq-admin-search" class="button" value="<?php _e('Search','btq-booking'); ?>">
 				</div>
 				<br class="clear">
 			</div>

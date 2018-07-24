@@ -37,7 +37,7 @@
 			dateFormat: 'dd/mm/yy'
 		});
 		
-		$('#btq-search').click(function() {
+		$('#btq-admin-search').click(function() {
 			btq_admin_btn_search();
 		});
 
