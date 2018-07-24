@@ -320,11 +320,11 @@ function btq_booking_admin_menu() {
 	    );
 	    add_submenu_page(
 	    	$menu_slug, 
-	    	__('IPH Test', 'btq-booking'), 
-	    	__('IPH Test', 'btq-booking'), 
+	    	__('Debug query', 'btq-booking'), 
+	    	__('Debug query', 'btq-booking'), 
 	    	'manage_options', 
-	    	'btq_booking_iph_test',
-	    	'btq_booking_iph_test_page'
+	    	'btq_booking_iph_debug',
+	    	'btq_booking_iph_debug_page'
 	    );
     }
     
@@ -425,7 +425,7 @@ function btq_booking_iph_admin_rooms_table($language, $checkIn, $checkOut){
 	<?php
 }
 
-function btq_booking_iph_test_page(){
+function btq_booking_iph_debug_page(){
 ?>
 	<div class="wrap">
 		<h1>Internet Power Hotel Test</h1>
