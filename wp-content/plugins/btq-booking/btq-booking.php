@@ -391,10 +391,10 @@ function btq_booking_iph_admin_rooms_table($language, $checkIn, $checkOut){
 	<table class="wp-list-table widefat fixed striped" cellspacing="0">
 		<thead>
 			<tr>
-				<th scope="col"><?php _e('Room Name','btq-booking'); ?><hr><?php _e('Show','btq-bookng'); ?></th>
+				<th scope="col"><?php _e('Room Name','btq-booking'); ?><hr><?php _e('Show','btq-booking'); ?></th>
 				<th scope="col"><?php _e('Link','btq-booking'); ?></th>
 				<th scope="col"><?php _e('Total','btq-booking'); ?></th>
-				<th scope="col"><?php _e('Promotion','btq-booking'); ?><hr><?php _e('Show','btq-bookng'); ?></th>
+				<th scope="col"><?php _e('Promotion','btq-booking'); ?><hr><?php _e('Show','btq-booking'); ?></th>
 				<th scope="col"><?php _e('Folder With Pictures','btq-booking'); ?></th>
 				<th scope="col"><?php _e('Picture','btq-booking'); ?></th>
 			</tr>
