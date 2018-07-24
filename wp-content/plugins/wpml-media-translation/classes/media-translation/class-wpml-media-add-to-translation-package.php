@@ -121,7 +121,8 @@ class WPML_Media_Add_To_Translation_Package implements IWPML_Action {
 
 	private function replace_caption_with_placeholder( $caption_shortcode, WPML_Media_Caption $caption ) {
 		$caption_content     = $caption->get_content();
-		$new_caption_content = str_replace( $caption->get_caption(), self::CAPTION_PLACEHOLDER, $caption_content );
+		$search_pattern      = '/(>\s?)(' .  preg_quote( $caption->get_caption(), '/' ) . ')/';
+		$new_caption_content = preg_replace( $search_pattern, "$1" . self::CAPTION_PLACEHOLDER, $caption_content, 1 );
 
 		return str_replace( $caption_content, $new_caption_content, $caption_shortcode );
 

@@ -4,7 +4,7 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInit6f59c21f4c5acf65f7bb78dc840bad91
+class ComposerStaticInitd5ab2ed147e5dc33ae269de0d066f4ae
 {
     public static $prefixesPsr0 = array (
         'x' => 
@@ -75,6 +75,7 @@ class ComposerStaticInit6f59c21f4c5acf65f7bb78dc840bad91
         'WPML_Media_Set_Initial_Language_Factory' => __DIR__ . '/../..' . '/classes/setup/class-wpml-media-set-initial-language-factory.php',
         'WPML_Media_Set_Posts_Media_Flag' => __DIR__ . '/../..' . '/classes/media-translation/class-wpml-media-set-posts-media-flag.php',
         'WPML_Media_Set_Posts_Media_Flag_Factory' => __DIR__ . '/../..' . '/classes/media-translation/class-wpml-media-set-posts-media-flag-factory.php',
+        'WPML_Media_Sizes' => __DIR__ . '/../..' . '/classes/media-translation/class-wpml-media-sizes.php',
         'WPML_Media_String_Batch_Url_Translation' => __DIR__ . '/../..' . '/classes/batch-media-url-translation/wpml-media-string-batch-media-url-translation.php',
         'WPML_Media_String_Batch_Url_Translation_Factory' => __DIR__ . '/../..' . '/classes/batch-media-url-translation/wpml-media-string-batch-media-url-translation-factory.php',
         'WPML_Media_String_Images_Translation' => __DIR__ . '/../..' . '/classes/media-translation/class-wpml-media-string-images-translation.php',
@@ -99,8 +100,8 @@ class ComposerStaticInit6f59c21f4c5acf65f7bb78dc840bad91
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixesPsr0 = ComposerStaticInit6f59c21f4c5acf65f7bb78dc840bad91::$prefixesPsr0;
-            $loader->classMap = ComposerStaticInit6f59c21f4c5acf65f7bb78dc840bad91::$classMap;
+            $loader->prefixesPsr0 = ComposerStaticInitd5ab2ed147e5dc33ae269de0d066f4ae::$prefixesPsr0;
+            $loader->classMap = ComposerStaticInitd5ab2ed147e5dc33ae269de0d066f4ae::$classMap;
 
         }, null, ClassLoader::class);
     }

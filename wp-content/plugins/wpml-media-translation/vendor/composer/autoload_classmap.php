@@ -64,6 +64,7 @@ return array(
     'WPML_Media_Set_Initial_Language_Factory' => $baseDir . '/classes/setup/class-wpml-media-set-initial-language-factory.php',
     'WPML_Media_Set_Posts_Media_Flag' => $baseDir . '/classes/media-translation/class-wpml-media-set-posts-media-flag.php',
     'WPML_Media_Set_Posts_Media_Flag_Factory' => $baseDir . '/classes/media-translation/class-wpml-media-set-posts-media-flag-factory.php',
+    'WPML_Media_Sizes' => $baseDir . '/classes/media-translation/class-wpml-media-sizes.php',
     'WPML_Media_String_Batch_Url_Translation' => $baseDir . '/classes/batch-media-url-translation/wpml-media-string-batch-media-url-translation.php',
     'WPML_Media_String_Batch_Url_Translation_Factory' => $baseDir . '/classes/batch-media-url-translation/wpml-media-string-batch-media-url-translation-factory.php',
     'WPML_Media_String_Images_Translation' => $baseDir . '/classes/media-translation/class-wpml-media-string-images-translation.php',

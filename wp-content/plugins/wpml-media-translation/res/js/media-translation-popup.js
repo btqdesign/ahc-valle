@@ -301,6 +301,8 @@ jQuery(document).ready(function ($) {
         var originalImage = imagesRow.find(".wpml-media-original-image img");
         var translatedImage = imagesRow.find(".wpml-media-translation-image img");
 
+		dialogForm.find("input[name=update-media-file]").val(0);
+
         translatedImage.attr("src", originalImage.attr("src"));
 
         dialogForm.find("input[name=restore-media]").val(1);
