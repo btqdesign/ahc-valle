@@ -1870,17 +1870,15 @@ function btq_booking_grid_form($language = 'es') {
 
 		<hr class="linea" />
 		
-		<?php ?>
-		
 		<section class="row">
 			<div class="col-xs-12<?php echo $css_class_col_md; ?>">
 				<button id="btq-btn-rooms" name="btq-btn-rooms" class="btn btn-default btq-btn"><?php _e('Rooms', 'btq-booking'); ?></button>
 			</div>
-			<?php if(btq_booking_tc_validate_saved_settings()){ ?>
+			<?php if (btq_booking_tc_validate_saved_settings()) { ?>
 			<div class="col-xs-12 col-md-4">
 				<button id="btq-btn-packages" name="btq-btn-rooms" class="btn btq-btn"><?php _e('Packages', 'btq-booking'); ?></button>
 			</div>
-			<? } ?>
+			<?php } ?>
 			<div class="col-xs-12<?php echo $css_class_col_md; ?>">
 				<button id="btq-btn-top" name="btq-btn-top" class="btn btq-btn"><?php _e('Top rated', 'btq-booking'); ?></button>
 			</div>
