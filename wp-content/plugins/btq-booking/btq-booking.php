@@ -235,8 +235,11 @@ function btq_booking_iph_grid_rooms($language = 'es', $checkIn, $checkOut, $room
 				$i++;
 				$precio = 0;
 			} // if ($room['total'] != '0.00' && $room['show'] == true)
+			else {
+				error_log('Error - Room: ' . $room['roomName'] . ' - URL: ' . $room['url']);
+			}
 		} // foreach($arrayRoomType as $elementRoomType)
-	} // if ($response !== FALSE)
+	} // if ($rooms !== FALSE)
 } // function btq_booking_iph_grid_rooms()
 
 /**
