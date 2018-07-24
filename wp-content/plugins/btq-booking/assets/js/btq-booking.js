@@ -80,6 +80,8 @@ jQuery(document).ready(function(){
     		}
 		})
 		.datepicker('refresh');
+	}).fail(function( jqxhr, textStatus, error ) {
+		console.log(textStatus);
 	});
 	
 	function vermas() {
