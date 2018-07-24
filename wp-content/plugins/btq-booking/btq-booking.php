@@ -351,6 +351,16 @@ function btq_booking_iph_admin_rooms_page(){
 		<form>
 			<div class="tablenav top">
 				<div class="alignleft actions">
+					<label class="screen-reader-text" for="children"><?php _e('Children'); ?></label>
+					<select name="children" id="children">
+						<option value="0">0 Children</option>
+					</select>
+					
+					<label class="screen-reader-text" for="rooms"><?php _e('Rooms'); ?></label>
+					<select name="rooms" id="rooms">
+						<option value="0">1 Room</option>
+					</select>
+					
 					<label class="screen-reader-text" for="checkin"><?php _e('Check-In'); ?></label>
 					<input type="text" name="checkin" id="checkin">
 					
@@ -361,16 +371,6 @@ function btq_booking_iph_admin_rooms_page(){
 					<select name="adults" id="adults">
 						<option value="1">1 Adult</option>
 						<option class="level-0" value="2">2 Adult</option>
-					</select>
-					
-					<label class="screen-reader-text" for="children"><?php _e('Children'); ?></label>
-					<select name="children" id="children">
-						<option value="0">0 Children</option>
-					</select>
-					
-					<label class="screen-reader-text" for="rooms"><?php _e('Rooms'); ?></label>
-					<select name="rooms" id="rooms">
-						<option value="0">1 Room</option>
 					</select>
 					
 					<input type="submit" name="seach_action" id="post-query-submit" class="button" value="<?php _e('Search','btq-booking'); ?>">
