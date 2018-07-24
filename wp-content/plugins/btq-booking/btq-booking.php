@@ -351,6 +351,18 @@ function btq_booking_iph_admin_rooms_page(){
 		<form>
 			<div class="tablenav top">
 				<div class="alignleft actions">
+					<label class="screen-reader-text" for="checkin"><?php _e('Check-In'); ?></label>
+					<input type="date" name="checkin" id="checkin">
+					
+					<label class="screen-reader-text" for="checkout"><?php _e('Check-Out'); ?></label>
+					<input type="date" name="checkout" id="checkout">
+					
+					<label class="screen-reader-text" for="adults"><?php _e('Adults'); ?></label>
+					<select name="adults" id="adults">
+						<option value="1">1 Adult</option>
+						<option class="level-0" value="2">2 Adult</option>
+					</select>
+					
 					<label class="screen-reader-text" for="children"><?php _e('Children'); ?></label>
 					<select name="children" id="children">
 						<option value="0">0 Children</option>
@@ -359,18 +371,6 @@ function btq_booking_iph_admin_rooms_page(){
 					<label class="screen-reader-text" for="rooms"><?php _e('Rooms'); ?></label>
 					<select name="rooms" id="rooms">
 						<option value="0">1 Room</option>
-					</select>
-					
-					<label class="screen-reader-text" for="checkin"><?php _e('Check-In'); ?></label>
-					<input type="text" name="checkin" id="checkin">
-					
-					<label class="screen-reader-text" for="checkout"><?php _e('Check-Out'); ?></label>
-					<input type="text" name="checkout" id="checkout">
-					
-					<label class="screen-reader-text" for="adults"><?php _e('Adults'); ?></label>
-					<select name="adults" id="adults">
-						<option value="1">1 Adult</option>
-						<option class="level-0" value="2">2 Adult</option>
 					</select>
 					
 					<input type="submit" name="seach_action" id="post-query-submit" class="button" value="<?php _e('Search','btq-booking'); ?>">
@@ -697,7 +697,11 @@ function btq_booking_admin_scripts($hook) {
     if(is_admin()) {      
         // Color Picker
         wp_enqueue_style('wp-color-picker'); 
-        wp_enqueue_script('btq-booking-admin-js', plugins_url('assets/js' . DIRECTORY_SEPARATOR . 'btq-booking-admin.js', __FILE__), array('wp-color-picker'), false, true); 
+        wp_enqueue_script('btq-booking-admin-js', plugins_url('assets/js' . DIRECTORY_SEPARATOR . 'btq-booking-admin.js', __FILE__), array('wp-color-picker'), false, true);
+        
+        wp_enqueue_script('jquery-ui-datepicker');
+        wp_register_style('jquery-ui', 'https://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css');
+        wp_enqueue_style('jquery-ui');
     }
 }
 add_action('admin_enqueue_scripts', 'btq_booking_admin_scripts');
