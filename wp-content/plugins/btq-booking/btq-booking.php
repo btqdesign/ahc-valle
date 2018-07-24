@@ -1850,25 +1850,38 @@ function btq_booking_grid_packages($language = 'es', $dateRangeStart, $dateRange
  */
 function btq_booking_grid_form($language = 'es') {	
 	$iconos_dir = 'assets/images/iconos';
+	
+	if(btq_booking_tc_validate_saved_settings()){
+		$str_select_a = __('Select a PACKAGE or ROOM', 'btq-booking');
+		$css_class_col_md = ' col-md-4';
+	}
+	elseif(btq_booking_iph_validate_saved_settings()){
+		$str_select_a = __('Select a ROOM', 'btq-booking');
+		$css_class_col_md = ' col-md-6';
+	}
 	?>
 		<hr class="linea"/>	
 		
 		<section class="row">
 			<article class="col-md-12">
-				<h5 class="hosp"><?php _e('Select a PACKAGE or ROOM', 'btq-booking'); ?></h5>
+				<h5 class="hosp"><?php echo $str_select_a; ?></h5>
 			</article>
 		</section>
 
 		<hr class="linea" />
-
+		
+		<?php ?>
+		
 		<section class="row">
-			<div class="col-xs-12 col-md-4">
+			<div class="col-xs-12<?php echo $css_class_col_md; ?>">
 				<button id="btq-btn-rooms" name="btq-btn-rooms" class="btn btn-default btq-btn"><?php _e('Rooms', 'btq-booking'); ?></button>
 			</div>
+			<?php if(btq_booking_tc_validate_saved_settings()){ ?>
 			<div class="col-xs-12 col-md-4">
 				<button id="btq-btn-packages" name="btq-btn-rooms" class="btn btq-btn"><?php _e('Packages', 'btq-booking'); ?></button>
 			</div>
-			<div class="col-xs-12 col-md-4">
+			<? } ?>
+			<div class="col-xs-12<?php echo $css_class_col_md; ?>">
 				<button id="btq-btn-top" name="btq-btn-top" class="btn btq-btn"><?php _e('Top rated', 'btq-booking'); ?></button>
 			</div>
 		</section>
@@ -2035,9 +2048,7 @@ function btq_booking_grid_shortcode() {
 	?>
 	<div class="container">
     <?php
-	if (btq_booking_tc_validate_saved_settings()){
-		btq_booking_grid_form( btq_booking_grid_current_language_code() );
-	}
+	btq_booking_grid_form( btq_booking_grid_current_language_code() );
 	?>
 	<div id="btq-booking-grid">
 		<?php
