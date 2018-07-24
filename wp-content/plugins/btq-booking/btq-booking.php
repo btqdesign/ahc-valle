@@ -124,113 +124,117 @@ function btq_booking_iph_grid_rooms($language = 'es', $checkIn, $checkOut, $room
 		$images_iconos_path = 'assets/images/iconos/';
 		
 		foreach($rooms as $room){
-			$roomSlug = sanitize_title($room['roomName']);
-			$images_dir = plugin_dir_path( __FILE__ ) . $images_rooms_path . $roomSlug;
-			?>
-			
-			<section class="row">
-				
-			<?php
-			if (btq_booking_folder_with_pictures($images_dir)) {
-				$images = btq_booking_grid_get_images($images_dir);
+			if ($room['total'] != '0.00' && $room['show'] == true) {			
+				$roomSlug = sanitize_title($room['roomName']);
+				$images_dir = plugin_dir_path( __FILE__ ) . $images_rooms_path . $roomSlug;
 				?>
-				<article class="col-md-5">
-					<div id="btq-carousel-<?php echo $roomSlug; ?>" class="carousel slide" data-ride="carousel">
-						<!-- Indicators -->
-						<ol class="carousel-indicators">
-						<?php 
-						$count_img = 0;
-						foreach ($images as $im) {
-						$class_active = ($count_img == 0) ? ' class="active"' : '';
-						?>
-							<li data-target="#btq-carousel-<?php echo $roomSlug; ?>" data-slide-to="<?php echo $count_img; ?>"<?php echo $class_active; ?>></li>
-						<?php
-						$count_img++;
-						}
-						?>
-						</ol>
-						
-						<!-- Wrapper for slides -->
-						<div class="carousel-inner">
-						<?php
-						$count_img = 1;
-						foreach ($images as $image_name) {
-						$image_url = plugins_url( $images_rooms_path . $roomSlug . DIRECTORY_SEPARATOR . $image_name, __FILE__ );
-						$class_active = ($count_img == 1) ? ' active' : '';
-						?> 
-							<div class="item<?php echo $class_active?>">
-								<img src="<?php echo $image_url; ?>" alt="Habitaciones">
-							</div>
-						<?php
-						$count_img++;
-						}
-						?>
-						</div>
-	
-						<!-- Left and right controls -->
-						<a class="left carousel-control" href="#btq-carousel-<?php echo $roomSlug; ?>" data-slide="prev">
-							<span class="glyphicon glyphicon-chevron-left"></span>
-							<span class="sr-only">Anterior</span>
-						</a>
-						<a class="right carousel-control" href="#btq-carousel-<?php echo $roomSlug; ?>" data-slide="next">
-							<span class="glyphicon glyphicon-chevron-right"></span>
-							<span class="sr-only">Siguiente</span>
-						</a>
-					</div>
-				</article>
+				
+				<section class="row">
+					
 				<?php
-			}
-			else{
-			?>
-				<article class="col-md-2">
-					<img src="<?php echo $room['img']; ?>" style="width: 100%; height: auto; margin-top: 27px;">
-				</article>
-			<?php
-			}
-			?>
-				<?php if (btq_booking_folder_with_pictures($images_dir)) { ?>
-				<article class="col-md-4">
-				<?php } else { ?>
-				<article class="col-md-7">
-				<?php } ?>
-					<h3 class="titulo"><?php echo $room['roomName'] ?></h3>
-					<?php btq_booking_grid_split_description($room['roomDescription'], $language); ?>
-								
-					<hr class="linealetras" />
+				if (btq_booking_folder_with_pictures($images_dir)) {
+					$images = btq_booking_grid_get_images($images_dir);
+					?>
+					<article class="col-md-5">
+						<div id="btq-carousel-<?php echo $roomSlug; ?>" class="carousel slide" data-ride="carousel">
+							<!-- Indicators -->
+							<ol class="carousel-indicators">
+							<?php 
+							$count_img = 0;
+							foreach ($images as $im) {
+							$class_active = ($count_img == 0) ? ' class="active"' : '';
+							?>
+								<li data-target="#btq-carousel-<?php echo $roomSlug; ?>" data-slide-to="<?php echo $count_img; ?>"<?php echo $class_active; ?>></li>
+							<?php
+							$count_img++;
+							}
+							?>
+							</ol>
+							
+							<!-- Wrapper for slides -->
+							<div class="carousel-inner">
+							<?php
+							$count_img = 1;
+							foreach ($images as $image_name) {
+							$image_url = plugins_url( $images_rooms_path . $roomSlug . DIRECTORY_SEPARATOR . $image_name, __FILE__ );
+							$class_active = ($count_img == 1) ? ' active' : '';
+							?> 
+								<div class="item<?php echo $class_active?>">
+									<img src="<?php echo $image_url; ?>" alt="Habitaciones">
+								</div>
+							<?php
+							$count_img++;
+							}
+							?>
+							</div>
+		
+							<!-- Left and right controls -->
+							<a class="left carousel-control" href="#btq-carousel-<?php echo $roomSlug; ?>" data-slide="prev">
+								<span class="glyphicon glyphicon-chevron-left"></span>
+								<span class="sr-only">Anterior</span>
+							</a>
+							<a class="right carousel-control" href="#btq-carousel-<?php echo $roomSlug; ?>" data-slide="next">
+								<span class="glyphicon glyphicon-chevron-right"></span>
+								<span class="sr-only">Siguiente</span>
+							</a>
+						</div>
+					</article>
+					<?php
+				}
+				else{
+				?>
+					<article class="col-md-2">
+						<img src="<?php echo $room['img']; ?>" style="width: 100%; height: auto; margin-top: 27px;">
+					</article>
+				<?php
+				}
+				?>
+					<?php if (btq_booking_folder_with_pictures($images_dir)) { ?>
+					<article class="col-md-4">
+					<?php } else { ?>
+					<article class="col-md-7">
+					<?php } ?>
+						<h3 class="titulo"><?php echo $room['roomName'] ?></h3>
+						<?php btq_booking_grid_split_description($room['roomDescription'], $language); ?>
+									
+						<hr class="linealetras" />
+						
+						<img src="<?php echo plugins_url( $images_iconos_path . 'icon_like.png', __FILE__ ); ?>" alt="Like" width="25" height="25">
+						<img src="<?php echo plugins_url( $images_iconos_path . 'icon_heart_uns.png', __FILE__ ); ?>" alt="Heart" width="25" height="25">
+					</article>
 					
-					<img src="<?php echo plugins_url( $images_iconos_path . 'icon_like.png', __FILE__ ); ?>" alt="Like" width="25" height="25">
-					<img src="<?php echo plugins_url( $images_iconos_path . 'icon_heart_uns.png', __FILE__ ); ?>" alt="Heart" width="25" height="25">
-				</article>
-				
-				<article class="col-md-3 grisfondo">
-					<form>
-						<hr class="linea"/>
-						<?php if(!empty($room['descPromotion'])):?>
-						<label class="radio-inline">
-							<input type="radio" name="optradio"><?php echo $room['descPromotion']; ?><br>
-							<span>$<?php echo  $room['promotion'] . ' ' . $currency; ?></span><br>
-							$<?php echo  $room['total'] . ' ' . $currency; ?>
-						</label>
-						<?php else: ?>
-						<label class="radio-inline">
-							<span>$<?php echo  $room['promotion'] . ' ' . $currency; ?></span><br>
-						</label>
+					<article class="col-md-3 grisfondo">
+						<?php if ($room['showPromotion'] == true): ?>
+						<form>
+							<hr class="linea"/>
+							<?php if(!empty($room['descPromotion'])):?>
+							<label class="radio-inline">
+								<input type="radio" name="optradio"><?php echo $room['descPromotion']; ?><br>
+								<span>$<?php echo  $room['promotion'] . ' ' . $currency; ?></span><br>
+								$<?php echo  $room['total'] . ' ' . $currency; ?>
+							</label>
+							<?php else: ?>
+							<label class="radio-inline">
+								<span>$<?php echo  $room['promotion'] . ' ' . $currency; ?></span><br>
+							</label>
+							<?php endif; ?>
+							<hr class="linea"/>
+						</form>
 						<?php endif; ?>
+						
+						<h3 align="center">$<?php echo $room['total'] . ' ' . $currency; ?>/noche</h3>
 						<hr class="linea"/>
-					</form>
+						
+						<button type="button" class="btn btq-btn" onclick="window.open('<?php echo $room['url']; ?>','_blank');"><?php _e('Book Now', 'btq-booking'); ?></button>
+					</article>
 					
-					<h3 align="center">$<?php echo $room['total'] . ' ' . $currency; ?>/noche</h3>
-					<hr class="linea"/>
-					
-					<button type="button" class="btn btq-btn" onclick="window.open('<?php echo $room['url']; ?>','_blank');"><?php _e('Book Now', 'btq-booking'); ?></button>
-				</article>
+				</section>
 				
-			</section>
-			
-			<hr class="lineaabajo" />
-			<?php
-			$i++;
-			$precio = 0;
+				<hr class="lineaabajo" />
+				<?php
+				$i++;
+				$precio = 0;
+			} // if ($room['total'] != '0.00' && $room['show'] == true)
 		} // foreach($arrayRoomType as $elementRoomType)
 	} // if ($response !== FALSE)
 } // function btq_booking_iph_grid_rooms()
