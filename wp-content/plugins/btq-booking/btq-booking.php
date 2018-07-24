@@ -363,19 +363,24 @@ function btq_booking_iph_admin_rooms_page(){
 					<input class="datepicker" type="text" name="checkout" id="checkout" value="<?php echo $checkoutDatepicker; ?>">
 					
 					<label class="screen-reader-text" for="adults"><?php _e('Adults'); ?></label>
-					<select name="adults" id="adults">
-						<option value="1">1 Adult</option>
-						<option class="level-0" value="2">2 Adult</option>
+					<select name="adults" id="adults">					
+						<?php for ($i = 1; $i <= 9; $i ++) { ?>
+							<option value="<?php echo $i; ?>"><?php printf( _n('%s adult', '%s adults', $i, 'btq-booking'), number_format_i18n($i) ); ?></option>
+						<?php } ?>
 					</select>
 					
 					<label class="screen-reader-text" for="children"><?php _e('Children'); ?></label>
 					<select name="children" id="children">
-						<option value="0">0 Children</option>
+						<?php for ($i = 0; $i <= 9; $i ++) { ?>
+							<option value="<?php echo $i; ?>"><?php printf( _n('%s child', '%s children', $i, 'btq-booking'), number_format_i18n($i) ); ?></option>
+						<?php } ?>
 					</select>
 					
 					<label class="screen-reader-text" for="rooms"><?php _e('Rooms'); ?></label>
 					<select name="rooms" id="rooms">
-						<option value="0">1 Room</option>
+						<?php for ($i = 1; $i <= 9; $i ++) { ?>
+							<option value="<?php echo $i; ?>"><?php printf( _n('%s room', '%s rooms', $i, 'btq-booking'), number_format_i18n($i) ); ?></option>
+						<?php } ?>
 					</select>
 					
 					<input type="submit" name="seach_action" id="post-query-submit" class="button" value="<?php _e('Search','btq-booking'); ?>">
