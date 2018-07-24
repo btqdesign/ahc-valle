@@ -391,10 +391,10 @@ function btq_booking_iph_admin_rooms_table($language, $checkIn, $checkOut){
 	<table class="wp-list-table widefat fixed striped" cellspacing="0">
 		<thead>
 			<tr>
-				<th scope="col"><?php _e('Room Name','btq-booking'); ?></th>
+				<th scope="col"><?php _e('Room Name','btq-booking'); ?><br><?php _e('Show','btq-bookng'); ?></th>
 				<th scope="col"><?php _e('Link','btq-booking'); ?></th>
 				<th scope="col"><?php _e('Total','btq-booking'); ?></th>
-				<th scope="col"><?php _e('Promotion','btq-booking'); ?></th>
+				<th scope="col"><?php _e('Promotion','btq-booking'); ?><br><?php _e('Show','btq-bookng'); ?></th>
 				<th scope="col"><?php _e('Folder With Pictures','btq-booking'); ?></th>
 				<th scope="col"><?php _e('Picture','btq-booking'); ?></th>
 			</tr>
@@ -406,12 +406,14 @@ function btq_booking_iph_admin_rooms_table($language, $checkIn, $checkOut){
 			$roomSlug = sanitize_title($room['roomName']);
 			$images_dir = plugin_dir_path( __FILE__ ) . $images_rooms_path . $roomSlug;
 			$folder_with_pictures = (btq_booking_folder_with_pictures($images_dir)) ? __('Yes','btq-booking') : __('No','btq-booking');
+			$show = ($room['show']) ? __('Yes','btq-booking') : __('No','btq-booking');
+			$showPromotion = ($room['showPromotion']) ? __('Yes','btq-booking') : __('No','btq-booking');
 			?>
 			<tr>
-				<td scope="col"><?php echo htmlentities($room['roomName']); ?></td>
+				<td scope="col"><?php echo htmlentities($room['roomName']); ?><br><?php echo $show; ?></td>
 				<td scope="col"><a href="<?php echo $room['url']; ?>" target="_blank">Book Now</a></td>
 				<td scope="col"><?php echo '$'.htmlentities($room['total']).' '.$currency; ?></td>
-				<td scope="col"><?php echo '$'.htmlentities($room['promotion']).' '.$currency; ?></td>
+				<td scope="col"><?php echo '$'.htmlentities($room['promotion']).' '.$currency; ?><br><?php echo $show; ?></td>
 				<td scope="col"><?php echo $folder_with_pictures; ?></td>
 				<td scope="col"><img src="<?php echo $room['img']; ?>"></td>
 			</tr>
