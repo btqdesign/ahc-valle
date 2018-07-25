@@ -422,7 +422,7 @@ function btq_booking_admin_grid_ajax() {
 }
 add_action( 'wp_ajax_btq_booking_admin_grid', 'btq_booking_admin_grid_ajax' );
 
-function btq_admin_booking_form(){
+function btq_admin_booking_form($typeQuery = 'rooms'){
 	?>
 		<form id="btq-admin-booking-form">
 			<div class="tablenav top">
@@ -454,7 +454,7 @@ function btq_admin_booking_form(){
 						<?php } ?>
 					</select>
 					
-					<input  type="hidden" name="btq-type-query" id="btq-type-query" value="rooms">
+					<input  type="hidden" name="btq-type-query" id="btq-type-query" value="<?php echo $typeQuery; ?>">
 					
 					<input type="button" name="btq-admin-search" id="btq-admin-search" class="button" value="<?php _e('Search','btq-booking'); ?>">
 				</div>
@@ -477,7 +477,7 @@ function btq_booking_iph_admin_rooms_page(){
 		
 		<?php btq_admin_booking_form(); ?>
 		
-		<div id="btq-booking-admin-grid">
+		<div id="btq-booking-admin-result">
 			<div>
 				<h2><?php _e('Spanish','btq-booking')?></h2>
 				<?php btq_booking_iph_admin_rooms_table('es', $checkin, $checkout); ?>
@@ -556,12 +556,10 @@ function btq_booking_iph_admin_rooms_table($language, $checkIn, $checkOut, $room
 	<?php
 }
 
-function btq_booking_iph_debug_page(){
-?>
-	<div class="wrap">
-		<h1><?php _e('Internet Power Hotel Debugger', 'btq-booking'); ?></h1>
-		<?php btq_admin_booking_form(); ?>
-		<h2><?php _e('URL', 'btq-booking'); ?></h2>
+function btq_booking_iph_debug_result($btq_date_start, $btq_date_end, $btq_num_rooms = 1, $btq_num_adults = 1, $btq_num_children = 0){
+	?>
+		<h2><?php _e('Spanish', 'btq-booking'); ?></h2>
+		<h3><?php _e('URL', 'btq-booking'); ?></h3>
 		<textarea class="large-text" rows="4" onclick="this.focus();this.select()" readonly="readonly"><?php 
 			echo htmlentities( 
 				btq_booking_iph_query_url(
@@ -569,33 +567,90 @@ function btq_booking_iph_debug_page(){
 					esc_attr( get_option('btq_booking_iph_property_number') ),
 					esc_attr( get_option('btq_booking_iph_partner_id') ),
 					'es-MX',
-					btq_booking_grid_date_start(),
-					btq_booking_grid_date_end(btq_booking_grid_date_start()),
+					$btq_date_start,
+					$btq_date_end,
 					'MXN',
-					1,
-					1,
-					0
+					$btq_num_rooms,
+					$btq_num_adults,
+					$btq_num_children
 				) 
 			); 
 		?></textarea>
 		
-		<h2><?php _e('Result', 'btq-booking'); ?></h2>
+		<h3><?php _e('Result', 'btq-booking'); ?></h3>
 		<?php
 		$result = btq_booking_iph_query(
 			esc_attr( get_option('btq_booking_iph_app') ),
 			esc_attr( get_option('btq_booking_iph_property_number') ),
 			esc_attr( get_option('btq_booking_iph_partner_id') ),
 			'es-MX',
-			btq_booking_grid_date_start(),
-			btq_booking_grid_date_end(btq_booking_grid_date_start()),
+			$btq_date_start,
+			$btq_date_end,
 			'MXN',
-			1,
-			1,
-			0
+			$btq_num_rooms,
+			$btq_num_adults,
+			$btq_num_children
 		);
 		$resultVarExport = var_export($result, TRUE);
 		?>
 		<pre style="background: white; padding: 5px;"><?php echo htmlentities($resultVarExport); ?></pre>
+		
+		<h2><?php _e('English', 'btq-booking'); ?></h2>
+		<h3><?php _e('URL', 'btq-booking'); ?></h3>
+		<textarea class="large-text" rows="4" onclick="this.focus();this.select()" readonly="readonly"><?php 
+			echo htmlentities( 
+				btq_booking_iph_query_url(
+					esc_attr( get_option('btq_booking_iph_app') ),
+					esc_attr( get_option('btq_booking_iph_property_number') ),
+					esc_attr( get_option('btq_booking_iph_partner_id') ),
+					'en-US',
+					$btq_date_start,
+					$btq_date_end,
+					'USD',
+					$btq_num_rooms,
+					$btq_num_adults,
+					$btq_num_children
+				) 
+			); 
+		?></textarea>
+		
+		<h3><?php _e('Result', 'btq-booking'); ?></h3>
+		<?php
+		$result = btq_booking_iph_query(
+			esc_attr( get_option('btq_booking_iph_app') ),
+			esc_attr( get_option('btq_booking_iph_property_number') ),
+			esc_attr( get_option('btq_booking_iph_partner_id') ),
+			'en-US',
+			$btq_date_start,
+			$btq_date_end,
+			'USD',
+			$btq_num_rooms,
+			$btq_num_adults,
+			$btq_num_children
+		);
+		$resultVarExport = var_export($result, TRUE);
+		?>
+		<pre style="background: white; padding: 5px;"><?php echo htmlentities($resultVarExport); ?></pre>
+	<?
+}
+
+function btq_booking_iph_debug_page(){
+?>
+	<div class="wrap">
+		<h1><?php _e('Internet Power Hotel Debugger', 'btq-booking'); ?></h1>
+		<?php btq_admin_booking_form(); ?>
+		
+		<div id="btq-booking-admin-result">
+		<?php 
+			btq_booking_iph_debug_result(
+				btq_booking_grid_date_start(),
+				btq_booking_grid_date_end(btq_booking_grid_date_start()),
+				1,
+				1,
+				0
+			); 
+		?>
+		</div>
 	</div>
 <?php
 }

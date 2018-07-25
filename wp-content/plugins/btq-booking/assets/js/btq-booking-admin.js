@@ -67,7 +67,7 @@
 				}
 		    }, 
 		    function(response) {
-				$('#btq-booking-admin-grid').html(response);
+				$('#btq-booking-admin-result').html(response);
 				//$(".preloader").css("display", "none");
 		    }
 		)
