@@ -571,7 +571,7 @@ function btq_booking_iph_debug_result($btq_date_start, $btq_date_end, $btq_num_r
 	?>
 		<h2><?php _e('Spanish', 'btq-booking'); ?></h2>
 		<h3><?php _e('URL', 'btq-booking'); ?></h3>
-		<textarea class="large-text" rows="4" style="background-color: white; font-family: monospace;" onclick="this.focus();this.select()" readonly="readonly" name="url-es" id="url-es"><?php 
+		<textarea class="large-text" rows="4" style="background-color: white; font-family: monospace;" onclick="this.focus();this.select();document.execCommand('copy');" readonly="readonly" name="url-es" id="url-es"><?php 
 			echo htmlentities( 
 				btq_booking_iph_query_url(
 					esc_attr( get_option('btq_booking_iph_app') ),
@@ -608,7 +608,7 @@ function btq_booking_iph_debug_result($btq_date_start, $btq_date_end, $btq_num_r
 		
 		<h2><?php _e('English', 'btq-booking'); ?></h2>
 		<h3><?php _e('URL', 'btq-booking'); ?></h3>
-		<textarea class="large-text" rows="4" style="background-color: white; font-family: monospace;" onclick="this.focus();this.select()" readonly="readonly" name="url-en" id="url-en"><?php 
+		<textarea class="large-text" rows="4" style="background-color: white; font-family: monospace;" onclick="this.focus();this.select();document.execCommand('copy');" readonly="readonly" name="url-en" id="url-en"><?php 
 			echo htmlentities( 
 				btq_booking_iph_query_url(
 					esc_attr( get_option('btq_booking_iph_app') ),
