@@ -594,44 +594,6 @@ function btq_booking_iph_debug_result($btq_date_start, $btq_date_end, $btq_num_r
 		$resultVarExport = var_export($result, TRUE);
 		?>
 		<pre style="background: white; padding: 5px;"><?php echo htmlentities($resultVarExport); ?></pre>
-		
-		
-		<h2><?php _e('English', 'btq-booking'); ?></h2>
-		<h3><?php _e('URL', 'btq-booking'); ?></h3>
-		<textarea class="large-text" rows="4" onclick="this.focus();this.select()" readonly="readonly" name="url-en" id="url-en"><?php 
-			echo htmlentities( 
-				btq_booking_iph_query_url(
-					esc_attr( get_option('btq_booking_iph_app') ),
-					esc_attr( get_option('btq_booking_iph_property_number') ),
-					esc_attr( get_option('btq_booking_iph_partner_id') ),
-					'en-US',
-					$btq_date_start,
-					$btq_date_end,
-					'USD',
-					$btq_num_rooms,
-					$btq_num_adults,
-					$btq_num_children
-				) 
-			); 
-		?></textarea>
-		
-		<h3><?php _e('Result', 'btq-booking'); ?></h3>
-		<?php
-		$result_en = btq_booking_iph_query(
-			esc_attr( get_option('btq_booking_iph_app') ),
-			esc_attr( get_option('btq_booking_iph_property_number') ),
-			esc_attr( get_option('btq_booking_iph_partner_id') ),
-			'en-US',
-			$btq_date_start,
-			$btq_date_end,
-			'USD',
-			$btq_num_rooms,
-			$btq_num_adults,
-			$btq_num_children
-		);
-		$resultEnVarExport = var_export($result_en, TRUE);
-		?>
-		<pre style="background: white; padding: 5px;"><?php echo htmlentities($resultEnVarExport); ?></pre>
 	<?
 }
 
