@@ -607,7 +607,7 @@ function btq_booking_iph_debug_result($btq_date_start, $btq_date_end, $btq_num_r
 					'en-US',
 					$btq_date_start,
 					$btq_date_end,
-					'USD'
+					'USD',
 					$btq_num_rooms,
 					$btq_num_adults,
 					$btq_num_children
@@ -621,10 +621,10 @@ function btq_booking_iph_debug_result($btq_date_start, $btq_date_end, $btq_num_r
 			esc_attr( get_option('btq_booking_iph_app') ),
 			esc_attr( get_option('btq_booking_iph_property_number') ),
 			esc_attr( get_option('btq_booking_iph_partner_id') ),
-			'en-US'
+			'en-US',
 			$btq_date_start,
 			$btq_date_end,
-			'USD'
+			'USD',
 			$btq_num_rooms,
 			$btq_num_adults,
 			$btq_num_children
