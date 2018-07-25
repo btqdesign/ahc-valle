@@ -331,7 +331,7 @@ function btq_booking_admin_menu() {
 	    	__('Debugger', 'btq-booking'), 
 	    	'manage_options', 
 	    	'btq_booking_iph_debug',
-	    	'btq_booking_iph_test_page'
+	    	'btq_booking_iph_debug_page'
 	    );
     }
     
@@ -595,6 +595,7 @@ function btq_booking_iph_debug_result($btq_date_start, $btq_date_end, $btq_num_r
 		?>
 		<pre style="background: white; padding: 5px;"><?php echo htmlentities($resultVarExport); ?></pre>
 		
+		<?php /*
 		<h2><?php _e('English', 'btq-booking'); ?></h2>
 		<h3><?php _e('URL', 'btq-booking'); ?></h3>
 		<textarea class="large-text" rows="4" onclick="this.focus();this.select()" readonly="readonly"><?php 
@@ -631,10 +632,10 @@ function btq_booking_iph_debug_result($btq_date_start, $btq_date_end, $btq_num_r
 		$resultVarExport = var_export($result, TRUE);
 		?>
 		<pre style="background: white; padding: 5px;"><?php echo htmlentities($resultVarExport); ?></pre>
-	<?
+	<?*/
 }
 
-function btq_booking_iph_test_page(){
+function btq_booking_iph_debug_page(){
 	?>
 	<div class="wrap">
 		<h1><?php _e('Internet Power Hotel Debugger', 'btq-booking'); ?></h1>
