@@ -643,7 +643,6 @@ function btq_booking_iph_debug_page(){
 		
 		<div id="btq-booking-admin-result">
 		<?php 
-			/*
 			btq_booking_iph_debug_result(
 				btq_booking_grid_date_start(),
 				btq_booking_grid_date_end(btq_booking_grid_date_start()),
@@ -651,7 +650,6 @@ function btq_booking_iph_debug_page(){
 				1,
 				0
 			);
-			*/
 		?>
 		</div>
 	</div>
