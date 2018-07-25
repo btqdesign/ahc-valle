@@ -428,10 +428,10 @@ function btq_admin_booking_form(){
 			<div class="tablenav top">
 				<div class="alignleft actions">
 					<label class="screen-reader-text" for="btq-date-start"><?php _e('Check-In'); ?></label>
-					<input class="datepicker" type="text" name="btq-date-start" id="btq-date-start" value="<?php echo $checkinDatepicker; ?>">
+					<input class="datepicker" type="text"  autocomplete="off" name="btq-date-start" id="btq-date-start" value="<?php echo $checkinDatepicker; ?>">
 					
 					<label class="screen-reader-text" for="btq-date-end"><?php _e('Check-Out'); ?></label>
-					<input class="datepicker" type="text" name="btq-date-end" id="btq-date-end" value="<?php echo $checkoutDatepicker; ?>">
+					<input class="datepicker" type="text"  autocomplete="off" name="btq-date-end" id="btq-date-end" value="<?php echo $checkoutDatepicker; ?>">
 					
 					<label class="screen-reader-text" for="btq-num-adults"><?php _e('Adults'); ?></label>
 					<select name="btq-num-adults" id="btq-num-adults">					
