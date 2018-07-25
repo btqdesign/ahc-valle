@@ -398,6 +398,17 @@ function btq_booking_admin_grid_ajax() {
 				<?php
 			}
 		}
+		elseif ($post_data['btq_type_query'] == 'debug'){
+			if(btq_booking_iph_validate_saved_settings()){
+				btq_booking_iph_debug_result(
+					$post_data['btq_date_start'],
+					$post_data['btq_date_end'],
+					$post_data['btq_num_rooms'],
+					$post_data['btq_num_adults'],
+					$post_data['btq_num_children']
+				);
+			}
+		}
 		/*
 		elseif ($post_data['btq_type_query'] == 'packages'){
 			btq_booking_grid_packages(
@@ -560,7 +571,7 @@ function btq_booking_iph_debug_result($btq_date_start, $btq_date_end, $btq_num_r
 	?>
 		<h2><?php _e('Spanish', 'btq-booking'); ?></h2>
 		<h3><?php _e('URL', 'btq-booking'); ?></h3>
-		<textarea class="large-text" rows="4" onclick="this.focus();this.select()" readonly="readonly" name="url-es" id="url-es"><?php 
+		<textarea class="large-text" rows="4" style="background-color: white;" onclick="this.focus();this.select()" readonly="readonly" name="url-es" id="url-es"><?php 
 			echo htmlentities( 
 				btq_booking_iph_query_url(
 					esc_attr( get_option('btq_booking_iph_app') ),
@@ -597,7 +608,7 @@ function btq_booking_iph_debug_result($btq_date_start, $btq_date_end, $btq_num_r
 		
 		<h2><?php _e('English', 'btq-booking'); ?></h2>
 		<h3><?php _e('URL', 'btq-booking'); ?></h3>
-		<textarea class="large-text" rows="4" onclick="this.focus();this.select()" readonly="readonly" name="url-en" id="url-en"><?php 
+		<textarea class="large-text" rows="4" style="background-color: white;" onclick="this.focus();this.select()" readonly="readonly" name="url-en" id="url-en"><?php 
 			echo htmlentities( 
 				btq_booking_iph_query_url(
 					esc_attr( get_option('btq_booking_iph_app') ),
@@ -638,7 +649,7 @@ function btq_booking_iph_debug_page(){
 	?>
 	<div class="wrap">
 		<h1><?php _e('Internet Power Hotel Debugger', 'btq-booking'); ?></h1>
-		<?php btq_admin_booking_form(btq_booking_grid_date_start(), btq_booking_grid_date_end(btq_booking_grid_date_start()), 'rooms'); ?>
+		<?php btq_admin_booking_form(btq_booking_grid_date_start(), btq_booking_grid_date_end(btq_booking_grid_date_start()), 'debug'); ?>
 		
 		<div id="btq-booking-admin-result">
 		<?php 
