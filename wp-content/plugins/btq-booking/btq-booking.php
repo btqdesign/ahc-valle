@@ -646,16 +646,21 @@ function btq_booking_iph_debug_result($btq_date_start, $btq_date_end, $btq_num_r
 }
 
 function btq_booking_iph_debug_page(){
+	$checkin  = btq_booking_grid_date_start();
+	$checkout = btq_booking_grid_date_end(btq_booking_grid_date_start());
+
+	$checkinDatepicker  = date('d/m/Y', strtotime($checkin));
+	$checkoutDatepicker = date('d/m/Y', strtotime($checkout));
 	?>
 	<div class="wrap">
 		<h1><?php _e('Internet Power Hotel Debugger', 'btq-booking'); ?></h1>
-		<?php btq_admin_booking_form(btq_booking_grid_date_start(), btq_booking_grid_date_end(btq_booking_grid_date_start()), 'debug'); ?>
+		<?php btq_admin_booking_form($checkinDatepicker, $checkoutDatepicker, 'debug'); ?>
 		
 		<div id="btq-booking-admin-result">
 		<?php 
 			btq_booking_iph_debug_result(
-				btq_booking_grid_date_start(),
-				btq_booking_grid_date_end(btq_booking_grid_date_start()),
+				$checkin,
+				$checkout,
 				1,
 				1,
 				0
