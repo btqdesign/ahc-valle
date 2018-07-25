@@ -553,7 +553,7 @@ function btq_booking_iph_admin_rooms_table($language, $checkIn, $checkOut, $room
 			?>
 			<tr>
 				<td scope="col"><?php echo htmlentities($room['roomName']); ?><hr><?php echo $show; ?></td>
-				<td scope="col"><a href="<?php echo $room['url']; ?>" target="_blank">Book Now</a></td>
+				<td scope="col"><a href="<?php echo $room['url']; ?>" target="_blank"><?php _e('Book Now','btq-booking'); ?></a></td>
 				<td scope="col"><?php echo '$'.htmlentities($room['total']).' '.$currency; ?></td>
 				<td scope="col"><?php echo '$'.htmlentities($room['promotion']).' '.$currency; ?><hr><?php echo $show; ?></td>
 				<td scope="col"><?php echo $folder_with_pictures; ?></td>
