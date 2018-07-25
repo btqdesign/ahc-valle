@@ -422,17 +422,8 @@ function btq_booking_admin_grid_ajax() {
 }
 add_action( 'wp_ajax_btq_booking_admin_grid', 'btq_booking_admin_grid_ajax' );
 
-function btq_booking_iph_admin_rooms_page(){
-	$checkin  = btq_booking_grid_date_start();
-	$checkout = btq_booking_grid_date_end(btq_booking_grid_date_start());
-
-	$checkinDatepicker  = date('d/m/Y', strtotime($checkin));
-	$checkoutDatepicker = date('d/m/Y', strtotime($checkout));
+function btq_admin_booking_form(){
 	?>
-	<!-- wrap -->
-	<div class="wrap">
-		<h1><?php _e('Rooms on Internet Power Hotel', 'btq-booking'); ?></h1>
-		
 		<form id="btq-admin-booking-form">
 			<div class="tablenav top">
 				<div class="alignleft actions">
@@ -470,6 +461,22 @@ function btq_booking_iph_admin_rooms_page(){
 				<br class="clear">
 			</div>
 		</form>
+	<?php
+}
+
+function btq_booking_iph_admin_rooms_page(){
+	$checkin  = btq_booking_grid_date_start();
+	$checkout = btq_booking_grid_date_end(btq_booking_grid_date_start());
+
+	$checkinDatepicker  = date('d/m/Y', strtotime($checkin));
+	$checkoutDatepicker = date('d/m/Y', strtotime($checkout));
+	?>
+	<!-- wrap -->
+	<div class="wrap">
+		<h1><?php _e('Rooms on Internet Power Hotel', 'btq-booking'); ?></h1>
+		
+		<?php btq_admin_booking_form(); ?>
+		
 		<div id="btq-booking-admin-grid">
 			<div>
 				<h2><?php _e('Spanish','btq-booking')?></h2>
@@ -552,7 +559,9 @@ function btq_booking_iph_admin_rooms_table($language, $checkIn, $checkOut, $room
 function btq_booking_iph_debug_page(){
 ?>
 	<div class="wrap">
-		<h1>Internet Power Hotel Test</h1>
+		<h1><?php _e('Internet Power Hotel Debugger', 'btq-booking'); ?></h1>
+		<?php btq_admin_booking_form(); ?>
+		<h2><?php _e('URL', 'btq-booking'); ?></h2>
 		<textarea class="large-text" rows="4" onclick="this.focus();this.select()" readonly="readonly"><?php 
 			echo htmlentities( 
 				btq_booking_iph_query_url(
@@ -570,6 +579,7 @@ function btq_booking_iph_debug_page(){
 			); 
 		?></textarea>
 		
+		<h2><?php _e('Result', 'btq-booking'); ?></h2>
 		<?php
 		$result = btq_booking_iph_query(
 			esc_attr( get_option('btq_booking_iph_app') ),
