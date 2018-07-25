@@ -553,8 +553,7 @@ function btq_booking_iph_debug_page(){
 ?>
 	<div class="wrap">
 		<h1>Internet Power Hotel Test</h1>
-		<textarea class="large-text">
-		<?php 
+		<textarea class="large-text" rows="5"><?php 
 			echo htmlentities( 
 				btq_booking_iph_query_url(
 					esc_attr( get_option('btq_booking_iph_app') ),
@@ -569,8 +568,7 @@ function btq_booking_iph_debug_page(){
 					0
 				) 
 			); 
-		?>
-		</textarea>
+		?></textarea>
 		
 		<?php
 		$result = btq_booking_iph_query(
