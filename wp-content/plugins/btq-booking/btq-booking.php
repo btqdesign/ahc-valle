@@ -560,7 +560,7 @@ function btq_booking_iph_debug_result($btq_date_start, $btq_date_end, $btq_num_r
 	?>
 		<h2><?php _e('Spanish', 'btq-booking'); ?></h2>
 		<h3><?php _e('URL', 'btq-booking'); ?></h3>
-		<textarea class="large-text" rows="4" onclick="this.focus();this.select()" readonly="readonly"><?php 
+		<textarea class="large-text" rows="4" onclick="this.focus();this.select()" readonly="readonly" name="url-es" id="url-es"><?php 
 			echo htmlentities( 
 				btq_booking_iph_query_url(
 					esc_attr( get_option('btq_booking_iph_app') ),
@@ -595,10 +595,10 @@ function btq_booking_iph_debug_result($btq_date_start, $btq_date_end, $btq_num_r
 		?>
 		<pre style="background: white; padding: 5px;"><?php echo htmlentities($resultVarExport); ?></pre>
 		
-		<?php /*
+		
 		<h2><?php _e('English', 'btq-booking'); ?></h2>
 		<h3><?php _e('URL', 'btq-booking'); ?></h3>
-		<textarea class="large-text" rows="4" onclick="this.focus();this.select()" readonly="readonly"><?php 
+		<textarea class="large-text" rows="4" onclick="this.focus();this.select()" readonly="readonly" name="url-en" id="url-en"><?php 
 			echo htmlentities( 
 				btq_booking_iph_query_url(
 					esc_attr( get_option('btq_booking_iph_app') ),
@@ -607,7 +607,7 @@ function btq_booking_iph_debug_result($btq_date_start, $btq_date_end, $btq_num_r
 					'en-US',
 					$btq_date_start,
 					$btq_date_end,
-					'USD',
+					'USD'
 					$btq_num_rooms,
 					$btq_num_adults,
 					$btq_num_children
@@ -617,22 +617,22 @@ function btq_booking_iph_debug_result($btq_date_start, $btq_date_end, $btq_num_r
 		
 		<h3><?php _e('Result', 'btq-booking'); ?></h3>
 		<?php
-		$result = btq_booking_iph_query(
+		$result_en = btq_booking_iph_query(
 			esc_attr( get_option('btq_booking_iph_app') ),
 			esc_attr( get_option('btq_booking_iph_property_number') ),
 			esc_attr( get_option('btq_booking_iph_partner_id') ),
-			'en-US',
+			'en-US'
 			$btq_date_start,
 			$btq_date_end,
-			'USD',
+			'USD'
 			$btq_num_rooms,
 			$btq_num_adults,
 			$btq_num_children
 		);
-		$resultVarExport = var_export($result, TRUE);
+		$resultEnVarExport = var_export($result_en, TRUE);
 		?>
-		<pre style="background: white; padding: 5px;"><?php echo htmlentities($resultVarExport); ?></pre>
-	<?*/
+		<pre style="background: white; padding: 5px;"><?php echo htmlentities($resultEnVarExport); ?></pre>
+	<?
 }
 
 function btq_booking_iph_debug_page(){
