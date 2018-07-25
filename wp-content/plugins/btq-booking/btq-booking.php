@@ -331,7 +331,7 @@ function btq_booking_admin_menu() {
 	    	__('Debugger', 'btq-booking'), 
 	    	'manage_options', 
 	    	'btq_booking_iph_debug',
-	    	'btq_booking_iph_debug_page'
+	    	'btq_booking_iph_test_page'
 	    );
     }
     
@@ -634,7 +634,7 @@ function btq_booking_iph_debug_result($btq_date_start, $btq_date_end, $btq_num_r
 	<?
 }
 
-function btq_booking_iph_debug_page(){
+function btq_booking_iph_test_page(){
 	?>
 	<div class="wrap">
 		<h1><?php _e('Internet Power Hotel Debugger', 'btq-booking'); ?></h1>
