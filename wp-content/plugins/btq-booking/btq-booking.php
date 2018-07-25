@@ -422,7 +422,7 @@ function btq_booking_admin_grid_ajax() {
 }
 add_action( 'wp_ajax_btq_booking_admin_grid', 'btq_booking_admin_grid_ajax' );
 
-function btq_admin_booking_form($typeQuery = 'rooms'){
+function btq_admin_booking_form($checkinDatepicker, $checkoutDatepicker, $typeQuery = 'rooms'){
 	?>
 		<form id="btq-admin-booking-form">
 			<div class="tablenav top">
@@ -475,7 +475,7 @@ function btq_booking_iph_admin_rooms_page(){
 	<div class="wrap">
 		<h1><?php _e('Rooms on Internet Power Hotel', 'btq-booking'); ?></h1>
 		
-		<?php btq_admin_booking_form(); ?>
+		<?php btq_admin_booking_form($checkinDatepicker, $checkoutDatepicker, 'rooms'); ?>
 		
 		<div id="btq-booking-admin-result">
 			<div>
