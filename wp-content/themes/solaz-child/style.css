@@ -19,14 +19,34 @@ Text Domain:  solaz-child
 .btq-book-now {
 	display: none !important;
 }
+
+.banner-type-5 .banner-desc h2 {
+	position: relative;
+	top: auto;
+	left: auto;
+}
+
+@media (max-width: 480px){
+	.side-breadcrumb {
+		height: 190px;
+	}
+	.side-breadcrumb h1 {
+		font-size: 32px;
+	}
+	/*
+	.vc_col-has-fill>.vc_column-inner{
+		padding-bottom: 0px;
+	}
+	*/
+}
 @media (max-width:768px){
 	.btq-book-now {
 		display: block !important;
 	}
 	.btq-book-now ul li {
-		background-color: #858a38;
+		background-color: #C5992D;
 	    border: none;
-	    color: white !important;
+	    color: white;
 	    padding: 15px 70px;
 	    text-align: center;
 	    text-decoration: none;
@@ -34,12 +54,14 @@ Text Domain:  solaz-child
 	    font-size: 16px;
 	    margin: 0px 0px;
 	    cursor: pointer;
-	    border: 2px solid #858a38;
+	    border: 2px solid #C5992D;
 	    align-content: center;
 	    width: 100%;
 	}
+	.banner-type-5 .banner-desc h2 {
+		font-size: 30px;
+	}
 }
-
 
 .btq-menu li {
 	display: inline;
@@ -47,6 +69,10 @@ Text Domain:  solaz-child
 	margin-right: 2%;
 }
 
+
+textarea.wpcf7-form-control.wpcf7-textarea.form-control.placeholder{
+    height: 150px;
+}
 /* Main Menu */
 ul#menu-subheader-menu{
 	height: 50px;
@@ -56,11 +82,45 @@ ul#menu-subheader-menu{
 /* Submenu */
 
 .menu-subheader_menu-container, .menu-subheader_menu_en-container{
-	padding-top: 21.5px;
+	padding-top: 20px;
 	padding-bottom: 21.5px;
 }
 
-
-textarea.wpcf7-form-control.wpcf7-textarea.form-control.placeholder{
-    height: 150px;
+.dropdown-menu {
+	min-width: 140px;
+	text-align: right;
+	right: -30px !important;
 }
+
+@media (min-width: 1231px) {
+	.main-navigation .mega-menu li a{
+		padding-left: 8px;
+		padding-right: 8px;
+	}
+}
+@media (max-width: 1230px) and (min-width: 992px) {
+	.main-navigation .mega-menu li a{
+		padding-left: 4px !important;
+		padding-right: 4px !important;
+		font-size: 11px !important;
+	}
+	.header-v1 .languges-flags + .search-block-top {
+		right: 55px !important;
+	}
+}
+@media (max-width: 991px) and (min-width: 768px) {
+	.header-v1 .mega-menu > li > a {
+	    font-size: 11px;
+	    padding-left: 3px !important;
+		padding-right: 3px !important;
+	}
+	.header-v1 .languges-flags + .search-block-top {
+		right: 55px !important;
+	}
+}
+
+/*
+.forcefullwidth_wrapper_tp_banner, .wpb_row{
+	z-index: -10000000000 !important;
+}
+*/
