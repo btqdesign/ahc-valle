@@ -2067,11 +2067,9 @@ function btq_booking_grid_form($language = 'es') {
 	$iconos_dir = 'assets/images/iconos';
 	
 	if(btq_booking_tc_validate_saved_settings()){
-		$str_select_a = __('Select a PACKAGE or ROOM', 'btq-booking');
 		$css_class_col_md = ' col-md-4';
 	}
 	elseif(btq_booking_iph_validate_saved_settings()){
-		$str_select_a = __('Select a ROOM', 'btq-booking');
 		$css_class_col_md = ' col-md-6';
 	}
 	?>
@@ -2079,7 +2077,7 @@ function btq_booking_grid_form($language = 'es') {
 		
 		<section class="row">
 			<article class="col-md-12">
-				<h5 class="hosp"><?php echo $str_select_a; ?></h5>
+				<h5 class="hosp"><?php _e('CHECK THE RATE OF YOUR STAY', 'btq-booking'); ?></h5>
 			</article>
 		</section>
 

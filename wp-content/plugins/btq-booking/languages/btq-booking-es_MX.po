@@ -1,15 +1,15 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: BTQ Booking\n"
-"POT-Creation-Date: 2018-07-25 00:34-0500\n"
-"PO-Revision-Date: 2018-07-25 00:35-0500\n"
+"POT-Creation-Date: 2018-07-26 18:40-0500\n"
+"PO-Revision-Date: 2018-07-26 18:41-0500\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: es_MX\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.1\n"
+"X-Generator: Poedit 2.1.1\n"
 "X-Poedit-Basepath: ..\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Poedit-Flags-xgettext: --add-comments=translators:\n"
@@ -31,16 +31,16 @@ msgid "Settings"
 msgstr "Configuración"
 
 #. Plugin Name of the plugin/theme
-#: btq-booking.php:284 btq-booking.php:285 btq-booking.php:2244
+#: btq-booking.php:284 btq-booking.php:285 btq-booking.php:2242
 msgid "BTQ Booking"
 msgstr ""
 
 #: btq-booking.php:296 btq-booking.php:297 btq-booking.php:322
-#: btq-booking.php:323 btq-booking.php:461 btq-booking.php:2090
+#: btq-booking.php:323 btq-booking.php:461 btq-booking.php:2088
 msgid "Rooms"
 msgstr "Habitaciones"
 
-#: btq-booking.php:304 btq-booking.php:305 btq-booking.php:2094
+#: btq-booking.php:304 btq-booking.php:305 btq-booking.php:2092
 msgid "Packages"
 msgstr "Paquetes"
 
@@ -99,7 +99,7 @@ msgid_plural "%s rooms"
 msgstr[0] "%s habitación"
 msgstr[1] "%s habitaciones"
 
-#: btq-booking.php:470 btq-booking.php:2162
+#: btq-booking.php:470 btq-booking.php:2160
 msgid "Search"
 msgstr "Buscar"
 
@@ -273,52 +273,48 @@ msgstr "Generar fechas no disponibles TravelClick"
 msgid "View more"
 msgstr "Ver más"
 
-#: btq-booking.php:2070
-msgid "Select a PACKAGE or ROOM"
-msgstr "Seleccione un PAQUETE o HABITACIÓN"
+#: btq-booking.php:2080
+msgid "CHECK THE RATE OF YOUR STAY"
+msgstr "CONSULTA TU ESTANCIA AQUÍ"
 
-#: btq-booking.php:2074
-msgid "Select a ROOM"
-msgstr "Selecciona una habitación"
-
-#: btq-booking.php:2098
+#: btq-booking.php:2096
 msgid "Top rated"
 msgstr "Mejor valorados"
 
-#: btq-booking.php:2112
+#: btq-booking.php:2110
 msgid "Check-in"
 msgstr "Fecha de llegada"
 
-#: btq-booking.php:2117
+#: btq-booking.php:2115
 msgid "Check-out"
 msgstr "Fecha de salida"
 
-#: btq-booking.php:2129
+#: btq-booking.php:2127
 #, php-format
 msgid "An adult"
 msgid_plural "%s adults"
 msgstr[0] "Un adulto"
 msgstr[1] "%s Adultos"
 
-#: btq-booking.php:2139
+#: btq-booking.php:2137
 msgid "Without children"
 msgstr "Sin niños"
 
-#: btq-booking.php:2141
+#: btq-booking.php:2139
 #, php-format
 msgid "A child"
 msgid_plural "%s children"
 msgstr[0] "Un niño"
 msgstr[1] "%s niños"
 
-#: btq-booking.php:2154
+#: btq-booking.php:2152
 #, php-format
 msgid "A room"
 msgid_plural "%s rooms"
 msgstr[0] "Una habitación"
 msgstr[1] "%s habitaciones"
 
-#: btq-booking.php:2173
+#: btq-booking.php:2171
 msgid ""
 "* Remember that having an advance reservation will always be a better option "
 "(rates shown at 90 days)."
@@ -326,7 +322,7 @@ msgstr ""
 "* Recuerda que tener una reservación anticipada siempre será una mejor "
 "opción (tarifas mostradas a 90 días)."
 
-#: btq-booking.php:2247
+#: btq-booking.php:2245
 msgid "Content"
 msgstr "Contenido"
 
@@ -345,6 +341,12 @@ msgstr ""
 #. Author URI of the plugin/theme
 msgid "http://btqdesign.com/"
 msgstr ""
+
+#~ msgid "Select a PACKAGE or ROOM"
+#~ msgstr "Seleccione un PAQUETE o HABITACIÓN"
+
+#~ msgid "Select a ROOM"
+#~ msgstr "Selecciona una habitación"
 
 #, fuzzy
 #~| msgid "Booking TravelClick"
