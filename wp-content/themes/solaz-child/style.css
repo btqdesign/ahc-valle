@@ -68,32 +68,28 @@ Text Domain:  solaz-child
 	margin: 22px;
 	margin-right: 2%;
 }
-ul#menu-header-menu, ul#menu-header-menu-terraza, ul#menu-header-menu-banquete, ul#menu-header-menu-terraza-en, ul#menu-header-menu-en {
-	height: 50px;
-	padding-top: 5px;
-	max-width: 600px;
-}
-.menu-header-menu-container, .menu-header-menu-terraza-container, .menu-header-menu-banquete-container, .menu-header-menu-terraza-en-container, .menu-header-menu-en-container {
-	padding-top: 17px;
-	max-width: 600px;
-	/*display: inline-block;*/
-}
+
 
 textarea.wpcf7-form-control.wpcf7-textarea.form-control.placeholder{
     height: 150px;
 }
+/* Main Menu */
+ul#menu-subheader-menu{
+	height: 50px;
+	padding-top: 5px;
+}
 
+/* Submenu */
 
-<<<<<<< HEAD
 .menu-subheader_menu-container, .menu-subheader_menu_en-container{
 	padding-top: 20px;
 	padding-bottom: 21.5px;
-=======
+}
+
 .dropdown-menu {
 	min-width: 140px;
 	text-align: right;
 	right: -30px !important;
->>>>>>> e45bbec27c40db90f63ff0bd7598a5d6c61b17c2
 }
 
 @media (min-width: 1231px) {
