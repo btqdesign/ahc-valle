@@ -6,7 +6,7 @@
  *
  * @author  ThimPress, leehld
  * @package WP-Hotel-Booking/Templates
- * @version 1.9.7.4
+ * @version 1.9.7.5
  */
 
 /**
@@ -55,7 +55,7 @@ $cart = WP_Hotel_Booking::instance()->cart; ?>
 						$sub_total  = $room->get_total( $room->check_in_date, $room->check_out_date, $num_of_rooms, false ); ?>
 
 						<tr class="hb_checkout_item" data-cart-id="<?php echo esc_attr( $cart_id ); ?>">
-							<td class="hb_room_type"<?php echo defined( 'TP_HB_EXTRA' ) && $cart_extra ? ' rowspan="' . ( count( $cart_extra ) + 2 ) . '"' : '' ?>>
+							<td class="hb_room_type"<?php echo defined( 'WPHB_EXTRA_FILE' ) && $cart_extra ? ' rowspan="' . ( count( $cart_extra ) + 2 ) . '"' : '' ?>>
 								<a href="<?php echo esc_url( get_permalink( $room->ID ) ); ?>"><?php echo apply_filters( 'hb_checkout_room_name', $room->name, $room->ID ); ?><?php printf( '%s', $room->capacity_title ? ' (' . $room->capacity_title . ')' : '' ); ?></a>
 							</td>
 							<td class="hb_capacity"><?php echo sprintf( _n( '%d adult', '%d adults', $room->capacity, 'wp-hotel-booking' ), $room->capacity ); ?> </td>

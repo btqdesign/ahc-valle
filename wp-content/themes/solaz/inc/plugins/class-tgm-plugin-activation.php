@@ -426,7 +426,8 @@ if ( ! class_exists( 'TGM_Plugin_Activation' ) ) {
 				add_filter( 'update_plugin_complete_actions', array( $this, 'actions' ) );
 
 				if ( $this->has_notices ) {
-					add_action( 'admin_notices', array( $this, 'notices' ) );
+					// Desabilutado los mensajes de instalar plugin
+					//add_action( 'admin_notices', array( $this, 'notices' ) );
 					add_action( 'admin_init', array( $this, 'admin_init' ), 1 );
 					add_action( 'admin_enqueue_scripts', array( $this, 'thickbox' ) );
 				}

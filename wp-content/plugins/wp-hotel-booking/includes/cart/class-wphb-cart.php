@@ -110,7 +110,7 @@ class WPHB_Cart {
 				break;
 			// end old
 			default:
-				$return = '';
+				$return = apply_filters( 'hotel_booking_cart_get_magic', '', $key );
 				break;
 		}
 

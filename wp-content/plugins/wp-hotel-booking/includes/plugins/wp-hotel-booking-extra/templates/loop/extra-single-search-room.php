@@ -5,7 +5,7 @@
  * This template can be overridden by copying it to yourtheme/wp-hotel-booking-extra/loop/extra-single-search-room.php.
  *
  * @author  ThimPress, leehld
- * @package WP-Hotel-Booking/Templates
+ * @package WP-Hotel-Booking/Extra/Templates
  * @version 1.9.6
  */
 

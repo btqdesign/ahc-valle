@@ -45,6 +45,7 @@ jQuery(document).ready(function ($) {
                 disabled: true,
                 click: function () {
                     var thisDialog = $(this);
+					disableFormSave();
                     var ajaxLoader = $("<span class=\"spinner\"></span>");
                     var translationForm = thisDialog.find("form");
                     ajaxLoader.insertBefore(".wpml-media-dialog .button-primary").css({
@@ -130,6 +131,10 @@ jQuery(document).ready(function ($) {
             }
         ]
     });
+
+	function disableFormSave() {
+	    $(".wpml-media-dialog .ui-dialog-buttonset .button-primary").prop("disabled", true);
+	}
 
     function enableFormSave(e) {
         if (typeof e !== 'undefined') {
@@ -295,6 +300,8 @@ jQuery(document).ready(function ($) {
         var imagesRow = $(this).closest(".wpml-form-row");
         var originalImage = imagesRow.find(".wpml-media-original-image img");
         var translatedImage = imagesRow.find(".wpml-media-translation-image img");
+
+		dialogForm.find("input[name=update-media-file]").val(0);
 
         translatedImage.attr("src", originalImage.attr("src"));
 

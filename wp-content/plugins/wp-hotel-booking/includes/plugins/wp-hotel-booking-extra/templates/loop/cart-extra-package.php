@@ -6,7 +6,7 @@
  * This template can be overridden by copying it to yourtheme/wp-hotel-booking-extra/loop/cart-extra-package.php.
  *
  * @author  ThimPress, leehld
- * @package WP-Hotel-Booking/Templates
+ * @package WP-Hotel-Booking/Extra/Templates
  * @version 1.9.7.4
  */
 

@@ -77,6 +77,12 @@ Yes.
 
 == Changelog ==
 
+= 1.9.7.5 =
++ Fix issue show unpublished extra room in search page
++ Update default setting room images size in single room gallery
++ Update process get related rooms
++ Update tool check override templates to check WP Hotel Booking addons
+
 = 1.9.7.4 =
 + Add tool check override templates
 + Update templates instruction

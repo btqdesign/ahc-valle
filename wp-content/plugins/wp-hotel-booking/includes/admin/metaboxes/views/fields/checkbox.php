@@ -36,6 +36,7 @@ if ( $field['attr'] ) {
 $value = $field['std'];
 if ( is_callable( $field['filter'] ) ) {
 	$value = call_user_func_array( $field['filter'], array( $value ) );
-}
+}?>
 
-printf( '<input type="checkbox" name="%s" id="%s" %s %s value="1"/>', $field['name'], $field['id'], checked( $value, 1, false ), $field_attr ); ?>
+<input type="hidden" name="<?php echo $field['name']; ?>" value="0" />
+<input type="checkbox" name="<?php echo $field['name']; ?>" id="<?php echo $field['id']; ?>" value="1" <?php echo $field_attr ?><?php checked( $value, 1 ); ?>/>

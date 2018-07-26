@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-06-14 11:53+0700\n"
+"POT-Creation-Date: 2018-06-20 10:57+0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -55,11 +55,11 @@ msgid "Room selected. Please View Cart to change order"
 msgstr ""
 
 #: includes/class-wphb-ajax.php:356
-#: includes/plugins/wp-hotel-booking-extra/inc/classes/class-hb-extra-cart.php:230
+#: includes/plugins/wp-hotel-booking-extra/inc/class-hb-extra-cart.php:249
 msgid "Cart item is not exists."
 msgstr ""
 
-#: includes/class-wphb-ajax.php:424 includes/wphb-core-functions.php:48
+#: includes/class-wphb-ajax.php:424 includes/wphb-core-functions.php:52
 msgid "Room not found."
 msgstr ""
 
@@ -244,8 +244,8 @@ msgid "Hotel Thank You"
 msgstr ""
 
 #: includes/class-wphb-post-types.php:90
-#: includes/plugins/wp-hotel-booking-extra/inc/classes/class-hb-extra-post-type.php:105
-#: includes/plugins/wp-hotel-booking-extra/inc/classes/class-hb-extra-post-type.php:195
+#: includes/plugins/wp-hotel-booking-extra/inc/class-hb-extra-post-type.php:118
+#: includes/plugins/wp-hotel-booking-extra/inc/class-hb-extra-post-type.php:213
 msgid "Type"
 msgstr ""
 
@@ -295,11 +295,11 @@ msgid "Max Children"
 msgstr ""
 
 #: includes/class-wphb-post-types.php:391
-#: includes/plugins/wp-hotel-booking-extra/inc/admin/views/extra.php:38
-#: includes/plugins/wp-hotel-booking-extra/inc/admin/views/extra.php:66
-#: includes/plugins/wp-hotel-booking-extra/inc/admin/views/extra.php:99
-#: includes/plugins/wp-hotel-booking-extra/inc/classes/class-hb-extra-post-type.php:103
-#: includes/plugins/wp-hotel-booking-extra/inc/classes/class-hb-extra-post-type.php:179
+#: includes/plugins/wp-hotel-booking-extra/inc/class-hb-extra-post-type.php:116
+#: includes/plugins/wp-hotel-booking-extra/inc/class-hb-extra-post-type.php:197
+#: includes/plugins/wp-hotel-booking-extra/inc/admin/views/extra.php:44
+#: includes/plugins/wp-hotel-booking-extra/inc/admin/views/extra.php:69
+#: includes/plugins/wp-hotel-booking-extra/inc/admin/views/extra.php:102
 #: templates/emails/booking-details.php:25 templates/loop/price.php:32
 msgid "Price"
 msgstr ""
@@ -590,29 +590,25 @@ msgstr ""
 msgid "Booking Editor"
 msgstr ""
 
-#: includes/class-wphb-settings.php:131
-msgid "Settings saved"
-msgstr ""
-
-#: includes/wphb-core-functions.php:61
+#: includes/wphb-core-functions.php:65
 msgid "Check in date is not valid."
 msgstr ""
 
-#: includes/wphb-core-functions.php:70
+#: includes/wphb-core-functions.php:74
 msgid "Check out date is not valid."
 msgstr ""
 
-#: includes/wphb-core-functions.php:118
+#: includes/wphb-core-functions.php:122
 msgid "This room is not available."
 msgstr ""
 
-#: includes/wphb-core-functions.php:257
-#: includes/plugins/wp-hotel-booking-extra/inc/functions.php:139
+#: includes/wphb-core-functions.php:261
+#: includes/plugins/wp-hotel-booking-extra/inc/functions.php:177
 msgid "Trip"
 msgstr ""
 
-#: includes/wphb-core-functions.php:258
-#: includes/plugins/wp-hotel-booking-extra/inc/functions.php:140
+#: includes/wphb-core-functions.php:262
+#: includes/plugins/wp-hotel-booking-extra/inc/functions.php:178
 msgid "Number"
 msgstr ""
 
@@ -2002,9 +1998,9 @@ msgid "Room Settings"
 msgstr ""
 
 #: includes/admin/wphb-admin-functions.php:77
-#: includes/admin/metaboxes/views/meta-booking-items-template-js.php:59
-#: includes/admin/metaboxes/views/meta-booking-items-template-js.php:96
-#: includes/admin/metaboxes/views/meta-booking-items-template-js.php:169
+#: includes/admin/metaboxes/views/meta-booking-items-template-js.php:57
+#: includes/admin/metaboxes/views/meta-booking-items-template-js.php:94
+#: includes/admin/metaboxes/views/meta-booking-items-template-js.php:167
 #: templates/cart/cart.php:36 templates/checkout/checkout.php:37
 msgid "Quantity"
 msgstr ""
@@ -2024,7 +2020,8 @@ msgstr ""
 #: includes/admin/wphb-admin-functions.php:107
 #: templates/checkout/addition-information.php:19
 #: templates/emails/booking-details.php:65
-msgid "Addition Information"
+#: templates/single-room/details.php:31
+msgid "Additional Information"
 msgstr ""
 
 #: includes/admin/wphb-admin-functions.php:118
@@ -2032,9 +2029,9 @@ msgid "Coupon Settings"
 msgstr ""
 
 #: includes/admin/wphb-admin-functions.php:128
-#: includes/plugins/wp-hotel-booking-extra/inc/admin/views/extra.php:34
-#: includes/plugins/wp-hotel-booking-extra/inc/admin/views/extra.php:62
-#: includes/plugins/wp-hotel-booking-extra/inc/admin/views/extra.php:95
+#: includes/plugins/wp-hotel-booking-extra/inc/admin/views/extra.php:40
+#: includes/plugins/wp-hotel-booking-extra/inc/admin/views/extra.php:65
+#: includes/plugins/wp-hotel-booking-extra/inc/admin/views/extra.php:98
 #: templates/single-room/details.php:26
 msgid "Description"
 msgstr ""
@@ -2092,13 +2089,13 @@ msgid "Date"
 msgstr ""
 
 #: includes/admin/wphb-admin-functions.php:276
-#: includes/admin/metaboxes/views/meta-booking-items-template-js.php:50
+#: includes/admin/metaboxes/views/meta-booking-items-template-js.php:48
 #: templates/emails/booking-details.php:22
 msgid "Check in"
 msgstr ""
 
 #: includes/admin/wphb-admin-functions.php:277
-#: includes/admin/metaboxes/views/meta-booking-items-template-js.php:52
+#: includes/admin/metaboxes/views/meta-booking-items-template-js.php:50
 #: templates/checkout/checkout.php:149 templates/emails/booking-details.php:23
 msgid "Check out"
 msgstr ""
@@ -2207,9 +2204,9 @@ msgid "Customer's Details"
 msgstr ""
 
 #: includes/admin/metaboxes/views/meta-booking-details.php:72
-#: includes/plugins/wp-hotel-booking-extra/inc/admin/views/extra.php:30
-#: includes/plugins/wp-hotel-booking-extra/inc/admin/views/extra.php:58
-#: includes/plugins/wp-hotel-booking-extra/inc/admin/views/extra.php:91
+#: includes/plugins/wp-hotel-booking-extra/inc/admin/views/extra.php:36
+#: includes/plugins/wp-hotel-booking-extra/inc/admin/views/extra.php:61
+#: includes/plugins/wp-hotel-booking-extra/inc/admin/views/extra.php:94
 #: templates/single-room-reviews.php:71
 msgid "Name"
 msgstr ""
@@ -2297,41 +2294,41 @@ msgstr ""
 msgid "Add new item"
 msgstr ""
 
-#: includes/admin/metaboxes/views/meta-booking-items-template-js.php:77
+#: includes/admin/metaboxes/views/meta-booking-items-template-js.php:75
 msgid "Extra Packages"
 msgstr ""
 
-#: includes/admin/metaboxes/views/meta-booking-items-template-js.php:115
+#: includes/admin/metaboxes/views/meta-booking-items-template-js.php:113
 msgid "Check Available"
 msgstr ""
 
-#: includes/admin/metaboxes/views/meta-booking-items-template-js.php:119
-#: includes/admin/metaboxes/views/meta-booking-items-template-js.php:232
+#: includes/admin/metaboxes/views/meta-booking-items-template-js.php:117
+#: includes/admin/metaboxes/views/meta-booking-items-template-js.php:230
 msgid "Close"
 msgstr ""
 
-#: includes/admin/metaboxes/views/meta-booking-items-template-js.php:120
-#: includes/admin/metaboxes/views/meta-booking-items-template-js.php:233
+#: includes/admin/metaboxes/views/meta-booking-items-template-js.php:118
+#: includes/admin/metaboxes/views/meta-booking-items-template-js.php:231
 msgid "Add"
 msgstr ""
 
-#: includes/admin/metaboxes/views/meta-booking-items-template-js.php:137
+#: includes/admin/metaboxes/views/meta-booking-items-template-js.php:135
 msgid "Do you want to do this?"
 msgstr ""
 
-#: includes/admin/metaboxes/views/meta-booking-items-template-js.php:156
+#: includes/admin/metaboxes/views/meta-booking-items-template-js.php:154
 #: includes/widgets/class-hb-widget-room-carousel.php:85
 #: includes/widgets/class-hb-widget-room-carousel.php:94
 msgid "No"
 msgstr ""
 
-#: includes/admin/metaboxes/views/meta-booking-items-template-js.php:157
+#: includes/admin/metaboxes/views/meta-booking-items-template-js.php:155
 #: includes/widgets/class-hb-widget-room-carousel.php:83
 #: includes/widgets/class-hb-widget-room-carousel.php:91
 msgid "Yes"
 msgstr ""
 
-#: includes/admin/metaboxes/views/meta-booking-items-template-js.php:196
+#: includes/admin/metaboxes/views/meta-booking-items-template-js.php:194
 msgid "Add new coupon"
 msgstr ""
 
@@ -2793,7 +2790,7 @@ msgid "Enable gallery lightbox"
 msgstr ""
 
 #: includes/admin/tools/class-wphb-tool-override-templates.php:38
-msgid "Override template"
+msgid "Template"
 msgstr ""
 
 #: includes/admin/tools/class-wphb-tool-override-templates.php:61
@@ -2854,9 +2851,9 @@ msgstr ""
 #: includes/admin/views/pricing-table.php:64
 #: includes/admin/views/pricing-table.php:130
 #: includes/admin/views/pricing-table.php:198
-#: includes/plugins/wp-hotel-booking-extra/inc/admin/views/extra.php:48
-#: includes/plugins/wp-hotel-booking-extra/inc/admin/views/extra.php:76
-#: includes/plugins/wp-hotel-booking-extra/inc/admin/views/extra.php:109
+#: includes/plugins/wp-hotel-booking-extra/inc/admin/views/extra.php:54
+#: includes/plugins/wp-hotel-booking-extra/inc/admin/views/extra.php:79
+#: includes/plugins/wp-hotel-booking-extra/inc/admin/views/extra.php:112
 msgid "Remove"
 msgstr ""
 
@@ -2921,6 +2918,11 @@ msgstr ""
 #: includes/booking/wphb-booking-hooks.php:308
 #: templates/emails/customer-cancelled.php:20
 msgid "Cancelled booking"
+msgstr ""
+
+#: includes/booking/wphb-booking-hooks.php:396
+msgctxt "Admin menu name"
+msgid "Bookings"
 msgstr ""
 
 #: includes/cart/class-wphb-cart.php:210
@@ -2995,134 +2997,134 @@ msgstr ""
 msgid "Paypal sandbox email"
 msgstr ""
 
-#: includes/plugins/wp-hotel-booking-extra/wp-hotel-booking-extra.php:60
+#: includes/plugins/wp-hotel-booking-extra/wp-hotel-booking-extra.php:56
 msgid "Remove package. Are you sure?"
 msgstr ""
 
-#: includes/plugins/wp-hotel-booking-extra/inc/admin/class-hb-admin.php:26
-msgid "Extra Room Packages"
+#: includes/plugins/wp-hotel-booking-extra/inc/class-hb-extra-cart.php:199
+msgid "Cart ID is not exists."
 msgstr ""
 
-#: includes/plugins/wp-hotel-booking-extra/inc/admin/views/extra.php:19
-msgid "Adding room's services packages with detail price for every service"
+#: includes/plugins/wp-hotel-booking-extra/inc/class-hb-extra-cart.php:360
+#: includes/plugins/wp-hotel-booking-extra/templates/loop/addition-services-title.php:26
+msgid "Addition Services"
 msgstr ""
 
-#: includes/plugins/wp-hotel-booking-extra/inc/admin/views/extra.php:23
-#: includes/plugins/wp-hotel-booking-extra/inc/classes/class-hb-extra-post-type.php:46
+#: includes/plugins/wp-hotel-booking-extra/inc/class-hb-extra-post-type.php:48
+#: includes/plugins/wp-hotel-booking-extra/inc/class-hb-extra-post-type.php:49
+msgid "Extra Room"
+msgstr ""
+
+#: includes/plugins/wp-hotel-booking-extra/inc/class-hb-extra-post-type.php:50
+msgctxt "wp-hotel-booking"
+msgid "Add New Extra Room"
+msgstr ""
+
+#: includes/plugins/wp-hotel-booking-extra/inc/class-hb-extra-post-type.php:51
+msgid "Add New Extra Room"
+msgstr ""
+
+#: includes/plugins/wp-hotel-booking-extra/inc/class-hb-extra-post-type.php:52
+msgid "Edit Extra Room"
+msgstr ""
+
+#: includes/plugins/wp-hotel-booking-extra/inc/class-hb-extra-post-type.php:53
+msgid "New Extra Room"
+msgstr ""
+
+#: includes/plugins/wp-hotel-booking-extra/inc/class-hb-extra-post-type.php:54
+msgid "View Extra Room"
+msgstr ""
+
+#: includes/plugins/wp-hotel-booking-extra/inc/class-hb-extra-post-type.php:55
+msgid "Search Extra Room"
+msgstr ""
+
+#: includes/plugins/wp-hotel-booking-extra/inc/class-hb-extra-post-type.php:56
+msgid "No Extra Room found"
+msgstr ""
+
+#: includes/plugins/wp-hotel-booking-extra/inc/class-hb-extra-post-type.php:57
+msgid "No Extra Room found in Trash"
+msgstr ""
+
+#: includes/plugins/wp-hotel-booking-extra/inc/class-hb-extra-post-type.php:58
+msgid "Parent Singular Extra Room:"
+msgstr ""
+
+#: includes/plugins/wp-hotel-booking-extra/inc/class-hb-extra-post-type.php:59
+#: includes/plugins/wp-hotel-booking-extra/inc/admin/views/extra.php:30
 msgid "Extra Options"
 msgstr ""
 
-#: includes/plugins/wp-hotel-booking-extra/inc/admin/views/extra.php:41
-#: includes/plugins/wp-hotel-booking-extra/inc/admin/views/extra.php:69
-#: includes/plugins/wp-hotel-booking-extra/inc/admin/views/extra.php:102
-#: includes/plugins/wp-hotel-booking-extra/inc/classes/class-hb-extra-post-type.php:191
+#: includes/plugins/wp-hotel-booking-extra/inc/class-hb-extra-post-type.php:117
+#: includes/plugins/wp-hotel-booking-extra/inc/class-hb-extra-post-type.php:206
+msgid "Unit"
+msgstr ""
+
+#: includes/plugins/wp-hotel-booking-extra/inc/class-hb-extra-post-type.php:119
+#: includes/plugins/wp-hotel-booking-extra/inc/class-hb-extra-post-type.php:220
+msgid "Required"
+msgstr ""
+
+#: includes/plugins/wp-hotel-booking-extra/inc/class-hb-extra-post-type.php:188
+msgid "Extra Settings"
+msgstr ""
+
+#: includes/plugins/wp-hotel-booking-extra/inc/class-hb-extra-post-type.php:200
+msgid "Price of extra room option"
+msgstr ""
+
+#: includes/plugins/wp-hotel-booking-extra/inc/class-hb-extra-post-type.php:207
+msgid "Unit of extra room option"
+msgstr ""
+
+#: includes/plugins/wp-hotel-booking-extra/inc/class-hb-extra-post-type.php:209
+#: includes/plugins/wp-hotel-booking-extra/inc/admin/views/extra.php:47
+#: includes/plugins/wp-hotel-booking-extra/inc/admin/views/extra.php:72
+#: includes/plugins/wp-hotel-booking-extra/inc/admin/views/extra.php:105
 #: includes/plugins/wp-hotel-booking-extra/templates/loop/extra-search-room.php:63
 #: includes/plugins/wp-hotel-booking-extra/templates/loop/extra-single-search-room.php:59
 #: templates/search/select-extra.php:53
 msgid "Package"
 msgstr ""
 
-#: includes/plugins/wp-hotel-booking-extra/inc/admin/views/extra.php:44
-#: includes/plugins/wp-hotel-booking-extra/inc/admin/views/extra.php:72
-#: includes/plugins/wp-hotel-booking-extra/inc/admin/views/extra.php:105
-msgid "Price Type"
-msgstr ""
-
-#: includes/plugins/wp-hotel-booking-extra/inc/admin/views/extra.php:82
-msgid "Save Extra"
-msgstr ""
-
-#: includes/plugins/wp-hotel-booking-extra/inc/admin/views/extra.php:83
-msgid "Add another item"
-msgstr ""
-
-#: includes/plugins/wp-hotel-booking-extra/inc/admin/views/extra.php:96
-msgid "Enter description here"
-msgstr ""
-
-#: includes/plugins/wp-hotel-booking-extra/inc/classes/class-hb-extra-cart.php:180
-msgid "Cart ID is not exists."
-msgstr ""
-
-#: includes/plugins/wp-hotel-booking-extra/inc/classes/class-hb-extra-cart.php:322
-#: includes/plugins/wp-hotel-booking-extra/templates/loop/addition-services-title.php:26
-msgid "Addition Services"
-msgstr ""
-
-#: includes/plugins/wp-hotel-booking-extra/inc/classes/class-hb-extra-post-type.php:35
-#: includes/plugins/wp-hotel-booking-extra/inc/classes/class-hb-extra-post-type.php:36
-msgid "Extra Room"
-msgstr ""
-
-#: includes/plugins/wp-hotel-booking-extra/inc/classes/class-hb-extra-post-type.php:37
-msgctxt "wp-hotel-booking"
-msgid "Add New Extra Room"
-msgstr ""
-
-#: includes/plugins/wp-hotel-booking-extra/inc/classes/class-hb-extra-post-type.php:38
-msgid "Add New Extra Room"
-msgstr ""
-
-#: includes/plugins/wp-hotel-booking-extra/inc/classes/class-hb-extra-post-type.php:39
-msgid "Edit Extra Room"
-msgstr ""
-
-#: includes/plugins/wp-hotel-booking-extra/inc/classes/class-hb-extra-post-type.php:40
-msgid "New Extra Room"
-msgstr ""
-
-#: includes/plugins/wp-hotel-booking-extra/inc/classes/class-hb-extra-post-type.php:41
-msgid "View Extra Room"
-msgstr ""
-
-#: includes/plugins/wp-hotel-booking-extra/inc/classes/class-hb-extra-post-type.php:42
-msgid "Search Extra Room"
-msgstr ""
-
-#: includes/plugins/wp-hotel-booking-extra/inc/classes/class-hb-extra-post-type.php:43
-msgid "No Extra Room found"
-msgstr ""
-
-#: includes/plugins/wp-hotel-booking-extra/inc/classes/class-hb-extra-post-type.php:44
-msgid "No Extra Room found in Trash"
-msgstr ""
-
-#: includes/plugins/wp-hotel-booking-extra/inc/classes/class-hb-extra-post-type.php:45
-msgid "Parent Singular Extra Room:"
-msgstr ""
-
-#: includes/plugins/wp-hotel-booking-extra/inc/classes/class-hb-extra-post-type.php:104
-#: includes/plugins/wp-hotel-booking-extra/inc/classes/class-hb-extra-post-type.php:188
-msgid "Unit"
-msgstr ""
-
-#: includes/plugins/wp-hotel-booking-extra/inc/classes/class-hb-extra-post-type.php:106
-#: includes/plugins/wp-hotel-booking-extra/inc/classes/class-hb-extra-post-type.php:202
-msgid "Required"
-msgstr ""
-
-#: includes/plugins/wp-hotel-booking-extra/inc/classes/class-hb-extra-post-type.php:170
-msgid "Extra Settings"
-msgstr ""
-
-#: includes/plugins/wp-hotel-booking-extra/inc/classes/class-hb-extra-post-type.php:182
-msgid "Price of extra room option"
-msgstr ""
-
-#: includes/plugins/wp-hotel-booking-extra/inc/classes/class-hb-extra-post-type.php:189
-msgid "Unit of extra room option"
-msgstr ""
-
-#: includes/plugins/wp-hotel-booking-extra/inc/classes/class-hb-extra-post-type.php:196
+#: includes/plugins/wp-hotel-booking-extra/inc/class-hb-extra-post-type.php:214
 msgid "Type of extra room option"
 msgstr ""
 
-#: includes/plugins/wp-hotel-booking-extra/inc/classes/class-hb-extra-post-type.php:203
+#: includes/plugins/wp-hotel-booking-extra/inc/class-hb-extra-post-type.php:221
 msgid "Required include for all booking"
 msgstr ""
 
-#: includes/plugins/wp-hotel-booking-extra/inc/classes/class-hb-extra.php:30
+#: includes/plugins/wp-hotel-booking-extra/inc/class-hb-extra.php:53
 msgid "Addition Package"
+msgstr ""
+
+#: includes/plugins/wp-hotel-booking-extra/inc/admin/class-hb-admin.php:39
+msgid "Extra Room Packages"
+msgstr ""
+
+#: includes/plugins/wp-hotel-booking-extra/inc/admin/views/extra.php:26
+msgid "Adding room's services packages with detail price for every service"
+msgstr ""
+
+#: includes/plugins/wp-hotel-booking-extra/inc/admin/views/extra.php:50
+#: includes/plugins/wp-hotel-booking-extra/inc/admin/views/extra.php:75
+#: includes/plugins/wp-hotel-booking-extra/inc/admin/views/extra.php:108
+msgid "Price Type"
+msgstr ""
+
+#: includes/plugins/wp-hotel-booking-extra/inc/admin/views/extra.php:85
+msgid "Save Extra"
+msgstr ""
+
+#: includes/plugins/wp-hotel-booking-extra/inc/admin/views/extra.php:86
+msgid "Add another item"
+msgstr ""
+
+#: includes/plugins/wp-hotel-booking-extra/inc/admin/views/extra.php:99
+msgid "Enter description here"
 msgstr ""
 
 #: includes/plugins/wp-hotel-booking-extra/templates/loop/extra-search-room.php:27
@@ -3541,7 +3543,7 @@ msgid "Billing address"
 msgstr ""
 
 #: templates/emails/customer-details.php:46
-msgid "Addition Information:"
+msgid "Additional Information:"
 msgstr ""
 
 #: templates/loop/pricing_plan.php:25
@@ -3626,10 +3628,6 @@ msgstr ""
 
 #: templates/search/select-extra.php:70
 msgid "There is no extra option of this room"
-msgstr ""
-
-#: templates/single-room/details.php:31
-msgid "Additional Information"
 msgstr ""
 
 #: templates/single-room/related-room.php:27

@@ -102,8 +102,20 @@ if ( ! class_exists( 'WPHB_Settings' ) ) {
 			// allow hook
 			do_action( 'hb_update_settings_' . $name, $name, $value );
 
+			add_action( 'admin_notices', array( $this, 'notice_success' ) );
+
 			return $this->_options;
 		}
+
+		/**
+		 * Admin notice settings saved.
+		 */
+		public function notice_success() {
+			?>
+			<div class="notice notice-success is-dismissible">
+				<p><?php _e( 'Settings saved.', 'wp-hotel-booking' ); ?></p>
+			</div>
+		<?php }
 
 		/**
 		 * Remove an option

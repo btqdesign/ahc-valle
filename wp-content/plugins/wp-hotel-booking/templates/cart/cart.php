@@ -6,7 +6,7 @@
  *
  * @author  ThimPress, leehld
  * @package WP-Hotel-Booking/Templates
- * @version 1.9.7.4
+ * @version 1.9.7.5
  */
 
 /**
@@ -52,7 +52,7 @@ global $hb_settings; ?>
 						$cart_extra = $cart->get_extra_packages( $cart_id ); ?>
 
 						<tr class="hb_checkout_item" data-cart-id="<?php echo esc_attr( $cart_id ); ?>">
-							<td<?php echo defined( 'TP_HB_EXTRA' ) && $cart_extra ? ' rowspan="' . ( count( $cart_extra ) + 2 ) . '"' : '' ?>>
+							<td<?php echo defined( 'WPHB_EXTRA_FILE' ) && $cart_extra ? ' rowspan="' . ( count( $cart_extra ) + 2 ) . '"' : '' ?>>
 								<a href="javascript:void(0)" class="hb_remove_cart_item"
 								   data-cart-id="<?php echo esc_attr( $cart_id ); ?>">
 									<i class="fa fa-times"></i>
