@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: BTQ Booking\n"
-"POT-Creation-Date: 2018-07-26 18:39-0500\n"
-"PO-Revision-Date: 2018-07-26 18:40-0500\n"
+"POT-Creation-Date: 2018-07-27 14:53-0500\n"
+"PO-Revision-Date: 2018-07-27 15:03-0500\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: es_ES\n"
@@ -21,8 +21,8 @@ msgstr ""
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: *.js\n"
 
-#: btq-booking.php:228 btq-booking.php:556 btq-booking.php:1833
-#: btq-booking.php:2045
+#: btq-booking.php:228 btq-booking.php:556 btq-booking.php:1848
+#: btq-booking.php:2060
 msgid "Book Now"
 msgstr "Reserve Ahora"
 
@@ -31,16 +31,16 @@ msgid "Settings"
 msgstr "Configuración"
 
 #. Plugin Name of the plugin/theme
-#: btq-booking.php:284 btq-booking.php:285 btq-booking.php:2242
+#: btq-booking.php:284 btq-booking.php:285 btq-booking.php:2257
 msgid "BTQ Booking"
 msgstr ""
 
 #: btq-booking.php:296 btq-booking.php:297 btq-booking.php:322
-#: btq-booking.php:323 btq-booking.php:461 btq-booking.php:2088
+#: btq-booking.php:323 btq-booking.php:461 btq-booking.php:2103
 msgid "Rooms"
 msgstr "Habitaciones"
 
-#: btq-booking.php:304 btq-booking.php:305 btq-booking.php:2092
+#: btq-booking.php:304 btq-booking.php:305 btq-booking.php:2107
 msgid "Packages"
 msgstr "Paquetes"
 
@@ -53,12 +53,12 @@ msgid "Debugger"
 msgstr "Depurador"
 
 #: btq-booking.php:391 btq-booking.php:493 btq-booking.php:572
-#: btq-booking.php:1330 btq-booking.php:1449
+#: btq-booking.php:1344 btq-booking.php:1463
 msgid "Spanish"
 msgstr "Español"
 
 #: btq-booking.php:395 btq-booking.php:497 btq-booking.php:609
-#: btq-booking.php:1334 btq-booking.php:1453
+#: btq-booking.php:1348 btq-booking.php:1467
 msgid "English"
 msgstr "Inglés"
 
@@ -99,7 +99,7 @@ msgid_plural "%s rooms"
 msgstr[0] "%s habitación"
 msgstr[1] "%s habitaciones"
 
-#: btq-booking.php:470 btq-booking.php:2160
+#: btq-booking.php:470 btq-booking.php:2175
 msgid "Search"
 msgstr "Buscar"
 
@@ -127,7 +127,7 @@ msgstr "Total"
 msgid "Promotion"
 msgstr "Promoción"
 
-#: btq-booking.php:540 btq-booking.php:1253 btq-booking.php:1363
+#: btq-booking.php:540 btq-booking.php:1267 btq-booking.php:1377
 msgid "Folder With Pictures"
 msgstr "Carpeta con imágenes"
 
@@ -136,12 +136,12 @@ msgid "Picture"
 msgstr "Fotografía"
 
 #: btq-booking.php:550 btq-booking.php:551 btq-booking.php:552
-#: btq-booking.php:1266 btq-booking.php:1373 btq-booking.php:1525
+#: btq-booking.php:1280 btq-booking.php:1387 btq-booking.php:1539
 msgid "Yes"
 msgstr "Si"
 
 #: btq-booking.php:550 btq-booking.php:551 btq-booking.php:552
-#: btq-booking.php:1266 btq-booking.php:1373 btq-booking.php:1521
+#: btq-booking.php:1280 btq-booking.php:1387 btq-booking.php:1535
 msgid "No"
 msgstr "No"
 
@@ -157,172 +157,185 @@ msgstr "Resultado"
 msgid "Internet Power Hotel Debugger"
 msgstr "Depurador de Internet Power Hotel"
 
-#: btq-booking.php:780
+#: btq-booking.php:781
 msgid "BTQ Booking Settings"
 msgstr "Configuración de BTQ Booking"
 
-#: btq-booking.php:787
+#: btq-booking.php:788
 msgid "Default color"
 msgstr "Color predeterminado"
 
-#: btq-booking.php:791
+#: btq-booking.php:792
+msgid "Early days to get the best price"
+msgstr "Días anticipados para obtener el mejor precio"
+
+#: btq-booking.php:796
 msgid "Booking service"
 msgstr "Servicio de reserva"
 
-#: btq-booking.php:802
+#: btq-booking.php:806
+msgid "Tavel Click Settings"
+msgstr "Configuración de Travel Click"
+
+#: btq-booking.php:810
 msgid "Sales channel info ID"
 msgstr "ID de canal de ventas"
 
-#: btq-booking.php:806
+#: btq-booking.php:814
 msgid "Username"
 msgstr "Nombre de usuario"
 
-#: btq-booking.php:810
+#: btq-booking.php:818
 msgid "Password"
 msgstr "Contraseña"
 
-#: btq-booking.php:814
+#: btq-booking.php:822
 msgid "SOAP Action PALS To"
 msgstr ""
 
-#: btq-booking.php:818
+#: btq-booking.php:826
 msgid "SOAP Action FULL To"
 msgstr ""
 
-#: btq-booking.php:822
+#: btq-booking.php:830
 msgid "Hotel code english language"
 msgstr "Código de hotel en idioma inglés"
 
-#: btq-booking.php:826
+#: btq-booking.php:834
 msgid "Hotel code spanish language"
 msgstr "Código de hotel en idioma español"
 
-#: btq-booking.php:830
+#: btq-booking.php:838
 msgid "Theme id english language"
 msgstr "Identificador de tema en idioma inglés"
 
-#: btq-booking.php:834
+#: btq-booking.php:842
 msgid "Theme id spanish language"
 msgstr "Identificador de tema en idioma español"
 
-#: btq-booking.php:842
+#: btq-booking.php:850
+msgid "Internet Power Hotel Settings"
+msgstr "Configuración de Internet Power Hotel"
+
+#: btq-booking.php:854
 msgid "Property number"
 msgstr ""
 
-#: btq-booking.php:846
+#: btq-booking.php:858
 msgid "App"
 msgstr ""
 
-#: btq-booking.php:850
+#: btq-booking.php:862
 msgid "Partner ID"
 msgstr ""
 
-#: btq-booking.php:1251
+#: btq-booking.php:1265
 msgid "Rate Plan Code"
 msgstr ""
 
-#: btq-booking.php:1252
+#: btq-booking.php:1266
 msgid "Rate Plan Name"
 msgstr ""
 
-#: btq-booking.php:1327
+#: btq-booking.php:1341
 msgid "Packages on TravelClick"
 msgstr "Paquetes en TravelClick"
 
-#: btq-booking.php:1361
+#: btq-booking.php:1375
 msgid "Room Type Code"
 msgstr "Código de tipo de habitación"
 
-#: btq-booking.php:1362
+#: btq-booking.php:1376
 msgid "Room Type Name"
 msgstr "Nombre de la habitación"
 
-#: btq-booking.php:1405
+#: btq-booking.php:1419
 msgid "Amenity Code"
 msgstr "Código de amenidad"
 
-#: btq-booking.php:1406
+#: btq-booking.php:1420
 msgid "Amenity Name"
 msgstr "Nombre de amenidad"
 
-#: btq-booking.php:1407
+#: btq-booking.php:1421
 msgid "Amenity Icon"
 msgstr "Icono de amenidad"
 
-#: btq-booking.php:1446
+#: btq-booking.php:1460
 msgid "Rooms on TravelClick"
 msgstr "Habitaciones en TravelClick"
 
-#: btq-booking.php:1507
+#: btq-booking.php:1521
 msgid "Date"
 msgstr "Fecha"
 
-#: btq-booking.php:1508
+#: btq-booking.php:1522
 msgid "Available"
 msgstr "Disponible"
 
-#: btq-booking.php:1509
+#: btq-booking.php:1523
 msgid "Description"
 msgstr "Descripción"
 
-#: btq-booking.php:1554
+#: btq-booking.php:1568
 msgid "Generate Unavailable Dates TravelClick"
 msgstr "Generar fechas no disponibles TravelClick"
 
-#: btq-booking.php:1619
+#: btq-booking.php:1633
 msgid "View more"
 msgstr "Ver más"
 
-#: btq-booking.php:2080
+#: btq-booking.php:2095
 msgid "CHECK THE RATE OF YOUR STAY"
 msgstr "CONSULTA TU ESTANCIA AQUÍ"
 
-#: btq-booking.php:2096
+#: btq-booking.php:2111
 msgid "Top rated"
 msgstr "Mejor valorados"
 
-#: btq-booking.php:2110
+#: btq-booking.php:2125
 msgid "Check-in"
 msgstr "Fecha de Llegada"
 
-#: btq-booking.php:2115
+#: btq-booking.php:2130
 msgid "Check-out"
 msgstr "Fecha de salida"
 
-#: btq-booking.php:2127
+#: btq-booking.php:2142
 #, php-format
 msgid "An adult"
 msgid_plural "%s adults"
 msgstr[0] "Un adulto"
 msgstr[1] "%s adultos"
 
-#: btq-booking.php:2137
+#: btq-booking.php:2152
 msgid "Without children"
 msgstr "Sin niños"
 
-#: btq-booking.php:2139
+#: btq-booking.php:2154
 #, php-format
 msgid "A child"
 msgid_plural "%s children"
 msgstr[0] "Un niño"
 msgstr[1] "%s niños"
 
-#: btq-booking.php:2152
+#: btq-booking.php:2167
 #, php-format
 msgid "A room"
 msgid_plural "%s rooms"
 msgstr[0] "Una habitación"
 msgstr[1] "%s habitaciones"
 
-#: btq-booking.php:2171
+#: btq-booking.php:2186
+#, php-format
 msgid ""
 "* Remember that having an advance reservation will always be a better option "
-"(rates shown at 90 days)."
+"(rates shown at %d days)."
 msgstr ""
 "* Recuerda que tener una reservación anticipada siempre será una mejor "
-"opción (tarifas mostradas a 90 días)."
+"opción (tarifas mostradas a %d días)."
 
-#: btq-booking.php:2245
+#: btq-booking.php:2260
 msgid "Content"
 msgstr "Contenido"
 
