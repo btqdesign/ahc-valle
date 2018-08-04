@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the Plugins - WP User Avatar - Development (trunk) package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2017-09-09 19:00:33+0000\n"
+"PO-Revision-Date: 2018-08-02 16:36:43+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -10,6 +10,22 @@ msgstr ""
 "X-Generator: GlotPress/2.4.0-alpha\n"
 "Language: es\n"
 "Project-Id-Version: Plugins - WP User Avatar - Development (trunk)\n"
+
+#: includes/plugins/mo-admin-notice.php:84
+msgid "Dismiss this notice"
+msgstr "Descartar este aviso"
+
+#: includes/plugins/mo-admin-notice.php:75
+msgid "Activate MailOptin Now!"
+msgstr "¡Activa MailOptin ahora!"
+
+#: includes/plugins/mo-admin-notice.php:70
+msgid "Install MailOptin Now for Free!"
+msgstr "¡Instala MailOptin ahora gratis!"
+
+#: includes/plugins/mo-admin-notice.php:62
+msgid "Powerful free plugin that %1$sconvert website visitors to email subscribers%2$s with beautiful conversion optimized forms%2$s and %1$sincrease revenue%2$s with automated newsletters."
+msgstr "Potente plugin gratuito que %1$sconvierte los visitantes de tu web en suscriptores por correo%2$s con bonitos formularios optimizados para la conversión%2$s y el %1$saumento de ingresos%2$s con boletines automatizados."
 
 #. Author URI of the plugin/theme
 msgid "http://www.flippercode.com/"
@@ -479,7 +495,7 @@ msgstr "Configurar"
 msgid "Avatars"
 msgstr "Avatares"
 
-#. #-#-#-#-#  wp-user-avatar-code.pot (WP User Avatar 2.1.1)  #-#-#-#-#
+#. #-#-#-#-#  wp-user-avatar-code.pot (WP User Avatar 2.1.4)  #-#-#-#-#
 #. Plugin Name of the plugin/theme
 #: includes/class-wp-user-avatar-admin.php:113
 #: includes/class-wp-user-avatar-admin.php:266

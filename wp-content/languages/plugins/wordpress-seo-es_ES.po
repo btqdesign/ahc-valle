@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the Plugins - Yoast SEO - Stable (latest release) package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2018-07-25 19:43:34+0000\n"
+"PO-Revision-Date: 2018-08-02 07:26:36+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -2193,8 +2193,8 @@ msgstr[1] "Esto es ligeramente menos que el %2$smínimo recomendado%3$s de %4$d 
 #: languages/yoast-seo-js.php:299
 msgid "This is more than or equal to the %2$srecommended minimum%3$s of %4$d word."
 msgid_plural "This is more than or equal to the %2$srecommended minimum%3$s of %4$d words."
-msgstr[0] "Es más o igual que el %2$smínimo recomendado%3$s de %4$d palabra."
-msgstr[1] "Es más o igual que el %2$smínimo recomendado%3$s de %4$d palabras."
+msgstr[0] "Es igual o más que el %2$smínimo recomendado%3$s de %4$d palabra."
+msgstr[1] "Es igual o más que el %2$smínimo recomendado%3$s de %4$d palabras."
 
 #. Translators: %1$d expands to the number of words in the text.
 #. Translators: %1$d expands to the number of words in the text
@@ -5028,7 +5028,7 @@ msgstr "Esta página tiene %1$s %2$senlace(s) saliente(s)%3$s, todos nofollow."
 #. anchor end tag
 #: languages/yoast-seo-js.php:322
 msgid "You're %1$slinking to another page with the focus keyword%2$s you want this page to rank for. Consider changing that if you truly want this page to rank."
-msgstr "Estás %1$senlazando a otra página con la palabra clave objetivo$%2$s con la que quieres indexar esta página. Plantéate cambiarla si es que realmente deseas que esta página indexe."
+msgstr "Estás %1$senlazando a otra página con la misma palabra clave objetivo$%2$s con la que quieres posicionar esta página. Plantéate cambiarla si es que realmente quieres que esta página se posicione."
 
 #. Translators:  %1$s expands to a link on yoast.com, %2$s expands to the
 #. anchor end tag
@@ -5038,7 +5038,7 @@ msgstr "En esta página no aparece ninguna %1$simagen%2$s, plantéate añadir al
 
 #: languages/yoast-seo-js.php:350
 msgid "The %1$sSEO title%2$s contains the focus keyword, but it does not appear at the beginning; try and move it to the beginning."
-msgstr "El %1$stítulo SEO%2$s contiene la palabra clave objetivo pero esta no aparece al principio; trata de moverla al principio."
+msgstr "El %1$stítulo SEO%2$s contiene la palabra clave objetivo pero no aparece al principio; intenta moverla al principio."
 
 #. Translators:  %1$s expands to a link on yoast.com, %2$s expands to the
 #. anchor end tag
