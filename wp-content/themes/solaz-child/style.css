@@ -118,6 +118,9 @@ ul#menu-subheader-menu{
 		right: 55px !important;
 	}
 }
+a {
+    color: white;
+}
 
 /*
 .forcefullwidth_wrapper_tp_banner, .wpb_row{
