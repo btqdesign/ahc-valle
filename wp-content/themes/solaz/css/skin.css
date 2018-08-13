@@ -57,14 +57,14 @@ h6 {
   color: #3d3935;
   font-size: 14px; }
 
-.main-color, a,
-.hb_room_carousel_container .text_link a,
+.main-color, 
+
 .hb_room_carousel_container .navigation .next,
 .hb_room_carousel_container .navigation .prev,
-.hb_room_carousel_container .text_link > a,
+
 .footer-v3 .footer_info a:hover,
 .link-contact a i,
-.mega-menu li:hover > a,
+
 .mega-menu li.current-menu-item > a,
 .mega-menu li.current-menu-ancestor > a,
 .rooms .hb_room .title h4 a:hover,
