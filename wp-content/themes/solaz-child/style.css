@@ -63,6 +63,10 @@ Text Domain:  solaz-child
 	}
 }
 
+ul.btq-menu li a{
+	color: #FFFFFF;
+}
+
 .btq-menu li {
 	display: inline;
 	margin: 22px;
