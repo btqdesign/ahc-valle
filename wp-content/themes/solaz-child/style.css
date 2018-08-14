@@ -65,9 +65,10 @@ Text Domain:  solaz-child
 
 ul.btq-menu li a{
 	color: #FFFFFF;
+	font-weight: bold;
 }
 
-.btq-menu li {
+ul.btq-menu li {
 	display: inline;
 	margin: 22px;
 	margin-right: 2%;
