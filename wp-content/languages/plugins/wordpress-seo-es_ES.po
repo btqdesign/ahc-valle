@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the Plugins - Yoast SEO - Stable (latest release) package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2018-08-08 16:27:04+0000\n"
+"PO-Revision-Date: 2018-08-15 06:52:49+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -10,6 +10,174 @@ msgstr ""
 "X-Generator: GlotPress/2.4.0-alpha\n"
 "Language: es\n"
 "Project-Id-Version: Plugins - Yoast SEO - Stable (latest release)\n"
+
+#: languages/yoast-components.php:176
+msgid "Are you trying to use multiple keywords? You should add them separately below."
+msgstr "¿Estás tratando de utilizar varias palabras clave? Debes añadirlas por separado a continuación."
+
+#: languages/yoast-components.php:173
+msgid "Focus keyword:"
+msgstr "Palabra clave objetivo:"
+
+#: languages/yoast-components.php:167
+msgid "Mark as cornerstone content"
+msgstr "Marcar como contenido esencial"
+
+#: languages/wordpress-seojs.php:108
+msgid "Move step down"
+msgstr "Mover paso hacia abajo"
+
+#: languages/wordpress-seojs.php:105
+msgid "Move step up"
+msgstr "Mover paso hacia arriba"
+
+#: languages/wordpress-seojs.php:102
+msgid "Insert step"
+msgstr "Insertar paso"
+
+#: languages/wordpress-seojs.php:99
+msgid "Delete step"
+msgstr "Eliminar paso"
+
+#: languages/wordpress-seojs.php:96
+msgid "Add image"
+msgstr "Añadir imagen"
+
+#: languages/wordpress-seojs.php:93
+msgid "Enter a step description"
+msgstr "Introduce una descripción del paso"
+
+#: languages/wordpress-seojs.php:90
+msgid "Enter a description"
+msgstr "Introduce una descripción"
+
+#: languages/wordpress-seojs.php:87
+msgid "Enter a title for your instructions"
+msgstr "Introduce un título para tus instrucciones"
+
+#: languages/wordpress-seojs.php:84
+msgid "Unordered list"
+msgstr "Lista desordenada"
+
+#: languages/wordpress-seojs.php:81
+msgid "CSS classes to add to the list of steps (excluding the how-to header)"
+msgstr "Clases CSS para añadir a la lista de pasos (excluyendo el encabezado de cómo hacerlo)"
+
+#: languages/wordpress-seojs.php:78
+msgid "Additional CSS Classes for list"
+msgstr "Clases CSS adicionales para lista"
+
+#: languages/wordpress-seojs.php:72
+msgid "Showing step items as an ordered list."
+msgstr "Mostrando los elementos de los pasos como una lista ordenada."
+
+#: languages/wordpress-seojs.php:69
+msgid "Showing step items as an unordered list"
+msgstr "Mostrando los elementos de los pasos como una lista desordenada."
+
+#: languages/wordpress-seojs.php:66
+msgid "Add step"
+msgstr "Añadir paso"
+
+#: languages/wordpress-seojs.php:63
+msgid "Total time:"
+msgstr "Tiempo total:"
+
+#: languages/wordpress-seojs.php:60
+msgid "Delete total time"
+msgstr "Eliminar tiempo total"
+
+#: languages/wordpress-seojs.php:57
+msgid "Add total time"
+msgstr "Añadir tiempo total"
+
+#: languages/wordpress-seojs.php:54
+msgid "How to"
+msgstr "Cómo hacerlo"
+
+#: languages/wordpress-seojs.php:51
+msgid "How-to"
+msgstr "Cómo hacerlo"
+
+#: languages/wordpress-seojs.php:39
+msgid "Snippet Preview"
+msgstr "Vista previa del snippet"
+
+#: languages/wordpress-seojs.php:33
+msgid "Analysis results:"
+msgstr "Resultados del análisis:"
+
+#: languages/wordpress-seojs.php:30
+msgid "Learn more about the Keyword Analysis."
+msgstr "Aprende más sobre el análisis de palabras clave."
+
+#: languages/wordpress-seojs.php:27
+msgid "A focus keyword is the term (or phrase) you'd like to be found with, in search engines. Enter it below to see how you can improve your text for this term."
+msgstr "Una palabra clave objetivo es el término (o frase) con el que te gustaría que te encontraran en los motores de búsqueda. Introdúcelo a continuación para ver cómo puedes mejorar tu texto para este término."
+
+#: languages/wordpress-seojs.php:20
+msgid "Enter a focus keyword to calculate the SEO score"
+msgstr "Introduce una palabra clave objetivo para calcular la puntuación SEO"
+
+#: languages/wordpress-seojs.php:11
+msgid "Learn more about Cornerstone Content."
+msgstr "Aprende más sobre el contenido esencial."
+
+#: languages/wordpress-seojs.php:8
+msgid "Cornerstone content should be the most important and extensive articles on your site."
+msgstr "El contenido esencial deben ser los artículos más importantes y extensos de tu sitio."
+
+#: admin/pages/network.php:19
+msgid "Restore Site"
+msgstr "Restaurar sitio"
+
+#: admin/metabox/class-metabox-multiple-keywords-config.php:22
+#: languages/wordpress-seojs.php:36
+msgid "Add additional keyword"
+msgstr "Añade una palabra clave adicional"
+
+#: admin/menu/class-network-admin-menu.php:34
+msgid "Network Settings"
+msgstr "Ajustes de red"
+
+#: admin/class-yoast-network-admin.php:241
+msgid "You are not allowed to perform this action."
+msgstr "No tienes permisos para realizar esta acción."
+
+#. translators: %s: error message
+#: admin/class-yoast-network-admin.php:178
+msgid "Error: %s"
+msgstr "Error: %s"
+
+#. translators: %s: success message
+#: admin/class-yoast-network-admin.php:175
+msgid "Success: %s"
+msgstr "Éxito: %s"
+
+#. translators: %s expands to the ID of a site within a multisite network.
+#: admin/class-yoast-network-admin.php:136
+msgid "Site with ID %d not found."
+msgstr "No se encontró el sitio con ID %d."
+
+#: admin/class-yoast-network-admin.php:127
+msgid "No site has been selected to restore."
+msgstr "No se seleccionó un sitio para ser restaurado."
+
+#: admin/class-yoast-network-admin.php:92
+msgid "You are not allowed to modify unregistered network settings."
+msgstr "No tienes permisos para modificar ajustes de red no registrados."
+
+#: admin/class-yoast-network-admin.php:63
+msgid "deleted"
+msgstr "eliminado"
+
+#: admin/class-structured-data-blocks.php:45
+msgid "Structured Data Blocks"
+msgstr "Bloques de datos estructurados"
+
+#: admin/class-multiple-keywords-modal.php:21
+msgid "Would you like to add another keyword?"
+msgstr "¿Te gustaría añadir otra palabra clave?"
 
 #: languages/yoast-seo-js.php:165
 msgid "The exact-match %3$skeyword density%4$s is %1$s, which is too low; the focus keyword was found %2$d times."
@@ -205,6 +373,10 @@ msgstr "Consigue avances rápidos para hacer que tu sitio obtenga mejores result
 #: admin/views/sidebar.php:51
 msgid "Free: %1$sSEO for Beginners course%2$s"
 msgstr "Gratis: %1$sCurso de SEO para principiantes%2$s"
+
+#: admin/metabox/class-metabox-keyword-synonyms-config.php:22
+msgid "Add synonyms"
+msgstr "Añade sinónimos"
 
 #. translators: %1$s resolves to Basic SEO training, 2: Yoast SEO
 #: admin/config-ui/components/class-component-suggestions.php:54
@@ -485,6 +657,10 @@ msgstr "Descartar este aviso"
 #: languages/wordpress-seojs.php:45
 msgid "Learn more about the Snippet Preview."
 msgstr "Aprende más sobre la vista previa del snippet."
+
+#: languages/wordpress-seojs.php:42
+msgid "This is a rendering of what this post might look like in Google's search results."
+msgstr "Esta es una visualización de cómo se vería esta publicación en los resultados de búsqueda de Google."
 
 #: languages/yoast-components.php:206
 msgid "No results"
@@ -1336,6 +1512,10 @@ msgstr "Configuración SEO inicial"
 #: admin/formatter/class-metabox-formatter.php:170
 msgid "Your site language is set to {language}. If this is not correct, contact your site administrator."
 msgstr "El idioma de tu sitio está configurado a {language}. Si esto no es correcto contacta con el administrador de tu sitio."
+
+#: languages/yoast-components.php:182
+msgid "Your site language is set to %s. "
+msgstr "El idioma de tu sitio está configurado a %s."
 
 #: admin/formatter/class-metabox-formatter.php:171
 #: languages/yoast-components.php:149
@@ -2505,7 +2685,7 @@ msgstr "Tu %1$sfrase clave%2$s tiene más de 10 palabras, una frase clave debe s
 
 #: languages/yoast-seo-js.php:21
 msgid "ok"
-msgstr "ok"
+msgstr "bueno"
 
 #: languages/yoast-components.php:116
 msgid "Choose an image"
@@ -4277,6 +4457,10 @@ msgstr "ID de sitio"
 msgid "Using this form you can reset a site to the default SEO settings."
 msgstr "Usando este formulario puedes devolver un sitio a los ajustes SEO por defecto."
 
+#: admin/views/tabs/network/general.php:51
+msgid "Privacy sensitive (FB admins and such), theme specific (title rewrite) and a few very site specific settings will not be imported to new sites."
+msgstr "Los datos sensibles a privacidad (administradores de Facebook, por ejemplo), los ajustes específicos del tema (reescritura del título) y algunos ajustes muy específicos no se importarán a los nuevos sitios."
+
 #. translators: 1: link open tag; 2: link close tag.
 #: admin/views/tabs/network/general.php:44
 msgid "Enter the %1$sSite ID%2$s for the site whose settings you want to use as default for all sites that are added to your network. Leave empty for none (i.e. the normal plugin defaults will be used)."
@@ -4896,7 +5080,7 @@ msgstr "extremadamente fácil"
 #. reading score.
 #: languages/yoast-seo-js.php:9
 msgid "The copy scores %1$s in the %2$s test, which is considered %3$s to read. %4$s"
-msgstr "La entrada tiene una calificación de %1$s en la prueba de %2$s, lo que se considera como %3$s de leer. %4$s"
+msgstr "La entrada tiene una calificación de %1$s en la prueba de %2$s, lo que se considera como %3$s para leer. %4$s"
 
 #. Translators: %1$s expands to a link on yoast.com, %2$s expands to the anchor
 #. end tag.
