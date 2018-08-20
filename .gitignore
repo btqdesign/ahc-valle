@@ -24,6 +24,7 @@ _notes
 logs
 .tmb
 .tmb/*
+.htpasswd
 
 info.php
 info-siwp.php
