@@ -22,7 +22,7 @@ class WPML_Compatibility_MailChimp_Widget_Filter {
 	 */
 	public function widget_display_callback_filter( $instance, $widget ) {
 
-		if ( isset( $widget->id_base ) && $widget->id_base == 'mc4wp_form_widget' ) {
+		if ( is_array( $instance ) && isset( $widget->id_base ) && $widget->id_base == 'mc4wp_form_widget' ) {
 
 			$form_id = array_key_exists( 'form_id', $instance ) ? $instance['form_id'] : (int) get_option( 'mc4wp_default_form_id', 0 );
 
