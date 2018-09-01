@@ -208,7 +208,6 @@ class WPSEO_Redirect_Page {
 			// Remove the nginx redirect entries.
 			$this->clear_nginx_redirects();
 		}
-
 	}
 
 	/**

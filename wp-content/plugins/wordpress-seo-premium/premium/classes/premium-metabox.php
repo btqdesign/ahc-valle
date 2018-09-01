@@ -60,6 +60,7 @@ class WPSEO_Premium_Metabox implements WPSEO_WordPress_Integration {
 				'underscore',
 				WPSEO_Admin_Asset_Manager::PREFIX . 'wp-globals-backport',
 				'yoast-seo-premium-commons',
+				WPSEO_Admin_Asset_Manager::PREFIX . 'analysis',
 			),
 			WPSEO_VERSION
 		);

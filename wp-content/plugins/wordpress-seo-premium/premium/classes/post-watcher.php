@@ -209,7 +209,6 @@ class WPSEO_Post_Watcher extends WPSEO_Watcher {
 
 			$this->create_notification( $message, 'trash' );
 		}
-
 	}
 
 	/**
@@ -236,7 +235,6 @@ class WPSEO_Post_Watcher extends WPSEO_Watcher {
 
 			$this->create_notification( $message, 'untrash' );
 		}
-
 	}
 
 	/**

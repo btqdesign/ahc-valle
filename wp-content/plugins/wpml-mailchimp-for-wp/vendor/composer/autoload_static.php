@@ -4,7 +4,7 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInit9c173502b61c85dc1de79a8c7ac530ff
+class ComposerStaticInit64643545433cb2c75068ad130ad28183
 {
     public static $classMap = array (
         'WPML_Compatibility_MailChimp' => __DIR__ . '/../..' . '/classes/class-wpml-compatibility-mailchimp.php',
@@ -16,7 +16,7 @@ class ComposerStaticInit9c173502b61c85dc1de79a8c7ac530ff
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->classMap = ComposerStaticInit9c173502b61c85dc1de79a8c7ac530ff::$classMap;
+            $loader->classMap = ComposerStaticInit64643545433cb2c75068ad130ad28183::$classMap;
 
         }, null, ClassLoader::class);
     }
