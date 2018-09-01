@@ -7,6 +7,7 @@
  * Localizes JavaScript files.
  */
 final class WPSEO_Premium_Asset_JS_L10n {
+
 	/**
 	 * Localizes the given script with the JavaScript translations.
 	 *

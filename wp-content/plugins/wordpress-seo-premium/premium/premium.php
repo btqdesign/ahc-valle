@@ -27,7 +27,7 @@ class WPSEO_Premium {
 	const OPTION_CURRENT_VERSION = 'wpseo_current_version';
 
 	/** @var string */
-	const PLUGIN_VERSION_NAME = '8.0';
+	const PLUGIN_VERSION_NAME = '8.1';
 
 	/** @var string */
 	const PLUGIN_VERSION_CODE = '16';
@@ -62,7 +62,7 @@ class WPSEO_Premium {
 		// Create the upload directory.
 		WPSEO_Redirect_File_Util::create_upload_dir();
 
-		WPSEO_Premium::activate_license();
+		self::activate_license();
 
 		// Make sure the notice will be given at install.
 		require_once WPSEO_PREMIUM_PATH . 'classes/premium-prominent-words-recalculation-notifier.php';
@@ -156,7 +156,7 @@ class WPSEO_Premium {
 	 */
 	private function setup() {
 
-		WPSEO_Premium::autoloader();
+		self::autoloader();
 
 		$this->load_textdomain();
 
@@ -204,7 +204,7 @@ class WPSEO_Premium {
 			add_action( 'admin_init', array( $this, 'register_settings' ) );
 
 			// Licensing part.
-			$license_manager = WPSEO_Premium::get_license_manager();
+			$license_manager = self::get_license_manager();
 
 			// Setup constant name.
 			$license_manager->set_license_constant_name( 'WPSEO_LICENSE' );
