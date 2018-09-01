@@ -51,7 +51,7 @@ $solaz_settings = solaz_check_theme_options();
 			                ?>
 			                <div class="menu-main_menu-container btq-book-now">
 				                <ul id="menu-main_menu" class="mega-menu">
-					                <li id="menu-item-6362" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-6362"><a href="https://secure.internetpower.com.mx/portals/ValleDeMexico/Hotel/HotelDescription.aspx?PropertyNumber=6422&Provider=0">Book Now</a></li>
+					                <li id="menu-item-6362" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-6362"><a href="https://secure.internetpower.com.mx/portals/ValleDeMexico/Hotel/HotelDescription.aspx?CheckIn=20180902&CheckOut=20180903&PropertyNumber=6422&Provider=0&Rooms=1&AccessCode=WEBPAGE&Currency=MXN">Book Now</a></li>
 								</ul>
 							</div>
 			            </div>
@@ -222,7 +222,7 @@ $solaz_settings = solaz_check_theme_options();
 			        		<?php $solaz_settings['header_book_link'] = (isset($solaz_settings['header_book_link']) && $solaz_settings['header_book_link']!='')? $solaz_settings['header_book_link']:'hola';?>
 			        		<div class="link-contact f_right main-bg display-inline-b">
 			        			<?php if ($language == 'es'):?>	
-								<a class="" target="_blank" href="https://secure.internetpower.com.mx/portals/ValleDeMexico/Hotel/HotelDescription.aspx?PropertyNumber=6422&Provider=0">Reservar Ahora</a>
+								<a class="" target="_blank" href="https://secure.internetpower.com.mx/portals/ValleDeMexico/Hotel/HotelDescription.aspx?CheckIn=20180902&CheckOut=20180903&PropertyNumber=6422&Provider=0&Rooms=1&AccessCode=WEBPAGE&Currency=MXN">Reservar Ahora</a>
 								<?php else:?>
 								<a class="" target="_blank" href="https://secure.internetpower.com.mx/portals/ValleDeMexico/Hotel/HotelDescription.aspx?PropertyNumber=6422&Provider=0">Book Now</a>
 								</a>	
