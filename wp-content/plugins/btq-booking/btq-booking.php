@@ -69,6 +69,54 @@ function btq_booking_log($file_name, $var, $same_file = false){
 	}
 }
 
+// if (!function_exists('btq_core_cache_save')) {
+	/**
+	 * Almacena y devuelve el valor de una variable en cache.
+	 *
+	 * Para mejorar el desempeño de la aplicación es necesario
+	 * contar con una funcion de cache.
+	 *
+	 * @author Saúl Díaz
+	 * @access public
+	 * @param string $name Nombre único de la variable.
+	 * @param mixed $value_cached Valor de la variable a almacenar o en devolver de cache.
+	 * @param int $lifetime Tiempo de vida en segundos del valor de la variable en cache.
+	 * @return mixed Valor del valor en cache.
+	 */ 
+/*
+	function btq_core_cache_save($name, $value_cached, $lifetime){
+		$cache_dir = plugin_dir_path( __FILE__ ) . 'cache';
+		
+		if (!file_exists($cache_dir)) {
+			if (!mkdir($cache_dir, 0755)){
+				error_log( __('Error creating the folder: ' . $cache_dir, 'btq-core') );
+			}
+		}
+		
+		$cache_file = $cache_dir . $name . '.tmp';
+		
+		$string_serialize = serialize($value_cached);
+		file_put_contents( $cache_file, $string_serialize );
+		$out = $value_cached;
+		
+		return $out;
+	}
+	
+	function btq_core_cache_lifetime($name){
+		$cache_dir = plugin_dir_path( __FILE__ ) . 'cache';
+		
+		if (!file_exists($cache_dir)) {
+			if (!mkdir($cache_dir, 0755)){
+				error_log( __('Error creating the folder: ' . $cache_dir, 'btq-core') );
+			}
+		}
+		
+		$cache_file = $cache_dir . $name . '.tmp';
+		return filemtime($cache_file);
+	}
+}
+*/
+
 /**
  * Grid del booking con los datos de habitaciones disponibles devueltos de la consulta a TravelClick.
  *
