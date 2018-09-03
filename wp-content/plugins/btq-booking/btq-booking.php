@@ -800,6 +800,8 @@ function btq_booking_iph_url_correct($url, $checkIn, $checkOut){
 function btq_booking_register_settings() {
 	register_setting('btq-booking-settings', 'btq_booking_color_principal');
 	register_setting('btq-booking-settings', 'btq_booking_early_days', array('type' => 'integer'));
+	register_setting('btq-booking-settings', 'btq_booking_url_book_now_en');
+	register_setting('btq-booking-settings', 'btq_booking_url_book_now_es');
 	register_setting('btq-booking-settings', 'btq_booking_service');
 	
 	register_setting('btq-booking-settings', 'btq_booking_tc_soap_sales_channel_info_id');
@@ -839,6 +841,14 @@ function btq_booking_admin_settings_page() {
 					<tr valign="top">
 						<th scope="row"><label for="btq_booking_early_days"><?php _e('Early days to get the best price', 'btq-booking'); ?></label></th>
 						<td><input type="number" class="regular-text" id="btq_booking_early_days" name="btq_booking_early_days" value="<?php echo esc_attr( get_option('btq_booking_early_days') ); ?>" /></td>
+					</tr>
+					<tr valign="top">
+						<th scope="row"><label for="btq_booking_url_book_now_en"><?php _e('Book Now URL in english', 'btq-booking'); ?></label></th>
+						<td><input type="url" class="regular-text" id="btq_booking_url_book_now_en" name="btq_booking_url_book_now_en" value="<?php echo esc_attr( get_option('btq_booking_url_book_now_en') ); ?>" /></td>
+					</tr>
+					<tr valign="top">
+						<th scope="row"><label for="btq_booking_url_book_now_es"><?php _e('Book Now URL in spanish', 'btq-booking'); ?></label></th>
+						<td><input type="url" class="regular-text" id="btq_booking_url_book_now_es" name="btq_booking_url_book_now_es" value="<?php echo esc_attr( get_option('btq_booking_url_book_now_es') ); ?>" /></td>
 					</tr>
 					<tr valign="top">
 						<th scope="row"><?php _e('Booking service', 'btq-booking'); ?></th>
@@ -918,6 +928,23 @@ function btq_booking_admin_settings_page() {
 		</form>
 	</div><!-- wrap -->
 <?php
+}
+
+function btq_booking_url_book_now(){
+	$language = btq_booking_grid_current_language_code();
+	if($language == 'es'){
+		$url_book_now = esc_attr( get_option('btq_booking_url_book_now_es') );
+	}
+	elseif($language == 'en') {
+		$url_book_now =  esc_attr( get_option('btq_booking_url_book_now_en') );
+	}
+	else {
+		$url_book_now =  esc_attr( get_option('btq_booking_url_book_now_en') );
+	}
+	
+	?>
+	<a class="" target="_blank" href="<?php echo $url_book_now; ?>"><?php _e('Book Now', 'btq-booking')?></a>
+	<?php
 }
 
 /**
