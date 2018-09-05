@@ -935,9 +935,6 @@ function btq_booking_url_book_now(){
 	if($language == 'es'){
 		$url_book_now = esc_attr( get_option('btq_booking_url_book_now_es') );
 	}
-	elseif($language == 'en') {
-		$url_book_now =  esc_attr( get_option('btq_booking_url_book_now_en') );
-	}
 	else {
 		$url_book_now =  esc_attr( get_option('btq_booking_url_book_now_en') );
 	}
