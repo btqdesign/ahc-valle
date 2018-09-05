@@ -940,7 +940,7 @@ function btq_booking_url_book_now(){
 	}
 	
 	?>
-	<a class="" target="_blank" href="<?php echo $url_book_now; ?>"><?php _e('Book Now', 'btq-booking')?></a>
+	<a class="test" target="_blank" href="<?php echo $url_book_now; ?>"><?php _e('Book Now', 'btq-booking')?></a>
 	<?php
 }
 
