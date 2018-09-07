@@ -1,3 +1,7 @@
+#2.0.7
+
+* Added fix to correctly calculate WC taxonomies after the import (wpmlai-78, wpmlai-71) 
+
 #2.0.6
 
 * Added support for importing tags and other taxonomies (WPMLAI-67)
