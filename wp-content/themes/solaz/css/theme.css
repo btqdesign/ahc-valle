@@ -736,7 +736,7 @@ header .close_mini_special, .footer .close_mini_special {
   -ms-transform: translateY(-50%);
   -webkit-transform: translateY(-50%);
   transform: translateY(-50%);
-  z-index: 9900; }
+}
 .header-v1 .languges-flags + .mini-cart {
   right: 97px; }
 .header-v1 .languges-flags + .search-block-top {

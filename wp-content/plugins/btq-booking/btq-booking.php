@@ -69,6 +69,54 @@ function btq_booking_log($file_name, $var, $same_file = false){
 	}
 }
 
+// if (!function_exists('btq_core_cache_save')) {
+	/**
+	 * Almacena y devuelve el valor de una variable en cache.
+	 *
+	 * Para mejorar el desempeño de la aplicación es necesario
+	 * contar con una funcion de cache.
+	 *
+	 * @author Saúl Díaz
+	 * @access public
+	 * @param string $name Nombre único de la variable.
+	 * @param mixed $value_cached Valor de la variable a almacenar o en devolver de cache.
+	 * @param int $lifetime Tiempo de vida en segundos del valor de la variable en cache.
+	 * @return mixed Valor del valor en cache.
+	 */ 
+/*
+	function btq_core_cache_save($name, $value_cached, $lifetime){
+		$cache_dir = plugin_dir_path( __FILE__ ) . 'cache';
+		
+		if (!file_exists($cache_dir)) {
+			if (!mkdir($cache_dir, 0755)){
+				error_log( __('Error creating the folder: ' . $cache_dir, 'btq-core') );
+			}
+		}
+		
+		$cache_file = $cache_dir . $name . '.tmp';
+		
+		$string_serialize = serialize($value_cached);
+		file_put_contents( $cache_file, $string_serialize );
+		$out = $value_cached;
+		
+		return $out;
+	}
+	
+	function btq_core_cache_lifetime($name){
+		$cache_dir = plugin_dir_path( __FILE__ ) . 'cache';
+		
+		if (!file_exists($cache_dir)) {
+			if (!mkdir($cache_dir, 0755)){
+				error_log( __('Error creating the folder: ' . $cache_dir, 'btq-core') );
+			}
+		}
+		
+		$cache_file = $cache_dir . $name . '.tmp';
+		return filemtime($cache_file);
+	}
+}
+*/
+
 /**
  * Grid del booking con los datos de habitaciones disponibles devueltos de la consulta a TravelClick.
  *
@@ -752,6 +800,8 @@ function btq_booking_iph_url_correct($url, $checkIn, $checkOut){
 function btq_booking_register_settings() {
 	register_setting('btq-booking-settings', 'btq_booking_color_principal');
 	register_setting('btq-booking-settings', 'btq_booking_early_days', array('type' => 'integer'));
+	register_setting('btq-booking-settings', 'btq_booking_url_book_now_en');
+	register_setting('btq-booking-settings', 'btq_booking_url_book_now_es');
 	register_setting('btq-booking-settings', 'btq_booking_service');
 	
 	register_setting('btq-booking-settings', 'btq_booking_tc_soap_sales_channel_info_id');
@@ -791,6 +841,14 @@ function btq_booking_admin_settings_page() {
 					<tr valign="top">
 						<th scope="row"><label for="btq_booking_early_days"><?php _e('Early days to get the best price', 'btq-booking'); ?></label></th>
 						<td><input type="number" class="regular-text" id="btq_booking_early_days" name="btq_booking_early_days" value="<?php echo esc_attr( get_option('btq_booking_early_days') ); ?>" /></td>
+					</tr>
+					<tr valign="top">
+						<th scope="row"><label for="btq_booking_url_book_now_en"><?php _e('Book Now URL in english', 'btq-booking'); ?></label></th>
+						<td><input type="url" class="regular-text" id="btq_booking_url_book_now_en" name="btq_booking_url_book_now_en" value="<?php echo esc_attr( get_option('btq_booking_url_book_now_en') ); ?>" /></td>
+					</tr>
+					<tr valign="top">
+						<th scope="row"><label for="btq_booking_url_book_now_es"><?php _e('Book Now URL in spanish', 'btq-booking'); ?></label></th>
+						<td><input type="url" class="regular-text" id="btq_booking_url_book_now_es" name="btq_booking_url_book_now_es" value="<?php echo esc_attr( get_option('btq_booking_url_book_now_es') ); ?>" /></td>
 					</tr>
 					<tr valign="top">
 						<th scope="row"><?php _e('Booking service', 'btq-booking'); ?></th>
@@ -870,6 +928,20 @@ function btq_booking_admin_settings_page() {
 		</form>
 	</div><!-- wrap -->
 <?php
+}
+
+function btq_booking_url_book_now(){
+	$language = btq_booking_grid_current_language_code();
+	if($language == 'es'){
+		$url_book_now = esc_attr( get_option('btq_booking_url_book_now_es') );
+	}
+	else {
+		$url_book_now =  esc_attr( get_option('btq_booking_url_book_now_en') );
+	}
+	
+	?>
+	<a class="test" target="_blank" href="<?php echo $url_book_now; ?>"><?php _e('Book Now', 'btq-booking')?></a>
+	<?php
 }
 
 /**
