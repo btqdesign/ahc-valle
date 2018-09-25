@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+      <!-- Inicializacion de Firebase -->
+      <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase-app.js"></script>
+      <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase-auth.js"></script>
+      
+      <!-- Css Personalizado -->
+      <link rel="stylesheet" type="text/css" href="estilos.css">
+      <!-- Css Bootstrap -->
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+      
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta charset="utf-8">
+    <title>BTQ Login</title>
+  </head>
+
+
+  <body> 
+
+      <div id="botones_primarios"> 
+<!-- Button trigger modal -->
+        <u data-toggle="modal" data-target="#Iniciar_Sesion">Iniciar Sesión</u>
+          
+          <!-- Modal -->
+          <div class="modal fade" id="Iniciar_Sesion" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLongTitle">Iniciar Sesión</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">    
+                    <div id="login_div" class="main-div">  
+                      <form>
+                        <div id="user_already_exist_fb" class="alert alert-danger" role="alert">
+                              El correo ya esta registrado con otra forma de autenticación.
+                        </div>
+                        <button onclick="facebook_login()" data-dismiss="modal"><img src="fb.png"/> Continuar con Facebook </button>
+                        <br>
+                        <div id="user_already_exist_google" class="alert alert-danger" role="alert">
+                            El correo ya esta registrado con otra forma de autenticación.
+                      </div>
+                        <button onclick="google_login()" data-dismiss="modal"><img src="google.png"/>  Continuar con Google </button>
+                        <br>
+                        <div id="email_void" class="alert alert-danger" role="alert">
+                              El campo de correo esta vacio o no tiene el formato adecuado.
+                        </div>
+                        <div id="pass_invalid" class="alert alert-danger" role="alert">
+                              El correo y la contraseña no coinciden.
+                        </div>
+                        <div id="user_non_exist" class="alert alert-danger" role="alert">
+                              El correo no esta registrado.
+                        </div>
+                        <div id="user_already_exist" class="alert alert-danger" role="alert">
+                              El correo ya esta registrado con otra forma de autenticación.
+                        </div>
+                        <div id="internal_error" class="alert alert-danger" role="alert">
+                              Algo salió mal, vuelve a intentarlo mas tarde.
+                        </div>
+                          <form>
+                              <input type="email" class="Input" placeholder="Correo" id="email_field" required>
+                              <input type="password" class="Input" placeholder="Contraseña" id="password_field" required>
+                              <button type="submit" class="Boton" data-dismiss="modal" onclick="login()">Ingresa a tu cuenta </button>
+                          </form>
+                      </form>  
+                    </div>
+                </div>
+                <div class="modal-footer">
+                  <p>¿No eres miembro? <u data-toggle="modal" data-target="#Registro" data-dismiss="modal">Registrate</u></p>
+                  <p class="Footer_Text" data-toggle="modal" data-target="#Restablecer_Pass" data-dismiss="modal">¿Olvidaste tu contraseña?</p>
+
+                </div>
+              </div>
+            </div>
+          </div>
+        
+
+
+
+          <u data-toggle="modal" data-target="#Registro">Registro</u>
+          <!-- Modal -->
+      <div class="modal fade" id="Registro" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLongTitle">Registrate</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            
+            <div class="modal-body">    
+                  <!-- Aqui inicia html para registro de usuario por correo --> 
+                  <div id="registro" class="loggedin-div">
+                    <h3>Registrate con tu correo: </h3>
+                    <div id="email_void_register" class="alert alert-danger" role="alert">
+                          El campo de correo esta vacio o no tiene el formato adecuado.
+                    </div>
+                    <div id="user_already_exist_register" class="alert alert-danger" role="alert">
+                          El correo ya esta registrado con otra forma de autenticación.
+                    </div>
+                    <div id="passwords_dont_match" class="alert alert-danger" role="alert">
+                          Las contraseñas no coinciden.
+                    </div>
+                    <div id="password_length" class="alert alert-danger" role="alert">
+                        La contraseña debe tener almenos 6 caracteres.
+                    </div>
+
+
+
+
+                    <div id="internal_error_register" class="alert alert-danger" role="alert">
+                          Algo salió mal, vuelve a intentarlo mas tarde.
+                    </div>
+
+                    <input type="email" placeholder="Correo" id="new_email_field" required/>
+                    <input type="password" placeholder="Contraseña" id="new_password_field" required/>
+                    <input type="password" placeholder="Confirma tu contraseña" id="password_field_confirmation" required/>
+                    <button onclick="nuevo_usuario()">Finaliza tu registro </button>
+                  </div>
+                  <div class="modal-footer">
+                    <p>¿Ya eres miembro? <u data-toggle="modal" data-target="#Iniciar_Sesion" data-dismiss="modal">Inicia Sesión</u></p>
+                    <p class="Footer_Text" class="Footer_Text" data-toggle="modal" data-target="#Restablecer_Pass" data-dismiss="modal">¿Olvidaste tu contraseña?</p> 
+                  </div>  
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+
+      <!-- Modal -->
+  <div class="modal fade" id="Restablecer_Pass" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLongTitle">Restablecer Contraseña</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        
+        <div class="modal-body">    
+              <!-- Aqui inicia html para registro de usuario por correo --> 
+              <div id="recuperar" class="loggedin-div">
+                <h3>Ingresa tu correo: </h3>
+                <div id="recover_success" class="alert alert-success" role="alert">
+                    Hemos enviado un correo de restablecimiento de contraseña al correo que nos proporcionaste.
+                </div>
+                <div id="recover_fail" class="alert alert-danger" role="alert">
+                    No hemos podido enviar el correo de restauración de contraseña, intentalo mas tarde.
+                </div>
+                <input type="email" placeholder="Correo" id="recover_email_field" required/>
+                <button onclick="recuperar_contrasena()">Restablecer tu contraseña </button>
+              </div>
+              <!-- Aqui termina html para registro de usuario por correo -->     
+        </div>
+        <div class="modal-footer">
+          <p>¿Ya eres miembro? <u data-toggle="modal" data-target="#Iniciar_Sesion" data-dismiss="modal">Inicia Sesión</u></p>
+          <p>¿No eres miembro? <u data-toggle="modal" data-target="#Registro" data-dismiss="modal">Registrate</u></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+      <!-- Aqui inicia html en caso de iniciar sesion con cualquier metodo, muestra esta pestaña -->
+      <div id="user_div" class="loggedin-div">
+          <div id="register_success" class="alert alert-success" role="alert">
+              Tu registro se ha completado correctamente, hemos iniciado sesion automaticamente por ti.
+          </div>            
+        <h3>Bienvenido: </h3>
+        <p id="user_para"></p>
+        <button onclick="logout()">Cerrar Sesión</button>
+      </div>
+      <!-- Aqui termina html en caso de iniciar sesion con cualquier metodo, muestra esta pestaña -->
+
+
+
+      
+      <!-- Script Bootstrap -->
+      <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+
+      <!-- Script Personalizado -->
+      <script src="scripts.js"></script>
+  </body>
+</html>
