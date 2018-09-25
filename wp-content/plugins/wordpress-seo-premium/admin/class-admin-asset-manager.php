@@ -224,16 +224,26 @@ class WPSEO_Admin_Asset_Manager {
 			}
 		}
 
+		// If Gutenberg's babel polyfill is not present, use our own.
+		$babel_polyfill = 'wp-polyfill-ecmascript';
+		if ( ! wp_script_is( 'wp-polyfill-ecmascript', 'registered' ) ) {
+			$babel_polyfill = self::PREFIX . 'babel-polyfill';
+		}
+
 		return array(
 			array(
 				'name' => 'react-dependencies',
 				// Load webpack-commons for bundle support.
 				'src'  => 'commons-' . $flat_version,
+				'deps' => array( $babel_polyfill ),
 			),
 			array(
 				'name' => 'search-appearance',
 				'src'  => 'search-appearance-' . $flat_version,
-				'deps' => 'react-dependencies',
+				'deps' => array(
+					self::PREFIX . 'react-dependencies',
+					self::PREFIX . 'components',
+				),
 			),
 			array(
 				'name' => 'wp-globals-backport',
@@ -386,6 +396,7 @@ class WPSEO_Admin_Asset_Manager {
 					'jquery',
 					'wp-util',
 					self::PREFIX . 'react-dependencies',
+					self::PREFIX . 'wp-globals-backport',
 				),
 			),
 			array(
@@ -477,11 +488,16 @@ class WPSEO_Admin_Asset_Manager {
 			array(
 				'name' => 'components',
 				'src'  => 'components-' . $flat_version,
+				'deps' => array( self::PREFIX . 'analysis' ),
 			),
 			array(
 				'name' => 'structured-data-blocks',
 				'src'  => 'wp-seo-structured-data-blocks-' . $flat_version,
 				'deps' => array( 'wp-blocks', 'wp-i18n', 'wp-element' ),
+			),
+			array(
+				'name' => 'babel-polyfill',
+				'src'  => 'babel-polyfill-' . $flat_version,
 			),
 		);
 	}
@@ -571,9 +587,6 @@ class WPSEO_Admin_Asset_Manager {
 			array(
 				'name' => 'search-appearance',
 				'src'  => 'search-appearance-' . $flat_version,
-				'deps' => array(
-					self::PREFIX . 'components',
-				),
 			),
 			array(
 				'name' => 'structured-data-blocks',
