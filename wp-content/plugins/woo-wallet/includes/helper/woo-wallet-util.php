@@ -29,7 +29,7 @@ if (!function_exists('is_wallet_rechargeable_cart')) {
      */
     function is_wallet_rechargeable_cart() {
         $is_wallet_rechargeable_cart = false;
-        if (sizeof(wc()->cart->get_cart()) > 0 && get_wallet_rechargeable_product()) {
+        if (!is_null(wc()->cart) && sizeof(wc()->cart->get_cart()) > 0 && get_wallet_rechargeable_product()) {
             foreach (wc()->cart->get_cart() as $key => $cart_item) {
                 if ($cart_item['product_id'] == get_wallet_rechargeable_product()->get_id()) {
                     $is_wallet_rechargeable_cart = true;
@@ -59,7 +59,7 @@ if (!function_exists('is_enable_wallet_partial_payment')) {
     function is_enable_wallet_partial_payment() {
         $is_enable = false;
         $cart_total = get_woowallet_cart_total();
-        if ( ( (!is_null(wc()->session) && wc()->session->get('is_wallet_partial_payment', false)) || 'on' === woo_wallet()->settings_api->get_option('is_auto_deduct_for_partial_payment', '_wallet_settings_general')) && $cart_total > woo_wallet()->wallet->get_wallet_balance(get_current_user_id(), 'edit')) {
+        if ( !is_wallet_rechargeable_cart() && is_user_logged_in() && ( (!is_null(wc()->session) && wc()->session->get('is_wallet_partial_payment', false)) || 'on' === woo_wallet()->settings_api->get_option('is_auto_deduct_for_partial_payment', '_wallet_settings_general')) && $cart_total > apply_filters('woo_wallet_partial_payment_amount', woo_wallet()->wallet->get_wallet_balance(get_current_user_id(), 'edit'))) {
             $is_enable = true;
         }
         return apply_filters('is_enable_wallet_partial_payment', $is_enable);

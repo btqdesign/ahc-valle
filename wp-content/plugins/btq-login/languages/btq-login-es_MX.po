@@ -1,0 +1,173 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: BTQ Login\n"
+"POT-Creation-Date: 2018-08-20 15:48-0500\n"
+"PO-Revision-Date: 2018-08-20 15:49-0500\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: es_MX\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.1.1\n"
+"X-Poedit-Basepath: ..\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-Flags-xgettext: --add-comments=translators:\n"
+"X-Poedit-WPHeader: btq-login.php\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
+"_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.js\n"
+
+#. Plugin Name of the plugin/theme
+#: btq-login.php:64
+msgid "BTQ Login"
+msgstr "BTQ Login"
+
+#: btq-login.php:67
+msgid "Content"
+msgstr "Contenido"
+
+#: btq-login.php:80 btq-login.php:87
+msgid "Log in "
+msgstr "Iniciar Sesión"
+
+#: btq-login.php:96 btq-login.php:101 btq-login.php:115 btq-login.php:159
+msgid "The email is already registered with another form of authentication."
+msgstr ""
+"El correo electrónico ya está registrado con otra forma de autenticación."
+
+#: btq-login.php:98
+msgid "Continue with Facebook"
+msgstr "Continuar con Facebook"
+
+#: btq-login.php:103
+msgid "Continue with Google"
+msgstr "Continuar con Google"
+
+#: btq-login.php:106 btq-login.php:156
+msgid "The mail field is empty or does not have the proper format."
+msgstr "El campo de correo está vacío o no tiene el formato adecuado."
+
+#: btq-login.php:109 btq-login.php:162
+msgid "The email and password do not match."
+msgstr "El correo electrónico y la contraseña no coinciden."
+
+#: btq-login.php:112
+msgid "The email is not registered."
+msgstr "El correo electrónico no está registrado."
+
+#: btq-login.php:118 btq-login.php:168
+msgid "Something went wrong, try again later."
+msgstr "Algo salió mal, inténtalo más tarde."
+
+#: btq-login.php:121 btq-login.php:171 btq-login.php:209
+msgid "Email"
+msgstr "Correo"
+
+#: btq-login.php:122 btq-login.php:172
+msgid "Password"
+msgstr "Contraseña"
+
+#: btq-login.php:123
+msgid "Log in to your account"
+msgstr "Acceder a tu cuenta"
+
+#: btq-login.php:129 btq-login.php:216
+msgid "Not a member? "
+msgstr "¿No estás registrado? "
+
+#: btq-login.php:129 btq-login.php:139 btq-login.php:145 btq-login.php:216
+msgid "Sign up"
+msgstr "Registro"
+
+#: btq-login.php:130 btq-login.php:178
+msgid "Did you forget your password?"
+msgstr "¿Has olvidado la contraseña?"
+
+#: btq-login.php:154
+msgid "Register with your mail:"
+msgstr "Regístrese con su correo electrónico"
+
+#: btq-login.php:165
+msgid "The password must be at least 6 characters."
+msgstr "La contraseña debe ser de al menos 6 caracteres."
+
+#: btq-login.php:173
+msgid "Confirm your password"
+msgstr "Confirma tu contraseña"
+
+#: btq-login.php:174
+msgid "Finalize your registration"
+msgstr "Finaliza tu registro"
+
+#: btq-login.php:177 btq-login.php:215
+msgid "Already a member? "
+msgstr "¿Ya eres usuario? "
+
+#: btq-login.php:177 btq-login.php:215
+msgid "Log in"
+msgstr "Iniciar sesión"
+
+#: btq-login.php:193 btq-login.php:210
+msgid "Restore password"
+msgstr "Restaurar contraseña"
+
+#: btq-login.php:202
+msgid "Enter your email:"
+msgstr "Introduce tu email:"
+
+#: btq-login.php:204
+msgid "We have sent a password reset email to the email address you provided."
+msgstr ""
+"Hemos enviado un correo electrónico de restablecimiento de contraseña a la "
+"dirección de correo electrónico que proporcionó."
+
+#: btq-login.php:207
+msgid "We were unable to send the password restoration email, try again later."
+msgstr ""
+"No hemos podido enviar el correo electrónico de restauración de contraseña, "
+"inténtelo de nuevo más tarde."
+
+#: btq-login.php:228
+msgid ""
+"Your registration has been completed correctly, we have logged in "
+"automatically for you."
+msgstr ""
+"Su registro se ha completado exitosamente, hemos iniciado sesión "
+"automáticamente por ti."
+
+#: btq-login.php:230
+msgid "Welcome: "
+msgstr "Bienvenido: "
+
+#: btq-login.php:232
+msgid "Log out"
+msgstr "Cerrar sesión"
+
+#. Plugin URI of the plugin/theme
+msgid "http://btqdesign.com/plugins/btq-login/"
+msgstr "http://btqdesign.com/plugins/btq-login/"
+
+#. Description of the plugin/theme
+msgid "Login con redes sociales."
+msgstr "Login con redes sociales."
+
+#. Author of the plugin/theme
+msgid "BTQ Design"
+msgstr "BTQ Design"
+
+#. Author URI of the plugin/theme
+msgid "http://btqdesign.com/"
+msgstr "http://btqdesign.com/"
+
+#~ msgid "Login"
+#~ msgstr "Iniciar Sesión"
+
+#~ msgid "Sing up"
+#~ msgstr "Registrarse"
+
+#~ msgid "Successful registration"
+#~ msgstr "Registro exitoso"
