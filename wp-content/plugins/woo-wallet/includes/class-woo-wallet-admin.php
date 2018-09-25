@@ -54,7 +54,7 @@ if (!class_exists('Woo_Wallet_Admin')) {
             add_action('woocommerce_coupon_options', array($this, 'add_coupon_option_for_cashback'));
             add_action('woocommerce_coupon_options_save', array($this, 'save_coupon_data'));
 
-            add_filter('admin_footer_text', array($this, 'admin_footer_text'), 1);
+            add_filter('admin_footer_text', array($this, 'admin_footer_text'), 5);
 
             if ('on' === woo_wallet()->settings_api->get_option('is_enable_cashback_reward_program', '_wallet_settings_credit', 'on') && 'product_cat' === woo_wallet()->settings_api->get_option('cashback_rule', '_wallet_settings_credit', 'cart')) {
                 add_action('product_cat_add_form_fields', array($this, 'add_product_cat_cashback_field'));
@@ -67,6 +67,7 @@ if (!class_exists('Woo_Wallet_Admin')) {
             add_filter('manage_users_columns', array($this, 'manage_users_columns'));
             add_filter('manage_users_custom_column', array($this, 'manage_users_custom_column'), 10, 3);
             add_filter('set-screen-option', array($this, 'set_wallet_screen_options'), 10, 3);
+            add_filter('woocommerce_screen_ids', array($this, 'woocommerce_screen_ids_callback'));
         }
 
         /**
@@ -84,12 +85,89 @@ if (!class_exists('Woo_Wallet_Admin')) {
          * init admin menu
          */
         public function admin_menu() {
-            $woo_wallet_menu_page_hook = add_menu_page(__('WooWallet', 'woo-wallet'), __('WooWallet', 'woo-wallet'), 'manage_woocommerce', 'woo-wallet', array($this, 'wallet_page'), WOO_WALLET_ICON, 59);
+            $woo_wallet_menu_page_hook = add_menu_page('WooWallet', 'WooWallet', 'manage_woocommerce', 'woo-wallet', array($this, 'wallet_page'), '', 59);
             add_action("load-$woo_wallet_menu_page_hook", array($this, 'add_woo_wallet_details'));
             $woo_wallet_menu_page_hook_add = add_submenu_page('', __('Woo Wallet', 'woo-wallet'), __('Woo Wallet', 'woo-wallet'), 'manage_woocommerce', 'woo-wallet-add', array($this, 'add_balance_to_user_wallet'));
             add_action("load-$woo_wallet_menu_page_hook_add", array($this, 'add_woo_wallet_add_balance_option'));
             $woo_wallet_menu_page_hook_view = add_submenu_page('', __('Woo Wallet', 'woo-wallet'), __('Woo Wallet', 'woo-wallet'), 'manage_woocommerce', 'woo-wallet-transactions', array($this, 'transaction_details_page'));
             add_action("load-$woo_wallet_menu_page_hook_view", array($this, 'add_woo_wallet_transaction_details_option'));
+            add_submenu_page('woo-wallet', __('Actions', 'woo-wallet'), __('Actions', 'woo-wallet'), 'manage_woocommerce', 'woo-wallet-actions', array($this, 'plugin_actions_page'));
+        }
+        /**
+         * Plugin action settings page 
+         */
+        public function plugin_actions_page() {
+            $screen = get_current_screen();
+            $wallet_actions = new WOO_Wallet_Actions();
+            if ($screen->id == 'woowallet_page_woo-wallet-actions' && isset($_GET['action']) && isset($wallet_actions->actions[$_GET['action']])) {
+                $this->display_action_settings();
+            } else {
+                $this->display_actions_table();
+            }
+        }
+        /**
+         * Plugin action setting init
+         */
+        public function display_action_settings() {
+            $wallet_actions = WOO_Wallet_Actions::instance();
+            ?>
+            <div class="wrap woocommerce">
+                <form method="post">
+                    <?php
+                    $wallet_actions->actions[$_GET['action']]->init_settings();
+                    $wallet_actions->actions[$_GET['action']]->admin_options();
+                    submit_button();
+                    ?>
+                </form>
+            </div>
+            <?php
+        }
+        /**
+         * Plugin action setting table
+         */
+        public function display_actions_table() {
+            $wallet_actions = WOO_Wallet_Actions::instance();
+            echo '<div class="wrap">';
+            echo '<h2>' . __('Wallet actions', 'woo-wallet') . '</h2>';
+            settings_errors();
+            ?>
+            <p><?php _e('Integrated wallet actions are listed below. If active those actions will be triggered with respective WordPress hook.', 'woo-wallet'); ?></p>
+            <table class="wc_emails widefat" cellspacing="0">
+                <thead>
+                    <tr>
+                        <th class="wc-email-settings-table-status"></th>
+                        <th class="wc-email-settings-table-name"><?php _e('Action', 'woo-wallet'); ?></th>
+                        <th class="wc-email-settings-table-name"><?php _e('Description', 'woo-wallet'); ?></th>
+                        <th class="wc-email-settings-table-actions"></th>						
+                    </tr>
+                </thead>
+                <tbody class="ui-sortable">
+                    <?php foreach ($wallet_actions->actions as $action) : ?>
+                        <tr data-gateway_id="<?php echo $action->get_action_id(); ?>">
+                            <td>
+                                <?php
+                                if ($action->is_enabled()) {
+                                    echo '<span class="status-enabled tips" data-tip="' . esc_attr__('Enabled', 'woo-wallet') . '">' . esc_html__('Yes', 'woo-wallet') . '</span>';
+                                } else {
+                                    echo '<span class="status-disabled tips" data-tip="' . esc_attr__('Disabled', 'woo-wallet') . '">-</span>';
+                                }
+                                ?>
+                            </td>
+                            <td class="name" width=""><a href="<?php echo esc_url(admin_url('admin.php?page=woo-wallet-actions&action=' . strtolower($action->id))); ?>" class="wc-payment-gateway-method-title"><?php echo $action->get_action_title(); ?></a></td>
+                            <td class="description" width=""><?php echo $action->get_action_description(); ?></td>
+                            <td class="action" width="1%"><a class="button alignright" href="<?php echo esc_url(admin_url('admin.php?page=woo-wallet-actions&action=' . strtolower($action->id))); ?>"><?php
+                                    if ($action->is_enabled()) {
+                                        echo __('Manage', 'woo-wallet');
+                                    } else {
+                                        echo __('Setup', 'woo-wallet');
+                                    }
+                                    ?></a></td>
+                        </tr>
+                    <?php endforeach; ?>
+                </tbody>
+            </table>
+            <?php
+            echo '</div>';
         }
 
         /**
@@ -127,9 +205,7 @@ if (!class_exists('Woo_Wallet_Admin')) {
                 );
                 wp_localize_script('woo_wallet_admin_order', 'woo_wallet_admin_order_param', $order_localizer);
             }
-            if (in_array($screen_id, array('toplevel_page_woo-wallet'))) {
-                wp_enqueue_style('woo_wallet_admin_styles');
-            }
+            wp_enqueue_style('woo_wallet_admin_styles');
         }
 
         /**
@@ -141,7 +217,7 @@ if (!class_exists('Woo_Wallet_Admin')) {
                 <h2><?php _e('Users wallet details', 'woo-wallet'); ?></h2>
                 <form id="posts-filter" method="post">
                     <?php $this->balance_details_table->search_box(__('Search Users', 'woo-wallet'), 'search_id'); ?>
-            <?php $this->balance_details_table->display(); ?>
+                    <?php $this->balance_details_table->display(); ?>
                 </form>
                 <div id="ajax-response"></div>
                 <br class="clear"/>
@@ -154,9 +230,10 @@ if (!class_exists('Woo_Wallet_Admin')) {
          */
         public function add_balance_to_user_wallet() {
             $user_id = filter_input(INPUT_GET, 'user_id');
+            $currency = apply_filters('woo_wallet_user_currency', '', $user_id);
             ?>
             <div class="wrap">
-            <?php settings_errors(); ?>
+                <?php settings_errors(); ?>
                 <h2><?php _e('Adjust Balance', 'woo-wallet'); ?> <a style="text-decoration: none;" href="<?php echo add_query_arg(array('page' => 'woo-wallet'), admin_url('admin.php')); ?>"><span class="dashicons dashicons-editor-break" style="vertical-align: middle;"></span></a></h2>
                 <p>
                     <?php
@@ -168,7 +245,7 @@ if (!class_exists('Woo_Wallet_Admin')) {
                     <table class="form-table">
                         <tbody>
                             <tr>
-                                <th scope="row"><label for="balance_amount"><?php echo __('Amount', 'woo-wallet') . ' (' . get_woocommerce_currency_symbol() . ')'; ?></label></th>
+                                <th scope="row"><label for="balance_amount"><?php echo __('Amount', 'woo-wallet') . ' (' . get_woocommerce_currency_symbol($currency) . ')'; ?></label></th>
                                 <td>
                                     <input type="number" step="0.01" name="balance_amount" class="regular-text" />
                                     <p class="description"><?php _e('Enter Amount', 'woo-wallet'); ?></p>
@@ -195,7 +272,7 @@ if (!class_exists('Woo_Wallet_Admin')) {
                     </table>
                     <input type="hidden" name="user_id" value="<?php echo $user_id; ?>" />
                     <?php wp_nonce_field('wc-wallet-admin-add-balance', 'wc-wallet-admin-add-balance'); ?>
-            <?php submit_button(); ?>
+                    <?php submit_button(); ?>
                 </form>
                 <div id="ajax-response"></div>
                 <br class="clear"/>
@@ -216,7 +293,7 @@ if (!class_exists('Woo_Wallet_Admin')) {
                     echo woo_wallet()->wallet->get_wallet_balance($user_id);
                     ?></p>
                 <form id="posts-filter" method="get">
-            <?php $this->transaction_details_table->display(); ?>
+                    <?php $this->transaction_details_table->display(); ?>
                 </form>
                 <div id="ajax-response"></div>
                 <br class="clear"/>
@@ -252,7 +329,7 @@ if (!class_exists('Woo_Wallet_Admin')) {
                 $payment_type = filter_input(INPUT_POST, 'payment_type');
                 $description = filter_input(INPUT_POST, 'payment_description');
                 if ($user_id != NULL && !empty($user_id) && $amount != NULL && !empty($amount)) {
-                    $amount = number_format($amount, 2, '.', '');
+                    $amount = apply_filters('woo_wallet_addjust_balance_amount', number_format($amount, 2, '.', ''), $user_id);
                     if ('credit' === $payment_type) {
                         $transaction_id = woo_wallet()->wallet->credit($user_id, $amount, $description);
                     } else if ('debit' === $payment_type) {
@@ -288,9 +365,9 @@ if (!class_exists('Woo_Wallet_Admin')) {
             $this->transaction_details_table = new Woo_Wallet_Transaction_Details();
             $this->transaction_details_table->prepare_items();
         }
-        
-        public function set_wallet_screen_options($screen_option, $option, $value){
-            if('transactions_per_page' === $option){
+
+        public function set_wallet_screen_options($screen_option, $option, $value) {
+            if ('transactions_per_page' === $option) {
                 $screen_option = $value;
             }
             return $screen_option;
@@ -363,7 +440,7 @@ if (!class_exists('Woo_Wallet_Admin')) {
                     <td class="label"><?php _e('Cashback', 'woo-wallet'); ?>:</td>
                     <td width="1%"></td>
                     <td class="via-wallet">
-                <?php echo wc_price($total_cashback_amount, array('currency' => $order->get_currency())); ?>
+                        <?php echo wc_price($total_cashback_amount, array('currency' => $order->get_currency())); ?>
                     </td>
                 </tr>
                 <?php
@@ -375,14 +452,14 @@ if (!class_exists('Woo_Wallet_Admin')) {
                     <td class="label"><?php _e('Via wallet', 'woo-wallet'); ?>:</td>
                     <td width="1%"></td>
                     <td class="via-wallet">
-                <?php echo wc_price(get_post_meta($order_id, '_via_wallet_payment', true), array('currency' => $order->get_currency())); ?>
+                        <?php echo wc_price(get_post_meta($order_id, '_via_wallet_payment', true), array('currency' => $order->get_currency())); ?>
                     </td>
                 </tr>
                 <tr>
                     <td class="label"><?php printf(__('Via %s', 'woo-wallet'), $order->get_payment_method_title()); ?>:</td>
                     <td width="1%"></td>
                     <td class="via-wallet">
-                <?php echo wc_price($via_other_gateway, array('currency' => $order->get_currency())); ?>
+                        <?php echo wc_price($via_other_gateway, array('currency' => $order->get_currency())); ?>
                     </td>
                 </tr>
                 <?php
@@ -421,7 +498,7 @@ if (!class_exists('Woo_Wallet_Admin')) {
                 return $footer_text;
             }
             $current_screen = get_current_screen();
-            $woo_wallet_pages = array('toplevel_page_woo-wallet', 'admin_page_woo-wallet-add', 'admin_page_woo-wallet-transactions', 'woowallet_page_woo-wallet-settings');
+            $woo_wallet_pages = array('toplevel_page_woo-wallet', 'admin_page_woo-wallet-add', 'admin_page_woo-wallet-transactions', 'woowallet_page_woo-wallet-settings', 'woowallet_page_woo-wallet-actions', 'woowallet_page_woo-wallet-extensions');
             if (isset($current_screen->id) && in_array($current_screen->id, $woo_wallet_pages)) {
                 if (!get_option('woocommerce_wallet_admin_footer_text_rated')) {
                     $footer_text = sprintf(
@@ -571,11 +648,19 @@ if (!class_exists('Woo_Wallet_Admin')) {
          */
         public function manage_users_custom_column($value, $column_name, $user_id) {
             if ($column_name === 'current_wallet_balance') {
-                return sprintf('<a href="%s" title="%s">%s</a>', admin_url('?page=woo-wallet-transactions&user_id='. $user_id), __('View details', 'woo-wallet'), woo_wallet()->wallet->get_wallet_balance($user_id));
+                return sprintf('<a href="%s" title="%s">%s</a>', admin_url('?page=woo-wallet-transactions&user_id=' . $user_id), __('View details', 'woo-wallet'), woo_wallet()->wallet->get_wallet_balance($user_id));
             }
             return $value;
         }
-
+        /**
+         * Add screen id woowallet_page_woo-wallet-actions to WooCommerce
+         * @param array $screen_ids
+         * @return array
+         */
+        public function woocommerce_screen_ids_callback($screen_ids) {
+            $screen_ids[] = 'woowallet_page_woo-wallet-actions';
+            return $screen_ids;
+        }
     }
 
 }

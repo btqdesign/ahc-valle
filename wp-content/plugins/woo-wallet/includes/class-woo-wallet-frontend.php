@@ -331,7 +331,7 @@ if (!class_exists('Woo_Wallet_Frontend')) {
         public function add_woo_wallet_product_price_to_cart_item_data($cart_item_data, $product_id) {
             $product = wc_get_product($product_id);
             if (isset($_POST['woo_wallet_balance_to_add']) && $product) {
-                $recharge_amount = round($_POST['woo_wallet_balance_to_add'], 2);
+                $recharge_amount = apply_filters('woo_wallet_rechargeable_amount', round($_POST['woo_wallet_balance_to_add'], 2));
                 $cart_item_data['recharge_amount'] = $recharge_amount;
             }
             return $cart_item_data;
@@ -441,7 +441,7 @@ if (!class_exists('Woo_Wallet_Frontend')) {
          * @since 1.2.1
          */
         public function woo_wallet_add_partial_payment_fee() {
-            $parial_payment_amount = apply_filters('woo_wallet_partial_payment_amount', woo_wallet()->wallet->get_wallet_balance(get_current_user_id(), 'edit'), 'NULL');
+            $parial_payment_amount = apply_filters('woo_wallet_partial_payment_amount', woo_wallet()->wallet->get_wallet_balance(get_current_user_id(), 'edit'));
             $fee = array(
                 'id' => '_via_wallet_partial_payment',
                 'name' => __('Via wallet'),
