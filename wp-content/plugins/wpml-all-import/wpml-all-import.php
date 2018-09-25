@@ -4,7 +4,7 @@
 	Plugin Name: WPML All Import
 	Plugin URI: http://wpml.org
 	Description: Import multilingual content to WordPress. Requires WP All Import & WPML.
-	Version: 2.0.7
+	Version: 2.0.8
 	Author: OnTheGoSystems
 	Author URI: http://www.onthegosystems.com/
 */
@@ -441,7 +441,7 @@ if ( ! class_exists('WPAI_WPML') )
 			return $attachment_id;
 		}
 
-		public function get_image_from_gallery_filter( $attachment, $original_image_name, $target_dir ) {
+		public function get_image_from_gallery_filter( $attachment ) {
 
 			if ( $this->language_code && $attachment ) {
 
