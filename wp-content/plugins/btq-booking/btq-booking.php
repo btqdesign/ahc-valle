@@ -746,6 +746,7 @@ function btq_booking_iph_query_url($app, $propertyNumber, $partnerId, $lang, $ch
 		$url = 
 			'https://secure.internetpower.com.mx/portals/DinamicRooms/Request.ashx?'
 			.'propertyNumber=' . $propertyNumber
+			.'&AccessCode=WEBPAGE'
 			.'&currency=' . $currency
 			.'&app=' . $app
 			.'&Rooms=' . $rooms

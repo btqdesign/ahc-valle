@@ -27,7 +27,7 @@ class WPSEO_Premium {
 	const OPTION_CURRENT_VERSION = 'wpseo_current_version';
 
 	/** @var string */
-	const PLUGIN_VERSION_NAME = '8.1.2';
+	const PLUGIN_VERSION_NAME = '8.3';
 
 	/** @var string */
 	const PLUGIN_VERSION_CODE = '16';
@@ -221,22 +221,24 @@ class WPSEO_Premium {
 
 			// Add Premium imports.
 			new WPSEO_Premium_Import_Manager();
+		}
 
-			// Only activate post and term watcher if permalink structure is enabled.
-			if ( get_option( 'permalink_structure' ) ) {
-				add_action( 'admin_init', array( $this, 'init_watchers' ) );
+		// Only activate post and term watcher if permalink structure is enabled.
+		if ( get_option( 'permalink_structure' ) ) {
+			add_action( 'admin_init', array( $this, 'init_watchers' ) );
+			add_action( 'rest_api_init', array( $this, 'init_watchers' ) );
 
-				// Check if we need to display an admin message.
-				$redirect_created = filter_input( INPUT_GET, 'yoast-redirect-created' );
-				if ( isset( $redirect_created ) && $redirect_created !== false ) {
+			// Check if we need to display an admin message.
+			$redirect_created = filter_input( INPUT_GET, 'yoast-redirect-created' );
+			if ( isset( $redirect_created ) && $redirect_created !== false ) {
 
-					// Message object.
-					$message = new WPSEO_Message_Redirect_Created( $redirect_created );
-					add_action( 'all_admin_notices', array( $message, 'display' ) );
-				}
+				// Message object.
+				$message = new WPSEO_Message_Redirect_Created( $redirect_created );
+				add_action( 'all_admin_notices', array( $message, 'display' ) );
 			}
 		}
-		else {
+
+		if ( ! is_admin() ) {
 			// Add 404 redirect link to WordPress toolbar.
 			add_action( 'admin_bar_menu', array( $this, 'admin_bar_menu' ), 96 );
 

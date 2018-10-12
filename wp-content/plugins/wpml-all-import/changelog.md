@@ -1,3 +1,7 @@
+#2.0.8
+
+* Fixed fatal error while importing images (wpmlai-81)
+
 #2.0.7
 
 * Added fix to correctly calculate WC taxonomies after the import (wpmlai-78, wpmlai-71) 

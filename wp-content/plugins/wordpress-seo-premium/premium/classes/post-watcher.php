@@ -358,7 +358,7 @@ class WPSEO_Post_Watcher extends WPSEO_Watcher {
 		global $pagenow;
 
 		// Only set the hooks for the page where they are needed.
-		if ( ! ( $this->post_redirect_can_be_made( $pagenow ) ) ) {
+		if ( ! $this->is_rest_request() && ! $this->post_redirect_can_be_made( $pagenow ) ) {
 			return;
 		}
 
@@ -379,6 +379,15 @@ class WPSEO_Post_Watcher extends WPSEO_Watcher {
 
 		// Detect a post delete.
 		add_action( 'before_delete_post', array( $this, 'detect_post_delete' ) );
+	}
+
+	/**
+	 * Determines whether we're dealing with a REST request or not.
+	 *
+	 * @return bool Whether or not the current request is a REST request.
+	 */
+	private function is_rest_request() {
+		return defined( 'REST_REQUEST' ) && REST_REQUEST === true;
 	}
 
 	/**
